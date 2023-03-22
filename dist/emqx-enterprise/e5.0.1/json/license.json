@@ -1,0 +1,53 @@
+[
+  {
+    "desc": "License provisioned as a string.",
+    "fields": [
+      {
+        "default": {
+          "hocon": "\"MjIwMTExCjAKMTAKRXZhbHVhdGlvbgpjb250YWN0QGVtcXguaW8KZGVmYXVsdAoyMDIzMDEwOQoxODI1CjEwMAo=.MEUCIG62t8W15g05f1cKx3tA3YgJoR0dmyHOPCdbUxBGxgKKAiEAhHKh8dUwhU+OxNEaOn8mgRDtiT3R8RZooqy6dEsOmDI=\"",
+          "oneliner": true
+        },
+        "desc": "License string",
+        "name": "key",
+        "raw_default": "MjIwMTExCjAKMTAKRXZhbHVhdGlvbgpjb250YWN0QGVtcXguaW8KZGVmYXVsdAoyMDIzMDEwOQoxODI1CjEwMAo=.MEUCIG62t8W15g05f1cKx3tA3YgJoR0dmyHOPCdbUxBGxgKKAiEAhHKh8dUwhU+OxNEaOn8mgRDtiT3R8RZooqy6dEsOmDI=",
+        "type": {
+          "kind": "primitive",
+          "name": "binary()"
+        }
+      },
+      {
+        "default": {
+          "hocon": "\"75%\"",
+          "oneliner": true
+        },
+        "desc": "Low watermark limit below which license connection quota usage alarms are deactivated",
+        "name": "connection_low_watermark",
+        "raw_default": "75%",
+        "type": {
+          "kind": "primitive",
+          "name": "emqx_schema:percent()"
+        }
+      },
+      {
+        "default": {
+          "hocon": "\"80%\"",
+          "oneliner": true
+        },
+        "desc": "High watermark limit above which license connection quota usage alarms are activated",
+        "name": "connection_high_watermark",
+        "raw_default": "80%",
+        "type": {
+          "kind": "primitive",
+          "name": "emqx_schema:percent()"
+        }
+      }
+    ],
+    "full_name": "key_license",
+    "paths": [
+      "license"
+    ],
+    "tags": [
+      "License"
+    ]
+  }
+]

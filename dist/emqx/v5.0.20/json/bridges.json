@@ -1,0 +1,38 @@
+[
+  {
+    "desc": "Configuration for MQTT bridges.",
+    "fields": [
+      {
+        "desc": "WebHook to an HTTP server.",
+        "name": "webhook",
+        "type": {
+          "kind": "map",
+          "name": "name",
+          "values": {
+            "kind": "struct",
+            "name": "bridge_webhook:config"
+          }
+        }
+      },
+      {
+        "desc": "MQTT bridges to/from another MQTT broker",
+        "name": "mqtt",
+        "type": {
+          "kind": "map",
+          "name": "name",
+          "values": {
+            "kind": "struct",
+            "name": "bridge_mqtt:config"
+          }
+        }
+      }
+    ],
+    "full_name": "bridge:bridges",
+    "paths": [
+      "bridges"
+    ],
+    "tags": [
+      "Bridge"
+    ]
+  }
+]
