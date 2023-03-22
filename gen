@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+help() {
+    echo "Usage: gen.sh [options]"
+    echo "Options:"
+    echo "  -h, --help      Show this help message and exit"
+    echo "  -v, --verbose   Enable verbose output"
+    echo "  --rebuild       Purge tmp/emqx and rebuild"
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -h|--help)
+            help
+            exit 0
+            ;;
+        -v|--verbose)
+            set -x
+            shift
+            ;;
+        --rebuild)
+            REBUILD=true
+            shift
+            ;;
+        v*)
+            export PROFILE='emqx'
+            VERSION="${1}"
+            shift
+            ;;
+        e*)
+            export PROFILE='emqx-enterprise'
+            VERSION="${1}"
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
+
+if [[ -z "${VERSION:-}" ]]; then
+    help
+    exit 1
+fi
+
+mkdir -p tmp
+pushd tmp
+if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
+    rm -rf emqx
+    git clone "https://github.com/emqx/emqx.git" -b "${VERSION}" --depth 1
+    cd emqx
+    env PROFILE="${PROFILE}" make
+else
+    cd emqx
+fi
+./_build/"$PROFILE"/rel/emqx/bin/emqx stop || true
+./_build/"$PROFILE"/rel/emqx/bin/emqx start
+popd
+
+OUTDIR="dist/${PROFILE}"
+./generate-config-sections.py -p tmp/emqx --profile "$PROFILE" --version "$VERSION" --output-dir "${OUTDIR}"
+# the file is so far still located in emqx.git
+#cp tmp/emqx/rel/emqx_conf.template.en.md "${OUTDIR}/index.md"
+./generate-markdown.exs --lang en --outdir "${OUTDIR}/${VERSION}"

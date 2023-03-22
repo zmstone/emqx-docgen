@@ -3,6 +3,24 @@
 This repo is to hold the generated schema artificats which are used as
 the source for documentation rendering.
 
+## Prerequisites
+
+- Erlang/OTP 23.0 or later
+- Elixir 1.11.0 or later
+- Python 3.6 or later
+
+## How to update
+
+After a new EMQX version 5.x.y is released, execute `gen.sh <version>` to update the content of this repo.
+
+For example, to update the content for v5.0.20, execute:
+
+```bash
+./gen v5.0.20 --rebuild
+```
+
+The generated content will be placed in the `dist/emqx/v5.0.20` directory.
+
 ## Background
 
 The main user interfaces to configure and manage EMQX are
@@ -28,31 +46,11 @@ are not possible to aut-generate. For example the
 lengthy in-general description to explain how the different
 configuration system works.
 
-This repo, is created as an intermediate stop to hold the
-generated artifacts which includes:
+This repo, is created to record the full schema dump and the generated artifacts for each EMQX version starting from v5.0.20.
+
+Including:
 
 - The JSON representation of the schema.
 - The hand-crafted document contents, i.e. the parts of the document which do not make sense
   to be a part of [emqx.git](https://github.com/emqx/emqx.git)
-- The final markdown generation scripts.
-  For as long as the [docs site](https://github.com/emqx/emqx-docs)
-  is rendering the doc pages from markdown, we will continue to generate markdown.
-
-In general this is the (second-stop) source of truth for
-downstream document generation or rendering. Meaning it is not a replacement for
-[emqx-docs.git](https://github.com/emqx/emqx-docs) but the input of it.
-
-## Why isn't this made a part of [emqx-docs.git](https://github.com/emqx/emqx-docs).
-
-The doc repo [emqx-docs.git](https://github.com/emqx/emqx-docs) holds the raw
-material (most of which is hand-crafted markdown) for only on purpose: doc-site rendering.
-
-This repo however, can hold the source of multiple downtreams, to name a few:
-
-- EMQX configuration docs markdown generation.
-- Multi-language translations (i18n).
-  So far we only supprot 2 languages, the translations still in [emqx.git](https://github.com/emqx/emqx.git).
-  In future release, we'll keep only the english descriptions in the source code and move translations here.
-- The OpenAPI 3.0 specification.
-- With the canonical schema format (JSON) version controlled here, a future doc-rendering web server
-  can make use of this source to render the pages in a whole different way.
+- The markdown generation scripts.

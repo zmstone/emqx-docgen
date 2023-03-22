@@ -51,12 +51,19 @@ def dir_path(path_str: str, **kwargs) -> Path:
             raise argparse.ArgumentTypeError(f"{path} must be a directory")
 
 
-def find_schema_json(root_dir: Path) -> Path:
-    path = (
+def find_schema_json(root_dir: Path, profile: str) -> Path:
+    path1 = (
+        # before v5.0.21
         root_dir / "apps" / "emqx_dashboard" / "priv" / "www" / "static" / "schema.json"
     )
-    if path.is_file():
-        return path
+    path2 = (
+        # starting from v5.0.21
+        root_dir / "docgen" / profile / "schema-en.json"
+    )
+    if path1.is_file():
+        return path1
+    elif path2.is_file():
+        return path2
     else:
         raise RuntimeError(
             f"schema.json not found in {path}\n"
@@ -96,8 +103,14 @@ def main(argv):
         help="path to output the subsection JSONs",
         type=lambda path: dir_path(path, create=True),
     )
+    parser.add_argument(
+        "-v",
+        "--version",
+        required=True,
+        help="the version of EMQX",
+    )
     args = parser.parse_args(argv)
-    schema_path = find_schema_json(args.project_root)
+    schema_path = find_schema_json(args.project_root, args.profile)
     with open(schema_path) as f:
         full_schema = json.load(f)
 
@@ -118,7 +131,7 @@ def main(argv):
     all_sections = {**special_sections, "others": generic_section}
     all_sections["emqx"] = [root] + all_sections["emqx"]
     for slug, subjson in all_sections.items():
-        output_dir = args.output_dir / args.profile / "json"
+        output_dir = args.output_dir / args.version / "json"
         output = output_dir / f"{slug}.json"
         ensure_dir(output_dir)
         print(f"writing output to {output}")

@@ -1,7 +1,7 @@
 #!/usr/bin/env elixir
 
 Mix.install([
-  {:hocon, github: "emqx/hocon", ref: "dcddb940ab2af56d6de2015347b6a7eb56948bdb"},
+  {:hocon, github: "emqx/hocon"},
   # {:hocon, path: "../hocon/"},
   :jason
 ])
@@ -10,21 +10,25 @@ defmodule Main do
   Code.require_file("md.exs")
   Code.require_file("schema_md.exs")
 
+  defp usage do
+    IO.puts "Usage: my_script.exs [--lang=<language>] --outdir=<path>"
+    IO.puts "  --lang=<language>  The language to use (default: en)"
+    IO.puts "  --outdir=<path>    The output directory (required)"
+    IO.puts "                     points to where the json files are located"
+    System.halt(1)
+  end
+
   def parse_args!(args) do
-    lang =
-      case OptionParser.parse!(args, strict: [lang: :string]) do
-        {[lang: lang], _} ->
-          lang
-
-        _ ->
-          Mix.raise("usage: generate-markdown.exs --lang {en,zh}")
-      end
-
+    {opts, _} = OptionParser.parse!(args, strict: [lang: :string, outdir: :string])
+    lang = opts[:lang]
+    outdir = opts[:outdir]
     unless lang in ["en", "zh"] do
-      Mix.raise("Invalid language #{lang}; options are `en`, `zh`")
+      usage()
     end
-
-    %{lang: lang}
+    unless outdir do
+      usage()
+    end
+    %{lang: lang, outdir: outdir}
   end
 
   def sections() do
@@ -101,9 +105,9 @@ defmodule Main do
   Creates an index mapping full names to files/sections, as they will
   be cross-referenced by fields/structs in different sections.
   """
-  def index_full_names(dist_dir, sections) do
+  def index_full_names(outdir, sections) do
     for %{slug: slug, title: _title} <- sections,
-        %{full_name: full_name} <- read_structs!(dist_dir, slug),
+        %{full_name: full_name} <- read_structs!(outdir, slug),
         reduce: %{} do
       acc ->
           if Map.has_key?(acc, full_name) and acc[full_name] != slug do
@@ -127,41 +131,37 @@ defmodule Main do
   end
 
   def generate_markdown(opts) do
-    dist_dir_ce = "dist/emqx/"
-    dist_dir_ee = "dist/emqx-enterprise/"
-    %{lang: lang} = opts
+    %{lang: lang, outdir: outdir} = opts
     %{
       sections_ce: sections_ce,
       sections_ee: sections_ee,
     } = sections()
 
-    [
-      {dist_dir_ce, sections_ce},
-      {dist_dir_ee, sections_ee}
-    ]
-    |> Enum.each(fn {dist_dir, sections} ->
-      Enum.each(sections, fn %{slug: slug, title: title} = section ->
-        index = make_index(sections, lang)
-        outfile = Path.join([dist_dir, "md", "index.md"])
-        File.write!(outfile, index)
+    sections = case String.starts_with?(Path.basename(outdir), "v") do
+      true -> sections_ce
+      false -> sections_ee
+    end
+    Enum.each(sections, fn %{slug: slug, title: title} = section ->
+      index = make_index(sections, lang)
+      outfile = Path.join([outdir, "index.md"])
+      File.write!(outfile, index)
 
-        header_index = index_full_names(dist_dir, sections)
-        body = Map.get(section, :body, "")
+      header_index = index_full_names(outdir, sections)
+      body = Map.get(section, :body, "")
 
-        md =
-          dist_dir
-          |> read_structs!(slug)
-          |> SchemaMD.gen_from_structs(%{
-              title: "# #{title}",
-              body: body,
-              env_prefix: "EMQX_",
-              header_index: header_index,
-              current_slug: slug,
-            })
+      md =
+        outdir
+        |> read_structs!(slug)
+        |> SchemaMD.gen_from_structs(%{
+            title: "# #{title}",
+            body: body,
+            env_prefix: "EMQX_",
+            header_index: header_index,
+            current_slug: slug,
+          })
 
-        outfile = Path.join([dist_dir, "md", "#{slug}.md"])
-        File.write!(outfile, md)
-      end)
+      outfile = Path.join([outdir, "#{slug}.md"])
+      File.write!(outfile, md)
     end)
   end
 
