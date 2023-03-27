@@ -52,18 +52,12 @@ def dir_path(path_str: str, **kwargs) -> Path:
 
 
 def find_schema_json(root_dir: Path, profile: str) -> Path:
-    path1 = (
-        # before v5.0.21
-        root_dir / "apps" / "emqx_dashboard" / "priv" / "www" / "static" / "schema.json"
-    )
-    path2 = (
+    path = (
         # starting from v5.0.21
-        root_dir / "docgen" / profile / "schema-en.json"
+        root_dir / "_build/docgen" / profile / "schema-en.json"
     )
-    if path1.is_file():
-        return path1
-    elif path2.is_file():
-        return path2
+    if path.is_file():
+        return path
     else:
         raise RuntimeError(
             f"schema.json not found in {path}\n"
