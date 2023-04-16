@@ -19,7 +19,7 @@ echo "<!DOCTYPE html>
   <ul>" > $index_file
 
 # Find all HTML files in the subdirectories and create a list with links
-find -type f -iname "*.html" | while read -r file; do
+find -type f -iname "*.html" | grep -vE 'index\.html' | while read -r file; do
   relative_path="$(realpath --relative-to=. "$file")"
   echo "    <li><a href=\"$relative_path\">$relative_path</a></li>" >> $index_file
 done
