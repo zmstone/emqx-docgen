@@ -55,15 +55,39 @@ if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
     git clone "https://github.com/emqx/emqx.git" -b "${VERSION}" --depth 1
     cd emqx
     env PROFILE="${PROFILE}" make
-else
-    cd emqx
 fi
-./_build/"$PROFILE"/rel/emqx/bin/emqx stop || true
-./_build/"$PROFILE"/rel/emqx/bin/emqx start
 popd
+INPUT_DIR="$(pwd)/tmp/emqx/_build/docgen/${PROFILE}"
+OUTPUT_DIR="$(pwd)/dist/${PROFILE}/${VERSION}"
+mkdir -p $OUTPUT_DIR
 
-OUTDIR="dist/${PROFILE}"
-./generate-config-sections.py -p tmp/emqx --profile "$PROFILE" --version "$VERSION" --output-dir "${OUTDIR}"
-# the file is so far still located in emqx.git
-#cp tmp/emqx/rel/emqx_conf.template.en.md "${OUTDIR}/index.md"
-./generate-markdown.exs --lang en --outdir "${OUTDIR}/${VERSION}"
+dot_json_to_dot_html () {
+  local input_file="$1"
+  local base_name
+  base_name="$(basename "$input_file" .json)"
+  echo "${base_name}.html"
+}
+
+build() {
+    local input_json="$1"
+    local output_dir="$2"
+    local output_file
+    output_file="$(dot_json_to_dot_html $input_json)"
+    docker run --rm -it \
+        -v "${input_json}:/hsv/public/schemas/default.json" \
+        -v "${output_dir}:/out" \
+        -e OUTPUT_FILE="/out/${output_file}" \
+        "zmstone/hocon-schema-viewer:0.4.1"
+}
+
+build_lang() {
+    lang="$1"
+    cp "$INPUT_DIR/schema-${lang}.json" "$OUTPUT_DIR"/
+    build "$OUTPUT_DIR/schema-${lang}.json" "$OUTPUT_DIR"
+}
+
+langs=("en" "zh")
+
+for lang in "${langs[@]}"; do
+    build_lang "$lang"
+done

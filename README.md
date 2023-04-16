@@ -41,16 +41,4 @@ For documentation, since the underlying schema is shared,
 it is possible to auto-generate them.
 E.g. the types and descriptions of the objects and fileds.
 
-However, there are certain parts of the doucment that
-are not possible to aut-generate. For example the
-lengthy in-general description to explain how the different
-configuration system works.
-
-This repo, is created to record the full schema dump and the generated artifacts for each EMQX version starting from v5.0.20.
-
-Including:
-
-- The JSON representation of the schema.
-- The hand-crafted document contents, i.e. the parts of the document which do not make sense
-  to be a part of [emqx.git](https://github.com/emqx/emqx.git)
-- The markdown generation scripts.
+This repo, is created to record the full schema dump and the generated html doc for each EMQX version starting from v5.0.20.
