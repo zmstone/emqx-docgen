@@ -12,16 +12,15 @@ echo "<!DOCTYPE html>
 <head>
   <meta charset=\"UTF-8\">
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-  <title>Index of HTML files</title>
+  <title>EMQX Config Docs</title>
 </head>
 <body>
-  <h1>Index of HTML files</h1>
   <ul>" > $index_file
 
-# Find all HTML files in the subdirectories and create a list with links
-find -type f -iname "*.html" | grep -vE 'index\.html' | while read -r file; do
+# Find all JSON files in the subdirectories and create a list with links
+find -type f -iname "*.json" | while read -r file; do
   relative_path="$(realpath --relative-to=. "$file")"
-  echo "    <li><a href=\"$relative_path\">$relative_path</a></li>" >> $index_file
+  echo "    <li><a href=\"v.html?s=$relative_path\">$relative_path</a></li>" >> $index_file
 done
 
 # Close the HTML tags
