@@ -91,3 +91,5 @@ langs=("en" "zh")
 for lang in "${langs[@]}"; do
     build_lang "$lang"
 done
+
+./refresh-index-page.sh
