@@ -58,7 +58,7 @@ if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
 fi
 popd
 INPUT_DIR="$(pwd)/tmp/emqx/_build/docgen/${PROFILE}"
-OUTPUT_DIR="$(pwd)/dist/${PROFILE}/${VERSION}"
+OUTPUT_DIR="$(pwd)/docs/${PROFILE}/${VERSION}"
 mkdir -p $OUTPUT_DIR
 
 dot_json_to_dot_html () {
