@@ -3,6 +3,8 @@
 This repo is to hold the generated schema artificats which are used as
 the source for documentation rendering.
 
+See the render results here: https://zmstone.github.io/emqx-docgen
+
 ## Prerequisites
 
 - Erlang/OTP 23.0 or later
