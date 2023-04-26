@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 help() {
-    echo "Usage: gen.sh [options]"
+    echo "Usage: gen.sh [options] <emqx-version>"
     echo "Options:"
     echo "  -h, --help      Show this help message and exit"
     echo "  -v, --verbose   Enable verbose output"
