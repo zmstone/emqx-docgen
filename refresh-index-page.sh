@@ -10,7 +10,7 @@ cd docs/
 gen_lang_list() {
     lang="$1"
     # Find all JSON files in the subdirectories and create a list with links
-    find "$lang" -type f -iname "*.json" | while read -r file; do
+    find "$lang" -type f -iname "*.json" | sort | while read -r file; do
         echo "<li><a href=\"v.html?s=$file\">$file</a></li>"
     done
 }
