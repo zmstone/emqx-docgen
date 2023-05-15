@@ -21,7 +21,7 @@ For example, to update the content for v5.0.20, execute:
 ./gen v5.0.20 --rebuild
 ```
 
-The generated content will be placed in the `dist/emqx/v5.0.20` directory.
+The generated content will be placed in the `docs/{en,zh}/v5.0.20.json`
 
 ## Background
 
