@@ -7,8 +7,8 @@ See the render results here: https://zmstone.github.io/emqx-docgen
 
 ## Prerequisites
 
-- Erlang/OTP 23.0 or later
-- Elixir 1.11.0 or later
+- Erlang/OTP 25.0 or later
+- Elixir 1.15.0 or later
 - Python 3.6 or later
 
 ## How to update
