@@ -9,14 +9,17 @@ cd docs/
 
 gen_lang_list() {
     lang="$1"
+    tag_prefix="$2"
     # Find all JSON files in the subdirectories and create a list with links
-    find "$lang" -type f -iname "*.json" | sort | while read -r file; do
+    find "$lang" -type f -iname "${tag_prefix}*.json" | sort | while read -r file; do
         echo "<li><a href=\"v.html?s=$file\">$file</a></li>"
     done
 }
 
-EN_LIST="$(gen_lang_list en)"
-ZH_LIST="$(gen_lang_list zh)"
+EN_LIST_ENTERPRISE="$(gen_lang_list en e)"
+EN_LIST_OPENSOURCE="$(gen_lang_list en v)"
+ZH_LIST_ENTERPRISE="$(gen_lang_list zh e)"
+ZH_LIST_OPENSOURCE="$(gen_lang_list zh v)"
 
 cat<<EOF > index.html
 <!DOCTYPE html>
@@ -84,18 +87,16 @@ cat<<EOF > index.html
     <div class="tab" onclick="switchTab(event, 'Chinese')">中文</div>
   </div>
     <div id="English" class="tab-content" style="display: block;">
-      <ul>
-
-${EN_LIST}
-
-      </ul>
+      <h1>Enterprise Edition</h1>
+      <ul>${EN_LIST_ENTERPRISE}</ul>
+      <h1>Opensource Edition</h1>
+      <ul>${EN_LIST_OPENSOURCE}</ul>
     </div>
     <div id="Chinese" class="tab-content">
-      <ul>
-
-${ZH_LIST}
-
-      </ul>
+      <h1>Enterprise Edition</h1>
+      <ul>${ZH_LIST_ENTERPRISE}</ul>
+      <h1>Opensource Edition</h1>
+      <ul>${ZH_LIST_OPENSOURCE}</ul>
     </div>
 </body>
 EOF
