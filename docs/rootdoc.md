@@ -129,7 +129,6 @@ below are some examples
 
 ```
 node.name = "emqx.127.0.0.1"
-zone.zone1.max_packet_size = "10M"
 authentication.1.enable = true
 ```
 
@@ -207,21 +206,30 @@ log.console_handler.level=debug
 
 #### Map Values
 
-Maps are like structs, only the files are user-defined rather than
-the config schema. For instance, `zone1` in the example below.
+Maps are like structs, only the fields are user-defined rather than the config schema.
+For instance, HTTP headers in the example below.
 
 ```
-zone {
-    zone1 {
-        mqtt.max_packet_size = 1M
+authentication = [
+    {
+        enable = true
+        mechanism = password_based
+        backend = http
+        method = post
+        url = "http://localhost:8080"
+        headers {
+            "content-type" = "application/json"
+            "connection" = "keep-alive"
+        }
     }
-}
+]
 
-## The maximum packet size can be defined as above,
-## then overridden as below
-
-zone.zone1.mqtt.max_packet_size = 10M
 ```
+
+::: tip Tip
+Map keys cannot have dots.
+e.g. `content-type` is a valid map key, but `some.other.name` is not.
+:::
 
 #### Array Elements
 
