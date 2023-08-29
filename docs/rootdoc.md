@@ -80,8 +80,10 @@ There are 4 complex data types in EMQX's HOCON config:
 
 1. Struct: Named using an unquoted string, followed by a predefined list of fields.
    Only lowercase letters and digits are allowed in struct and field names.
-   Alos, only underscore can be used as word separator.
-1. Map: Map is like Struct, however the fields are not predefined.
+   Also, only underscore (`_`) can be used as word separator.
+1. Map: Map is like Struct, only the fields are not predefined.
+   Comparing to struct filed names, map keys can contain more special characters such as `-`,
+   but not dots (`.`).
 1. Union: `MemberType1 | MemberType2 | ...`
 1. Array: `[ElementType]`
 
@@ -92,7 +94,7 @@ For example:
 myarray.1 = 74
 myarray.2 = 75
 ```
-will be interpreated as `myarray = [74, 75]`, which is handy when trying to override array elements.
+It is interpreated as `myarray = [74, 75]`, which is handy when trying to override array elements.
 :::
 
 ### Primitive Data Types
