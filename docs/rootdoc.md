@@ -47,7 +47,7 @@ node {
 Another equivalent representation is flat, such as
 
 ```
-node.name = "127.0.0.1"
+node.name = "emqx@127.0.0.1"
 node.cookie = "mysecret"
 ```
 
