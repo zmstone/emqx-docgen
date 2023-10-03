@@ -33,6 +33,89 @@
       },
       {
         "type" : {
+          "kind" : "array",
+          "elements" : {
+            "members" : [
+              {
+                "name" : "authn:builtin_db",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:mysql",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:postgresql",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:mongo_single",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:mongo_rs",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:mongo_sharded",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:redis_single",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:redis_cluster",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:redis_sentinel",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:http_get",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:http_post",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:jwt_hmac",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:jwt_public_key",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:jwt_jwks",
+                "kind" : "struct"
+              },
+              {
+                "name" : "authn:scram",
+                "kind" : "struct"
+              }
+            ],
+            "kind" : "union"
+          }
+        },
+        "raw_default" : [
+          
+        ],
+        "name" : "authentication",
+        "importance" : "low",
+        "desc" : "Default authentication configs for all MQTT listeners.\n\nFor per-listener overrides see <code>authentication</code> in listener configs\n\nThis option can be configured with:\n<ul>\n  <li><code>[]</code>: The default value, it allows *ALL* logins</li>\n  <li>one: For example <code>{enable:true,backend:\"built_in_database\",mechanism=\"password_based\"}</code></li>\n  <li>chain: An array of structs.</li>\n</ul>\n\nWhen a chain is configured, the login credentials are checked against the backends per the configured order, until an 'allow' or 'deny' decision can be made.\n\nIf there is no decision after a full chain exhaustion, the login is rejected.",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "[]"
+        },
+        "aliases" : [
+          
+        ]
+      },
+      {
+        "type" : {
           "name" : "authorization",
           "kind" : "struct"
         },
@@ -4796,89 +4879,6 @@
       },
       {
         "type" : {
-          "kind" : "array",
-          "elements" : {
-            "members" : [
-              {
-                "name" : "authn:builtin_db",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mysql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:postgresql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_rs",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_sharded",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_cluster",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_sentinel",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_get",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_post",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_hmac",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_public_key",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_jwks",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:scram",
-                "kind" : "struct"
-              }
-            ],
-            "kind" : "union"
-          }
-        },
-        "raw_default" : [
-          
-        ],
-        "name" : "authentication",
-        "importance" : "low",
-        "desc" : "Default authentication configs for all MQTT listeners.\n\nFor per-listener overrides see <code>authentication</code> in listener configs\n\nThis option can be configured with:\n<ul>\n  <li><code>[]</code>: The default value, it allows *ALL* logins</li>\n  <li>one: For example <code>{enable:true,backend:\"built_in_database\",mechanism=\"password_based\"}</code></li>\n  <li>chain: An array of structs.</li>\n</ul>\n\nWhen a chain is configured, the login credentials are checked against the backends per the configured order, until an 'allow' or 'deny' decision can be made.\n\nIf there is no decision after a full chain exhaustion, the login is rejected.",
-        "default" : {
-          "oneliner" : true,
-          "hocon" : "[]"
-        },
-        "aliases" : [
-          
-        ]
-      },
-      {
-        "type" : {
           "name" : "broker:tcp_opts",
           "kind" : "struct"
         },
@@ -5118,89 +5118,6 @@
       },
       {
         "type" : {
-          "kind" : "array",
-          "elements" : {
-            "members" : [
-              {
-                "name" : "authn:builtin_db",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mysql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:postgresql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_rs",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_sharded",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_cluster",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_sentinel",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_get",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_post",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_hmac",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_public_key",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_jwks",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:scram",
-                "kind" : "struct"
-              }
-            ],
-            "kind" : "union"
-          }
-        },
-        "raw_default" : [
-          
-        ],
-        "name" : "authentication",
-        "importance" : "low",
-        "desc" : "Default authentication configs for all MQTT listeners.\n\nFor per-listener overrides see <code>authentication</code> in listener configs\n\nThis option can be configured with:\n<ul>\n  <li><code>[]</code>: The default value, it allows *ALL* logins</li>\n  <li>one: For example <code>{enable:true,backend:\"built_in_database\",mechanism=\"password_based\"}</code></li>\n  <li>chain: An array of structs.</li>\n</ul>\n\nWhen a chain is configured, the login credentials are checked against the backends per the configured order, until an 'allow' or 'deny' decision can be made.\n\nIf there is no decision after a full chain exhaustion, the login is rejected.",
-        "default" : {
-          "oneliner" : true,
-          "hocon" : "[]"
-        },
-        "aliases" : [
-          
-        ]
-      },
-      {
-        "type" : {
           "name" : "broker:tcp_opts",
           "kind" : "struct"
         },
@@ -5423,89 +5340,6 @@
         "default" : {
           "oneliner" : true,
           "hocon" : "3s"
-        },
-        "aliases" : [
-          
-        ]
-      },
-      {
-        "type" : {
-          "kind" : "array",
-          "elements" : {
-            "members" : [
-              {
-                "name" : "authn:builtin_db",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mysql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:postgresql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_rs",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_sharded",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_cluster",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_sentinel",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_get",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_post",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_hmac",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_public_key",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_jwks",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:scram",
-                "kind" : "struct"
-              }
-            ],
-            "kind" : "union"
-          }
-        },
-        "raw_default" : [
-          
-        ],
-        "name" : "authentication",
-        "importance" : "low",
-        "desc" : "Default authentication configs for all MQTT listeners.\n\nFor per-listener overrides see <code>authentication</code> in listener configs\n\nThis option can be configured with:\n<ul>\n  <li><code>[]</code>: The default value, it allows *ALL* logins</li>\n  <li>one: For example <code>{enable:true,backend:\"built_in_database\",mechanism=\"password_based\"}</code></li>\n  <li>chain: An array of structs.</li>\n</ul>\n\nWhen a chain is configured, the login credentials are checked against the backends per the configured order, until an 'allow' or 'deny' decision can be made.\n\nIf there is no decision after a full chain exhaustion, the login is rejected.",
-        "default" : {
-          "oneliner" : true,
-          "hocon" : "[]"
         },
         "aliases" : [
           
@@ -5752,89 +5586,6 @@
       },
       {
         "type" : {
-          "kind" : "array",
-          "elements" : {
-            "members" : [
-              {
-                "name" : "authn:builtin_db",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mysql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:postgresql",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_rs",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:mongo_sharded",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_single",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_cluster",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:redis_sentinel",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_get",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:http_post",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_hmac",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_public_key",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:jwt_jwks",
-                "kind" : "struct"
-              },
-              {
-                "name" : "authn:scram",
-                "kind" : "struct"
-              }
-            ],
-            "kind" : "union"
-          }
-        },
-        "raw_default" : [
-          
-        ],
-        "name" : "authentication",
-        "importance" : "low",
-        "desc" : "Default authentication configs for all MQTT listeners.\n\nFor per-listener overrides see <code>authentication</code> in listener configs\n\nThis option can be configured with:\n<ul>\n  <li><code>[]</code>: The default value, it allows *ALL* logins</li>\n  <li>one: For example <code>{enable:true,backend:\"built_in_database\",mechanism=\"password_based\"}</code></li>\n  <li>chain: An array of structs.</li>\n</ul>\n\nWhen a chain is configured, the login credentials are checked against the backends per the configured order, until an 'allow' or 'deny' decision can be made.\n\nIf there is no decision after a full chain exhaustion, the login is rejected.",
-        "default" : {
-          "oneliner" : true,
-          "hocon" : "[]"
-        },
-        "aliases" : [
-          
-        ]
-      },
-      {
-        "type" : {
           "name" : "broker:tcp_opts",
           "kind" : "struct"
         },
@@ -5959,15 +5710,12 @@
       "EMQX"
     ],
     "paths" : [
+      "authentication.$INDEX.ssl",
       "authorization.sources.$INDEX.ssl",
       "bridges.mqtt.$name.ssl",
       "bridges.webhook.$name.ssl",
       "cluster.etcd.ssl_options",
-      "gateway.exproto.handler.ssl_options",
-      "listeners.ssl.$name.authentication.$INDEX.ssl",
-      "listeners.tcp.$name.authentication.$INDEX.ssl",
-      "listeners.ws.$name.authentication.$INDEX.ssl",
-      "listeners.wss.$name.authentication.$INDEX.ssl"
+      "gateway.exproto.handler.ssl_options"
     ],
     "full_name" : "broker:ssl_client_opts",
     "fields" : [
@@ -12186,11 +11934,8 @@
       
     ],
     "paths" : [
-      "authorization.sources.$INDEX.topology",
-      "listeners.ssl.$name.authentication.$INDEX.topology",
-      "listeners.tcp.$name.authentication.$INDEX.topology",
-      "listeners.ws.$name.authentication.$INDEX.topology",
-      "listeners.wss.$name.authentication.$INDEX.topology"
+      "authentication.$INDEX.topology",
+      "authorization.sources.$INDEX.topology"
     ],
     "full_name" : "topology",
     "fields" : [
@@ -12728,10 +12473,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:http_get",
     "fields" : [
@@ -12950,10 +12692,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:http_post",
     "fields" : [
@@ -13173,10 +12912,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_hmac",
     "fields" : [
@@ -13308,10 +13044,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_jwks",
     "fields" : [
@@ -13477,10 +13210,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_public_key",
     "fields" : [
@@ -13596,10 +13326,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:builtin_db",
     "fields" : [
@@ -13700,10 +13427,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_rs",
     "fields" : [
@@ -14062,10 +13786,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_sharded",
     "fields" : [
@@ -14394,10 +14115,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_single",
     "fields" : [
@@ -14726,10 +14444,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:mysql",
     "fields" : [
@@ -14932,10 +14647,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:postgresql",
     "fields" : [
@@ -15117,10 +14829,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_cluster",
     "fields" : [
@@ -15307,10 +15016,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_sentinel",
     "fields" : [
@@ -15524,10 +15230,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_single",
     "fields" : [
@@ -15730,10 +15433,7 @@
       "Authentication"
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX",
-      "listeners.tcp.$name.authentication.$INDEX",
-      "listeners.ws.$name.authentication.$INDEX",
-      "listeners.wss.$name.authentication.$INDEX"
+      "authentication.$INDEX"
     ],
     "full_name" : "authn:scram",
     "fields" : [
@@ -15818,10 +15518,7 @@
       
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.tcp.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.ws.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.wss.$name.authentication.$INDEX.password_hash_algorithm"
+      "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn-hash:bcrypt",
     "fields" : [
@@ -15844,10 +15541,7 @@
       
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.tcp.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.ws.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.wss.$name.authentication.$INDEX.password_hash_algorithm"
+      "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn-hash:bcrypt_rw",
     "fields" : [
@@ -15889,10 +15583,7 @@
       
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.tcp.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.ws.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.wss.$name.authentication.$INDEX.password_hash_algorithm"
+      "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn-hash:pbkdf2",
     "fields" : [
@@ -15957,10 +15648,7 @@
       
     ],
     "paths" : [
-      "listeners.ssl.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.tcp.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.ws.$name.authentication.$INDEX.password_hash_algorithm",
-      "listeners.wss.$name.authentication.$INDEX.password_hash_algorithm"
+      "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn-hash:simple",
     "fields" : [
@@ -17006,12 +16694,9 @@
       
     ],
     "paths" : [
+      "authentication.$INDEX.request",
       "authorization.sources.$INDEX.request",
-      "bridges.webhook.$name.request",
-      "listeners.ssl.$name.authentication.$INDEX.request",
-      "listeners.tcp.$name.authentication.$INDEX.request",
-      "listeners.ws.$name.authentication.$INDEX.request",
-      "listeners.wss.$name.authentication.$INDEX.request"
+      "bridges.webhook.$name.request"
     ],
     "full_name" : "connector-http:request",
     "fields" : [

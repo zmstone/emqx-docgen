@@ -10,6 +10,8 @@ help() {
     echo "  -h, --help      Show this help message and exit"
     echo "  -v, --verbose   Enable verbose output"
     echo "  --rebuild       Purge tmp/emqx and rebuild"
+    echo "  --git_repo      Git repo url to clone"
+    echo "  --git_ref       Git tag or branch name to clone"
 }
 
 while [[ $# -gt 0 ]]; do
@@ -25,6 +27,14 @@ while [[ $# -gt 0 ]]; do
         --rebuild)
             REBUILD=true
             shift
+            ;;
+        --git_ref)
+            GIT_REF="${2}"
+            shift 2
+            ;;
+        --git_repo)
+            GIT_REPO="${2}"
+            shift 2
             ;;
         v*)
             export PROFILE='emqx'
@@ -48,11 +58,19 @@ if [[ -z "${VERSION:-}" ]]; then
     exit 1
 fi
 
+if [[ -z "${GIT_REF:-}" ]]; then
+    GIT_REF="${VERSION}"
+fi
+
+if [[ -z "${GIT_REPO:-}" ]]; then
+    GIT_REPO="https://github.com/emqx/emqx.git"
+fi
+
 mkdir -p tmp
 pushd tmp
 if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
     rm -rf emqx
-    git clone "https://github.com/emqx/emqx.git" -b "${VERSION}" --depth 1
+    git clone "${GIT_REPO}" -b "${GIT_REF}" --depth 1
     cd emqx
     env PROFILE="${PROFILE}" make
 fi
