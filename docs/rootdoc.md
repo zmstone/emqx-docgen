@@ -195,15 +195,15 @@ For example, in below config, the last line `debug` overwrites `error` for
 console log handler's `level` config, but leaving `enable` unchanged.
 ```
 log {
-    console_handler{
-        enable=true,
-        level=error
+    console {
+        enable = true
+        level = error
     }
 }
 
 ## ... more configs ...
 
-log.console_handler.level=debug
+log.console.level = debug
 ```
 
 #### Map Values
