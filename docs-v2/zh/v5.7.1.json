@@ -2356,6 +2356,13 @@
               "type" : "String"
             },
             {
+              "doc" : "在连接中禁用预处理语句的使用。\n某些端点，如 PGBouncer 或 Transaction 模式下的 Supabase，\n不支持像处理语句这样的会话功能。 \n 对于此类连接，应启用此选项。",
+              "hash" : "V-authentication-S-postgresql-disable_prepared_statements",
+              "text" : "disable_prepared_statements",
+              "type" : "Boolean",
+              "default" : "false"
+            },
+            {
               "doc" : "数据库名字。",
               "hash" : "V-authentication-S-postgresql-database",
               "text" : "database",
@@ -4707,17 +4714,17 @@
               "default" : "8"
             },
             {
-              "doc" : "Deprecated since 5.0.4.",
-              "hash" : "V-authentication-S-http_get-max_retries",
-              "text" : "max_retries",
-              "type" : "Integer(0..+inf)"
-            },
-            {
               "doc" : "连接到 HTTP 服务器的超时时间。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
               "hash" : "V-authentication-S-http_get-connect_timeout",
               "text" : "connect_timeout",
               "type" : "Duration",
               "default" : "\"15s\""
+            },
+            {
+              "doc" : "Deprecated since 5.0.4.",
+              "hash" : "V-authentication-S-http_get-max_retries",
+              "text" : "max_retries",
+              "type" : "Integer(0..+inf)"
             },
             {
               "doc" : "一个正整数。是否连续发送 HTTP 请求，当设置为1时，意味着在发送每个 HTTP 请求后，需要等待服务器返回，然后继续发送下一个请求。",
@@ -4964,17 +4971,17 @@
               "default" : "8"
             },
             {
-              "doc" : "Deprecated since 5.0.4.",
-              "hash" : "V-authentication-S-http_post-max_retries",
-              "text" : "max_retries",
-              "type" : "Integer(0..+inf)"
-            },
-            {
               "doc" : "连接到 HTTP 服务器的超时时间。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
               "hash" : "V-authentication-S-http_post-connect_timeout",
               "text" : "connect_timeout",
               "type" : "Duration",
               "default" : "\"15s\""
+            },
+            {
+              "doc" : "Deprecated since 5.0.4.",
+              "hash" : "V-authentication-S-http_post-max_retries",
+              "text" : "max_retries",
+              "type" : "Integer(0..+inf)"
             },
             {
               "doc" : "一个正整数。是否连续发送 HTTP 请求，当设置为1时，意味着在发送每个 HTTP 请求后，需要等待服务器返回，然后继续发送下一个请求。",
@@ -7189,6 +7196,13 @@
                       "hash" : "V-authorization-S-authorization-sources-S-postgresql-server",
                       "text" : "server",
                       "type" : "String"
+                    },
+                    {
+                      "doc" : "在连接中禁用预处理语句的使用。\n某些端点，如 PGBouncer 或 Transaction 模式下的 Supabase，\n不支持像处理语句这样的会话功能。 \n 对于此类连接，应启用此选项。",
+                      "hash" : "V-authorization-S-authorization-sources-S-postgresql-disable_prepared_statements",
+                      "text" : "disable_prepared_statements",
+                      "type" : "Boolean",
+                      "default" : "false"
                     },
                     {
                       "doc" : "数据库名字。",
@@ -10225,6 +10239,255 @@
               "hash" : "V-connectors-S-connectors-mqtt",
               "text" : "mqtt",
               "type" : "Map($name->Struct(config_connector))"
+            },
+            {
+              "doc" : "ElasticSearch Connector Config",
+              "refs" : [
+                {
+                  "doc" : "ElasticSearch 动作的配置。",
+                  "hash" : "T-connectors-S-connectors-elasticsearch-S-config",
+                  "fields" : [
+                    {
+                      "doc" : "启用 (是) 或 停用 (否) 该连接器。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-enable",
+                      "text" : "enable",
+                      "type" : "Boolean",
+                      "default" : "true"
+                    },
+                    {
+                      "doc" : "连接器的标签",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-tags",
+                      "text" : "tags",
+                      "type" : "Array(String)"
+                    },
+                    {
+                      "doc" : "描述性文本。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-description",
+                      "text" : "description",
+                      "type" : "String",
+                      "default" : "\"\""
+                    },
+                    {
+                      "doc" : "连接到 HTTP 服务器的超时时间。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-connect_timeout",
+                      "text" : "connect_timeout",
+                      "type" : "Duration",
+                      "default" : "\"15s\""
+                    },
+                    {
+                      "doc" : "连接池类型。可以是random、hash之一。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-pool_type",
+                      "text" : "pool_type",
+                      "type" : "Enum(random,hash)",
+                      "default" : "random"
+                    },
+                    {
+                      "doc" : "连接池大小。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-pool_size",
+                      "text" : "pool_size",
+                      "type" : "Integer(1..+inf)",
+                      "default" : "8"
+                    },
+                    {
+                      "doc" : "一个正整数。是否连续发送 HTTP 请求，当设置为1时，意味着在发送每个 HTTP 请求后，需要等待服务器返回，然后继续发送下一个请求。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-enable_pipelining",
+                      "text" : "enable_pipelining",
+                      "type" : "Integer(1..+inf)",
+                      "default" : "100"
+                    },
+                    {
+                      "doc" : "启用 SSL 连接。",
+                      "refs" : [
+                        {
+                          "doc" : "Socket options for SSL clients.",
+                          "hash" : "T-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts",
+                          "fields" : [
+                            {
+                              "doc" : "受信任的 PEM 格式 CA  证书捆绑文件<br/>\n此文件中的证书用于验证 TLS 对等方的证书。\n如果要信任新 CA，请将新证书附加到文件中。\n无需重启 EMQX 即可加载更新的文件，因为系统会定期检查文件是否已更新（并重新加载）<br/>\n注意：从文件中失效（删除）证书不会影响已建立的连接。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-cacertfile",
+                              "text" : "cacertfile",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "Deprecated since 5.1.4.",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-cacerts",
+                              "text" : "cacerts",
+                              "type" : "Boolean"
+                            },
+                            {
+                              "doc" : "PEM 格式证书链文件<br/>\n此文件中的证书应与证书颁发链的顺序相反。也就是说，主机的证书应该放在文件的开头，\n然后是直接颁发者 CA 证书，依此类推，一直到根 CA 证书。\n根 CA 证书是可选的，如果想要添加，应加到文件到最末端。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-certfile",
+                              "text" : "certfile",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "PEM 格式的私钥文件。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-keyfile",
+                              "text" : "keyfile",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "启用或禁用对等验证。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-verify",
+                              "text" : "verify",
+                              "type" : "Enum(verify_peer,verify_none)",
+                              "default" : "verify_none"
+                            },
+                            {
+                              "doc" : "启用 TLS 会话重用。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-reuse_sessions",
+                              "text" : "reuse_sessions",
+                              "type" : "Boolean",
+                              "default" : "true"
+                            },
+                            {
+                              "doc" : "在有效的证书路径中，可以跟随对等证书的非自颁发中间证书的最大数量。\n因此，如果深度为 0，则对等方必须由受信任的根 CA 直接签名；<br/>\n如果是 1，路径可以是 PEER、中间 CA、ROOT-CA；<br/>\n如果是 2，则路径可以是 PEER、中间 CA1、中间 CA2、ROOT-CA。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-depth",
+                              "text" : "depth",
+                              "type" : "Integer(0..+inf)",
+                              "default" : "10"
+                            },
+                            {
+                              "doc" : "包含用户密码的字符串。仅在私钥文件受密码保护时使用。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-password",
+                              "text" : "password",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "支持所有 TLS/DTLS 版本<br/>\n注：PSK 的 Ciphers 无法在 <code>tlsv1.3</code> 中使用，如果打算使用 PSK 密码套件，请确保这里配置为 <code>[\"tlsv1.2\",\"tlsv1.1\"]</code>。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-versions",
+                              "text" : "versions",
+                              "type" : "Array(String)",
+                              "default" : "[\"tlsv1.3\", \"tlsv1.2\"]"
+                            },
+                            {
+                              "doc" : "此配置保存由逗号分隔的 TLS 密码套件名称，或作为字符串数组。例如\n<code>\"TLS_AES_256_GCM_SHA384,TLS_AES_128_GCM_SHA256\"</code>或\n<code>[\"TLS_AES_256_GCM_SHA384\",\"TLS_AES_128_GCM_SHA256\"]</code>。\n<br/>\n密码（及其顺序）定义了客户端和服务器通过网络连接加密信息的方式。\n选择一个好的密码套件对于应用程序的数据安全性、机密性和性能至关重要。\n\n名称应为 OpenSSL 字符串格式（而不是 RFC 格式）。\nEMQX 配置文档提供的所有默认值和示例都是 OpenSSL 格式<br/>\n注意：某些密码套件仅与特定的 TLS <code>版本</code>兼容（'tlsv1.1'、'tlsv1.2'或'tlsv1.3'）。\n不兼容的密码套件将被自动删除。\n\n例如，如果只有 <code>versions</code> 仅配置为 <code>tlsv1.3</code>。为其他版本配置密码套件将无效。\n\n<br/>\n注：PSK 的 Ciphers 不支持 tlsv1.3<br/>\n如果打算使用 PSK 密码套件, <code>tlsv1.3</code> 应在<code>ssl.versions</code>中禁用。\n\n<br/>\nPSK 密码套件：\n<code>\"RSA-PSK-AES256-GCM-SHA384,RSA-PSK-AES256-CBC-SHA384,\nRSA-PSK-AES128-GCM-SHA256,RSA-PSK-AES128-CBC-SHA256,\nRSA-PSK-AES256-CBC-SHA,RSA-PSK-AES128-CBC-SHA,\nRSA-PSK-DES-CBC3-SHA,RSA-PSK-RC4-SHA\"</code>",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-ciphers",
+                              "text" : "ciphers",
+                              "type" : "Array(String)",
+                              "default" : "[]"
+                            },
+                            {
+                              "doc" : "SSL 参数重新协商是一种允许客户端和服务器动态重新协商 SSL 连接参数的功能。\nRFC 5746 定义了一种更安全的方法。通过启用安全的重新协商，您就失去了对不安全的重新协商的支持，从而容易受到 MitM 攻击。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-secure_renegotiate",
+                              "text" : "secure_renegotiate",
+                              "type" : "Boolean",
+                              "default" : "true"
+                            },
+                            {
+                              "doc" : "SSL 握手的日志级别。默认值是 'notice'，可以设置为 'debug' 用来调查 SSL 握手的问题。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-log_level",
+                              "text" : "log_level",
+                              "type" : "Enum(emergency,alert,critical,error,warning,notice,info,debug,none,all)",
+                              "default" : "notice"
+                            },
+                            {
+                              "doc" : "在闲置一定时间后休眠 SSL 进程，减少其内存占用。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-hibernate_after",
+                              "text" : "hibernate_after",
+                              "type" : "Duration",
+                              "default" : "\"5s\""
+                            },
+                            {
+                              "doc" : "启用 TLS。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-enable",
+                              "text" : "enable",
+                              "type" : "Boolean",
+                              "default" : "false"
+                            },
+                            {
+                              "doc" : "指定要在 TLS 服务器名称指示扩展中使用的主机名。<br/>\n例如，当连接到 \"server.example.net\" 时，接受连接并执行 TLS 握手的真正服务器可能与 TLS 客户端最初连接到的主机不同，\n例如，当连接到 IP 地址时，或者当主机具有多个可解析的 DNS 记录时<br/>\n如果未指定，它将默认为使用的主机名字符串\n建立连接，除非使用 IP 地址<br/>\n然后，主机名也用于对等机的主机名验证证书<br/>\n特殊值 <code>disable</code> 阻止发送服务器名称指示扩展，并禁用主机名验证检查。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl-S-ssl_client_opts-server_name_indication",
+                              "text" : "server_name_indication",
+                              "type" : "OneOf(String(\"disable\"),String)"
+                            }
+                          ],
+                          "text" : "ssl_client_opts"
+                        }
+                      ],
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-ssl",
+                      "text" : "ssl",
+                      "type" : "Struct(ssl_client_opts)",
+                      "default" : "{enable = false}"
+                    },
+                    {
+                      "doc" : "资源相关的选项。",
+                      "refs" : [
+                        {
+                          "doc" : "资源相关的选项。",
+                          "hash" : "T-connectors-S-connectors-elasticsearch-S-config-resource_opts-S-connector_resource_opts",
+                          "fields" : [
+                            {
+                              "doc" : "健康检查间隔。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-resource_opts-S-connector_resource_opts-health_check_interval",
+                              "text" : "health_check_interval",
+                              "type" : "Duration",
+                              "default" : "\"15s\""
+                            },
+                            {
+                              "doc" : "是否在创建资源后立即启动资源。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-resource_opts-S-connector_resource_opts-start_after_created",
+                              "text" : "start_after_created",
+                              "type" : "Boolean",
+                              "default" : "true"
+                            },
+                            {
+                              "doc" : "在回复资源创建请求前等待资源进入健康状态的时间。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-resource_opts-S-connector_resource_opts-start_timeout",
+                              "text" : "start_timeout",
+                              "type" : "Duration",
+                              "default" : "\"5s\""
+                            }
+                          ],
+                          "text" : "connector_resource_opts"
+                        }
+                      ],
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-resource_opts",
+                      "text" : "resource_opts",
+                      "type" : "Struct(connector_resource_opts)",
+                      "default" : "{}"
+                    },
+                    {
+                      "doc" : "要连接的 IPv4 或 IPv6 地址或主机名。\n一个主机条目有如下形式：`主机[:端口]`。\n如果没有指定 `[:端口]`，则使用 Elasticsearch 默认端口 9200。",
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-server",
+                      "text" : "server",
+                      "type" : "String",
+                      "default" : "\"127.0.0.1:9200\""
+                    },
+                    {
+                      "doc" : "认证配置",
+                      "refs" : [
+                        {
+                          "doc" : "Basic Authentication",
+                          "hash" : "T-connectors-S-connectors-elasticsearch-S-config-authentication-S-auth_basic",
+                          "fields" : [
+                            {
+                              "doc" : "IoTDB REST 接口配置的用户名",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-authentication-S-auth_basic-username",
+                              "text" : "username",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "ElasticSearch REST 连接密码<br/>包含一些敏感信息的字符串，例如密码。当密钥以 <code>file://</code> 开头时，字符串的其余部分将被解释为包含密钥本身的文件路径：文件的整个内容（除了任何尾随的空白字符）都被视为密钥值。注意：在集群中，所有 EMQX 节点在使用 <code>file://</code> 密钥之前应该具有相同的文件。",
+                              "hash" : "V-connectors-S-connectors-elasticsearch-S-config-authentication-S-auth_basic-password",
+                              "text" : "password",
+                              "type" : "Secret"
+                            }
+                          ],
+                          "text" : "auth_basic"
+                        }
+                      ],
+                      "hash" : "V-connectors-S-connectors-elasticsearch-S-config-authentication",
+                      "text" : "authentication",
+                      "type" : "OneOf(Struct(auth_basic))"
+                    }
+                  ],
+                  "text" : "config"
+                }
+              ],
+              "hash" : "V-connectors-S-connectors-elasticsearch",
+              "text" : "elasticsearch",
+              "type" : "Map($name->Struct(config))"
             }
           ],
           "text" : "connectors"
@@ -10559,6 +10822,274 @@
               "hash" : "V-actions-S-actions-mqtt",
               "text" : "mqtt",
               "type" : "Map($name->Struct(mqtt_publisher_action))"
+            },
+            {
+              "doc" : "Elasticsearch 动作",
+              "refs" : [
+                {
+                  "doc" : "ElasticSearch 动作配置项",
+                  "hash" : "T-actions-S-actions-elasticsearch-S-action_config",
+                  "fields" : [
+                    {
+                      "doc" : "启用（是）或停用（否）此动作。",
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-enable",
+                      "text" : "enable",
+                      "type" : "Boolean",
+                      "default" : "true"
+                    },
+                    {
+                      "doc" : "由动作指定的连接器名称，用于选择外部资源。",
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-connector",
+                      "text" : "connector",
+                      "type" : "String"
+                    },
+                    {
+                      "doc" : "连接器的标签",
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-tags",
+                      "text" : "tags",
+                      "type" : "Array(String)"
+                    },
+                    {
+                      "doc" : "描述性文本。",
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-description",
+                      "text" : "description",
+                      "type" : "String",
+                      "default" : "\"\""
+                    },
+                    {
+                      "doc" : "ElasticSearch 动作参数",
+                      "refs" : [
+                        {
+                          "doc" : "将一个 JSON 文件添加到指定的索引中，并使其可搜索。\n如果目标是一个索引并且文件已经存在，\n请求会更新该文件并增加其版本。",
+                          "hash" : "T-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create",
+                          "fields" : [
+                            {
+                              "doc" : "create",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-action",
+                              "text" : "action",
+                              "type" : "String(\"create\")"
+                            },
+                            {
+                              "doc" : "执行操作的索引名称或索引别名。\n此参数是必需的。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-index",
+                              "text" : "index",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "文档 ID。如果没有指定 ID，将自动生成。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-id",
+                              "text" : "id",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "JSON 文档模板，如果留空则为包含所有可用字段的 JSON 文本，如 clientid、topic、payload 等。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-doc",
+                              "text" : "doc",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "用于将操作路由到特定分片的自定义值。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-routing",
+                              "text" : "routing",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "如果为 true, 则请求的操作必须针对一个索引别名。默认为 false。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-require_alias",
+                              "text" : "require_alias",
+                              "type" : "Boolean"
+                            },
+                            {
+                              "doc" : "如果指定 _id 的文档已经存在（冲突），将设置为 false，操作将失败。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-overwrite",
+                              "text" : "overwrite",
+                              "type" : "Boolean",
+                              "default" : "true"
+                            },
+                            {
+                              "doc" : "如果发送请求时出错，最大的重试次数。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_create-max_retries",
+                              "text" : "max_retries",
+                              "type" : "Integer(0..+inf)",
+                              "default" : "2"
+                            }
+                          ],
+                          "text" : "action_create"
+                        },
+                        {
+                          "doc" : "从指定的索引中删除一个 JSON 文件。",
+                          "hash" : "T-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete",
+                          "fields" : [
+                            {
+                              "doc" : "delete",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete-action",
+                              "text" : "action",
+                              "type" : "String(\"delete\")"
+                            },
+                            {
+                              "doc" : "执行操作的索引名称或索引别名。\n此参数是必需的。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete-index",
+                              "text" : "index",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "文档 ID。如果没有指定 ID，将自动生成。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete-id",
+                              "text" : "id",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "用于将操作路由到特定分片的自定义值。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete-routing",
+                              "text" : "routing",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "如果发送请求时出错，最大的重试次数。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_delete-max_retries",
+                              "text" : "max_retries",
+                              "type" : "Integer(0..+inf)",
+                              "default" : "2"
+                            }
+                          ],
+                          "text" : "action_delete"
+                        },
+                        {
+                          "doc" : "使用指定的文件更新一个文件。",
+                          "hash" : "T-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update",
+                          "fields" : [
+                            {
+                              "doc" : "update",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-action",
+                              "text" : "action",
+                              "type" : "String(\"update\")"
+                            },
+                            {
+                              "doc" : "执行操作的索引名称或索引别名。\n此参数是必需的。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-index",
+                              "text" : "index",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "文档 ID。如果没有指定 ID，将自动生成。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-id",
+                              "text" : "id",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "JSON 文档模板，如果留空则为包含所有可用字段的 JSON 文本，如 clientid、topic、payload 等。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-doc",
+                              "text" : "doc",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "你可以将 doc_as_upsert 设置为 true，使用 doc 的内容作为 upsert 值，而不是发送一个不完整的文件加上一个 upsert 文件。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-doc_as_upsert",
+                              "text" : "doc_as_upsert",
+                              "type" : "Boolean",
+                              "default" : "false"
+                            },
+                            {
+                              "doc" : "用于将操作路由到特定分片的自定义值。<br/>用于`${.path.to.var}`样式值插值的字符串，其中开头的点是可选的。语法`${.}`表示取值整个对象（包含所有字段）。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-routing",
+                              "text" : "routing",
+                              "type" : "String"
+                            },
+                            {
+                              "doc" : "如果为 true, 则请求的操作必须针对一个索引别名。默认为 false。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-require_alias",
+                              "text" : "require_alias",
+                              "type" : "Boolean"
+                            },
+                            {
+                              "doc" : "如果发送请求时出错，最大的重试次数。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters-S-action_update-max_retries",
+                              "text" : "max_retries",
+                              "type" : "Integer(0..+inf)",
+                              "default" : "2"
+                            }
+                          ],
+                          "text" : "action_update"
+                        }
+                      ],
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-parameters",
+                      "text" : "parameters",
+                      "type" : "OneOf(Struct(action_create),Struct(action_delete),Struct(action_update))"
+                    },
+                    {
+                      "doc" : "资源相关的选项。",
+                      "refs" : [
+                        {
+                          "doc" : "资源选项。",
+                          "hash" : "T-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts",
+                          "fields" : [
+                            {
+                              "doc" : "缓存队列 worker 数量。仅对 egress 类型的桥接有意义。当桥接仅有 ingress 方向时，可设置为 0，否则必须大于 0。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-worker_pool_size",
+                              "text" : "worker_pool_size",
+                              "type" : "Integer(1..1024)",
+                              "default" : "16"
+                            },
+                            {
+                              "doc" : "健康检查间隔。<br/>表示时间持续的字符串，例如：<code>10s</code>、<code>2.5m</code>、<code>1h30m</code>、<code>1W2D</code> 或 <code>2345ms</code>，其中 <code>ms</code> 是最小单位。当指定精度时，可能会忽略更精细的时间部分：例如将 <code>1200ms</code> 用于 <code>Duration(s)</code> 相当于写 <code>1s</code>。单位部分不区分大小写。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-health_check_interval",
+                              "text" : "health_check_interval",
+                              "type" : "Duration",
+                              "default" : "\"15s\""
+                            },
+                            {
+                              "doc" : "请求模式。可选 '同步/异步'，默认为'异步'模式。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-query_mode",
+                              "text" : "query_mode",
+                              "type" : "Enum(sync,async)",
+                              "default" : "async"
+                            },
+                            {
+                              "doc" : "从请求进入缓冲区的时刻开始，如果请求在指定的时间内仍然停留在缓冲区中，或者已经发送但没有及时收到响应或确认，该请求将被视为过期。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-request_ttl",
+                              "aliases" : [
+                                "request_timeout"
+                              ],
+                              "text" : "request_ttl",
+                              "type" : "OneOf(Duration,String(\"infinity\"))",
+                              "default" : "\"45s\""
+                            },
+                            {
+                              "doc" : "请求飞行队列窗口大小。当请求模式为异步时，如果需要严格保证来自同一 MQTT 客户端的消息有序，则必须将此值设为 1。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-inflight_window",
+                              "aliases" : [
+                                "async_inflight_window"
+                              ],
+                              "text" : "inflight_window",
+                              "type" : "Integer(1..+inf)",
+                              "default" : "100"
+                            },
+                            {
+                              "doc" : "每个缓存 worker 允许使用的最大字节数。<br/>表示字节数量的字符串，例如：<code>10B</code>、<code>640kb</code>、<code>4MB</code>、<code>1GB</code>。单位以 1024 的幂次来解释，并且单位部分不区分大小写。",
+                              "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts-S-action_resource_opts-max_buffer_bytes",
+                              "aliases" : [
+                                "max_queue_bytes"
+                              ],
+                              "text" : "max_buffer_bytes",
+                              "type" : "Bytesize",
+                              "default" : "\"256MB\""
+                            }
+                          ],
+                          "text" : "action_resource_opts"
+                        }
+                      ],
+                      "hash" : "V-actions-S-actions-elasticsearch-S-action_config-resource_opts",
+                      "text" : "resource_opts",
+                      "type" : "Struct(action_resource_opts)",
+                      "default" : "{}"
+                    }
+                  ],
+                  "text" : "action_config"
+                }
+              ],
+              "hash" : "V-actions-S-actions-elasticsearch",
+              "text" : "elasticsearch",
+              "type" : "Map($action_name->Struct(action_config))"
             }
           ],
           "text" : "actions"

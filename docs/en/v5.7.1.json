@@ -436,6 +436,7 @@
       "api_key"
     ],
     "full_name" : "api_key",
+    "desc" : "API Key, can be used to request API other than the management API key and the Dashboard user management API",
     "fields" : [
       {
         "raw_default" : "",
@@ -453,8 +454,7 @@
           "hocon" : "\"\""
         }
       }
-    ],
-    "desc" : "API Key, can be used to request API other than the management API key and the Dashboard user management API"
+    ]
   },
   {
     "tags" : [
@@ -464,6 +464,7 @@
       "dashboard"
     ],
     "full_name" : "dashboard",
+    "desc" : "Configuration for EMQX dashboard.",
     "fields" : [
       {
         "aliases" : [
@@ -524,8 +525,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration for EMQX dashboard."
+    ]
   },
   {
     "tags" : [
@@ -535,6 +535,7 @@
       "dashboard.listeners.http"
     ],
     "full_name" : "dashboard:http",
+    "desc" : "Configuration for the dashboard listener (plaintext).",
     "fields" : [
       {
         "raw_default" : 0,
@@ -689,8 +690,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Configuration for the dashboard listener (plaintext)."
+    ]
   },
   {
     "tags" : [
@@ -700,6 +700,7 @@
       "dashboard.listeners.https"
     ],
     "full_name" : "dashboard:https",
+    "desc" : "Configuration for the dashboard listener (TLS).",
     "fields" : [
       {
         "raw_default" : 0,
@@ -866,8 +867,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Configuration for the dashboard listener (TLS)."
+    ]
   },
   {
     "tags" : [
@@ -877,6 +877,7 @@
       "dashboard.listeners"
     ],
     "full_name" : "dashboard:listeners",
+    "desc" : "Configuration for the dashboard listener.",
     "fields" : [
       {
         "aliases" : [
@@ -900,8 +901,7 @@
         },
         "name" : "https"
       }
-    ],
-    "desc" : "Configuration for the dashboard listener."
+    ]
   },
   {
     "tags" : [
@@ -911,6 +911,7 @@
       "dashboard.listeners.https.ssl_options"
     ],
     "full_name" : "dashboard:ssl_options",
+    "desc" : "SSL/TLS options for the dashboard listener.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -1200,8 +1201,7 @@
           "hocon" : "\"15s\""
         }
       }
-    ],
-    "desc" : "SSL/TLS options for the dashboard listener."
+    ]
   },
   {
     "tags" : [
@@ -1211,6 +1211,7 @@
       "durable_storage.messages"
     ],
     "full_name" : "durable_storage:builtin",
+    "desc" : "Builtin session storage backend utilizing embedded RocksDB key-value store.",
     "fields" : [
       {
         "raw_default" : "builtin",
@@ -1287,8 +1288,7 @@
           "hocon" : "{type = wildcard_optimized}"
         }
       }
-    ],
-    "desc" : "Builtin session storage backend utilizing embedded RocksDB key-value store."
+    ]
   },
   {
     "tags" : [
@@ -1298,6 +1298,7 @@
       "durable_storage.messages.layout"
     ],
     "full_name" : "durable_storage:layout_builtin_reference",
+    "desc" : "A simplistic layout type that stores all messages from all topics in chronological order in a single stream.\n\nNot recommended for production use.",
     "fields" : [
       {
         "importance" : "low",
@@ -1311,8 +1312,7 @@
         },
         "name" : "type"
       }
-    ],
-    "desc" : "A simplistic layout type that stores all messages from all topics in chronological order in a single stream.\n\nNot recommended for production use."
+    ]
   },
   {
     "tags" : [
@@ -1322,6 +1322,7 @@
       "durable_storage.messages.layout"
     ],
     "full_name" : "durable_storage:layout_builtin_wildcard_optimized",
+    "desc" : "_Wildcard-optimized_ layout is designed to maximize the throughput of wildcard subscriptions covering large numbers of topics.\n\nFor example, it can handle scenarios where a very large number of clients publish data to the topics containing their client ID, such as: `sensor/%device-version%/%clientid%/temperature`, `sensor/%device-version%/%clientid%/pressure`, etc.\nThis layout will automatically group such topics into a single stream, so a client subscribing to a topic filter containing wildcards (such as `sensor/+/+/temperature`) will be able to consume messages published by all devices as a single batch.\n\nThis layout is efficient for non-wildcard subscriptions as well.",
     "fields" : [
       {
         "raw_default" : "wildcard_optimized",
@@ -1339,8 +1340,7 @@
           "hocon" : "wildcard_optimized"
         }
       }
-    ],
-    "desc" : "_Wildcard-optimized_ layout is designed to maximize the throughput of wildcard subscriptions covering large numbers of topics.\n\nFor example, it can handle scenarios where a very large number of clients publish data to the topics containing their client ID, such as: `sensor/%device-version%/%clientid%/temperature`, `sensor/%device-version%/%clientid%/pressure`, etc.\nThis layout will automatically group such topics into a single stream, so a client subscribing to a topic filter containing wildcards (such as `sensor/+/+/temperature`) will be able to consume messages published by all devices as a single batch.\n\nThis layout is efficient for non-wildcard subscriptions as well."
+    ]
   },
   {
     "tags" : [
@@ -1350,6 +1350,7 @@
       "cluster.dns"
     ],
     "full_name" : "emqx:cluster_dns",
+    "desc" : "Service discovery via DNS SRV records.",
     "fields" : [
       {
         "raw_default" : "localhost",
@@ -1387,8 +1388,7 @@
           "hocon" : "a"
         }
       }
-    ],
-    "desc" : "Service discovery via DNS SRV records."
+    ]
   },
   {
     "tags" : [
@@ -1398,6 +1398,7 @@
       "cluster.etcd"
     ],
     "full_name" : "emqx:cluster_etcd",
+    "desc" : "Service discovery using 'etcd' service.",
     "fields" : [
       {
         "aliases" : [
@@ -1453,8 +1454,7 @@
         },
         "name" : "ssl_options"
       }
-    ],
-    "desc" : "Service discovery using 'etcd' service."
+    ]
   },
   {
     "tags" : [
@@ -1464,6 +1464,7 @@
       "cluster.k8s"
     ],
     "full_name" : "emqx:cluster_k8s",
+    "desc" : "Service discovery via Kubernetes API server.",
     "fields" : [
       {
         "raw_default" : "https://kubernetes.default.svc:443",
@@ -1549,8 +1550,7 @@
           "hocon" : "\"pod.local\""
         }
       }
-    ],
-    "desc" : "Service discovery via Kubernetes API server."
+    ]
   },
   {
     "tags" : [
@@ -1560,6 +1560,7 @@
       "cluster.static"
     ],
     "full_name" : "emqx:cluster_static",
+    "desc" : "Service discovery via static nodes.\nThe new node joins the cluster by connecting to one of the bootstrap nodes.",
     "fields" : [
       {
         "raw_default" : [
@@ -1592,8 +1593,7 @@
           "hocon" : "[]"
         }
       }
-    ],
-    "desc" : "Service discovery via static nodes.\nThe new node joins the cluster by connecting to one of the bootstrap nodes."
+    ]
   },
   {
     "tags" : [
@@ -1603,6 +1603,7 @@
       "authorization"
     ],
     "full_name" : "emqx:authorization",
+    "desc" : "Settings that control client authorization.",
     "fields" : [
       {
         "raw_default" : "allow",
@@ -1735,8 +1736,7 @@
           "hocon" : "[{enable = true, path = \"${EMQX_ETC_DIR}/acl.conf\", type = file}]"
         }
       }
-    ],
-    "desc" : "Settings that control client authorization."
+    ]
   },
   {
     "tags" : [
@@ -1746,6 +1746,7 @@
       "cluster"
     ],
     "full_name" : "emqx:cluster",
+    "desc" : "EMQX nodes can form a cluster to scale up the total capacity.<br/>\n      Here holds the configs to instruct how individual nodes can discover each other.",
     "fields" : [
       {
         "raw_default" : "emqxcl",
@@ -1878,8 +1879,7 @@
         },
         "name" : "k8s"
       }
-    ],
-    "desc" : "EMQX nodes can form a cluster to scale up the total capacity.<br/>\n      Here holds the configs to instruct how individual nodes can discover each other."
+    ]
   },
   {
     "tags" : [
@@ -1889,6 +1889,7 @@
       "log.console"
     ],
     "full_name" : "emqx:console_handler",
+    "desc" : "Log handler that prints log events to the EMQX console.",
     "fields" : [
       {
         "raw_default" : "warning",
@@ -1992,8 +1993,7 @@
           "hocon" : "system"
         }
       }
-    ],
-    "desc" : "Log handler that prints log events to the EMQX console."
+    ]
   },
   {
     "tags" : [
@@ -2003,6 +2003,7 @@
       "log"
     ],
     "full_name" : "emqx:log",
+    "desc" : "EMQX supports multiple log handlers, one console handler and multiple file handlers.\nEMQX by default logs to console when running in docker or in console/foreground mode,\notherwise it logs to file $EMQX_LOG_DIR/emqx.log.\nFor advanced configuration, you can find more parameters in this section.",
     "fields" : [
       {
         "importance" : "high",
@@ -2059,8 +2060,7 @@
         },
         "name" : "throttling"
       }
-    ],
-    "desc" : "EMQX supports multiple log handlers, one console handler and multiple file handlers.\nEMQX by default logs to console when running in docker or in console/foreground mode,\notherwise it logs to file $EMQX_LOG_DIR/emqx.log.\nFor advanced configuration, you can find more parameters in this section."
+    ]
   },
   {
     "tags" : [
@@ -2071,6 +2071,7 @@
       "log.file.$handler_name"
     ],
     "full_name" : "emqx:log_file_handler",
+    "desc" : "Log handler that prints log events to files.",
     "fields" : [
       {
         "raw_default" : "${EMQX_LOG_DIR}/emqx.log",
@@ -2236,8 +2237,7 @@
           "hocon" : "system"
         }
       }
-    ],
-    "desc" : "Log handler that prints log events to files."
+    ]
   },
   {
     "tags" : [
@@ -2247,6 +2247,7 @@
       "log.throttling"
     ],
     "full_name" : "emqx:log_throttling",
+    "desc" : "Log throttling feature reduces the number of potentially flooding logged events by\ndropping all but the first event within a configured time window.\nThe throttling is automatically disabled if `console` or `file` log level is set to debug.",
     "fields" : [
       {
         "raw_default" : "1m",
@@ -2265,8 +2266,7 @@
           "hocon" : "\"1m\""
         }
       }
-    ],
-    "desc" : "Log throttling feature reduces the number of potentially flooding logged events by\ndropping all but the first event within a configured time window.\nThe throttling is automatically disabled if `console` or `file` log level is set to debug."
+    ]
   },
   {
     "tags" : [
@@ -2276,6 +2276,7 @@
       "node"
     ],
     "full_name" : "emqx:node",
+    "desc" : "Node name, cookie, config & data directories and the Erlang virtual machine (BEAM) boot parameters.",
     "fields" : [
       {
         "raw_default" : "emqx@127.0.0.1",
@@ -2399,8 +2400,7 @@
           "hocon" : "core"
         }
       }
-    ],
-    "desc" : "Node name, cookie, config & data directories and the Erlang virtual machine (BEAM) boot parameters."
+    ]
   },
   {
     "tags" : [
@@ -2410,6 +2410,7 @@
       "rpc"
     ],
     "full_name" : "emqx:rpc",
+    "desc" : "EMQX uses a library called <code>gen_rpc</code> for inter-broker communication.<br/>\nMost of the time the default config should work,\nbut in case you need to do performance fine-tuning or experiment a bit,\nthis is where to look.",
     "fields" : [
       {
         "raw_default" : "async",
@@ -2819,8 +2820,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "EMQX uses a library called <code>gen_rpc</code> for inter-broker communication.<br/>\nMost of the time the default config should work,\nbut in case you need to do performance fine-tuning or experiment a bit,\nthis is where to look."
+    ]
   },
   {
     "tags" : [
@@ -2830,6 +2830,7 @@
       "durable_storage"
     ],
     "full_name" : "emqx:durable_storage",
+    "desc" : "Configuration related to the EMQX durable storages.\n\nEMQX uses durable storages to offload various data, such as MQTT messages, to disc.",
     "fields" : [
       {
         "raw_default" : {
@@ -2856,8 +2857,7 @@
           "hocon" : "{backend = builtin}"
         }
       }
-    ],
-    "desc" : "Configuration related to the EMQX durable storages.\n\nEMQX uses durable storages to offload various data, such as MQTT messages, to disc."
+    ]
   },
   {
     "tags" : [
@@ -2867,6 +2867,7 @@
       "alarm"
     ],
     "full_name" : "emqx:alarm",
+    "desc" : "Settings for the alarms.",
     "fields" : [
       {
         "raw_default" : [
@@ -2941,8 +2942,7 @@
           "hocon" : "\"24h\""
         }
       }
-    ],
-    "desc" : "Settings for the alarms."
+    ]
   },
   {
     "tags" : [
@@ -2952,6 +2952,7 @@
       "authorization.cache"
     ],
     "full_name" : "emqx:authz_cache",
+    "desc" : "Settings for the authorization cache.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3022,8 +3023,7 @@
           "hocon" : "[]"
         }
       }
-    ],
-    "desc" : "Settings for the authorization cache."
+    ]
   },
   {
     "tags" : [
@@ -3033,6 +3033,7 @@
       "mqtt.client_attrs_init.$INDEX"
     ],
     "full_name" : "emqx:client_attrs_init",
+    "desc" : "Specify how to initialize client attributes.\nEach client attribute can be initialized as `client_attrs.{NAME}`,\nwhere `{NAME}` is the name of the attribute specified in the config field `set_as_attr`.\nThe initialized client attribute will be stored in the `client_attrs` property with the specified name,\nand can be used as a placeholder in a template for authentication and authorization.\nFor example, use `${client_attrs.alias}` to render an HTTP POST body when `set_as_attr = alias`,\nor render listener config `moutpoint = devices/${client_attrs.alias}/` to initialize a per-client topic namespace.",
     "fields" : [
       {
         "aliases" : [
@@ -3056,8 +3057,7 @@
         },
         "name" : "set_as_attr"
       }
-    ],
-    "desc" : "Specify how to initialize client attributes.\nEach client attribute can be initialized as `client_attrs.{NAME}`,\nwhere `{NAME}` is the name of the attribute specified in the config field `set_as_attr`.\nThe initialized client attribute will be stored in the `client_attrs` property with the specified name,\nand can be used as a placeholder in a template for authentication and authorization.\nFor example, use `${client_attrs.alias}` to render an HTTP POST body when `set_as_attr = alias`,\nor render listener config `moutpoint = devices/${client_attrs.alias}/` to initialize a per-client topic namespace."
+    ]
   },
   {
     "tags" : [
@@ -3068,6 +3068,7 @@
       "listeners.wss.$name.websocket.deflate_opts"
     ],
     "full_name" : "emqx:deflate_opts",
+    "desc" : "Compression options.",
     "fields" : [
       {
         "aliases" : [
@@ -3192,8 +3193,7 @@
           "hocon" : "15"
         }
       }
-    ],
-    "desc" : "Compression options."
+    ]
   },
   {
     "tags" : [
@@ -3203,6 +3203,7 @@
       "sys_topics.sys_event_messages"
     ],
     "full_name" : "emqx:event_names",
+    "desc" : "Enable or disable client lifecycle event publishing.\n\nThe following options affect MQTT clients as well as\ngateway clients. The types of the clients\nare distinguished by the topic prefix:\n\n- For the MQTT clients, the format is:\n`$SYS/broker/<node>/clients/<clientid>/<event>`\n- For the Gateway clients, it is\n`$SYS/broker/<node>/gateway/<gateway-name>/clients/<clientid>/<event>`\n",
     "fields" : [
       {
         "raw_default" : true,
@@ -3268,8 +3269,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Enable or disable client lifecycle event publishing.\n\nThe following options affect MQTT clients as well as\ngateway clients. The types of the clients\nare distinguished by the topic prefix:\n\n- For the MQTT clients, the format is:\n`$SYS/broker/<node>/clients/<clientid>/<event>`\n- For the Gateway clients, it is\n`$SYS/broker/<node>/gateway/<gateway-name>/clients/<clientid>/<event>`\n"
+    ]
   },
   {
     "tags" : [
@@ -3279,6 +3279,7 @@
       "flapping_detect"
     ],
     "full_name" : "emqx:flapping_detect",
+    "desc" : "This config controls the allowed maximum number of `CONNECT` packets received\nfrom the same clientid in a time frame defined by `window_time`.\nAfter the limit is reached, successive `CONNECT` requests are forbidden\n(banned) until the end of the time period defined by `ban_time`.",
     "fields" : [
       {
         "raw_default" : false,
@@ -3345,8 +3346,7 @@
           "hocon" : "\"5m\""
         }
       }
-    ],
-    "desc" : "This config controls the allowed maximum number of `CONNECT` packets received\nfrom the same clientid in a time frame defined by `window_time`.\nAfter the limit is reached, successive `CONNECT` requests are forbidden\n(banned) until the end of the time period defined by `ban_time`."
+    ]
   },
   {
     "tags" : [
@@ -3356,6 +3356,7 @@
       "force_gc"
     ],
     "full_name" : "emqx:force_gc",
+    "desc" : "Force garbage collection in MQTT connection process after\n they process certain number of messages or bytes of data.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3405,8 +3406,7 @@
           "hocon" : "\"16MB\""
         }
       }
-    ],
-    "desc" : "Force garbage collection in MQTT connection process after\n they process certain number of messages or bytes of data."
+    ]
   },
   {
     "tags" : [
@@ -3416,6 +3416,7 @@
       "force_shutdown"
     ],
     "full_name" : "emqx:force_shutdown",
+    "desc" : "When the process message queue length, or the memory bytes\nreaches a certain value, the process is forced to close.\n\nNote: \"message queue\" here refers to the \"message mailbox\"\nof the Erlang process, not the `mqueue` of QoS 1 and QoS 2.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3465,8 +3466,7 @@
           "hocon" : "\"32MB\""
         }
       }
-    ],
-    "desc" : "When the process message queue length, or the memory bytes\nreaches a certain value, the process is forced to close.\n\nNote: \"message queue\" here refers to the \"message mailbox\"\nof the Erlang process, not the `mqueue` of QoS 1 and QoS 2."
+    ]
   },
   {
     "tags" : [
@@ -3476,6 +3476,7 @@
       "listeners.quic.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_quic_ssl_opts",
+    "desc" : "TLS options for QUIC transport.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -3559,8 +3560,7 @@
         },
         "name" : "password"
       }
-    ],
-    "desc" : "TLS options for QUIC transport."
+    ]
   },
   {
     "tags" : [
@@ -3572,6 +3572,7 @@
       "listeners.ssl.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_ssl_opts",
+    "desc" : "Socket options for SSL connections.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -3920,8 +3921,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Socket options for SSL connections."
+    ]
   },
   {
     "tags" : [
@@ -3931,6 +3931,7 @@
       "listeners.wss.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_wss_opts",
+    "desc" : "Socket options for WebSocket/SSL connections.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -4236,8 +4237,7 @@
           "hocon" : "\"15s\""
         }
       }
-    ],
-    "desc" : "Socket options for WebSocket/SSL connections."
+    ]
   },
   {
     "tags" : [
@@ -4247,6 +4247,7 @@
       "listeners"
     ],
     "full_name" : "emqx:listeners",
+    "desc" : "MQTT listeners identified by their protocol type and assigned names",
     "fields" : [
       {
         "aliases" : [
@@ -4373,8 +4374,7 @@
         },
         "name" : "quic"
       }
-    ],
-    "desc" : "MQTT listeners identified by their protocol type and assigned names"
+    ]
   },
   {
     "tags" : [
@@ -4384,6 +4384,7 @@
       "mqtt"
     ],
     "full_name" : "emqx:mqtt",
+    "desc" : "Global MQTT configuration.",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -5009,8 +5010,7 @@
           "hocon" : "\"300s\""
         }
       }
-    ],
-    "desc" : "Global MQTT configuration."
+    ]
   },
   {
     "tags" : [
@@ -5020,6 +5020,7 @@
       "listeners.quic.$name"
     ],
     "full_name" : "emqx:mqtt_quic_listener",
+    "desc" : "Settings for the MQTT over QUIC listener.",
     "fields" : [
       {
         "raw_default" : [
@@ -5227,8 +5228,7 @@
         },
         "name" : "bytes_rate"
       }
-    ],
-    "desc" : "Settings for the MQTT over QUIC listener."
+    ]
   },
   {
     "tags" : [
@@ -5238,6 +5238,7 @@
       "listeners.ssl.$name"
     ],
     "full_name" : "emqx:mqtt_ssl_listener",
+    "desc" : "Settings for the MQTT over SSL listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5484,8 +5485,7 @@
         },
         "name" : "ssl_options"
       }
-    ],
-    "desc" : "Settings for the MQTT over SSL listener."
+    ]
   },
   {
     "tags" : [
@@ -5495,6 +5495,7 @@
       "listeners.tcp.$name"
     ],
     "full_name" : "emqx:mqtt_tcp_listener",
+    "desc" : "Settings for the MQTT over TCP listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5731,8 +5732,7 @@
         },
         "name" : "tcp_options"
       }
-    ],
-    "desc" : "Settings for the MQTT over TCP listener."
+    ]
   },
   {
     "tags" : [
@@ -5742,6 +5742,7 @@
       "listeners.ws.$name"
     ],
     "full_name" : "emqx:mqtt_ws_listener",
+    "desc" : "Settings for the MQTT over WebSocket listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5988,8 +5989,7 @@
         },
         "name" : "websocket"
       }
-    ],
-    "desc" : "Settings for the MQTT over WebSocket listener."
+    ]
   },
   {
     "tags" : [
@@ -5999,6 +5999,7 @@
       "listeners.wss.$name"
     ],
     "full_name" : "emqx:mqtt_wss_listener",
+    "desc" : "Settings for the MQTT over WebSocket/SSL listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -6255,8 +6256,7 @@
         },
         "name" : "websocket"
       }
-    ],
-    "desc" : "Settings for the MQTT over WebSocket/SSL listener."
+    ]
   },
   {
     "tags" : [
@@ -6272,6 +6272,7 @@
       "listeners.ssl.$name.ssl_options.ocsp"
     ],
     "full_name" : "emqx:ocsp",
+    "desc" : "Per listener OCSP Stapling configuration.",
     "fields" : [
       {
         "raw_default" : false,
@@ -6343,8 +6344,7 @@
           "hocon" : "\"15s\""
         }
       }
-    ],
-    "desc" : "Per listener OCSP Stapling configuration."
+    ]
   },
   {
     "tags" : [
@@ -6354,12 +6354,14 @@
       "authentication.$INDEX.ssl",
       "authorization.sources.$INDEX.ssl",
       "cluster.etcd.ssl_options",
+      "connectors.elasticsearch.$name.ssl",
       "connectors.http.$name.ssl",
       "connectors.mqtt.$name.ssl",
       "gateway.exproto.handler.ssl_options",
       "opentelemetry.exporter.ssl_options"
     ],
     "full_name" : "emqx:ssl_client_opts",
+    "desc" : "Socket options for SSL clients.",
     "fields" : [
       {
         "aliases" : [
@@ -6615,8 +6617,7 @@
         },
         "name" : "server_name_indication"
       }
-    ],
-    "desc" : "Socket options for SSL clients."
+    ]
   },
   {
     "tags" : [
@@ -6626,6 +6627,7 @@
       "sys_topics"
     ],
     "full_name" : "emqx:sys_topics",
+    "desc" : "The EMQX Broker periodically publishes its own status, message statistics,\nclient online and offline events to the system topic starting with `$SYS/`.\n\nThe following options control the behavior of `$SYS` topics.",
     "fields" : [
       {
         "raw_default" : "1m",
@@ -6690,8 +6692,7 @@
         },
         "name" : "sys_event_messages"
       }
-    ],
-    "desc" : "The EMQX Broker periodically publishes its own status, message statistics,\nclient online and offline events to the system topic starting with `$SYS/`.\n\nThe following options control the behavior of `$SYS` topics."
+    ]
   },
   {
     "tags" : [
@@ -6701,6 +6702,7 @@
       "sysmon"
     ],
     "full_name" : "emqx:sysmon",
+    "desc" : "Features related to system monitoring and introspection.",
     "fields" : [
       {
         "aliases" : [
@@ -6722,8 +6724,7 @@
         },
         "name" : "os"
       }
-    ],
-    "desc" : "Features related to system monitoring and introspection."
+    ]
   },
   {
     "tags" : [
@@ -6733,6 +6734,7 @@
       "sysmon.os"
     ],
     "full_name" : "emqx:sysmon_os",
+    "desc" : "This part of the configuration is responsible for monitoring\n the host OS health, such as free memory, disk space, CPU load, etc.",
     "fields" : [
       {
         "raw_default" : "60s",
@@ -6840,8 +6842,7 @@
           "hocon" : "\"5%\""
         }
       }
-    ],
-    "desc" : "This part of the configuration is responsible for monitoring\n the host OS health, such as free memory, disk space, CPU load, etc."
+    ]
   },
   {
     "tags" : [
@@ -6851,6 +6852,7 @@
       "sysmon.vm"
     ],
     "full_name" : "emqx:sysmon_vm",
+    "desc" : "This part of the configuration is responsible for collecting\n BEAM VM events, such as long garbage collection, traffic congestion in the inter-broker\n communication, etc.",
     "fields" : [
       {
         "raw_default" : "30s",
@@ -7010,8 +7012,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "This part of the configuration is responsible for collecting\n BEAM VM events, such as long garbage collection, traffic congestion in the inter-broker\n communication, etc."
+    ]
   },
   {
     "tags" : [
@@ -7028,6 +7029,7 @@
       "listeners.wss.$name.tcp_options"
     ],
     "full_name" : "emqx:tcp_opts",
+    "desc" : "TCP listener options.",
     "fields" : [
       {
         "raw_default" : 100,
@@ -7204,8 +7206,7 @@
           "hocon" : "none"
         }
       }
-    ],
-    "desc" : "TCP listener options."
+    ]
   },
   {
     "tags" : [
@@ -7216,6 +7217,7 @@
       "listeners.wss.$name.websocket"
     ],
     "full_name" : "emqx:ws_opts",
+    "desc" : "WebSocket listener options.",
     "fields" : [
       {
         "raw_default" : "/mqtt",
@@ -7448,8 +7450,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "WebSocket listener options."
+    ]
   },
   {
     "tags" : [
@@ -7459,6 +7460,7 @@
       "exhook"
     ],
     "full_name" : "exhook",
+    "desc" : "External hook (exhook) configuration.",
     "fields" : [
       {
         "raw_default" : [
@@ -7481,8 +7483,7 @@
           "hocon" : "[]"
         }
       }
-    ],
-    "desc" : "External hook (exhook) configuration."
+    ]
   },
   {
     "tags" : [
@@ -7492,6 +7493,7 @@
       "exhook.servers.$INDEX"
     ],
     "full_name" : "exhook:server",
+    "desc" : "gRPC server configuration.",
     "fields" : [
       {
         "examples" : [
@@ -7642,8 +7644,7 @@
           "hocon" : "8"
         }
       }
-    ],
-    "desc" : "gRPC server configuration."
+    ]
   },
   {
     "tags" : [
@@ -7653,6 +7654,7 @@
       "exhook.servers.$INDEX.socket_options"
     ],
     "full_name" : "exhook:socket_options",
+    "desc" : "Connection socket options",
     "fields" : [
       {
         "raw_default" : true,
@@ -7714,8 +7716,7 @@
         },
         "name" : "sndbuf"
       }
-    ],
-    "desc" : "Connection socket options"
+    ]
   },
   {
     "tags" : [
@@ -7725,6 +7726,7 @@
       "exhook.servers.$INDEX.ssl"
     ],
     "full_name" : "exhook:ssl_conf",
+    "desc" : "SSL client configuration.",
     "fields" : [
       {
         "aliases" : [
@@ -7980,8 +7982,7 @@
         },
         "name" : "server_name_indication"
       }
-    ],
-    "desc" : "SSL client configuration."
+    ]
   },
   {
     "tags" : [
@@ -7995,6 +7996,7 @@
       "gateway.stomp.clientinfo_override"
     ],
     "full_name" : "gateway:clientinfo_override",
+    "desc" : "ClientInfo override.",
     "fields" : [
       {
         "aliases" : [
@@ -8029,8 +8031,7 @@
         },
         "name" : "clientid"
       }
-    ],
-    "desc" : "ClientInfo override."
+    ]
   },
   {
     "tags" : [
@@ -8043,6 +8044,7 @@
       "gateway.mqttsn.listeners.dtls.$name"
     ],
     "full_name" : "gateway:dtls_listener",
+    "desc" : "Settings for DTLS listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -8198,8 +8200,7 @@
         },
         "name" : "dtls_options"
       }
-    ],
-    "desc" : "Settings for DTLS listener."
+    ]
   },
   {
     "tags" : [
@@ -8212,6 +8213,7 @@
       "gateway.mqttsn.listeners.dtls.$name.dtls_options"
     ],
     "full_name" : "gateway:dtls_opts",
+    "desc" : "Settings for DTLS protocol.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -8559,8 +8561,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Settings for DTLS protocol."
+    ]
   },
   {
     "tags" : [
@@ -8570,6 +8571,7 @@
       "gateway"
     ],
     "full_name" : "gateway",
+    "desc" : "EMQX Gateway configuration root.",
     "fields" : [
       {
         "aliases" : [
@@ -8621,8 +8623,7 @@
         },
         "name" : "stomp"
       }
-    ],
-    "desc" : "EMQX Gateway configuration root."
+    ]
   },
   {
     "tags" : [
@@ -8633,6 +8634,7 @@
       "gateway.stomp.listeners.ssl.$name"
     ],
     "full_name" : "gateway:ssl_listener",
+    "desc" : "Settings for SSL listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -8821,8 +8823,7 @@
         },
         "name" : "ssl_options"
       }
-    ],
-    "desc" : "Settings for SSL listener."
+    ]
   },
   {
     "tags" : [
@@ -8833,6 +8834,7 @@
       "gateway.stomp.listeners.tcp.$name"
     ],
     "full_name" : "gateway:tcp_listener",
+    "desc" : "Settings for TCP listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -9010,8 +9012,7 @@
           "hocon" : "[]"
         }
       }
-    ],
-    "desc" : "Settings for TCP listener."
+    ]
   },
   {
     "tags" : [
@@ -9021,6 +9022,7 @@
       "gateway.stomp.listeners"
     ],
     "full_name" : "gateway:tcp_listeners",
+    "desc" : "Settings for the TCP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9052,8 +9054,7 @@
         },
         "name" : "ssl"
       }
-    ],
-    "desc" : "Settings for the TCP listeners."
+    ]
   },
   {
     "tags" : [
@@ -9063,6 +9064,7 @@
       "gateway.exproto.listeners"
     ],
     "full_name" : "gateway:tcp_udp_listeners",
+    "desc" : "Settings for TCP and UDP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9124,8 +9126,7 @@
         },
         "name" : "dtls"
       }
-    ],
-    "desc" : "Settings for TCP and UDP listeners."
+    ]
   },
   {
     "tags" : [
@@ -9138,6 +9139,7 @@
       "gateway.mqttsn.listeners.udp.$name"
     ],
     "full_name" : "gateway:udp_listener",
+    "desc" : "Settings for UDP listener.",
     "fields" : [
       {
         "aliases" : [
@@ -9266,8 +9268,7 @@
           "hocon" : "[]"
         }
       }
-    ],
-    "desc" : "Settings for UDP listener."
+    ]
   },
   {
     "tags" : [
@@ -9279,6 +9280,7 @@
       "gateway.mqttsn.listeners"
     ],
     "full_name" : "gateway:udp_listeners",
+    "desc" : "Settings for the UDP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9310,8 +9312,7 @@
         },
         "name" : "dtls"
       }
-    ],
-    "desc" : "Settings for the UDP listeners."
+    ]
   },
   {
     "tags" : [
@@ -9328,6 +9329,7 @@
       "gateway.mqttsn.listeners.udp.$name.udp_options"
     ],
     "full_name" : "gateway:udp_opts",
+    "desc" : "Settings for UDP sockets.",
     "fields" : [
       {
         "raw_default" : 100,
@@ -9394,8 +9396,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Settings for UDP sockets."
+    ]
   },
   {
     "tags" : [
@@ -9405,6 +9406,7 @@
       "gateway.lwm2m"
     ],
     "full_name" : "gateway:lwm2m",
+    "desc" : "The LwM2M protocol gateway.",
     "fields" : [
       {
         "examples" : [
@@ -9599,8 +9601,7 @@
         },
         "name" : "clientinfo_override"
       }
-    ],
-    "desc" : "The LwM2M protocol gateway."
+    ]
   },
   {
     "tags" : [
@@ -9610,6 +9611,7 @@
       "gateway.lwm2m.translators"
     ],
     "full_name" : "gateway:lwm2m_translators",
+    "desc" : "MQTT topics that correspond to LwM2M events.",
     "fields" : [
       {
         "aliases" : [
@@ -9666,8 +9668,7 @@
         },
         "name" : "update"
       }
-    ],
-    "desc" : "MQTT topics that correspond to LwM2M events."
+    ]
   },
   {
     "tags" : [
@@ -9681,6 +9682,7 @@
       "gateway.lwm2m.translators.update"
     ],
     "full_name" : "gateway:translator",
+    "desc" : "MQTT topic that corresponds to a particular type of event.",
     "fields" : [
       {
         "aliases" : [
@@ -9709,8 +9711,7 @@
           "hocon" : "0"
         }
       }
-    ],
-    "desc" : "MQTT topic that corresponds to a particular type of event."
+    ]
   },
   {
     "tags" : [
@@ -9720,6 +9721,7 @@
       "delayed"
     ],
     "full_name" : "modules:delayed",
+    "desc" : "Settings for the delayed module.",
     "fields" : [
       {
         "raw_default" : true,
@@ -9753,8 +9755,7 @@
           "hocon" : "0"
         }
       }
-    ],
-    "desc" : "Settings for the delayed module."
+    ]
   },
   {
     "tags" : [
@@ -9764,6 +9765,7 @@
       "opentelemetry"
     ],
     "full_name" : "opentelemetry",
+    "desc" : "Open Telemetry Toolkit configuration",
     "fields" : [
       {
         "aliases" : [
@@ -9809,8 +9811,7 @@
         },
         "name" : "exporter"
       }
-    ],
-    "desc" : "Open Telemetry Toolkit configuration"
+    ]
   },
   {
     "tags" : [
@@ -9820,6 +9821,7 @@
       "opentelemetry.exporter"
     ],
     "full_name" : "opentelemetry:otel_exporter",
+    "desc" : "Open Telemetry Exporter",
     "fields" : [
       {
         "raw_default" : [
@@ -9879,8 +9881,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Open Telemetry Exporter"
+    ]
   },
   {
     "tags" : [
@@ -9890,6 +9891,7 @@
       "opentelemetry.logs"
     ],
     "full_name" : "opentelemetry:otel_logs",
+    "desc" : "Open Telemetry Logs configuration. If enabled, EMQX installs a log handler that formats events according to Open Telemetry log data model and\nexports them to the configured Open Telemetry collector or backend.",
     "fields" : [
       {
         "raw_default" : "warning",
@@ -9952,8 +9954,7 @@
           "hocon" : "\"1s\""
         }
       }
-    ],
-    "desc" : "Open Telemetry Logs configuration. If enabled, EMQX installs a log handler that formats events according to Open Telemetry log data model and\nexports them to the configured Open Telemetry collector or backend."
+    ]
   },
   {
     "tags" : [
@@ -9963,6 +9964,7 @@
       "opentelemetry.metrics"
     ],
     "full_name" : "opentelemetry:otel_metrics",
+    "desc" : "Open Telemetry Metrics configuration.",
     "fields" : [
       {
         "raw_default" : false,
@@ -9997,8 +9999,7 @@
           "hocon" : "\"10s\""
         }
       }
-    ],
-    "desc" : "Open Telemetry Metrics configuration."
+    ]
   },
   {
     "tags" : [
@@ -10008,6 +10009,7 @@
       "opentelemetry.traces"
     ],
     "full_name" : "opentelemetry:otel_traces",
+    "desc" : "Open Telemetry Traces configuration.",
     "fields" : [
       {
         "raw_default" : false,
@@ -10055,8 +10057,7 @@
         },
         "name" : "filter"
       }
-    ],
-    "desc" : "Open Telemetry Traces configuration."
+    ]
   },
   {
     "tags" : [
@@ -10066,6 +10067,7 @@
       "opentelemetry.traces.filter"
     ],
     "full_name" : "opentelemetry:trace_filter",
+    "desc" : "Open Telemetry Trace Filter configuration",
     "fields" : [
       {
         "raw_default" : false,
@@ -10084,8 +10086,7 @@
           "hocon" : "false"
         }
       }
-    ],
-    "desc" : "Open Telemetry Trace Filter configuration"
+    ]
   },
   {
     "tags" : [
@@ -10095,6 +10096,7 @@
       "prometheus.collectors"
     ],
     "full_name" : "prometheus:collectors",
+    "desc" : "The internal advanced metrics of the virtual machine are initially disabled\nand are usually only enabled during performance testing.\nEnabling them will increase the CPU load.",
     "fields" : [
       {
         "raw_default" : "disabled",
@@ -10210,8 +10212,7 @@
           "hocon" : "disabled"
         }
       }
-    ],
-    "desc" : "The internal advanced metrics of the virtual machine are initially disabled\nand are usually only enabled during performance testing.\nEnabling them will increase the CPU load."
+    ]
   },
   {
     "tags" : [
@@ -10221,6 +10222,7 @@
       "prometheus"
     ],
     "full_name" : "prometheus:legacy_deprecated_setting",
+    "desc" : "Deprecated since 5.4.0",
     "fields" : [
       {
         "raw_default" : "http://127.0.0.1:9091",
@@ -10424,8 +10426,7 @@
           "hocon" : "disabled"
         }
       }
-    ],
-    "desc" : "Deprecated since 5.4.0"
+    ]
   },
   {
     "tags" : [
@@ -10435,6 +10436,7 @@
       "prometheus.push_gateway"
     ],
     "full_name" : "prometheus:push_gateway",
+    "desc" : "Push Gateway is optional, should not be configured if prometheus is to scrape EMQX.",
     "fields" : [
       {
         "raw_default" : false,
@@ -10518,8 +10520,7 @@
           "hocon" : "\"${name}/instance/${name}~${host}\""
         }
       }
-    ],
-    "desc" : "Push Gateway is optional, should not be configured if prometheus is to scrape EMQX."
+    ]
   },
   {
     "tags" : [
@@ -10529,6 +10530,7 @@
       "prometheus"
     ],
     "full_name" : "prometheus:recommend_setting",
+    "desc" : "Recommended setting",
     "fields" : [
       {
         "raw_default" : false,
@@ -10571,8 +10573,7 @@
         },
         "name" : "collectors"
       }
-    ],
-    "desc" : "Recommended setting"
+    ]
   },
   {
     "tags" : [
@@ -10582,6 +10583,7 @@
       "retainer.backend"
     ],
     "full_name" : "retainer:mnesia_config",
+    "desc" : "Configuration of the internal database storing retained messages.",
     "fields" : [
       {
         "raw_default" : "built_in_database",
@@ -10697,8 +10699,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration of the internal database storing retained messages."
+    ]
   },
   {
     "tags" : [
@@ -10708,6 +10709,7 @@
       "retainer"
     ],
     "full_name" : "retainer",
+    "desc" : "Configuration related to handling `PUBLISH` packets with a `retain` flag set to 1.",
     "fields" : [
       {
         "raw_default" : true,
@@ -10824,8 +10826,7 @@
         },
         "name" : "backend"
       }
-    ],
-    "desc" : "Configuration related to handling `PUBLISH` packets with a `retain` flag set to 1."
+    ]
   },
   {
     "tags" : [
@@ -10836,6 +10837,7 @@
       "actions"
     ],
     "full_name" : "actions_and_sources:actions",
+    "desc" : "Configuration for actions.",
     "fields" : [
       {
         "aliases" : [
@@ -10866,9 +10868,23 @@
           "name" : "name"
         },
         "name" : "mqtt"
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "Elasticsearch Bridge",
+        "type" : {
+          "kind" : "map",
+          "values" : {
+            "kind" : "struct",
+            "name" : "bridge_elasticsearch:action_config"
+          },
+          "name" : "action_name"
+        },
+        "name" : "elasticsearch"
       }
-    ],
-    "desc" : "Configuration for actions."
+    ]
   },
   {
     "tags" : [
@@ -10879,6 +10895,7 @@
       "sources"
     ],
     "full_name" : "actions_and_sources:sources",
+    "desc" : "Configuration for sources.",
     "fields" : [
       {
         "aliases" : [
@@ -10895,8 +10912,7 @@
         },
         "name" : "mqtt"
       }
-    ],
-    "desc" : "Configuration for sources."
+    ]
   },
   {
     "tags" : [
@@ -10906,6 +10922,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:http_get",
+    "desc" : "Configuration of authenticator using HTTP Server as authentication service (Using GET request).",
     "fields" : [
       {
         "aliases" : [
@@ -11061,17 +11078,6 @@
         }
       },
       {
-        "aliases" : [
-          
-        ],
-        "desc" : "Deprecated since 5.0.4.",
-        "type" : {
-          "kind" : "primitive",
-          "name" : "non_neg_integer()"
-        },
-        "name" : "max_retries"
-      },
-      {
         "raw_default" : "15s",
         "aliases" : [
           
@@ -11086,6 +11092,17 @@
           "oneliner" : true,
           "hocon" : "\"15s\""
         }
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "Deprecated since 5.0.4.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "non_neg_integer()"
+        },
+        "name" : "max_retries"
       },
       {
         "raw_default" : 100,
@@ -11114,8 +11131,7 @@
         },
         "name" : "retry_interval"
       }
-    ],
-    "desc" : "Configuration of authenticator using HTTP Server as authentication service (Using GET request)."
+    ]
   },
   {
     "tags" : [
@@ -11125,6 +11141,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:http_post",
+    "desc" : "Configuration of authenticator using HTTP Server as authentication service (Using POST request).",
     "fields" : [
       {
         "aliases" : [
@@ -11281,17 +11298,6 @@
         }
       },
       {
-        "aliases" : [
-          
-        ],
-        "desc" : "Deprecated since 5.0.4.",
-        "type" : {
-          "kind" : "primitive",
-          "name" : "non_neg_integer()"
-        },
-        "name" : "max_retries"
-      },
-      {
         "raw_default" : "15s",
         "aliases" : [
           
@@ -11306,6 +11312,17 @@
           "oneliner" : true,
           "hocon" : "\"15s\""
         }
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "Deprecated since 5.0.4.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "non_neg_integer()"
+        },
+        "name" : "max_retries"
       },
       {
         "raw_default" : 100,
@@ -11334,8 +11351,7 @@
         },
         "name" : "retry_interval"
       }
-    ],
-    "desc" : "Configuration of authenticator using HTTP Server as authentication service (Using POST request)."
+    ]
   },
   {
     "tags" : [
@@ -11345,6 +11361,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_hmac",
+    "desc" : "Configuration when the JWT for authentication is issued using the HMAC algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -11482,8 +11499,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration when the JWT for authentication is issued using the HMAC algorithm."
+    ]
   },
   {
     "tags" : [
@@ -11493,6 +11509,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_jwks",
+    "desc" : "Configuration when JWTs used for authentication need to be fetched from the JWKS endpoint.",
     "fields" : [
       {
         "aliases" : [
@@ -11664,8 +11681,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration when JWTs used for authentication need to be fetched from the JWKS endpoint."
+    ]
   },
   {
     "tags" : [
@@ -11675,6 +11691,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_public_key",
+    "desc" : "Configuration when the JWT for authentication is issued using RSA or ECDSA algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -11796,8 +11813,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration when the JWT for authentication is issued using RSA or ECDSA algorithm."
+    ]
   },
   {
     "tags" : [
@@ -11807,6 +11823,7 @@
       "authentication.$INDEX.method"
     ],
     "full_name" : "authn:bind_method",
+    "desc" : "Authenticate by the LDAP bind operation.",
     "fields" : [
       {
         "raw_default" : "bind",
@@ -11845,8 +11862,7 @@
           "hocon" : "\"${password}\""
         }
       }
-    ],
-    "desc" : "Authenticate by the LDAP bind operation."
+    ]
   },
   {
     "tags" : [
@@ -11856,6 +11872,7 @@
       "authentication.$INDEX.method"
     ],
     "full_name" : "authn:hash_method",
+    "desc" : "Authenticate by comparing the hashed password which was provided by the `password attribute`.",
     "fields" : [
       {
         "raw_default" : "hash",
@@ -11907,8 +11924,7 @@
           "hocon" : "isSuperuser"
         }
       }
-    ],
-    "desc" : "Authenticate by comparing the hashed password which was provided by the `password attribute`."
+    ]
   },
   {
     "tags" : [
@@ -11918,6 +11934,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:ldap",
+    "desc" : "Configuration of authenticator using LDAP as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -12110,8 +12127,7 @@
         },
         "name" : "method"
       }
-    ],
-    "desc" : "Configuration of authenticator using LDAP as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -12121,6 +12137,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:ldap_deprecated",
+    "desc" : "This is a deprecated form, and you should avoid using it.",
     "fields" : [
       {
         "aliases" : [
@@ -12324,8 +12341,7 @@
           "hocon" : "isSuperuser"
         }
       }
-    ],
-    "desc" : "This is a deprecated form, and you should avoid using it."
+    ]
   },
   {
     "tags" : [
@@ -12335,6 +12351,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:builtin_db",
+    "desc" : "Configuration of authenticator using built-in database as data source.",
     "fields" : [
       {
         "raw_default" : {
@@ -12426,8 +12443,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using built-in database as data source."
+    ]
   },
   {
     "tags" : [
@@ -12437,6 +12453,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_rs",
+    "desc" : "Configuration of authenticator using MongoDB (Replica Set) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -12786,8 +12803,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using MongoDB (Replica Set) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -12797,6 +12813,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_sharded",
+    "desc" : "Configuration of authenticator using MongoDB (Sharded Cluster) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -13116,8 +13133,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using MongoDB (Sharded Cluster) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -13127,6 +13143,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_single",
+    "desc" : "Configuration of authenticator using MongoDB (Standalone) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -13446,8 +13463,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using MongoDB (Standalone) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -13457,6 +13473,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mysql",
+    "desc" : "Configuration of authenticator using MySQL as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -13650,8 +13667,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using MySQL as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -13661,6 +13677,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:postgresql",
+    "desc" : "Configuration of authenticator using PostgreSQL as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -13756,6 +13773,22 @@
         "name" : "server"
       },
       {
+        "raw_default" : false,
+        "aliases" : [
+          
+        ],
+        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "disable_prepared_statements",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "false"
+        }
+      },
+      {
         "aliases" : [
           
         ],
@@ -13833,8 +13866,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using PostgreSQL as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -13844,6 +13876,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_cluster",
+    "desc" : "Configuration of authenticator using Redis (Cluster) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -14021,8 +14054,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using Redis (Cluster) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -14032,6 +14064,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_sentinel",
+    "desc" : "Configuration of authenticator using Redis (Sentinel) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -14236,8 +14269,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using Redis (Sentinel) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -14247,6 +14279,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_single",
+    "desc" : "Configuration of authenticator using Redis (Standalone) as authentication data source.",
     "fields" : [
       {
         "aliases" : [
@@ -14440,8 +14473,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Configuration of authenticator using Redis (Standalone) as authentication data source."
+    ]
   },
   {
     "tags" : [
@@ -14451,6 +14483,7 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:scram",
+    "desc" : "Settings for Salted Challenge Response Authentication Mechanism\n(SCRAM) authentication.",
     "fields" : [
       {
         "aliases" : [
@@ -14525,8 +14558,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Settings for Salted Challenge Response Authentication Mechanism\n(SCRAM) authentication."
+    ]
   },
   {
     "tags" : [
@@ -14536,6 +14568,7 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:bcrypt",
+    "desc" : "Settings for bcrypt password hashing algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -14548,8 +14581,7 @@
         },
         "name" : "name"
       }
-    ],
-    "desc" : "Settings for bcrypt password hashing algorithm."
+    ]
   },
   {
     "tags" : [
@@ -14559,6 +14591,7 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:bcrypt_rw",
+    "desc" : "Settings for bcrypt password hashing algorithm (for DB backends with write capability).",
     "fields" : [
       {
         "aliases" : [
@@ -14590,8 +14623,7 @@
           "hocon" : "10"
         }
       }
-    ],
-    "desc" : "Settings for bcrypt password hashing algorithm (for DB backends with write capability)."
+    ]
   },
   {
     "tags" : [
@@ -14601,6 +14633,7 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:pbkdf2",
+    "desc" : "Settings for PBKDF2 password hashing algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -14655,8 +14688,7 @@
         },
         "name" : "dk_length"
       }
-    ],
-    "desc" : "Settings for PBKDF2 password hashing algorithm."
+    ]
   },
   {
     "tags" : [
@@ -14666,6 +14698,7 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:simple",
+    "desc" : "Settings for simple algorithms.",
     "fields" : [
       {
         "aliases" : [
@@ -14704,8 +14737,7 @@
           "hocon" : "prefix"
         }
       }
-    ],
-    "desc" : "Settings for simple algorithms."
+    ]
   },
   {
     "tags" : [
@@ -14715,6 +14747,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:file",
+    "desc" : "Authorization using a static file.",
     "fields" : [
       {
         "aliases" : [
@@ -14754,8 +14787,7 @@
         },
         "name" : "path"
       }
-    ],
-    "desc" : "Authorization using a static file."
+    ]
   },
   {
     "tags" : [
@@ -14765,6 +14797,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:http_get",
+    "desc" : "Authorization using an external HTTP server (via GET requests).",
     "fields" : [
       {
         "aliases" : [
@@ -14966,8 +14999,7 @@
           "hocon" : "{accept = \"application/json\", cache-control = \"no-cache\", connection = \"keep-alive\", keep-alive = \"timeout=30, max=1000\"}"
         }
       }
-    ],
-    "desc" : "Authorization using an external HTTP server (via GET requests)."
+    ]
   },
   {
     "tags" : [
@@ -14977,6 +15009,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:http_post",
+    "desc" : "Authorization using an external HTTP server (via POST requests).",
     "fields" : [
       {
         "aliases" : [
@@ -15179,8 +15212,7 @@
           "hocon" : "{accept = \"application/json\", cache-control = \"no-cache\", connection = \"keep-alive\", content-type = \"application/json\", keep-alive = \"timeout=30, max=1000\"}"
         }
       }
-    ],
-    "desc" : "Authorization using an external HTTP server (via POST requests)."
+    ]
   },
   {
     "tags" : [
@@ -15190,6 +15222,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:ldap",
+    "desc" : "AuthZ with LDAP",
     "fields" : [
       {
         "aliases" : [
@@ -15398,8 +15431,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "AuthZ with LDAP"
+    ]
   },
   {
     "tags" : [
@@ -15409,6 +15441,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:builtin_db",
+    "desc" : "Authorization using a built-in database (mnesia).",
     "fields" : [
       {
         "aliases" : [
@@ -15437,8 +15470,7 @@
           "hocon" : "true"
         }
       }
-    ],
-    "desc" : "Authorization using a built-in database (mnesia)."
+    ]
   },
   {
     "tags" : [
@@ -15448,6 +15480,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_rs",
+    "desc" : "Authorization using a MongoDB replica set.",
     "fields" : [
       {
         "aliases" : [
@@ -15705,8 +15738,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Authorization using a MongoDB replica set."
+    ]
   },
   {
     "tags" : [
@@ -15716,6 +15748,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_sharded",
+    "desc" : "Authorization using a sharded MongoDB cluster.",
     "fields" : [
       {
         "aliases" : [
@@ -15943,8 +15976,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Authorization using a sharded MongoDB cluster."
+    ]
   },
   {
     "tags" : [
@@ -15954,6 +15986,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_single",
+    "desc" : "Authorization using a single MongoDB instance.",
     "fields" : [
       {
         "aliases" : [
@@ -16181,8 +16214,7 @@
           "hocon" : "{enable = false}"
         }
       }
-    ],
-    "desc" : "Authorization using a single MongoDB instance."
+    ]
   },
   {
     "tags" : [
@@ -16192,6 +16224,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mysql",
+    "desc" : "Authorization using a MySQL database.",
     "fields" : [
       {
         "aliases" : [
@@ -16336,8 +16369,7 @@
         },
         "name" : "query"
       }
-    ],
-    "desc" : "Authorization using a MySQL database."
+    ]
   },
   {
     "tags" : [
@@ -16347,6 +16379,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:postgresql",
+    "desc" : "Authorization using a PostgreSQL database.",
     "fields" : [
       {
         "aliases" : [
@@ -16385,6 +16418,22 @@
           "name" : "string()"
         },
         "name" : "server"
+      },
+      {
+        "raw_default" : false,
+        "aliases" : [
+          
+        ],
+        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "disable_prepared_statements",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "false"
+        }
       },
       {
         "aliases" : [
@@ -16486,8 +16535,7 @@
         },
         "name" : "query"
       }
-    ],
-    "desc" : "Authorization using a PostgreSQL database."
+    ]
   },
   {
     "tags" : [
@@ -16497,6 +16545,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_cluster",
+    "desc" : "Authorization using a Redis cluster.",
     "fields" : [
       {
         "aliases" : [
@@ -16633,8 +16682,7 @@
         },
         "name" : "cmd"
       }
-    ],
-    "desc" : "Authorization using a Redis cluster."
+    ]
   },
   {
     "tags" : [
@@ -16644,6 +16692,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_sentinel",
+    "desc" : "Authorization using a Redis Sentinel.",
     "fields" : [
       {
         "aliases" : [
@@ -16807,8 +16856,7 @@
         },
         "name" : "cmd"
       }
-    ],
-    "desc" : "Authorization using a Redis Sentinel."
+    ]
   },
   {
     "tags" : [
@@ -16818,6 +16866,7 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_single",
+    "desc" : "Authorization using a single Redis instance.",
     "fields" : [
       {
         "aliases" : [
@@ -16970,17 +17019,334 @@
         },
         "name" : "cmd"
       }
-    ],
-    "desc" : "Authorization using a single Redis instance."
+    ]
   },
   {
     "tags" : [
       
     ],
     "paths" : [
-      "actions.http.$name.resource_opts"
+      "actions.elasticsearch.$action_name"
     ],
-    "full_name" : "bridge_http:action_resource_opts",
+    "full_name" : "bridge_elasticsearch:action_config",
+    "desc" : "ElasticSearch Action Configuration",
+    "fields" : [
+      {
+        "raw_default" : true,
+        "aliases" : [
+          
+        ],
+        "desc" : "Enable (true) or disable (false) this action.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "enable",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "true"
+        }
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "Name of the connector specified by the action, used for external resource selection.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "binary()"
+        },
+        "name" : "connector"
+      },
+      {
+        "importance" : "low",
+        "aliases" : [
+          
+        ],
+        "desc" : "Tags to annotate this config entry.",
+        "type" : {
+          "elements" : {
+            "kind" : "primitive",
+            "name" : "binary()"
+          },
+          "kind" : "array"
+        },
+        "name" : "tags"
+      },
+      {
+        "raw_default" : "",
+        "importance" : "low",
+        "aliases" : [
+          
+        ],
+        "desc" : "Descriptive text.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "binary()"
+        },
+        "name" : "description",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"\""
+        }
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "ElasticSearch action parameters",
+        "type" : {
+          "display_name" : "undefined",
+          "members" : [
+            {
+              "kind" : "struct",
+              "name" : "bridge_elasticsearch:action_create"
+            },
+            {
+              "kind" : "struct",
+              "name" : "bridge_elasticsearch:action_delete"
+            },
+            {
+              "kind" : "struct",
+              "name" : "bridge_elasticsearch:action_update"
+            }
+          ],
+          "kind" : "union"
+        },
+        "name" : "parameters"
+      },
+      {
+        "raw_default" : {
+          
+        },
+        "aliases" : [
+          
+        ],
+        "desc" : "Resource options.",
+        "type" : {
+          "kind" : "struct",
+          "name" : "bridge_elasticsearch:action_resource_opts"
+        },
+        "name" : "resource_opts",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "{}"
+        }
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "actions.elasticsearch.$action_name.parameters"
+    ],
+    "full_name" : "bridge_elasticsearch:action_create",
+    "desc" : "Adds a JSON document to the specified index and makes it searchable.\nIf the target is an index and the document already exists,\nthe request updates the document and increments its version.",
+    "fields" : [
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "create",
+        "type" : {
+          "kind" : "singleton",
+          "name" : "create"
+        },
+        "name" : "action"
+      },
+      {
+        "examples" : [
+          "${payload.index}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Name of index, or index alias to perform the action on.\nThis parameter is required.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "index"
+      },
+      {
+        "examples" : [
+          "${payload.id}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "The document ID. If no ID is specified, a document ID is automatically generated.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "id"
+      },
+      {
+        "examples" : [
+          "${payload.doc}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "JSON document. If undefined, rule engine will use JSON format to serialize all visible inputs, such as clientid, topic, payload etc.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "doc"
+      },
+      {
+        "examples" : [
+          "${payload.routing}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Custom value used to route operations to a specific shard.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "routing"
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "If true, the request’s actions must target an index alias. Defaults to false",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "require_alias"
+      },
+      {
+        "raw_default" : true,
+        "aliases" : [
+          
+        ],
+        "desc" : "Set to false If a document with the specified _id already exists(conflict), the operation will fail.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "overwrite",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "true"
+        }
+      },
+      {
+        "raw_default" : 2,
+        "aliases" : [
+          
+        ],
+        "desc" : "HTTP request max retry times if failed.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "non_neg_integer()"
+        },
+        "name" : "max_retries",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "2"
+        }
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "actions.elasticsearch.$action_name.parameters"
+    ],
+    "full_name" : "bridge_elasticsearch:action_delete",
+    "desc" : "Removes a JSON document from the specified index.",
+    "fields" : [
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "delete",
+        "type" : {
+          "kind" : "singleton",
+          "name" : "delete"
+        },
+        "name" : "action"
+      },
+      {
+        "examples" : [
+          "${payload.index}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Name of index, or index alias to perform the action on.\nThis parameter is required.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "index"
+      },
+      {
+        "examples" : [
+          "${payload.id}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "The document ID. If no ID is specified, a document ID is automatically generated.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "id"
+      },
+      {
+        "examples" : [
+          "${payload.routing}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Custom value used to route operations to a specific shard.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "routing"
+      },
+      {
+        "raw_default" : 2,
+        "aliases" : [
+          
+        ],
+        "desc" : "HTTP request max retry times if failed.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "non_neg_integer()"
+        },
+        "name" : "max_retries",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "2"
+        }
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "actions.elasticsearch.$action_name.resource_opts"
+    ],
+    "full_name" : "bridge_elasticsearch:action_resource_opts",
+    "desc" : "Resource options.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -17091,17 +17457,261 @@
           "hocon" : "\"256MB\""
         }
       }
-    ],
-    "desc" : "Resource options."
+    ]
   },
   {
     "tags" : [
       
     ],
     "paths" : [
+      "actions.elasticsearch.$action_name.parameters"
+    ],
+    "full_name" : "bridge_elasticsearch:action_update",
+    "desc" : "Updates a document using the specified doc.",
+    "fields" : [
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "update",
+        "type" : {
+          "kind" : "singleton",
+          "name" : "update"
+        },
+        "name" : "action"
+      },
+      {
+        "examples" : [
+          "${payload.index}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Name of index, or index alias to perform the action on.\nThis parameter is required.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "index"
+      },
+      {
+        "examples" : [
+          "${payload.id}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "The document ID. If no ID is specified, a document ID is automatically generated.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "id"
+      },
+      {
+        "examples" : [
+          "${payload.doc}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "JSON document. If undefined, rule engine will use JSON format to serialize all visible inputs, such as clientid, topic, payload etc.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "doc"
+      },
+      {
+        "raw_default" : false,
+        "aliases" : [
+          
+        ],
+        "desc" : "Instead of sending a partial doc plus an upsert doc,\nyou can set doc_as_upsert to true to use the contents of doc as the upsert value.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "doc_as_upsert",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "false"
+        }
+      },
+      {
+        "examples" : [
+          "${payload.routing}"
+        ],
+        "aliases" : [
+          
+        ],
+        "desc" : "Custom value used to route operations to a specific shard.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:template()"
+        },
+        "name" : "routing"
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "If true, the request’s actions must target an index alias. Defaults to false",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "require_alias"
+      },
+      {
+        "raw_default" : 2,
+        "aliases" : [
+          
+        ],
+        "desc" : "HTTP request max retry times if failed.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "non_neg_integer()"
+        },
+        "name" : "max_retries",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "2"
+        }
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "actions.http.$name.resource_opts"
+    ],
+    "full_name" : "bridge_http:action_resource_opts",
+    "desc" : "Resource options.",
+    "fields" : [
+      {
+        "raw_default" : 16,
+        "aliases" : [
+          
+        ],
+        "desc" : "The number of buffer workers. Only applicable for egress type bridges.\nFor bridges only have ingress direction data flow, it can be set to 0 otherwise must be greater than 0.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "1..1024"
+        },
+        "name" : "worker_pool_size",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "16"
+        }
+      },
+      {
+        "raw_default" : "15s",
+        "aliases" : [
+          
+        ],
+        "desc" : "Health check interval.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:timeout_duration_ms()"
+        },
+        "name" : "health_check_interval",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"15s\""
+        }
+      },
+      {
+        "raw_default" : "async",
+        "aliases" : [
+          
+        ],
+        "desc" : "Query mode. Optional 'sync/async', default 'async'.",
+        "type" : {
+          "kind" : "enum",
+          "symbols" : [
+            "sync",
+            "async"
+          ]
+        },
+        "name" : "query_mode",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "async"
+        }
+      },
+      {
+        "raw_default" : "45s",
+        "aliases" : [
+          "request_timeout"
+        ],
+        "desc" : "Starting from the moment when the request enters the buffer, if the request remains in the buffer for the specified time or is sent but does not receive a response or acknowledgement in time, the request is considered expired.",
+        "type" : {
+          "display_name" : "undefined",
+          "members" : [
+            {
+              "kind" : "primitive",
+              "name" : "emqx_schema:timeout_duration_ms()"
+            },
+            {
+              "kind" : "singleton",
+              "name" : "infinity"
+            }
+          ],
+          "kind" : "union"
+        },
+        "name" : "request_ttl",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"45s\""
+        }
+      },
+      {
+        "raw_default" : 100,
+        "aliases" : [
+          "async_inflight_window"
+        ],
+        "desc" : "Query inflight window. When query_mode is set to async, this config has to be set to 1 if messages from the same MQTT client have to be strictly ordered.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "pos_integer()"
+        },
+        "name" : "inflight_window",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "100"
+        }
+      },
+      {
+        "raw_default" : "256MB",
+        "aliases" : [
+          "max_queue_bytes"
+        ],
+        "desc" : "Maximum number of bytes to buffer for each buffer worker.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:bytesize()"
+        },
+        "name" : "max_buffer_bytes",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"256MB\""
+        }
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "connectors.elasticsearch.$name.resource_opts",
       "connectors.http.$name.resource_opts"
     ],
     "full_name" : "bridge_http:connector_resource_opts",
+    "desc" : "Resource options.",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -17151,8 +17761,7 @@
           "hocon" : "\"5s\""
         }
       }
-    ],
-    "desc" : "Resource options."
+    ]
   },
   {
     "tags" : [
@@ -17162,6 +17771,7 @@
       "connectors.http.$name"
     ],
     "full_name" : "bridge_http:config_connector",
+    "desc" : "Configuration for an HTTP action.",
     "fields" : [
       {
         "raw_default" : true,
@@ -17369,8 +17979,7 @@
           "hocon" : "{}"
         }
       }
-    ],
-    "desc" : "Configuration for an HTTP action."
+    ]
   },
   {
     "tags" : [
@@ -17380,6 +17989,7 @@
       "actions.http.$name"
     ],
     "full_name" : "bridge_http:http_action",
+    "desc" : "Configuration for an HTTP action.",
     "fields" : [
       {
         "raw_default" : true,
@@ -17469,8 +18079,7 @@
           "hocon" : "{}"
         }
       }
-    ],
-    "desc" : "Configuration for an HTTP action."
+    ]
   },
   {
     "tags" : [
@@ -17480,6 +18089,7 @@
       "actions.http.$name.parameters"
     ],
     "full_name" : "bridge_http:parameters_opts",
+    "desc" : "The parameters for HTTP action.",
     "fields" : [
       {
         "aliases" : [
@@ -17573,8 +18183,7 @@
         },
         "name" : "request_timeout"
       }
-    ],
-    "desc" : "The parameters for HTTP action."
+    ]
   },
   {
     "tags" : [
@@ -17584,6 +18193,7 @@
       "actions.mqtt.$name.parameters"
     ],
     "full_name" : "bridge_mqtt_publisher:action_parameters",
+    "desc" : "Action specific configs.",
     "fields" : [
       {
         "aliases" : [
@@ -17659,8 +18269,7 @@
         },
         "name" : "payload"
       }
-    ],
-    "desc" : "Action specific configs."
+    ]
   },
   {
     "tags" : [
@@ -17670,6 +18279,7 @@
       "actions.mqtt.$name.resource_opts"
     ],
     "full_name" : "bridge_mqtt_publisher:action_resource_opts",
+    "desc" : "Creation options.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -17780,8 +18390,7 @@
           "hocon" : "\"256MB\""
         }
       }
-    ],
-    "desc" : "Creation options."
+    ]
   },
   {
     "tags" : [
@@ -17791,6 +18400,7 @@
       "sources.mqtt.$name.parameters"
     ],
     "full_name" : "bridge_mqtt_publisher:ingress_parameters",
+    "desc" : "Source specific configs.",
     "fields" : [
       {
         "aliases" : [
@@ -17819,8 +18429,7 @@
           "hocon" : "1"
         }
       }
-    ],
-    "desc" : "Source specific configs."
+    ]
   },
   {
     "tags" : [
@@ -17830,6 +18439,7 @@
       "sources.mqtt.$name.resource_opts"
     ],
     "full_name" : "bridge_mqtt_publisher:source_resource_opts",
+    "desc" : "Creation options.",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -17847,8 +18457,7 @@
           "hocon" : "\"15s\""
         }
       }
-    ],
-    "desc" : "Creation options."
+    ]
   },
   {
     "tags" : [
@@ -17858,6 +18467,7 @@
       "actions.mqtt.$name"
     ],
     "full_name" : "bridge_mqtt_publisher:mqtt_publisher_action",
+    "desc" : "Action configs.",
     "fields" : [
       {
         "aliases" : [
@@ -17958,8 +18568,7 @@
           "hocon" : "{}"
         }
       }
-    ],
-    "desc" : "Action configs."
+    ]
   },
   {
     "tags" : [
@@ -17969,6 +18578,7 @@
       "sources.mqtt.$name"
     ],
     "full_name" : "bridge_mqtt_publisher:mqtt_subscriber_source",
+    "desc" : "Source configs.",
     "fields" : [
       {
         "raw_default" : true,
@@ -18057,8 +18667,7 @@
           "hocon" : "{}"
         }
       }
-    ],
-    "desc" : "Source configs."
+    ]
   },
   {
     "tags" : [
@@ -18068,6 +18677,7 @@
       "connectors"
     ],
     "full_name" : "connector:connectors",
+    "desc" : "Connectors that are used to connect to external systems",
     "fields" : [
       {
         "aliases" : [
@@ -18098,9 +18708,23 @@
           "name" : "name"
         },
         "name" : "mqtt"
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "ElasticSearch Connector Config",
+        "type" : {
+          "kind" : "map",
+          "values" : {
+            "kind" : "struct",
+            "name" : "elasticsearch:config"
+          },
+          "name" : "name"
+        },
+        "name" : "elasticsearch"
       }
-    ],
-    "desc" : "Connectors that are used to connect to external systems"
+    ]
   },
   {
     "tags" : [
@@ -18111,6 +18735,7 @@
       "authorization.sources.$INDEX.request"
     ],
     "full_name" : "connector_http:request",
+    "desc" : "",
     "fields" : [
       {
         "aliases" : [
@@ -18178,8 +18803,7 @@
         },
         "name" : "request_timeout"
       }
-    ],
-    "desc" : ""
+    ]
   },
   {
     "tags" : [
@@ -18189,6 +18813,7 @@
       "connectors.mqtt.$name.resource_opts"
     ],
     "full_name" : "connector_mqtt:resource_opts",
+    "desc" : "Resource options.",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -18238,8 +18863,7 @@
           "hocon" : "\"5s\""
         }
       }
-    ],
-    "desc" : "Resource options."
+    ]
   },
   {
     "tags" : [
@@ -18249,6 +18873,7 @@
       "connectors.mqtt.$name"
     ],
     "full_name" : "connector_mqtt:config_connector",
+    "desc" : "Configurations for an MQTT connector.",
     "fields" : [
       {
         "raw_default" : true,
@@ -18518,8 +19143,237 @@
           "hocon" : "{enable = false}"
         }
       }
+    ]
+  },
+  {
+    "tags" : [
+      
     ],
-    "desc" : "Configurations for an MQTT connector."
+    "paths" : [
+      "connectors.elasticsearch.$name.authentication"
+    ],
+    "full_name" : "elasticsearch:auth_basic",
+    "desc" : "Basic Authentication",
+    "fields" : [
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "The username as configured at the ElasticSearch REST interface",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "binary()"
+        },
+        "name" : "username"
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "The password as configured at the ElasticSearch REST interface",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema_secret:secret()"
+        },
+        "name" : "password"
+      }
+    ]
+  },
+  {
+    "tags" : [
+      
+    ],
+    "paths" : [
+      "connectors.elasticsearch.$name"
+    ],
+    "full_name" : "elasticsearch:config",
+    "desc" : "Configuration for ElasticSearch bridge.",
+    "fields" : [
+      {
+        "raw_default" : true,
+        "aliases" : [
+          
+        ],
+        "desc" : "Enable (true) or disable (false) this connector.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "boolean()"
+        },
+        "name" : "enable",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "true"
+        }
+      },
+      {
+        "importance" : "low",
+        "aliases" : [
+          
+        ],
+        "desc" : "Tags to annotate this config entry.",
+        "type" : {
+          "elements" : {
+            "kind" : "primitive",
+            "name" : "binary()"
+          },
+          "kind" : "array"
+        },
+        "name" : "tags"
+      },
+      {
+        "raw_default" : "",
+        "importance" : "low",
+        "aliases" : [
+          
+        ],
+        "desc" : "Descriptive text.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "binary()"
+        },
+        "name" : "description",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"\""
+        }
+      },
+      {
+        "raw_default" : "15s",
+        "aliases" : [
+          
+        ],
+        "desc" : "The timeout when connecting to the HTTP server.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "emqx_schema:timeout_duration_ms()"
+        },
+        "name" : "connect_timeout",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"15s\""
+        }
+      },
+      {
+        "raw_default" : "random",
+        "aliases" : [
+          
+        ],
+        "desc" : "The type of the pool. Can be one of `random`, `hash`.",
+        "type" : {
+          "kind" : "enum",
+          "symbols" : [
+            "random",
+            "hash"
+          ]
+        },
+        "name" : "pool_type",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "random"
+        }
+      },
+      {
+        "raw_default" : 8,
+        "aliases" : [
+          
+        ],
+        "desc" : "The pool size.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "pos_integer()"
+        },
+        "name" : "pool_size",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "8"
+        }
+      },
+      {
+        "raw_default" : 100,
+        "aliases" : [
+          
+        ],
+        "desc" : "A positive integer. Whether to send HTTP requests continuously, when set to 1, it means that after each HTTP request is sent, you need to wait for the server to return and then continue to send the next request.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "pos_integer()"
+        },
+        "name" : "enable_pipelining",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "100"
+        }
+      },
+      {
+        "raw_default" : {
+          "enable" : false
+        },
+        "aliases" : [
+          
+        ],
+        "desc" : "SSL connection settings.",
+        "type" : {
+          "kind" : "struct",
+          "name" : "emqx:ssl_client_opts"
+        },
+        "name" : "ssl",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "{enable = false}"
+        }
+      },
+      {
+        "raw_default" : {
+          
+        },
+        "aliases" : [
+          
+        ],
+        "desc" : "Resource options.",
+        "type" : {
+          "kind" : "struct",
+          "name" : "bridge_http:connector_resource_opts"
+        },
+        "name" : "resource_opts",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "{}"
+        }
+      },
+      {
+        "raw_default" : "127.0.0.1:9200",
+        "aliases" : [
+          
+        ],
+        "desc" : "The IPv4 or IPv6 address or the hostname to connect to.\nA host entry has the following form: `Host[:Port]`.\nThe Elasticsearch default port 9200 is used if `[:Port]` is not specified.",
+        "type" : {
+          "kind" : "primitive",
+          "name" : "string()"
+        },
+        "name" : "server",
+        "default" : {
+          "oneliner" : true,
+          "hocon" : "\"127.0.0.1:9200\""
+        }
+      },
+      {
+        "aliases" : [
+          
+        ],
+        "desc" : "Authentication configuration",
+        "type" : {
+          "display_name" : "undefined",
+          "members" : [
+            {
+              "kind" : "struct",
+              "name" : "elasticsearch:auth_basic"
+            }
+          ],
+          "kind" : "union"
+        },
+        "name" : "authentication"
+      }
+    ]
   },
   {
     "tags" : [
@@ -18529,6 +19383,7 @@
       "telemetry"
     ],
     "full_name" : "emqxtel:telemetry",
+    "desc" : "Configure telemetry data report from this EMQX node to EMQ's telemetry data collection server.\nSee https://www.emqx.io/docs/en/v5.0/telemetry/telemetry.html for more details.",
     "fields" : [
       {
         "aliases" : [
@@ -18541,8 +19396,7 @@
         },
         "name" : "enable"
       }
-    ],
-    "desc" : "Configure telemetry data report from this EMQX node to EMQ's telemetry data collection server.\nSee https://www.emqx.io/docs/en/v5.0/telemetry/telemetry.html for more details."
+    ]
   },
   {
     "tags" : [
@@ -18552,6 +19406,7 @@
       "gateway.coap"
     ],
     "full_name" : "gateway:coap",
+    "desc" : "The CoAP protocol gateway provides EMQX with the access capability of the CoAP protocol.\nIt allows publishing, subscribing, and receiving messages to EMQX in accordance\nwith a certain defined CoAP message format.",
     "fields" : [
       {
         "raw_default" : "30s",
@@ -18732,8 +19587,7 @@
         },
         "name" : "clientinfo_override"
       }
-    ],
-    "desc" : "The CoAP protocol gateway provides EMQX with the access capability of the CoAP protocol.\nIt allows publishing, subscribing, and receiving messages to EMQX in accordance\nwith a certain defined CoAP message format."
+    ]
   },
   {
     "tags" : [
@@ -18743,6 +19597,7 @@
       "gateway.exproto"
     ],
     "full_name" : "gateway:exproto",
+    "desc" : "Settings for EMQX extension protocol (exproto).",
     "fields" : [
       {
         "aliases" : [
@@ -18851,8 +19706,7 @@
         },
         "name" : "clientinfo_override"
       }
-    ],
-    "desc" : "Settings for EMQX extension protocol (exproto)."
+    ]
   },
   {
     "tags" : [
@@ -18862,6 +19716,7 @@
       "gateway.exproto.handler"
     ],
     "full_name" : "gateway:exproto_grpc_handler",
+    "desc" : "Settings for the exproto gRPC connection handler.",
     "fields" : [
       {
         "aliases" : [
@@ -18911,8 +19766,7 @@
         },
         "name" : "ssl_options"
       }
-    ],
-    "desc" : "Settings for the exproto gRPC connection handler."
+    ]
   },
   {
     "tags" : [
@@ -18922,6 +19776,7 @@
       "gateway.exproto.server"
     ],
     "full_name" : "gateway:exproto_grpc_server",
+    "desc" : "Settings for the exproto gRPC server.",
     "fields" : [
       {
         "aliases" : [
@@ -18945,8 +19800,7 @@
         },
         "name" : "ssl_options"
       }
-    ],
-    "desc" : "Settings for the exproto gRPC server."
+    ]
   },
   {
     "tags" : [
@@ -18956,6 +19810,7 @@
       "gateway.exproto.server.ssl_options"
     ],
     "full_name" : "gateway:ssl_server_opts",
+    "desc" : "SSL configuration for the server.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -19261,8 +20116,7 @@
           "hocon" : "\"15s\""
         }
       }
-    ],
-    "desc" : "SSL configuration for the server."
+    ]
   },
   {
     "tags" : [
@@ -19272,6 +20126,7 @@
       "gateway.mqttsn"
     ],
     "full_name" : "gateway:mqttsn",
+    "desc" : "The MQTT-SN (MQTT for Sensor Networks) protocol gateway.",
     "fields" : [
       {
         "raw_default" : 1,
@@ -19443,8 +20298,7 @@
         },
         "name" : "clientinfo_override"
       }
-    ],
-    "desc" : "The MQTT-SN (MQTT for Sensor Networks) protocol gateway."
+    ]
   },
   {
     "tags" : [
@@ -19454,6 +20308,7 @@
       "gateway.mqttsn.predefined.$INDEX"
     ],
     "full_name" : "gateway:mqttsn_predefined",
+    "desc" : "The pre-defined topic name corresponding to the pre-defined topic\nID of N.\n\nNote: the pre-defined topic ID of 0 is reserved.",
     "fields" : [
       {
         "aliases" : [
@@ -19477,8 +20332,7 @@
         },
         "name" : "topic"
       }
-    ],
-    "desc" : "The pre-defined topic name corresponding to the pre-defined topic\nID of N.\n\nNote: the pre-defined topic ID of 0 is reserved."
+    ]
   },
   {
     "tags" : [
@@ -19488,6 +20342,7 @@
       "gateway.stomp"
     ],
     "full_name" : "gateway:stomp",
+    "desc" : "The STOMP protocol gateway provides EMQX with the ability to access STOMP\n(Simple (or Streaming) Text Orientated Messaging Protocol) protocol.",
     "fields" : [
       {
         "aliases" : [
@@ -19584,8 +20439,7 @@
         },
         "name" : "clientinfo_override"
       }
-    ],
-    "desc" : "The STOMP protocol gateway provides EMQX with the ability to access STOMP\n(Simple (or Streaming) Text Orientated Messaging Protocol) protocol."
+    ]
   },
   {
     "tags" : [
@@ -19595,6 +20449,7 @@
       "gateway.stomp.frame"
     ],
     "full_name" : "gateway:stomp_frame",
+    "desc" : "Size limits for the STOMP frames.",
     "fields" : [
       {
         "raw_default" : 10,
@@ -19644,8 +20499,7 @@
           "hocon" : "65536"
         }
       }
-    ],
-    "desc" : "Size limits for the STOMP frames."
+    ]
   },
   {
     "tags" : [
@@ -19656,6 +20510,7 @@
       "authorization.sources.$INDEX.ssl"
     ],
     "full_name" : "ldap:ssl",
+    "desc" : "SSL connection settings.",
     "fields" : [
       {
         "aliases" : [
@@ -19911,8 +20766,7 @@
         },
         "name" : "server_name_indication"
       }
-    ],
-    "desc" : "SSL connection settings."
+    ]
   },
   {
     "tags" : [
@@ -19923,6 +20777,7 @@
       "authorization.sources.$INDEX.topology"
     ],
     "full_name" : "mongo:topology",
+    "desc" : "Topology of MongoDB.",
     "fields" : [
       {
         "raw_default" : 0,
@@ -20044,8 +20899,7 @@
         },
         "name" : "min_heartbeat_frequency_ms"
       }
-    ],
-    "desc" : "Topology of MongoDB."
+    ]
   },
   {
     "tags" : [
@@ -20055,6 +20909,7 @@
       "plugins"
     ],
     "full_name" : "plugin:plugins",
+    "desc" : "Manage EMQX plugins.<br/>\nPlugins can be pre-built as a part of EMQX package,\nor installed as a standalone package in a location specified by\n<code>install_dir</code> config key<br/>\nThe standalone-installed plugins are referred to as 'external' plugins.",
     "fields" : [
       {
         "raw_default" : [
@@ -20106,8 +20961,7 @@
         },
         "name" : "check_interval"
       }
-    ],
-    "desc" : "Manage EMQX plugins.<br/>\nPlugins can be pre-built as a part of EMQX package,\nor installed as a standalone package in a location specified by\n<code>install_dir</code> config key<br/>\nThe standalone-installed plugins are referred to as 'external' plugins."
+    ]
   },
   {
     "tags" : [
@@ -20117,6 +20971,7 @@
       "plugins.states.$INDEX"
     ],
     "full_name" : "plugin:state",
+    "desc" : "A per-plugin config to describe the desired state of the plugin.",
     "fields" : [
       {
         "aliases" : [
@@ -20140,8 +20995,7 @@
         },
         "name" : "enable"
       }
-    ],
-    "desc" : "A per-plugin config to describe the desired state of the plugin."
+    ]
   },
   {
     "tags" : [
@@ -20151,6 +21005,7 @@
       "psk_authentication"
     ],
     "full_name" : "psk:psk_authentication",
+    "desc" : "PSK stands for 'Pre-Shared Keys'.\nThis config to enable TLS-PSK authentication.\n\nImportant! Make sure the SSL listener with only <code>tlsv1.2</code> enabled, and also PSK cipher suites\nconfigured, such as <code>RSA-PSK-AES256-GCM-SHA384</code>.\n\nSee listener SSL options config for more details.\n\nThe IDs and secrets can be provided from a file which is configurable by the <code>init_file</code> field.",
     "fields" : [
       {
         "raw_default" : false,
@@ -20211,8 +21066,7 @@
           "hocon" : "50"
         }
       }
-    ],
-    "desc" : "PSK stands for 'Pre-Shared Keys'.\nThis config to enable TLS-PSK authentication.\n\nImportant! Make sure the SSL listener with only <code>tlsv1.2</code> enabled, and also PSK cipher suites\nconfigured, such as <code>RSA-PSK-AES256-GCM-SHA384</code>.\n\nSee listener SSL options config for more details.\n\nThe IDs and secrets can be provided from a file which is configurable by the <code>init_file</code> field."
+    ]
   },
   {
     "tags" : [
@@ -20222,6 +21076,7 @@
       "slow_subs"
     ],
     "full_name" : "slow_subs",
+    "desc" : "Configuration for `slow_subs` feature.",
     "fields" : [
       {
         "raw_default" : false,
@@ -20307,7 +21162,6 @@
           "hocon" : "whole"
         }
       }
-    ],
-    "desc" : "Configuration for `slow_subs` feature."
+    ]
   }
 ]

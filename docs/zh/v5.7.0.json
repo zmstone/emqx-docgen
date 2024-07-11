@@ -436,7 +436,6 @@
       "api_key"
     ],
     "full_name" : "api_key",
-    "desc" : "API 密钥， 可用于请求除管理 API 密钥及 Dashboard 用户管理 API 的其它接口",
     "fields" : [
       {
         "raw_default" : "",
@@ -454,7 +453,8 @@
           "hocon" : "\"\""
         }
       }
-    ]
+    ],
+    "desc" : "API 密钥， 可用于请求除管理 API 密钥及 Dashboard 用户管理 API 的其它接口"
   },
   {
     "tags" : [
@@ -464,7 +464,6 @@
       "dashboard"
     ],
     "full_name" : "dashboard",
-    "desc" : "EMQX Dashboard 配置。",
     "fields" : [
       {
         "aliases" : [
@@ -525,7 +524,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "EMQX Dashboard 配置。"
   },
   {
     "tags" : [
@@ -535,7 +535,6 @@
       "dashboard.listeners.http"
     ],
     "full_name" : "dashboard:http",
-    "desc" : "Dashboard 监听器(HTTP)配置。",
     "fields" : [
       {
         "raw_default" : 0,
@@ -690,7 +689,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Dashboard 监听器(HTTP)配置。"
   },
   {
     "tags" : [
@@ -700,7 +700,6 @@
       "dashboard.listeners.https"
     ],
     "full_name" : "dashboard:https",
-    "desc" : "Dashboard 监听器(HTTPS)配置。",
     "fields" : [
       {
         "raw_default" : 0,
@@ -867,7 +866,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Dashboard 监听器(HTTPS)配置。"
   },
   {
     "tags" : [
@@ -877,7 +877,6 @@
       "dashboard.listeners"
     ],
     "full_name" : "dashboard:listeners",
-    "desc" : "Dashboard 监听器配置。",
     "fields" : [
       {
         "aliases" : [
@@ -901,7 +900,8 @@
         },
         "name" : "https"
       }
-    ]
+    ],
+    "desc" : "Dashboard 监听器配置。"
   },
   {
     "tags" : [
@@ -911,7 +911,6 @@
       "dashboard.listeners.https.ssl_options"
     ],
     "full_name" : "dashboard:ssl_options",
-    "desc" : "Dashboard 监听器的 SSL/TLS 选项。",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -1201,7 +1200,8 @@
           "hocon" : "\"15s\""
         }
       }
-    ]
+    ],
+    "desc" : "Dashboard 监听器的 SSL/TLS 选项。"
   },
   {
     "tags" : [
@@ -1211,7 +1211,6 @@
       "durable_storage.messages"
     ],
     "full_name" : "durable_storage:builtin",
-    "desc" : "使用嵌入式 RocksDB 键值存储的内置会话存储后端。",
     "fields" : [
       {
         "raw_default" : "builtin",
@@ -1288,7 +1287,8 @@
           "hocon" : "{type = wildcard_optimized}"
         }
       }
-    ]
+    ],
+    "desc" : "使用嵌入式 RocksDB 键值存储的内置会话存储后端。"
   },
   {
     "tags" : [
@@ -1298,21 +1298,21 @@
       "durable_storage.messages.layout"
     ],
     "full_name" : "durable_storage:layout_builtin_reference",
-    "desc" : "A simplistic layout type that stores all messages from all topics in chronological order in a single stream.\n\nNot recommended for production use.",
     "fields" : [
       {
         "importance" : "low",
         "aliases" : [
           
         ],
-        "desc" : "Reference layout type.",
+        "desc" : "参考布局类型",
         "type" : {
           "kind" : "singleton",
           "name" : "reference"
         },
         "name" : "type"
       }
-    ]
+    ],
+    "desc" : "一种简单的布局类型，将所有主题的所有消息按时间顺序存储在一个流中。\n\n不推荐用于生产环境。"
   },
   {
     "tags" : [
@@ -1322,7 +1322,6 @@
       "durable_storage.messages.layout"
     ],
     "full_name" : "durable_storage:layout_builtin_wildcard_optimized",
-    "desc" : "通配符优化 布局旨在最大化覆盖大量主题的通配符订阅的吞吐量。\n\n例如，它可以处理大量客户端将数据发布到包含其客户端 ID 的主题的场景，如：sensor/%device-version%/%clientid%/temperature、sensor/%device-version%/%clientid%/pressure 等。\n此布局将自动将此类主题分组到单个流中，因此订阅包含通配符的主题过滤器（如 sensor/+/+/temperature）的客户端将能够以单个批次消费所有设备发布的消息。\n\n此布局对非通配符订阅也是有效的。",
     "fields" : [
       {
         "raw_default" : "wildcard_optimized",
@@ -1340,7 +1339,8 @@
           "hocon" : "wildcard_optimized"
         }
       }
-    ]
+    ],
+    "desc" : "通配符优化 布局旨在最大化覆盖大量主题的通配符订阅的吞吐量。\n\n例如，它可以处理大量客户端将数据发布到包含其客户端 ID 的主题的场景，如：sensor/%device-version%/%clientid%/temperature、sensor/%device-version%/%clientid%/pressure 等。\n此布局将自动将此类主题分组到单个流中，因此订阅包含通配符的主题过滤器（如 sensor/+/+/temperature）的客户端将能够以单个批次消费所有设备发布的消息。\n\n此布局对非通配符订阅也是有效的。"
   },
   {
     "tags" : [
@@ -1350,7 +1350,6 @@
       "cluster.dns"
     ],
     "full_name" : "emqx:cluster_dns",
-    "desc" : "DNS SRV 记录服务发现。",
     "fields" : [
       {
         "raw_default" : "localhost",
@@ -1388,7 +1387,8 @@
           "hocon" : "a"
         }
       }
-    ]
+    ],
+    "desc" : "DNS SRV 记录服务发现。"
   },
   {
     "tags" : [
@@ -1398,7 +1398,6 @@
       "cluster.etcd"
     ],
     "full_name" : "emqx:cluster_etcd",
-    "desc" : "使用 'etcd' 服务的服务发现。",
     "fields" : [
       {
         "aliases" : [
@@ -1454,7 +1453,8 @@
         },
         "name" : "ssl_options"
       }
-    ]
+    ],
+    "desc" : "使用 'etcd' 服务的服务发现。"
   },
   {
     "tags" : [
@@ -1464,7 +1464,6 @@
       "cluster.k8s"
     ],
     "full_name" : "emqx:cluster_k8s",
-    "desc" : "Kubernetes 服务发现。",
     "fields" : [
       {
         "raw_default" : "https://kubernetes.default.svc:443",
@@ -1550,7 +1549,8 @@
           "hocon" : "\"pod.local\""
         }
       }
-    ]
+    ],
+    "desc" : "Kubernetes 服务发现。"
   },
   {
     "tags" : [
@@ -1560,7 +1560,6 @@
       "cluster.static"
     ],
     "full_name" : "emqx:cluster_static",
-    "desc" : "静态节点服务发现。新节点通过连接一个节点来加入集群。",
     "fields" : [
       {
         "raw_default" : [
@@ -1593,7 +1592,8 @@
           "hocon" : "[]"
         }
       }
-    ]
+    ],
+    "desc" : "静态节点服务发现。新节点通过连接一个节点来加入集群。"
   },
   {
     "tags" : [
@@ -1603,7 +1603,6 @@
       "authorization"
     ],
     "full_name" : "emqx:authorization",
-    "desc" : "授权相关",
     "fields" : [
       {
         "raw_default" : "allow",
@@ -1736,7 +1735,8 @@
           "hocon" : "[{enable = true, path = \"${EMQX_ETC_DIR}/acl.conf\", type = file}]"
         }
       }
-    ]
+    ],
+    "desc" : "授权相关"
   },
   {
     "tags" : [
@@ -1746,7 +1746,6 @@
       "cluster"
     ],
     "full_name" : "emqx:cluster",
-    "desc" : "EMQX 节点可以组成一个集群，以提高总容量。<br/> 这里指定了节点之间如何连接。",
     "fields" : [
       {
         "raw_default" : "emqxcl",
@@ -1879,7 +1878,8 @@
         },
         "name" : "k8s"
       }
-    ]
+    ],
+    "desc" : "EMQX 节点可以组成一个集群，以提高总容量。<br/> 这里指定了节点之间如何连接。"
   },
   {
     "tags" : [
@@ -1889,7 +1889,6 @@
       "log.console"
     ],
     "full_name" : "emqx:console_handler",
-    "desc" : "日志处理进程将日志事件打印到 EMQX 控制台。",
     "fields" : [
       {
         "raw_default" : "warning",
@@ -1993,7 +1992,8 @@
           "hocon" : "system"
         }
       }
-    ]
+    ],
+    "desc" : "日志处理进程将日志事件打印到 EMQX 控制台。"
   },
   {
     "tags" : [
@@ -2003,7 +2003,6 @@
       "log"
     ],
     "full_name" : "emqx:log",
-    "desc" : "EMQX 支持同时多个日志输出，一个控制台输出，和多个文件输出。\n默认情况下，EMQX 运行在容器中，或者在 'console' 或 'foreground' 模式下运行时，会输出到 控制台，否则输出到文件。",
     "fields" : [
       {
         "importance" : "high",
@@ -2060,7 +2059,8 @@
         },
         "name" : "throttling"
       }
-    ]
+    ],
+    "desc" : "EMQX 支持同时多个日志输出，一个控制台输出，和多个文件输出。\n默认情况下，EMQX 运行在容器中，或者在 'console' 或 'foreground' 模式下运行时，会输出到 控制台，否则输出到文件。"
   },
   {
     "tags" : [
@@ -2071,7 +2071,6 @@
       "log.file.$handler_name"
     ],
     "full_name" : "emqx:log_file_handler",
-    "desc" : "日志处理进程将日志事件打印到文件。",
     "fields" : [
       {
         "raw_default" : "${EMQX_LOG_DIR}/emqx.log",
@@ -2237,7 +2236,8 @@
           "hocon" : "system"
         }
       }
-    ]
+    ],
+    "desc" : "日志处理进程将日志事件打印到文件。"
   },
   {
     "tags" : [
@@ -2247,7 +2247,6 @@
       "log.throttling"
     ],
     "full_name" : "emqx:log_throttling",
-    "desc" : "日志限流功能通过在配置的时间窗口内丢弃除第一个事件外的所有事件，来减少可能泛滥的日志事件数量。\n如果 `console` 或 `file` 日志级别设置为 debug，则自动禁用限流。",
     "fields" : [
       {
         "raw_default" : "1m",
@@ -2266,7 +2265,8 @@
           "hocon" : "\"1m\""
         }
       }
-    ]
+    ],
+    "desc" : "日志限流功能通过在配置的时间窗口内丢弃除第一个事件外的所有事件，来减少可能泛滥的日志事件数量。\n如果 `console` 或 `file` 日志级别设置为 debug，则自动禁用限流。"
   },
   {
     "tags" : [
@@ -2276,7 +2276,6 @@
       "node"
     ],
     "full_name" : "emqx:node",
-    "desc" : "节点名称、Cookie、配置文件、数据目录和 Erlang 虚拟机（BEAM）启动参数。",
     "fields" : [
       {
         "raw_default" : "emqx@127.0.0.1",
@@ -2400,7 +2399,8 @@
           "hocon" : "core"
         }
       }
-    ]
+    ],
+    "desc" : "节点名称、Cookie、配置文件、数据目录和 Erlang 虚拟机（BEAM）启动参数。"
   },
   {
     "tags" : [
@@ -2410,7 +2410,6 @@
       "rpc"
     ],
     "full_name" : "emqx:rpc",
-    "desc" : "EMQX 使用 <code>gen_rpc</code> 库来实现跨节点通信。<br/>\n大多数情况下，默认的配置应该可以工作，但如果你需要做一些性能优化或者实验，可以尝试调整这些参数。",
     "fields" : [
       {
         "raw_default" : "async",
@@ -2820,7 +2819,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "EMQX 使用 <code>gen_rpc</code> 库来实现跨节点通信。<br/>\n大多数情况下，默认的配置应该可以工作，但如果你需要做一些性能优化或者实验，可以尝试调整这些参数。"
   },
   {
     "tags" : [
@@ -2830,7 +2830,6 @@
       "durable_storage"
     ],
     "full_name" : "emqx:durable_storage",
-    "desc" : "与 EMQX 持久存储相关的配置。\n\nEMQX 使用持久存储来卸载各种数据到磁盘，如 MQTT 消息。",
     "fields" : [
       {
         "raw_default" : {
@@ -2857,7 +2856,8 @@
           "hocon" : "{backend = builtin}"
         }
       }
-    ]
+    ],
+    "desc" : "与 EMQX 持久存储相关的配置。\n\nEMQX 使用持久存储来卸载各种数据到磁盘，如 MQTT 消息。"
   },
   {
     "tags" : [
@@ -2867,7 +2867,6 @@
       "alarm"
     ],
     "full_name" : "emqx:alarm",
-    "desc" : "Settings for the alarms.",
     "fields" : [
       {
         "raw_default" : [
@@ -2942,7 +2941,8 @@
           "hocon" : "\"24h\""
         }
       }
-    ]
+    ],
+    "desc" : "Settings for the alarms."
   },
   {
     "tags" : [
@@ -2952,7 +2952,6 @@
       "authorization.cache"
     ],
     "full_name" : "emqx:authz_cache",
-    "desc" : "Settings for the authorization cache.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3023,7 +3022,8 @@
           "hocon" : "[]"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for the authorization cache."
   },
   {
     "tags" : [
@@ -3033,13 +3033,12 @@
       "mqtt.client_attrs_init.$INDEX"
     ],
     "full_name" : "emqx:client_attrs_init",
-    "desc" : "Specify how to initialize client attributes.\nEach client attribute can be initialized as `client_attrs.{NAME}`,\nwhere `{NAME}` is the name of the attribute specified in the config field `set_as_attr`.\nThe initialized client attribute will be stored in the `client_attrs` property with the specified name,\nand can be used as a placeholder in a template for authentication and authorization.\nFor example, use `${client_attrs.alias}` to render an HTTP POST body when `set_as_attr = alias`,\nor render listener config `moutpoint = devices/${client_attrs.alias}/` to initialize a per-client topic namespace.",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "A one line expression to evaluate a set of predefined string functions (like in the rule engine SQL statements).\nThe expression can be a function call with nested calls as its arguments, or direct variable reference.\nSo far, it does not provide user-defined variable binding (like `var a=1`) or user-defined functions.\nAs an example, to extract the prefix of client ID delimited by a dot: `nth(1, tokens(clientid, '.'))`.\n\nThe variables pre-bound variables are:\n- `cn`: Client's TLS certificate common name.\n- `dn`: Client's TLS certificate distinguished name (the subject).\n- `clientid`: MQTT Client ID.\n- `username`: MQTT Client's username.\n- `user_property.{NAME}`: User properties in the CONNECT packet.\n\nYou can read more about variform expressions in EMQX docs.",
+        "desc" : "单行表达式，用于求值一组预定义的字符串函数（类似规则引擎 SQL 语句中的函数）。\n表达式可以是带有嵌套调用的函数调用，或直接变量引用。\n目前，它不提供用户定义的变量绑定（如 `var a=1`）或用户定义的函数。\n例如，提取以点分隔的客户端 ID 的前缀：`nth(1, tokens(clientid, '.'))`。\n\n预绑定的变量包括：\n- `cn`: 客户端 TLS 证书的常用名称。\n- `dn`: 客户端 TLS 证书的专有名称（主题）。\n- `clientid`: MQTT 客户端 ID。\n- `username`: MQTT 客户端的用户名。\n- `user_property.{NAME}`: CONNECT 包中的用户属性。\n\n您可以在 EMQX 文档中了解更多关于各种表达式的信息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -3050,14 +3049,15 @@
         "aliases" : [
           
         ],
-        "desc" : "The name of the client attribute extracted from the client data.\nThe extracted attribute will be stored in the `client_attrs` property with this name.",
+        "desc" : "从客户端数据中提取的客户端属性的名称。\n提取的属性将以此名称存储在 `client_attrs` 属性中。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
         },
         "name" : "set_as_attr"
       }
-    ]
+    ],
+    "desc" : "指定如何初始化客户端属性。每个属性可被初始化为 `client_attrs.{NAME}` ，其中 `{NAME}` 是在配置字段 `set_as_attr` 中指定的属性名称。初始化的客户端属性将以指定的名称存储在 `client_attrs` 属性中。然后，它们可以在身份验证和授权过程的模板中用作占位符。例如，当 `set_as_attr = alias` 时，使用 `${client_attrs.alias}` 来渲染 HTTP POST 请求体，或者渲染监听器配置 `moutpoint = devices/${client_attrs.alias}/` 来初始化每个客户端独有的主题命名空间。"
   },
   {
     "tags" : [
@@ -3068,7 +3068,6 @@
       "listeners.wss.$name.websocket.deflate_opts"
     ],
     "full_name" : "emqx:deflate_opts",
-    "desc" : "Compression options.",
     "fields" : [
       {
         "aliases" : [
@@ -3193,7 +3192,8 @@
           "hocon" : "15"
         }
       }
-    ]
+    ],
+    "desc" : "Compression options."
   },
   {
     "tags" : [
@@ -3203,7 +3203,6 @@
       "sys_topics.sys_event_messages"
     ],
     "full_name" : "emqx:event_names",
-    "desc" : "Enable or disable client lifecycle event publishing.\n\nThe following options affect MQTT clients as well as\ngateway clients. The types of the clients\nare distinguished by the topic prefix:\n\n- For the MQTT clients, the format is:\n`$SYS/broker/<node>/clients/<clientid>/<event>`\n- For the Gateway clients, it is\n`$SYS/broker/<node>/gateway/<gateway-name>/clients/<clientid>/<event>`\n",
     "fields" : [
       {
         "raw_default" : true,
@@ -3269,7 +3268,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Enable or disable client lifecycle event publishing.\n\nThe following options affect MQTT clients as well as\ngateway clients. The types of the clients\nare distinguished by the topic prefix:\n\n- For the MQTT clients, the format is:\n`$SYS/broker/<node>/clients/<clientid>/<event>`\n- For the Gateway clients, it is\n`$SYS/broker/<node>/gateway/<gateway-name>/clients/<clientid>/<event>`\n"
   },
   {
     "tags" : [
@@ -3279,7 +3279,6 @@
       "flapping_detect"
     ],
     "full_name" : "emqx:flapping_detect",
-    "desc" : "This config controls the allowed maximum number of `CONNECT` packets received\nfrom the same clientid in a time frame defined by `window_time`.\nAfter the limit is reached, successive `CONNECT` requests are forbidden\n(banned) until the end of the time period defined by `ban_time`.",
     "fields" : [
       {
         "raw_default" : false,
@@ -3346,7 +3345,8 @@
           "hocon" : "\"5m\""
         }
       }
-    ]
+    ],
+    "desc" : "This config controls the allowed maximum number of `CONNECT` packets received\nfrom the same clientid in a time frame defined by `window_time`.\nAfter the limit is reached, successive `CONNECT` requests are forbidden\n(banned) until the end of the time period defined by `ban_time`."
   },
   {
     "tags" : [
@@ -3356,7 +3356,6 @@
       "force_gc"
     ],
     "full_name" : "emqx:force_gc",
-    "desc" : "Force garbage collection in MQTT connection process after\n they process certain number of messages or bytes of data.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3406,7 +3405,8 @@
           "hocon" : "\"16MB\""
         }
       }
-    ]
+    ],
+    "desc" : "Force garbage collection in MQTT connection process after\n they process certain number of messages or bytes of data."
   },
   {
     "tags" : [
@@ -3416,7 +3416,6 @@
       "force_shutdown"
     ],
     "full_name" : "emqx:force_shutdown",
-    "desc" : "When the process message queue length, or the memory bytes\nreaches a certain value, the process is forced to close.\n\nNote: \"message queue\" here refers to the \"message mailbox\"\nof the Erlang process, not the `mqueue` of QoS 1 and QoS 2.",
     "fields" : [
       {
         "raw_default" : true,
@@ -3466,7 +3465,8 @@
           "hocon" : "\"32MB\""
         }
       }
-    ]
+    ],
+    "desc" : "When the process message queue length, or the memory bytes\nreaches a certain value, the process is forced to close.\n\nNote: \"message queue\" here refers to the \"message mailbox\"\nof the Erlang process, not the `mqueue` of QoS 1 and QoS 2."
   },
   {
     "tags" : [
@@ -3476,7 +3476,6 @@
       "listeners.quic.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_quic_ssl_opts",
-    "desc" : "TLS options for QUIC transport.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -3560,7 +3559,8 @@
         },
         "name" : "password"
       }
-    ]
+    ],
+    "desc" : "TLS options for QUIC transport."
   },
   {
     "tags" : [
@@ -3572,7 +3572,6 @@
       "listeners.ssl.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_ssl_opts",
-    "desc" : "Socket options for SSL connections.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -3921,7 +3920,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Socket options for SSL connections."
   },
   {
     "tags" : [
@@ -3931,7 +3931,6 @@
       "listeners.wss.$name.ssl_options"
     ],
     "full_name" : "emqx:listener_wss_opts",
-    "desc" : "Socket options for WebSocket/SSL connections.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -4237,7 +4236,8 @@
           "hocon" : "\"15s\""
         }
       }
-    ]
+    ],
+    "desc" : "Socket options for WebSocket/SSL connections."
   },
   {
     "tags" : [
@@ -4247,7 +4247,6 @@
       "listeners"
     ],
     "full_name" : "emqx:listeners",
-    "desc" : "MQTT listeners identified by their protocol type and assigned names",
     "fields" : [
       {
         "aliases" : [
@@ -4374,7 +4373,8 @@
         },
         "name" : "quic"
       }
-    ]
+    ],
+    "desc" : "MQTT listeners identified by their protocol type and assigned names"
   },
   {
     "tags" : [
@@ -4384,7 +4384,6 @@
       "mqtt"
     ],
     "full_name" : "emqx:mqtt",
-    "desc" : "Global MQTT configuration.",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -4739,7 +4738,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Specify how to initialize client attributes.\nEach client attribute can be initialized as `client_attrs.{NAME}`,\nwhere `{NAME}` is the name of the attribute specified in the config field `set_as_attr`.\nThe initialized client attribute will be stored in the `client_attrs` property with the specified name,\nand can be used as a placeholder in a template for authentication and authorization.\nFor example, use `${client_attrs.alias}` to render an HTTP POST body when `set_as_attr = alias`,\nor render listener config `moutpoint = devices/${client_attrs.alias}/` to initialize a per-client topic namespace.",
+        "desc" : "指定如何初始化客户端属性。每个属性可被初始化为 `client_attrs.{NAME}` ，其中 `{NAME}` 是在配置字段 `set_as_attr` 中指定的属性名称。初始化的客户端属性将以指定的名称存储在 `client_attrs` 属性中。然后，它们可以在身份验证和授权过程的模板中用作占位符。例如，当 `set_as_attr = alias` 时，使用 `${client_attrs.alias}` 来渲染 HTTP POST 请求体，或者渲染监听器配置 `moutpoint = devices/${client_attrs.alias}/` 来初始化每个客户端独有的主题命名空间。",
         "type" : {
           "elements" : {
             "kind" : "struct",
@@ -5010,7 +5009,8 @@
           "hocon" : "\"300s\""
         }
       }
-    ]
+    ],
+    "desc" : "Global MQTT configuration."
   },
   {
     "tags" : [
@@ -5020,7 +5020,6 @@
       "listeners.quic.$name"
     ],
     "full_name" : "emqx:mqtt_quic_listener",
-    "desc" : "Settings for the MQTT over QUIC listener.",
     "fields" : [
       {
         "raw_default" : [
@@ -5152,7 +5151,7 @@
         "aliases" : [
           
         ],
-        "desc" : "监听器所属的配置组。",
+        "desc" : "监听器所属的配置 zone。\n连接到此监听器的客户端将继承在此 zone 名称下创建的 zone 设置。\n\n一个 zone 可以覆盖以下根名称下的配置：\n- `mqtt`\n- `force_shutdown`\n- `force_gc`\n- `flapping_detect`\n- `durable_sessions`",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -5228,7 +5227,8 @@
         },
         "name" : "bytes_rate"
       }
-    ]
+    ],
+    "desc" : "Settings for the MQTT over QUIC listener."
   },
   {
     "tags" : [
@@ -5238,7 +5238,6 @@
       "listeners.ssl.$name"
     ],
     "full_name" : "emqx:mqtt_ssl_listener",
-    "desc" : "Settings for the MQTT over SSL listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5336,7 +5335,7 @@
         "aliases" : [
           
         ],
-        "desc" : "监听器所属的配置组。",
+        "desc" : "监听器所属的配置 zone。\n连接到此监听器的客户端将继承在此 zone 名称下创建的 zone 设置。\n\n一个 zone 可以覆盖以下根名称下的配置：\n- `mqtt`\n- `force_shutdown`\n- `force_gc`\n- `flapping_detect`\n- `durable_sessions`",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -5485,7 +5484,8 @@
         },
         "name" : "ssl_options"
       }
-    ]
+    ],
+    "desc" : "Settings for the MQTT over SSL listener."
   },
   {
     "tags" : [
@@ -5495,7 +5495,6 @@
       "listeners.tcp.$name"
     ],
     "full_name" : "emqx:mqtt_tcp_listener",
-    "desc" : "Settings for the MQTT over TCP listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5593,7 +5592,7 @@
         "aliases" : [
           
         ],
-        "desc" : "监听器所属的配置组。",
+        "desc" : "监听器所属的配置 zone。\n连接到此监听器的客户端将继承在此 zone 名称下创建的 zone 设置。\n\n一个 zone 可以覆盖以下根名称下的配置：\n- `mqtt`\n- `force_shutdown`\n- `force_gc`\n- `flapping_detect`\n- `durable_sessions`",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -5732,7 +5731,8 @@
         },
         "name" : "tcp_options"
       }
-    ]
+    ],
+    "desc" : "Settings for the MQTT over TCP listener."
   },
   {
     "tags" : [
@@ -5742,7 +5742,6 @@
       "listeners.ws.$name"
     ],
     "full_name" : "emqx:mqtt_ws_listener",
-    "desc" : "Settings for the MQTT over WebSocket listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -5840,7 +5839,7 @@
         "aliases" : [
           
         ],
-        "desc" : "监听器所属的配置组。",
+        "desc" : "监听器所属的配置 zone。\n连接到此监听器的客户端将继承在此 zone 名称下创建的 zone 设置。\n\n一个 zone 可以覆盖以下根名称下的配置：\n- `mqtt`\n- `force_shutdown`\n- `force_gc`\n- `flapping_detect`\n- `durable_sessions`",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -5989,7 +5988,8 @@
         },
         "name" : "websocket"
       }
-    ]
+    ],
+    "desc" : "Settings for the MQTT over WebSocket listener."
   },
   {
     "tags" : [
@@ -5999,7 +5999,6 @@
       "listeners.wss.$name"
     ],
     "full_name" : "emqx:mqtt_wss_listener",
-    "desc" : "Settings for the MQTT over WebSocket/SSL listener.",
     "fields" : [
       {
         "raw_default" : true,
@@ -6097,7 +6096,7 @@
         "aliases" : [
           
         ],
-        "desc" : "监听器所属的配置组。",
+        "desc" : "监听器所属的配置 zone。\n连接到此监听器的客户端将继承在此 zone 名称下创建的 zone 设置。\n\n一个 zone 可以覆盖以下根名称下的配置：\n- `mqtt`\n- `force_shutdown`\n- `force_gc`\n- `flapping_detect`\n- `durable_sessions`",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -6256,7 +6255,8 @@
         },
         "name" : "websocket"
       }
-    ]
+    ],
+    "desc" : "Settings for the MQTT over WebSocket/SSL listener."
   },
   {
     "tags" : [
@@ -6272,7 +6272,6 @@
       "listeners.ssl.$name.ssl_options.ocsp"
     ],
     "full_name" : "emqx:ocsp",
-    "desc" : "Per listener OCSP Stapling configuration.",
     "fields" : [
       {
         "raw_default" : false,
@@ -6344,7 +6343,8 @@
           "hocon" : "\"15s\""
         }
       }
-    ]
+    ],
+    "desc" : "Per listener OCSP Stapling configuration."
   },
   {
     "tags" : [
@@ -6360,7 +6360,6 @@
       "opentelemetry.exporter.ssl_options"
     ],
     "full_name" : "emqx:ssl_client_opts",
-    "desc" : "Socket options for SSL clients.",
     "fields" : [
       {
         "aliases" : [
@@ -6616,7 +6615,8 @@
         },
         "name" : "server_name_indication"
       }
-    ]
+    ],
+    "desc" : "Socket options for SSL clients."
   },
   {
     "tags" : [
@@ -6626,7 +6626,6 @@
       "sys_topics"
     ],
     "full_name" : "emqx:sys_topics",
-    "desc" : "The EMQX Broker periodically publishes its own status, message statistics,\nclient online and offline events to the system topic starting with `$SYS/`.\n\nThe following options control the behavior of `$SYS` topics.",
     "fields" : [
       {
         "raw_default" : "1m",
@@ -6691,7 +6690,8 @@
         },
         "name" : "sys_event_messages"
       }
-    ]
+    ],
+    "desc" : "The EMQX Broker periodically publishes its own status, message statistics,\nclient online and offline events to the system topic starting with `$SYS/`.\n\nThe following options control the behavior of `$SYS` topics."
   },
   {
     "tags" : [
@@ -6701,7 +6701,6 @@
       "sysmon"
     ],
     "full_name" : "emqx:sysmon",
-    "desc" : "Features related to system monitoring and introspection.",
     "fields" : [
       {
         "aliases" : [
@@ -6723,7 +6722,8 @@
         },
         "name" : "os"
       }
-    ]
+    ],
+    "desc" : "Features related to system monitoring and introspection."
   },
   {
     "tags" : [
@@ -6733,7 +6733,6 @@
       "sysmon.os"
     ],
     "full_name" : "emqx:sysmon_os",
-    "desc" : "This part of the configuration is responsible for monitoring\n the host OS health, such as free memory, disk space, CPU load, etc.",
     "fields" : [
       {
         "raw_default" : "60s",
@@ -6841,7 +6840,8 @@
           "hocon" : "\"5%\""
         }
       }
-    ]
+    ],
+    "desc" : "This part of the configuration is responsible for monitoring\n the host OS health, such as free memory, disk space, CPU load, etc."
   },
   {
     "tags" : [
@@ -6851,7 +6851,6 @@
       "sysmon.vm"
     ],
     "full_name" : "emqx:sysmon_vm",
-    "desc" : "This part of the configuration is responsible for collecting\n BEAM VM events, such as long garbage collection, traffic congestion in the inter-broker\n communication, etc.",
     "fields" : [
       {
         "raw_default" : "30s",
@@ -7011,7 +7010,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "This part of the configuration is responsible for collecting\n BEAM VM events, such as long garbage collection, traffic congestion in the inter-broker\n communication, etc."
   },
   {
     "tags" : [
@@ -7028,7 +7028,6 @@
       "listeners.wss.$name.tcp_options"
     ],
     "full_name" : "emqx:tcp_opts",
-    "desc" : "TCP listener options.",
     "fields" : [
       {
         "raw_default" : 100,
@@ -7205,7 +7204,8 @@
           "hocon" : "none"
         }
       }
-    ]
+    ],
+    "desc" : "TCP listener options."
   },
   {
     "tags" : [
@@ -7216,7 +7216,6 @@
       "listeners.wss.$name.websocket"
     ],
     "full_name" : "emqx:ws_opts",
-    "desc" : "WebSocket listener options.",
     "fields" : [
       {
         "raw_default" : "/mqtt",
@@ -7449,7 +7448,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "WebSocket listener options."
   },
   {
     "tags" : [
@@ -7459,7 +7459,6 @@
       "exhook"
     ],
     "full_name" : "exhook",
-    "desc" : "External hook (exhook) configuration.",
     "fields" : [
       {
         "raw_default" : [
@@ -7482,7 +7481,8 @@
           "hocon" : "[]"
         }
       }
-    ]
+    ],
+    "desc" : "External hook (exhook) configuration."
   },
   {
     "tags" : [
@@ -7492,7 +7492,6 @@
       "exhook.servers.$INDEX"
     ],
     "full_name" : "exhook:server",
-    "desc" : "gRPC server configuration.",
     "fields" : [
       {
         "examples" : [
@@ -7643,7 +7642,8 @@
           "hocon" : "8"
         }
       }
-    ]
+    ],
+    "desc" : "gRPC server configuration."
   },
   {
     "tags" : [
@@ -7653,7 +7653,6 @@
       "exhook.servers.$INDEX.socket_options"
     ],
     "full_name" : "exhook:socket_options",
-    "desc" : "连接套接字设置",
     "fields" : [
       {
         "raw_default" : true,
@@ -7715,7 +7714,8 @@
         },
         "name" : "sndbuf"
       }
-    ]
+    ],
+    "desc" : "连接套接字设置"
   },
   {
     "tags" : [
@@ -7725,7 +7725,6 @@
       "exhook.servers.$INDEX.ssl"
     ],
     "full_name" : "exhook:ssl_conf",
-    "desc" : "SSL client configuration.",
     "fields" : [
       {
         "aliases" : [
@@ -7981,7 +7980,8 @@
         },
         "name" : "server_name_indication"
       }
-    ]
+    ],
+    "desc" : "SSL client configuration."
   },
   {
     "tags" : [
@@ -7995,7 +7995,6 @@
       "gateway.stomp.clientinfo_override"
     ],
     "full_name" : "gateway:clientinfo_override",
-    "desc" : "ClientInfo override.",
     "fields" : [
       {
         "aliases" : [
@@ -8030,7 +8029,8 @@
         },
         "name" : "clientid"
       }
-    ]
+    ],
+    "desc" : "ClientInfo override."
   },
   {
     "tags" : [
@@ -8043,7 +8043,6 @@
       "gateway.mqttsn.listeners.dtls.$name"
     ],
     "full_name" : "gateway:dtls_listener",
-    "desc" : "Settings for DTLS listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -8199,7 +8198,8 @@
         },
         "name" : "dtls_options"
       }
-    ]
+    ],
+    "desc" : "Settings for DTLS listener."
   },
   {
     "tags" : [
@@ -8212,7 +8212,6 @@
       "gateway.mqttsn.listeners.dtls.$name.dtls_options"
     ],
     "full_name" : "gateway:dtls_opts",
-    "desc" : "Settings for DTLS protocol.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -8560,7 +8559,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for DTLS protocol."
   },
   {
     "tags" : [
@@ -8570,7 +8570,6 @@
       "gateway"
     ],
     "full_name" : "gateway",
-    "desc" : "EMQX Gateway configuration root.",
     "fields" : [
       {
         "aliases" : [
@@ -8622,7 +8621,8 @@
         },
         "name" : "stomp"
       }
-    ]
+    ],
+    "desc" : "EMQX Gateway configuration root."
   },
   {
     "tags" : [
@@ -8633,7 +8633,6 @@
       "gateway.stomp.listeners.ssl.$name"
     ],
     "full_name" : "gateway:ssl_listener",
-    "desc" : "Settings for SSL listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -8822,7 +8821,8 @@
         },
         "name" : "ssl_options"
       }
-    ]
+    ],
+    "desc" : "Settings for SSL listener."
   },
   {
     "tags" : [
@@ -8833,7 +8833,6 @@
       "gateway.stomp.listeners.tcp.$name"
     ],
     "full_name" : "gateway:tcp_listener",
-    "desc" : "Settings for TCP listener.",
     "fields" : [
       {
         "raw_default" : 16,
@@ -9011,7 +9010,8 @@
           "hocon" : "[]"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for TCP listener."
   },
   {
     "tags" : [
@@ -9021,7 +9021,6 @@
       "gateway.stomp.listeners"
     ],
     "full_name" : "gateway:tcp_listeners",
-    "desc" : "Settings for the TCP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9053,7 +9052,8 @@
         },
         "name" : "ssl"
       }
-    ]
+    ],
+    "desc" : "Settings for the TCP listeners."
   },
   {
     "tags" : [
@@ -9063,7 +9063,6 @@
       "gateway.exproto.listeners"
     ],
     "full_name" : "gateway:tcp_udp_listeners",
-    "desc" : "Settings for TCP and UDP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9125,7 +9124,8 @@
         },
         "name" : "dtls"
       }
-    ]
+    ],
+    "desc" : "Settings for TCP and UDP listeners."
   },
   {
     "tags" : [
@@ -9138,7 +9138,6 @@
       "gateway.mqttsn.listeners.udp.$name"
     ],
     "full_name" : "gateway:udp_listener",
-    "desc" : "Settings for UDP listener.",
     "fields" : [
       {
         "aliases" : [
@@ -9267,7 +9266,8 @@
           "hocon" : "[]"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for UDP listener."
   },
   {
     "tags" : [
@@ -9279,7 +9279,6 @@
       "gateway.mqttsn.listeners"
     ],
     "full_name" : "gateway:udp_listeners",
-    "desc" : "Settings for the UDP listeners.",
     "fields" : [
       {
         "aliases" : [
@@ -9311,7 +9310,8 @@
         },
         "name" : "dtls"
       }
-    ]
+    ],
+    "desc" : "Settings for the UDP listeners."
   },
   {
     "tags" : [
@@ -9328,7 +9328,6 @@
       "gateway.mqttsn.listeners.udp.$name.udp_options"
     ],
     "full_name" : "gateway:udp_opts",
-    "desc" : "Settings for UDP sockets.",
     "fields" : [
       {
         "raw_default" : 100,
@@ -9395,7 +9394,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for UDP sockets."
   },
   {
     "tags" : [
@@ -9405,7 +9405,6 @@
       "gateway.lwm2m"
     ],
     "full_name" : "gateway:lwm2m",
-    "desc" : "The LwM2M protocol gateway.",
     "fields" : [
       {
         "examples" : [
@@ -9600,7 +9599,8 @@
         },
         "name" : "clientinfo_override"
       }
-    ]
+    ],
+    "desc" : "The LwM2M protocol gateway."
   },
   {
     "tags" : [
@@ -9610,7 +9610,6 @@
       "gateway.lwm2m.translators"
     ],
     "full_name" : "gateway:lwm2m_translators",
-    "desc" : "MQTT topics that correspond to LwM2M events.",
     "fields" : [
       {
         "aliases" : [
@@ -9667,7 +9666,8 @@
         },
         "name" : "update"
       }
-    ]
+    ],
+    "desc" : "MQTT topics that correspond to LwM2M events."
   },
   {
     "tags" : [
@@ -9681,7 +9681,6 @@
       "gateway.lwm2m.translators.update"
     ],
     "full_name" : "gateway:translator",
-    "desc" : "MQTT topic that corresponds to a particular type of event.",
     "fields" : [
       {
         "aliases" : [
@@ -9710,7 +9709,8 @@
           "hocon" : "0"
         }
       }
-    ]
+    ],
+    "desc" : "MQTT topic that corresponds to a particular type of event."
   },
   {
     "tags" : [
@@ -9720,7 +9720,6 @@
       "delayed"
     ],
     "full_name" : "modules:delayed",
-    "desc" : "Settings for the delayed module.",
     "fields" : [
       {
         "raw_default" : true,
@@ -9754,7 +9753,8 @@
           "hocon" : "0"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for the delayed module."
   },
   {
     "tags" : [
@@ -9764,7 +9764,6 @@
       "opentelemetry"
     ],
     "full_name" : "opentelemetry",
-    "desc" : "Open Telemetry 工具包配置",
     "fields" : [
       {
         "aliases" : [
@@ -9810,7 +9809,8 @@
         },
         "name" : "exporter"
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 工具包配置"
   },
   {
     "tags" : [
@@ -9820,7 +9820,6 @@
       "opentelemetry.exporter"
     ],
     "full_name" : "opentelemetry:otel_exporter",
-    "desc" : "Open Telemetry 导出器",
     "fields" : [
       {
         "raw_default" : [
@@ -9880,7 +9879,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 导出器"
   },
   {
     "tags" : [
@@ -9890,7 +9890,6 @@
       "opentelemetry.logs"
     ],
     "full_name" : "opentelemetry:otel_logs",
-    "desc" : "Open Telemetry 日志配置。如果启用，EMQX 将安装一个日志处理器，根据 Open Telemetry 日志数据模型格式化事件，并将它们导出到配置的 Open Telemetry 收集器或后端。",
     "fields" : [
       {
         "raw_default" : "warning",
@@ -9953,7 +9952,8 @@
           "hocon" : "\"1s\""
         }
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 日志配置。如果启用，EMQX 将安装一个日志处理器，根据 Open Telemetry 日志数据模型格式化事件，并将它们导出到配置的 Open Telemetry 收集器或后端。"
   },
   {
     "tags" : [
@@ -9963,7 +9963,6 @@
       "opentelemetry.metrics"
     ],
     "full_name" : "opentelemetry:otel_metrics",
-    "desc" : "Open Telemetry 指标配置。",
     "fields" : [
       {
         "raw_default" : false,
@@ -9998,7 +9997,8 @@
           "hocon" : "\"10s\""
         }
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 指标配置。"
   },
   {
     "tags" : [
@@ -10008,7 +10008,6 @@
       "opentelemetry.traces"
     ],
     "full_name" : "opentelemetry:otel_traces",
-    "desc" : "Open Telemetry 追踪配置。",
     "fields" : [
       {
         "raw_default" : false,
@@ -10056,7 +10055,8 @@
         },
         "name" : "filter"
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 追踪配置。"
   },
   {
     "tags" : [
@@ -10066,7 +10066,6 @@
       "opentelemetry.traces.filter"
     ],
     "full_name" : "opentelemetry:trace_filter",
-    "desc" : "Open Telemetry 追踪过滤器配置",
     "fields" : [
       {
         "raw_default" : false,
@@ -10085,7 +10084,8 @@
           "hocon" : "false"
         }
       }
-    ]
+    ],
+    "desc" : "Open Telemetry 追踪过滤器配置"
   },
   {
     "tags" : [
@@ -10095,7 +10095,6 @@
       "prometheus.collectors"
     ],
     "full_name" : "prometheus:collectors",
-    "desc" : "虚拟机的内部高级指标最初是禁用的\n通常只在性能测试期间启用。\n启用它们将增加 CPU 负载。",
     "fields" : [
       {
         "raw_default" : "disabled",
@@ -10211,7 +10210,8 @@
           "hocon" : "disabled"
         }
       }
-    ]
+    ],
+    "desc" : "虚拟机的内部高级指标最初是禁用的\n通常只在性能测试期间启用。\n启用它们将增加 CPU 负载。"
   },
   {
     "tags" : [
@@ -10221,7 +10221,6 @@
       "prometheus"
     ],
     "full_name" : "prometheus:legacy_deprecated_setting",
-    "desc" : "自5.4.0版本起弃用。",
     "fields" : [
       {
         "raw_default" : "http://127.0.0.1:9091",
@@ -10425,7 +10424,8 @@
           "hocon" : "disabled"
         }
       }
-    ]
+    ],
+    "desc" : "自5.4.0版本起弃用。"
   },
   {
     "tags" : [
@@ -10435,7 +10435,6 @@
       "prometheus.push_gateway"
     ],
     "full_name" : "prometheus:push_gateway",
-    "desc" : "Push Gateway 是可选的，如果 Prometheus 要抓取 EMQX，则不应配置。",
     "fields" : [
       {
         "raw_default" : false,
@@ -10519,7 +10518,8 @@
           "hocon" : "\"${name}/instance/${name}~${host}\""
         }
       }
-    ]
+    ],
+    "desc" : "Push Gateway 是可选的，如果 Prometheus 要抓取 EMQX，则不应配置。"
   },
   {
     "tags" : [
@@ -10529,7 +10529,6 @@
       "prometheus"
     ],
     "full_name" : "prometheus:recommend_setting",
-    "desc" : "推荐的设置",
     "fields" : [
       {
         "raw_default" : false,
@@ -10572,7 +10571,8 @@
         },
         "name" : "collectors"
       }
-    ]
+    ],
+    "desc" : "推荐的设置"
   },
   {
     "tags" : [
@@ -10582,7 +10582,6 @@
       "retainer.backend"
     ],
     "full_name" : "retainer:mnesia_config",
-    "desc" : "Configuration of the internal database storing retained messages.",
     "fields" : [
       {
         "raw_default" : "built_in_database",
@@ -10698,7 +10697,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "Configuration of the internal database storing retained messages."
   },
   {
     "tags" : [
@@ -10708,7 +10708,6 @@
       "retainer"
     ],
     "full_name" : "retainer",
-    "desc" : "Configuration related to handling `PUBLISH` packets with a `retain` flag set to 1.",
     "fields" : [
       {
         "raw_default" : true,
@@ -10825,7 +10824,8 @@
         },
         "name" : "backend"
       }
-    ]
+    ],
+    "desc" : "Configuration related to handling `PUBLISH` packets with a `retain` flag set to 1."
   },
   {
     "tags" : [
@@ -10836,7 +10836,6 @@
       "actions"
     ],
     "full_name" : "actions_and_sources:actions",
-    "desc" : "数据桥接的配置信息",
     "fields" : [
       {
         "aliases" : [
@@ -10868,7 +10867,8 @@
         },
         "name" : "mqtt"
       }
-    ]
+    ],
+    "desc" : "数据桥接的配置信息"
   },
   {
     "tags" : [
@@ -10879,7 +10879,6 @@
       "sources"
     ],
     "full_name" : "actions_and_sources:sources",
-    "desc" : "Source 的配置。",
     "fields" : [
       {
         "aliases" : [
@@ -10896,7 +10895,8 @@
         },
         "name" : "mqtt"
       }
-    ]
+    ],
+    "desc" : "Source 的配置。"
   },
   {
     "tags" : [
@@ -10906,7 +10906,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:http_get",
-    "desc" : "使用 HTTP Server 作为认证服务的认证器的配置项 (使用 GET 请求)。",
     "fields" : [
       {
         "aliases" : [
@@ -11115,7 +11114,8 @@
         },
         "name" : "retry_interval"
       }
-    ]
+    ],
+    "desc" : "使用 HTTP Server 作为认证服务的认证器的配置项 (使用 GET 请求)。"
   },
   {
     "tags" : [
@@ -11125,7 +11125,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:http_post",
-    "desc" : "使用 HTTP Server 作为认证服务的认证器的配置项 (使用 POST 请求)。",
     "fields" : [
       {
         "aliases" : [
@@ -11335,7 +11334,8 @@
         },
         "name" : "retry_interval"
       }
-    ]
+    ],
+    "desc" : "使用 HTTP Server 作为认证服务的认证器的配置项 (使用 POST 请求)。"
   },
   {
     "tags" : [
@@ -11345,7 +11345,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_hmac",
-    "desc" : "用于认证的 JWT 使用 HMAC 算法签发时的配置。",
     "fields" : [
       {
         "aliases" : [
@@ -11437,7 +11436,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disconnect the client after the token expires.",
+        "desc" : "在 token 过期后断开客户端连接。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -11483,7 +11482,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "用于认证的 JWT 使用 HMAC 算法签发时的配置。"
   },
   {
     "tags" : [
@@ -11493,7 +11493,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_jwks",
-    "desc" : "用于认证的 JWTs 需要从 JWKS 端点获取时的配置。",
     "fields" : [
       {
         "aliases" : [
@@ -11619,7 +11618,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disconnect the client after the token expires.",
+        "desc" : "在 token 过期后断开客户端连接。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -11665,7 +11664,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "用于认证的 JWTs 需要从 JWKS 端点获取时的配置。"
   },
   {
     "tags" : [
@@ -11675,7 +11675,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:jwt_public_key",
-    "desc" : "用于认证的 JWT 使用 RSA 或 ECDSA 算法签发时的配置。",
     "fields" : [
       {
         "aliases" : [
@@ -11751,7 +11750,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disconnect the client after the token expires.",
+        "desc" : "在 token 过期后断开客户端连接。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -11797,7 +11796,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "用于认证的 JWT 使用 RSA 或 ECDSA 算法签发时的配置。"
   },
   {
     "tags" : [
@@ -11807,7 +11807,6 @@
       "authentication.$INDEX.method"
     ],
     "full_name" : "authn:bind_method",
-    "desc" : "通过 LDAP 绑定操作进行认证。",
     "fields" : [
       {
         "raw_default" : "bind",
@@ -11846,7 +11845,8 @@
           "hocon" : "\"${password}\""
         }
       }
-    ]
+    ],
+    "desc" : "通过 LDAP 绑定操作进行认证。"
   },
   {
     "tags" : [
@@ -11856,7 +11856,6 @@
       "authentication.$INDEX.method"
     ],
     "full_name" : "authn:hash_method",
-    "desc" : "通过将本地密码与经过由`密码属性`指定的算法加密的密码进行比对来进行认证。",
     "fields" : [
       {
         "raw_default" : "hash",
@@ -11908,7 +11907,8 @@
           "hocon" : "isSuperuser"
         }
       }
-    ]
+    ],
+    "desc" : "通过将本地密码与经过由`密码属性`指定的算法加密的密码进行比对来进行认证。"
   },
   {
     "tags" : [
@@ -11918,7 +11918,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:ldap",
-    "desc" : "使用 LDAP 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -12111,7 +12110,8 @@
         },
         "name" : "method"
       }
-    ]
+    ],
+    "desc" : "使用 LDAP 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -12121,7 +12121,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:ldap_deprecated",
-    "desc" : "这是一种已弃用的形式，应避免使用。",
     "fields" : [
       {
         "aliases" : [
@@ -12325,7 +12324,8 @@
           "hocon" : "isSuperuser"
         }
       }
-    ]
+    ],
+    "desc" : "这是一种已弃用的形式，应避免使用。"
   },
   {
     "tags" : [
@@ -12335,7 +12335,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:builtin_db",
-    "desc" : "使用内置数据库作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "raw_default" : {
@@ -12427,7 +12426,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "使用内置数据库作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -12437,7 +12437,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_rs",
-    "desc" : "使用 MongoDB (Replica Set) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -12787,7 +12786,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB (Replica Set) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -12797,7 +12797,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_sharded",
-    "desc" : "使用 MongoDB (Sharded Cluster) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -13117,7 +13116,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB (Sharded Cluster) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -13127,7 +13127,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mongo_single",
-    "desc" : "使用 MongoDB (Standalone) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -13447,7 +13446,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB (Standalone) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -13457,7 +13457,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:mysql",
-    "desc" : "使用 MySQL 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -13651,7 +13650,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MySQL 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -13661,7 +13661,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:postgresql",
-    "desc" : "使用 PostgreSQL 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -13834,7 +13833,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 PostgreSQL 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -13844,7 +13844,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_cluster",
-    "desc" : "使用 Redis (Cluster) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -14022,7 +14021,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 Redis (Cluster) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -14032,7 +14032,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_sentinel",
-    "desc" : "使用 Redis (Sentinel) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -14237,7 +14236,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 Redis (Sentinel) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -14247,7 +14247,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:redis_single",
-    "desc" : "使用 Redis (Standalone) 作为认证数据源的认证器的配置项。",
     "fields" : [
       {
         "aliases" : [
@@ -14441,7 +14440,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 Redis (Standalone) 作为认证数据源的认证器的配置项。"
   },
   {
     "tags" : [
@@ -14451,7 +14451,6 @@
       "authentication.$INDEX"
     ],
     "full_name" : "authn:scram",
-    "desc" : "Settings for Salted Challenge Response Authentication Mechanism\n(SCRAM) authentication.",
     "fields" : [
       {
         "aliases" : [
@@ -14526,7 +14525,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for Salted Challenge Response Authentication Mechanism\n(SCRAM) authentication."
   },
   {
     "tags" : [
@@ -14536,7 +14536,6 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:bcrypt",
-    "desc" : "Settings for bcrypt password hashing algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -14549,7 +14548,8 @@
         },
         "name" : "name"
       }
-    ]
+    ],
+    "desc" : "Settings for bcrypt password hashing algorithm."
   },
   {
     "tags" : [
@@ -14559,7 +14559,6 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:bcrypt_rw",
-    "desc" : "Settings for bcrypt password hashing algorithm (for DB backends with write capability).",
     "fields" : [
       {
         "aliases" : [
@@ -14591,7 +14590,8 @@
           "hocon" : "10"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for bcrypt password hashing algorithm (for DB backends with write capability)."
   },
   {
     "tags" : [
@@ -14601,7 +14601,6 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:pbkdf2",
-    "desc" : "Settings for PBKDF2 password hashing algorithm.",
     "fields" : [
       {
         "aliases" : [
@@ -14656,7 +14655,8 @@
         },
         "name" : "dk_length"
       }
-    ]
+    ],
+    "desc" : "Settings for PBKDF2 password hashing algorithm."
   },
   {
     "tags" : [
@@ -14666,7 +14666,6 @@
       "authentication.$INDEX.password_hash_algorithm"
     ],
     "full_name" : "authn_hash:simple",
-    "desc" : "Settings for simple algorithms.",
     "fields" : [
       {
         "aliases" : [
@@ -14705,7 +14704,8 @@
           "hocon" : "prefix"
         }
       }
-    ]
+    ],
+    "desc" : "Settings for simple algorithms."
   },
   {
     "tags" : [
@@ -14715,7 +14715,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:file",
-    "desc" : "使用 ACL 文件授权。",
     "fields" : [
       {
         "aliases" : [
@@ -14755,7 +14754,8 @@
         },
         "name" : "path"
       }
-    ]
+    ],
+    "desc" : "使用 ACL 文件授权。"
   },
   {
     "tags" : [
@@ -14765,7 +14765,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:http_get",
-    "desc" : "使用外部 HTTP 服务器授权(GET 请求)。",
     "fields" : [
       {
         "aliases" : [
@@ -14967,7 +14966,8 @@
           "hocon" : "{accept = \"application/json\", cache-control = \"no-cache\", connection = \"keep-alive\", keep-alive = \"timeout=30, max=1000\"}"
         }
       }
-    ]
+    ],
+    "desc" : "使用外部 HTTP 服务器授权(GET 请求)。"
   },
   {
     "tags" : [
@@ -14977,7 +14977,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:http_post",
-    "desc" : "使用外部 HTTP 服务器授权(POST 请求)。",
     "fields" : [
       {
         "aliases" : [
@@ -15180,7 +15179,8 @@
           "hocon" : "{accept = \"application/json\", cache-control = \"no-cache\", connection = \"keep-alive\", content-type = \"application/json\", keep-alive = \"timeout=30, max=1000\"}"
         }
       }
-    ]
+    ],
+    "desc" : "使用外部 HTTP 服务器授权(POST 请求)。"
   },
   {
     "tags" : [
@@ -15190,7 +15190,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:ldap",
-    "desc" : "AuthZ with LDAP",
     "fields" : [
       {
         "aliases" : [
@@ -15399,7 +15398,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "AuthZ with LDAP"
   },
   {
     "tags" : [
@@ -15409,7 +15409,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:builtin_db",
-    "desc" : "使用内置数据库 (mnesia) 进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -15438,7 +15437,8 @@
           "hocon" : "true"
         }
       }
-    ]
+    ],
+    "desc" : "使用内置数据库 (mnesia) 进行授权。"
   },
   {
     "tags" : [
@@ -15448,7 +15448,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_rs",
-    "desc" : "使用 MongoDB 授权（副本集模式）",
     "fields" : [
       {
         "aliases" : [
@@ -15706,7 +15705,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB 授权（副本集模式）"
   },
   {
     "tags" : [
@@ -15716,7 +15716,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_sharded",
-    "desc" : "使用 MongoDB 授权（分片集群模式）。",
     "fields" : [
       {
         "aliases" : [
@@ -15944,7 +15943,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB 授权（分片集群模式）。"
   },
   {
     "tags" : [
@@ -15954,7 +15954,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mongo_single",
-    "desc" : "使用 MongoDB 授权（单实例）。",
     "fields" : [
       {
         "aliases" : [
@@ -16182,7 +16181,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "使用 MongoDB 授权（单实例）。"
   },
   {
     "tags" : [
@@ -16192,7 +16192,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:mysql",
-    "desc" : "使用 MySQL 数据库进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -16337,7 +16336,8 @@
         },
         "name" : "query"
       }
-    ]
+    ],
+    "desc" : "使用 MySQL 数据库进行授权。"
   },
   {
     "tags" : [
@@ -16347,7 +16347,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:postgresql",
-    "desc" : "使用 PostgreSQL 数据库进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -16487,7 +16486,8 @@
         },
         "name" : "query"
       }
-    ]
+    ],
+    "desc" : "使用 PostgreSQL 数据库进行授权。"
   },
   {
     "tags" : [
@@ -16497,7 +16497,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_cluster",
-    "desc" : "使用 Redis 集群进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -16634,7 +16633,8 @@
         },
         "name" : "cmd"
       }
-    ]
+    ],
+    "desc" : "使用 Redis 集群进行授权。"
   },
   {
     "tags" : [
@@ -16644,7 +16644,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_sentinel",
-    "desc" : "使用 Redis Sentinel 进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -16808,7 +16807,8 @@
         },
         "name" : "cmd"
       }
-    ]
+    ],
+    "desc" : "使用 Redis Sentinel 进行授权。"
   },
   {
     "tags" : [
@@ -16818,7 +16818,6 @@
       "authorization.sources.$INDEX"
     ],
     "full_name" : "authz:redis_single",
-    "desc" : "使用单个 Redis 实例进行授权。",
     "fields" : [
       {
         "aliases" : [
@@ -16971,7 +16970,8 @@
         },
         "name" : "cmd"
       }
-    ]
+    ],
+    "desc" : "使用单个 Redis 实例进行授权。"
   },
   {
     "tags" : [
@@ -16981,7 +16981,6 @@
       "actions.http.$name.resource_opts"
     ],
     "full_name" : "bridge_http:action_resource_opts",
-    "desc" : "资源相关的选项。",
     "fields" : [
       {
         "raw_default" : 16,
@@ -17092,7 +17091,8 @@
           "hocon" : "\"256MB\""
         }
       }
-    ]
+    ],
+    "desc" : "资源相关的选项。"
   },
   {
     "tags" : [
@@ -17102,7 +17102,6 @@
       "connectors.http.$name.resource_opts"
     ],
     "full_name" : "bridge_http:connector_resource_opts",
-    "desc" : "资源相关的选项。",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -17152,7 +17151,8 @@
           "hocon" : "\"5s\""
         }
       }
-    ]
+    ],
+    "desc" : "资源相关的选项。"
   },
   {
     "tags" : [
@@ -17162,7 +17162,6 @@
       "connectors.http.$name"
     ],
     "full_name" : "bridge_http:config_connector",
-    "desc" : "HTTP 动作的配置",
     "fields" : [
       {
         "raw_default" : true,
@@ -17370,7 +17369,8 @@
           "hocon" : "{}"
         }
       }
-    ]
+    ],
+    "desc" : "HTTP 动作的配置"
   },
   {
     "tags" : [
@@ -17380,7 +17380,6 @@
       "actions.http.$name"
     ],
     "full_name" : "bridge_http:http_action",
-    "desc" : "HTTP 动作的配置",
     "fields" : [
       {
         "raw_default" : true,
@@ -17470,7 +17469,8 @@
           "hocon" : "{}"
         }
       }
-    ]
+    ],
+    "desc" : "HTTP 动作的配置"
   },
   {
     "tags" : [
@@ -17480,7 +17480,6 @@
       "actions.http.$name.parameters"
     ],
     "full_name" : "bridge_http:parameters_opts",
-    "desc" : "HTTP 动作的参数",
     "fields" : [
       {
         "aliases" : [
@@ -17574,7 +17573,8 @@
         },
         "name" : "request_timeout"
       }
-    ]
+    ],
+    "desc" : "HTTP 动作的参数"
   },
   {
     "tags" : [
@@ -17584,7 +17584,6 @@
       "actions.mqtt.$name.parameters"
     ],
     "full_name" : "bridge_mqtt_publisher:action_parameters",
-    "desc" : "动作的具体配置。",
     "fields" : [
       {
         "aliases" : [
@@ -17660,7 +17659,8 @@
         },
         "name" : "payload"
       }
-    ]
+    ],
+    "desc" : "动作的具体配置。"
   },
   {
     "tags" : [
@@ -17670,7 +17670,6 @@
       "actions.mqtt.$name.resource_opts"
     ],
     "full_name" : "bridge_mqtt_publisher:action_resource_opts",
-    "desc" : "资源启动相关的选项。",
     "fields" : [
       {
         "raw_default" : 16,
@@ -17781,7 +17780,8 @@
           "hocon" : "\"256MB\""
         }
       }
-    ]
+    ],
+    "desc" : "资源启动相关的选项。"
   },
   {
     "tags" : [
@@ -17791,7 +17791,6 @@
       "sources.mqtt.$name.parameters"
     ],
     "full_name" : "bridge_mqtt_publisher:ingress_parameters",
-    "desc" : "Source 的具体配置",
     "fields" : [
       {
         "aliases" : [
@@ -17820,7 +17819,8 @@
           "hocon" : "1"
         }
       }
-    ]
+    ],
+    "desc" : "Source 的具体配置"
   },
   {
     "tags" : [
@@ -17830,7 +17830,6 @@
       "sources.mqtt.$name.resource_opts"
     ],
     "full_name" : "bridge_mqtt_publisher:source_resource_opts",
-    "desc" : "资源启动相关的选项。",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -17848,7 +17847,8 @@
           "hocon" : "\"15s\""
         }
       }
-    ]
+    ],
+    "desc" : "资源启动相关的选项。"
   },
   {
     "tags" : [
@@ -17858,7 +17858,6 @@
       "actions.mqtt.$name"
     ],
     "full_name" : "bridge_mqtt_publisher:mqtt_publisher_action",
-    "desc" : "发布动作的配置。",
     "fields" : [
       {
         "aliases" : [
@@ -17959,7 +17958,8 @@
           "hocon" : "{}"
         }
       }
-    ]
+    ],
+    "desc" : "发布动作的配置。"
   },
   {
     "tags" : [
@@ -17969,7 +17969,6 @@
       "sources.mqtt.$name"
     ],
     "full_name" : "bridge_mqtt_publisher:mqtt_subscriber_source",
-    "desc" : "订阅 Source 的配置。",
     "fields" : [
       {
         "raw_default" : true,
@@ -18058,7 +18057,8 @@
           "hocon" : "{}"
         }
       }
-    ]
+    ],
+    "desc" : "订阅 Source 的配置。"
   },
   {
     "tags" : [
@@ -18068,7 +18068,6 @@
       "connectors"
     ],
     "full_name" : "connector:connectors",
-    "desc" : "用于连接到外部系统的连接器。",
     "fields" : [
       {
         "aliases" : [
@@ -18100,7 +18099,8 @@
         },
         "name" : "mqtt"
       }
-    ]
+    ],
+    "desc" : "用于连接到外部系统的连接器。"
   },
   {
     "tags" : [
@@ -18111,7 +18111,6 @@
       "authorization.sources.$INDEX.request"
     ],
     "full_name" : "connector_http:request",
-    "desc" : "",
     "fields" : [
       {
         "aliases" : [
@@ -18179,7 +18178,8 @@
         },
         "name" : "request_timeout"
       }
-    ]
+    ],
+    "desc" : ""
   },
   {
     "tags" : [
@@ -18189,7 +18189,6 @@
       "connectors.mqtt.$name.resource_opts"
     ],
     "full_name" : "connector_mqtt:resource_opts",
-    "desc" : "资源相关的选项。",
     "fields" : [
       {
         "raw_default" : "15s",
@@ -18239,7 +18238,8 @@
           "hocon" : "\"5s\""
         }
       }
-    ]
+    ],
+    "desc" : "资源相关的选项。"
   },
   {
     "tags" : [
@@ -18249,7 +18249,6 @@
       "connectors.mqtt.$name"
     ],
     "full_name" : "connector_mqtt:config_connector",
-    "desc" : "MQTT connector 的配置。",
     "fields" : [
       {
         "raw_default" : true,
@@ -18519,7 +18518,8 @@
           "hocon" : "{enable = false}"
         }
       }
-    ]
+    ],
+    "desc" : "MQTT connector 的配置。"
   },
   {
     "tags" : [
@@ -18529,7 +18529,6 @@
       "telemetry"
     ],
     "full_name" : "emqxtel:telemetry",
-    "desc" : "配置 EMQX 节点向 EMQ 的遥测服务器发送遥测数据。\n详情请参考 https://www.emqx.io/docs/zh/v5.1/telemetry/telemetry.html。",
     "fields" : [
       {
         "aliases" : [
@@ -18542,7 +18541,8 @@
         },
         "name" : "enable"
       }
-    ]
+    ],
+    "desc" : "配置 EMQX 节点向 EMQ 的遥测服务器发送遥测数据。\n详情请参考 https://www.emqx.io/docs/zh/v5.1/telemetry/telemetry.html。"
   },
   {
     "tags" : [
@@ -18552,7 +18552,6 @@
       "gateway.coap"
     ],
     "full_name" : "gateway:coap",
-    "desc" : "The CoAP protocol gateway provides EMQX with the access capability of the CoAP protocol.\nIt allows publishing, subscribing, and receiving messages to EMQX in accordance\nwith a certain defined CoAP message format.",
     "fields" : [
       {
         "raw_default" : "30s",
@@ -18733,7 +18732,8 @@
         },
         "name" : "clientinfo_override"
       }
-    ]
+    ],
+    "desc" : "The CoAP protocol gateway provides EMQX with the access capability of the CoAP protocol.\nIt allows publishing, subscribing, and receiving messages to EMQX in accordance\nwith a certain defined CoAP message format."
   },
   {
     "tags" : [
@@ -18743,7 +18743,6 @@
       "gateway.exproto"
     ],
     "full_name" : "gateway:exproto",
-    "desc" : "Settings for EMQX extension protocol (exproto).",
     "fields" : [
       {
         "aliases" : [
@@ -18852,7 +18851,8 @@
         },
         "name" : "clientinfo_override"
       }
-    ]
+    ],
+    "desc" : "Settings for EMQX extension protocol (exproto)."
   },
   {
     "tags" : [
@@ -18862,7 +18862,6 @@
       "gateway.exproto.handler"
     ],
     "full_name" : "gateway:exproto_grpc_handler",
-    "desc" : "Settings for the exproto gRPC connection handler.",
     "fields" : [
       {
         "aliases" : [
@@ -18912,7 +18911,8 @@
         },
         "name" : "ssl_options"
       }
-    ]
+    ],
+    "desc" : "Settings for the exproto gRPC connection handler."
   },
   {
     "tags" : [
@@ -18922,7 +18922,6 @@
       "gateway.exproto.server"
     ],
     "full_name" : "gateway:exproto_grpc_server",
-    "desc" : "Settings for the exproto gRPC server.",
     "fields" : [
       {
         "aliases" : [
@@ -18946,7 +18945,8 @@
         },
         "name" : "ssl_options"
       }
-    ]
+    ],
+    "desc" : "Settings for the exproto gRPC server."
   },
   {
     "tags" : [
@@ -18956,7 +18956,6 @@
       "gateway.exproto.server.ssl_options"
     ],
     "full_name" : "gateway:ssl_server_opts",
-    "desc" : "SSL configuration for the server.",
     "fields" : [
       {
         "raw_default" : "${EMQX_ETC_DIR}/certs/cacert.pem",
@@ -19262,7 +19261,8 @@
           "hocon" : "\"15s\""
         }
       }
-    ]
+    ],
+    "desc" : "SSL configuration for the server."
   },
   {
     "tags" : [
@@ -19272,7 +19272,6 @@
       "gateway.mqttsn"
     ],
     "full_name" : "gateway:mqttsn",
-    "desc" : "The MQTT-SN (MQTT for Sensor Networks) protocol gateway.",
     "fields" : [
       {
         "raw_default" : 1,
@@ -19444,7 +19443,8 @@
         },
         "name" : "clientinfo_override"
       }
-    ]
+    ],
+    "desc" : "The MQTT-SN (MQTT for Sensor Networks) protocol gateway."
   },
   {
     "tags" : [
@@ -19454,7 +19454,6 @@
       "gateway.mqttsn.predefined.$INDEX"
     ],
     "full_name" : "gateway:mqttsn_predefined",
-    "desc" : "The pre-defined topic name corresponding to the pre-defined topic\nID of N.\n\nNote: the pre-defined topic ID of 0 is reserved.",
     "fields" : [
       {
         "aliases" : [
@@ -19478,7 +19477,8 @@
         },
         "name" : "topic"
       }
-    ]
+    ],
+    "desc" : "The pre-defined topic name corresponding to the pre-defined topic\nID of N.\n\nNote: the pre-defined topic ID of 0 is reserved."
   },
   {
     "tags" : [
@@ -19488,7 +19488,6 @@
       "gateway.stomp"
     ],
     "full_name" : "gateway:stomp",
-    "desc" : "The STOMP protocol gateway provides EMQX with the ability to access STOMP\n(Simple (or Streaming) Text Orientated Messaging Protocol) protocol.",
     "fields" : [
       {
         "aliases" : [
@@ -19585,7 +19584,8 @@
         },
         "name" : "clientinfo_override"
       }
-    ]
+    ],
+    "desc" : "The STOMP protocol gateway provides EMQX with the ability to access STOMP\n(Simple (or Streaming) Text Orientated Messaging Protocol) protocol."
   },
   {
     "tags" : [
@@ -19595,7 +19595,6 @@
       "gateway.stomp.frame"
     ],
     "full_name" : "gateway:stomp_frame",
-    "desc" : "Size limits for the STOMP frames.",
     "fields" : [
       {
         "raw_default" : 10,
@@ -19645,7 +19644,8 @@
           "hocon" : "65536"
         }
       }
-    ]
+    ],
+    "desc" : "Size limits for the STOMP frames."
   },
   {
     "tags" : [
@@ -19656,7 +19656,6 @@
       "authorization.sources.$INDEX.ssl"
     ],
     "full_name" : "ldap:ssl",
-    "desc" : "启用 SSL 连接。",
     "fields" : [
       {
         "aliases" : [
@@ -19912,7 +19911,8 @@
         },
         "name" : "server_name_indication"
       }
-    ]
+    ],
+    "desc" : "启用 SSL 连接。"
   },
   {
     "tags" : [
@@ -19923,7 +19923,6 @@
       "authorization.sources.$INDEX.topology"
     ],
     "full_name" : "mongo:topology",
-    "desc" : "MongoDB 的拓扑结构。",
     "fields" : [
       {
         "raw_default" : 0,
@@ -20045,7 +20044,8 @@
         },
         "name" : "min_heartbeat_frequency_ms"
       }
-    ]
+    ],
+    "desc" : "MongoDB 的拓扑结构。"
   },
   {
     "tags" : [
@@ -20055,7 +20055,6 @@
       "plugins"
     ],
     "full_name" : "plugin:plugins",
-    "desc" : "管理 EMQX 插件。<br/>\n插件可以是 EMQX 安装包中的一部分，也可以是一个独立的安装包。<br/>\n独立安装的插件称为“外部插件”。",
     "fields" : [
       {
         "raw_default" : [
@@ -20107,7 +20106,8 @@
         },
         "name" : "check_interval"
       }
-    ]
+    ],
+    "desc" : "管理 EMQX 插件。<br/>\n插件可以是 EMQX 安装包中的一部分，也可以是一个独立的安装包。<br/>\n独立安装的插件称为“外部插件”。"
   },
   {
     "tags" : [
@@ -20117,7 +20117,6 @@
       "plugins.states.$INDEX"
     ],
     "full_name" : "plugin:state",
-    "desc" : "描述插件的状态",
     "fields" : [
       {
         "aliases" : [
@@ -20141,7 +20140,8 @@
         },
         "name" : "enable"
       }
-    ]
+    ],
+    "desc" : "描述插件的状态"
   },
   {
     "tags" : [
@@ -20151,7 +20151,6 @@
       "psk_authentication"
     ],
     "full_name" : "psk:psk_authentication",
-    "desc" : "此配置用于启用 TLS-PSK 身份验证。\n\nPSK 是 “Pre-Shared-Keys” 的缩写。\n\n注意: 确保 SSL 监听器仅启用了 'tlsv1.2'，并且配置了 PSK 密码套件，例如 'RSA-PSK-AES256-GCM-SHA384'。\n\n可以通过查看监听器中的 SSL 选项，了解更多详细信息。\n\n可以通过配置 'init_file' 来设置初始化的 ID 和 密钥",
     "fields" : [
       {
         "raw_default" : false,
@@ -20212,7 +20211,8 @@
           "hocon" : "50"
         }
       }
-    ]
+    ],
+    "desc" : "此配置用于启用 TLS-PSK 身份验证。\n\nPSK 是 “Pre-Shared-Keys” 的缩写。\n\n注意: 确保 SSL 监听器仅启用了 'tlsv1.2'，并且配置了 PSK 密码套件，例如 'RSA-PSK-AES256-GCM-SHA384'。\n\n可以通过查看监听器中的 SSL 选项，了解更多详细信息。\n\n可以通过配置 'init_file' 来设置初始化的 ID 和 密钥"
   },
   {
     "tags" : [
@@ -20222,7 +20222,6 @@
       "slow_subs"
     ],
     "full_name" : "slow_subs",
-    "desc" : "Configuration for `slow_subs` feature.",
     "fields" : [
       {
         "raw_default" : false,
@@ -20308,6 +20307,7 @@
           "hocon" : "whole"
         }
       }
-    ]
+    ],
+    "desc" : "Configuration for `slow_subs` feature."
   }
 ]
