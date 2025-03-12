@@ -1,4 +1,4 @@
-listeners.ws.mywebhook1 {
+listeners.ws.my_websocket_listener {
   bind = 8083
   acceptors = 16
   max_connections = infinity
@@ -8,15 +8,13 @@ listeners.ws.mywebhook1 {
   max_conn_rate = infinity
   messages_rate = "500/s"
   bytes_rate = "100MB/s"
-  access_rules = [
-    "allow all"
-  ]
+  access_rules = ["allow all"]
   proxy_protocol = false
   proxy_protocol_timeout = "3s"
-  tcp_options {
+  tcp_options = {
     #substruct(emqx:tcp_opts)
   }
-  websocket {
+  websocket = {
     #substruct(emqx:ws_opts)
   }
 }

@@ -1,14 +1,11 @@
-connectors.cassandra.myconnector1 {
+connectors.cassandra.my_connector {
   tags = []
   description = ""
-  servers = "Host[:Port][,Host2:Port]"
+  servers = "127.0.0.1:9042"
   keyspace = "my_keyspace"
   pool_size = 8
   username = "my_username"
   password = "my_password"
-  ssl {
-    enable = false
-  }
-  resource_opts {
-  }
+  ssl = {enable = false}
+  resource_opts = {}
 }

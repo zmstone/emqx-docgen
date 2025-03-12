@@ -1,4 +1,4 @@
-actions.greptimedb.myaction1.parameters {
+actions.greptimedb.my_greptimedb_instance.parameters {
   write_syntax = "<measurement>,<tag_key>=<tag_value> <field_key>=<field_value> <timestamp>"
   precision = ms
 }

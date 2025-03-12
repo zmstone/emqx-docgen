@@ -1,4 +1,4 @@
-actions.redis.myaction1.parameters {
+actions.redis.my_redis_action.parameters {
   command_template = [
     "rpush",
     "msgs",

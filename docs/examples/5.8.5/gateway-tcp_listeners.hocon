@@ -1,46 +1,12 @@
-gateway {
-  gbt32960 {
-    listeners {
-      tcp {
-        mygbt32960listener1 {
-          #substruct(gateway:tcp_listener)
-        }
-      }
-      ssl {
-        mygbt32960listener1 {
-          #substruct(gateway:ssl_listener)
-        }
-      }
+gateway.gbt32960.listeners {
+  tcp {
+    my_tcp_listener {
+      #substruct(gateway:tcp_listener)
     }
   }
-
-  jt808 {
-    listeners {
-      tcp {
-        myjt808listener1 {
-          #substruct(gateway:tcp_listener)
-        }
-      }
-      ssl {
-        myjt808listener1 {
-          #substruct(gateway:ssl_listener)
-        }
-      }
-    }
-  }
-
-  stomp {
-    listeners {
-      tcp {
-        mystomplistener1 {
-          #substruct(gateway:tcp_listener)
-        }
-      }
-      ssl {
-        mystomplistener1 {
-          #substruct(gateway:ssl_listener)
-        }
-      }
+  ssl {
+    my_ssl_listener {
+      #substruct(gateway:ssl_listener)
     }
   }
 }

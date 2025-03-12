@@ -1,7 +1,3 @@
-durable_storage {
-  messages {
-    layout {
-      type = reference
-    }
-  }
+durable_storage.messages.layout {
+  type = reference
 }

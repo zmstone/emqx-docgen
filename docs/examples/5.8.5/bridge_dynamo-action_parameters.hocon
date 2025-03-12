@@ -1,7 +1,7 @@
-actions.dynamo.myaction1.parameters {
+actions.dynamo.my_action.parameters {
   template = ""
-  hash_key = "exampleHashKey"
-  range_key = "exampleRangeKey"
-  table = "exampleTable"
+  hash_key = "example_hash_key"
+  range_key = "example_range_key"
+  table = "example_table"
   undefined_vars_as_null = false
 }

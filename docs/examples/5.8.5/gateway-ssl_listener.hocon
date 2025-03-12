@@ -1,97 +1,17 @@
-gateway {
-  exproto {
-    listeners {
-      ssl {
-        myexproto1 {
-          acceptors = 16
-          tcp_options {
-            #substruct(emqx:tcp_opts)
-          }
-          proxy_protocol = false
-          proxy_protocol_timeout = "3s"
-          bind = "127.0.0.1:8883"
-          max_connections = 1024
-          max_conn_rate = 1000
-          enable_authn = true
-          mountpoint = ""
-          access_rules = []
-          ssl_options {
-            #substruct(emqx:listener_ssl_opts)
-          }
-        }
-      }
-    }
+gateway.exproto.listeners.ssl.myListener {
+  acceptors = 16
+  tcp_options = {
+    #substruct(emqx:tcp_opts)
   }
-
-  gbt32960 {
-    listeners {
-      ssl {
-        mygbt32960 {
-          acceptors = 16
-          tcp_options {
-            #substruct(emqx:tcp_opts)
-          }
-          proxy_protocol = false
-          proxy_protocol_timeout = "3s"
-          bind = "127.0.0.1:8883"
-          max_connections = 1024
-          max_conn_rate = 1000
-          enable_authn = true
-          mountpoint = ""
-          access_rules = []
-          ssl_options {
-            #substruct(emqx:listener_ssl_opts)
-          }
-        }
-      }
-    }
-  }
-
-  jt808 {
-    listeners {
-      ssl {
-        myjt808 {
-          acceptors = 16
-          tcp_options {
-            #substruct(emqx:tcp_opts)
-          }
-          proxy_protocol = false
-          proxy_protocol_timeout = "3s"
-          bind = "127.0.0.1:8883"
-          max_connections = 1024
-          max_conn_rate = 1000
-          enable_authn = true
-          mountpoint = ""
-          access_rules = []
-          ssl_options {
-            #substruct(emqx:listener_ssl_opts)
-          }
-        }
-      }
-    }
-  }
-
-  stomp {
-    listeners {
-      ssl {
-        mystomp {
-          acceptors = 16
-          tcp_options {
-            #substruct(emqx:tcp_opts)
-          }
-          proxy_protocol = false
-          proxy_protocol_timeout = "3s"
-          bind = "127.0.0.1:8883"
-          max_connections = 1024
-          max_conn_rate = 1000
-          enable_authn = true
-          mountpoint = ""
-          access_rules = []
-          ssl_options {
-            #substruct(emqx:listener_ssl_opts)
-          }
-        }
-      }
-    }
+  proxy_protocol = false
+  proxy_protocol_timeout = "3s"
+  bind = "127.0.0.1:8883"
+  max_connections = 1024
+  max_conn_rate = 1000
+  enable_authn = true
+  mountpoint = "/${clientid}/"
+  access_rules = []
+  ssl_options = {
+    #substruct(emqx:listener_ssl_opts)
   }
 }

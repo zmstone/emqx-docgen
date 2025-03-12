@@ -1,3 +1,5 @@
 file_transfer.storage {
-  #substruct(file_transfer:local_storage)
+  local = {
+    #substruct(file_transfer:local_storage)
+  }
 }

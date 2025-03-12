@@ -1,4 +1,8 @@
 dashboard.listeners {
-  #substruct(dashboard:http)
-  #substruct(dashboard:https)
+  http = {
+    #substruct(dashboard:http)
+  }
+  https = {
+    #substruct(dashboard:https)
+  }
 }

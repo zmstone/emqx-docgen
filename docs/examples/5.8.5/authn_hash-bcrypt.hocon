@@ -1,6 +1,6 @@
 authentication = [
   {
-    password_hash_algorithm = {
+    password_hash_algorithm {
       name = bcrypt
     }
   }

@@ -1,15 +1,12 @@
-actions.cassandra.mycassandra1 {
-  local_topic = "your_mqtt_topic"
-  parameters {
+actions.cassandra.my_cassandra_action {
+  local_topic = ""
+  parameters = {
     #substruct(bridge_cassa:action_parameters)
   }
-  connector = "your_connector_name"
-  tags = [
-    "tag1",
-    "tag2"
-  ]
+  connector = ""
+  tags = []
   description = ""
-  resource_opts {
+  resource_opts = {
     #substruct(actions_and_sources:action_resource_opts)
   }
 }

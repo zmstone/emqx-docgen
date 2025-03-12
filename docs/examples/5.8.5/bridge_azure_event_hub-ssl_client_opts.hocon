@@ -1,11 +1,11 @@
-connectors.azure_event_hub_producer.myazureeventhub1.ssl {
+connectors.azure_event_hub_producer.my_event_hub.ssl {
   cacertfile = "/path/to/cacertfile.pem"
   certfile = "/path/to/certfile.pem"
   keyfile = "/path/to/keyfile.pem"
   verify = verify_none
   reuse_sessions = true
   depth = 10
-  password = ""
+  password = "your_password"
   versions = ["tlsv1.3", "tlsv1.2"]
   ciphers = []
   secure_renegotiate = true

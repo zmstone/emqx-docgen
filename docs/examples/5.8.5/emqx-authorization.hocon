@@ -1,7 +1,7 @@
 authorization {
   no_match = allow
   deny_action = ignore
-  cache {
+  cache = {
     #substruct(emqx:authz_cache)
   }
   sources = [

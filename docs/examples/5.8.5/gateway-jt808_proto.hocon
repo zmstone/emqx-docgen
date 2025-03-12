@@ -1,5 +1,5 @@
 gateway.jt808.proto {
-  auth {
+  auth = {
     #substruct(gateway:anonymous_true)
     #substruct(gateway:anonymous_false)
   }

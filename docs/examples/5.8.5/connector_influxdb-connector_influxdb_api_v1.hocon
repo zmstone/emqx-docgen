@@ -1,6 +1,6 @@
-connectors.influxdb.myinfluxdb1.parameters {
+connectors.influxdb.my_influxdb.parameters {
   influxdb_type = influxdb_api_v1
-  database = my_database
-  username = my_username
-  password = my_password
+  database = "example_database"
+  username = "example_user"
+  password = "example_password"
 }

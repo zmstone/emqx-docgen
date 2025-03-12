@@ -1,22 +1,17 @@
-gateway.ocpp.listeners.ws.mywebhook1 {
+gateway.ocpp.listeners.ws.my_listener {
   acceptors = 16
-  tcp_options {
+  tcp_options = {
     #substruct(emqx:tcp_opts)
   }
   proxy_protocol = false
   proxy_protocol_timeout = "3s"
-  bind = "127.0.0.1:8080"  // Example IP and port
+  bind = "<ip>:<port>"
   max_connections = 1024
   max_conn_rate = 1000
   enable_authn = true
-  mountpoint = ""  // Example mountpoint
-  access_rules = [
-    // Example access rules
-    "deny 192.168.1.1",
-    "allow 192.168.1.0/24",
-    "deny all"
-  ]
-  websocket {
+  mountpoint = ""
+  access_rules = []
+  websocket = {
     #substruct(gateway_ocpp:websocket)
   }
 }

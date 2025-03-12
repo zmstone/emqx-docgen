@@ -1,17 +1,11 @@
 schema_registry {
-  external {
-    myexternalregistry1 {
-      #substruct(schema_registry:confluent_schema_registry)
-    }
+  external = {
+    #substruct(schema_registry:confluent_schema_registry)
   }
   schemas {
-    myregisteredavroschema1 {
+    some_schema = {
       #substruct(schema_registry:avro)
-    }
-    myregisteredprotobufschema1 {
       #substruct(schema_registry:protobuf)
-    }
-    myregisteredjsonschema1 {
       #substruct(schema_registry:json)
     }
   }

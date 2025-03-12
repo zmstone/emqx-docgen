@@ -1,4 +1,4 @@
-connectors.influxdb.myinfluxdb1.parameters {
+connectors.influxdb.my_influxdb_instance.parameters {
   influxdb_type = influxdb_api_v2
   bucket = "example_bucket"
   org = "example_org"

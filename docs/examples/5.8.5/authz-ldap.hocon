@@ -5,15 +5,15 @@ authorization.sources = [
     subscribe_attribute = mqttSubscriptionTopic
     all_attribute = mqttPubSubTopic
     query_timeout = "5s"
-    server = "ldap.example.com"
+    server = "ldap.example.com:389"
     pool_size = 8
-    username = "exampleUser"
-    password = "examplePassword"
+    username = "ldap_user"
+    password = "ldap_password"
     base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
     filter = "(objectClass=mqttUser)"
     request_timeout = "10s"
-    ssl {
-      enable = false
+    ssl = {
+      #substruct(ldap:ssl)
     }
   }
 ]

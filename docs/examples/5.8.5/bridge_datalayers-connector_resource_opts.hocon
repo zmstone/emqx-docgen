@@ -1,4 +1,4 @@
-connectors.datalayers.myconnector1.resource_opts {
+connectors.datalayers.my_resource.resource_opts {
   health_check_interval = "15s"
   start_after_created = true
   start_timeout = "5s"

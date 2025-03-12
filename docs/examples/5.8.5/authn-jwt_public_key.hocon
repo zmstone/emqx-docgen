@@ -1,12 +1,10 @@
 authentication = [
   {
     algorithm = public-key
-    public_key = "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----"
+    public_key = "your-public-key-here"
     mechanism = jwt
     acl_claim_name = acl
-    verify_claims = {
-      claim_name = "${username}"
-    }
+    verify_claims = {}
     disconnect_after_expire = true
     from = password
   }

@@ -2,7 +2,7 @@ opentelemetry.traces {
   enable = false
   max_queue_size = 2048
   scheduled_delay = "5s"
-  filter {
+  filter = {
     #substruct(opentelemetry:trace_filter)
   }
 }

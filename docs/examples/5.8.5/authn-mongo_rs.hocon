@@ -2,28 +2,25 @@ authentication = [
   {
     mechanism = password_based
     backend = mongodb
-    collection = "auth_collection"
+    collection = "my_auth_collection"
     filter = {}
     password_hash_field = "password_hash"
     salt_field = "salt"
     is_superuser_field = "is_superuser"
-    password_hash_algorithm = {
-      name = sha256
-      salt_position = prefix
-    }
+    password_hash_algorithm = {name = sha256, salt_position = prefix}
     mongo_type = rs
-    servers = "127.0.0.1:27017"
+    servers = "192.168.1.100,192.168.1.101"
     w_mode = unsafe
     r_mode = master
-    replica_set_name = "my_replica_set"
+    replica_set_name = "myReplicaSet"
     srv_record = false
     pool_size = 8
-    username = "user123"
-    password = "secret_password"
+    username = "mongoUser"
+    password = "mongoPass"
     use_legacy_protocol = auto
-    auth_source = "auth_db"
-    database = "my_database"
-    topology {
+    auth_source = "admin"
+    database = "authDB"
+    topology = {
       #substruct(mongo:topology)
     }
     ssl = {

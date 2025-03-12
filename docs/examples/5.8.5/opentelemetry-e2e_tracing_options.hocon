@@ -1,5 +1,5 @@
 opentelemetry.traces.filter.e2e_tracing_options {
-  cluster_identifier = "emqxcl"
+  cluster_identifier = emqxcl
   msg_trace_level = 0
   clientid_match_rules_max = 30
   topic_match_rules_max = 30

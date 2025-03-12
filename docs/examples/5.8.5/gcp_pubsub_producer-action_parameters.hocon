@@ -1,8 +1,6 @@
-actions.gcp_pubsub_producer.myaction1.parameters {
-  attributes_template = [
-    #substruct(bridge_gcp_pubsub:key_value_pair)
-  ]
+actions.gcp_pubsub_producer.my_gcp_producer.parameters {
+  attributes_template = []
   ordering_key_template = ""
   payload_template = ""
-  pubsub_topic = "your-gcp-pubsub-topic"
+  pubsub_topic = "projects/my-project/topics/my-topic"
 }

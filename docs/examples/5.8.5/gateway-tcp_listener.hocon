@@ -1,59 +1,14 @@
-gateway.exproto.listeners.tcp.mylistener1 {
+gateway.exproto.listeners.tcp.my_listener {
   acceptors = 16
-  tcp_options {
+  tcp_options = {
     #substruct(emqx:tcp_opts)
   }
   proxy_protocol = false
   proxy_protocol_timeout = "3s"
-  bind = "127.0.0.1:1883"  # Example IP and port
+  bind = "0.0.0.0:1883"
   max_connections = 1024
   max_conn_rate = 1000
   enable_authn = true
-  mountpoint = ""  # Example mountpoint
-  access_rules = []
-}
-
-gateway.gbt32960.listeners.tcp.mylistener1 {
-  acceptors = 16
-  tcp_options {
-    #substruct(emqx:tcp_opts)
-  }
-  proxy_protocol = false
-  proxy_protocol_timeout = "3s"
-  bind = "127.0.0.1:1883"  # Example IP and port
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""  # Example mountpoint
-  access_rules = []
-}
-
-gateway.jt808.listeners.tcp.mylistener1 {
-  acceptors = 16
-  tcp_options {
-    #substruct(emqx:tcp_opts)
-  }
-  proxy_protocol = false
-  proxy_protocol_timeout = "3s"
-  bind = "127.0.0.1:1883"  # Example IP and port
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""  # Example mountpoint
-  access_rules = []
-}
-
-gateway.stomp.listeners.tcp.mylistener1 {
-  acceptors = 16
-  tcp_options {
-    #substruct(emqx:tcp_opts)
-  }
-  proxy_protocol = false
-  proxy_protocol_timeout = "3s"
-  bind = "127.0.0.1:1883"  # Example IP and port
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""  # Example mountpoint
+  mountpoint = ""
   access_rules = []
 }

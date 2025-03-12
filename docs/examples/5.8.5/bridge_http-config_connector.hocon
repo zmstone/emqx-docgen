@@ -1,4 +1,4 @@
-connectors.http.myconnector1 {
+connectors.http.my_http_connector {
   tags = []
   description = ""
   url = "http://localhost:9901/${topic}"
@@ -16,5 +16,7 @@ connectors.http.myconnector1 {
   ssl = {
     enable = false
   }
-  resource_opts = {}
+  resource_opts = {
+    #substruct(bridge_http:connector_resource_opts)
+  }
 }

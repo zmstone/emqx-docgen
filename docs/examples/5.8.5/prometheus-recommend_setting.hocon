@@ -1,11 +1,9 @@
 prometheus {
   enable_basic_auth = false
-
-  push_gateway {
+  push_gateway = {
     #substruct(prometheus:push_gateway)
   }
-
-  collectors {
+  collectors = {
     #substruct(prometheus:collectors)
   }
 }

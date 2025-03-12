@@ -1,4 +1,4 @@
-connectors.iotdb.myconnector {
+connectors.iotdb.my_iotdb_connector {
   tags = []
   description = ""
   driver = restapi
@@ -10,10 +10,8 @@ connectors.iotdb.myconnector {
   recv_timeout = "10s"
   username = "your_username"
   password = "your_password"
-  ssl {
+  ssl = {
     enable = false
   }
-  resource_opts {
-    #substruct(iotdb:connector_resource_opts)
-  }
+  resource_opts = {}
 }

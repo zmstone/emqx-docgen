@@ -1,4 +1,4 @@
-actions.iotdb.myaction1.parameters {
+actions.iotdb.my_device.parameters {
   is_aligned = false
   device_id = ""
   data = [

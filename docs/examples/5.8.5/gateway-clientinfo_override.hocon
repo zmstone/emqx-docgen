@@ -1,47 +1,5 @@
 gateway.coap.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.exproto.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.gbt32960.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.jt808.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.lwm2m.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.mqttsn.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.ocpp.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
-}
-
-gateway.stomp.clientinfo_override {
-  username = "example_username"
-  password = "example_password"
-  clientid = "example_clientid"
+  username = "override_username"
+  password = "override_password"
+  clientid = "override_clientid"
 }

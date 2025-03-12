@@ -1,13 +1,12 @@
-actions.clickhouse.myaction1 {
-  local_topic = "your/mqtt/topic"
-  parameters {
+actions.clickhouse.my_clickhouse_action {
+  local_topic = ""
+  parameters = {
     #substruct(bridge_clickhouse:action_parameters)
   }
-  connector = "my_connector"
+  connector = ""
   tags = [
-    "tag1",
-    "tag2"
+    ""
   ]
   description = ""
-  resource_opts {}
+  resource_opts = {}
 }

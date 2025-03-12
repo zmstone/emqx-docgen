@@ -1,15 +1,19 @@
-connectors.timescale.myconnector1 {
+connectors.timescale.my_connector {
   server = "localhost:5432"
   disable_prepared_statements = false
-  database = "mydatabase"
+  database = "my_database"
   pool_size = 8
-  username = "myusername"
-  password = "mypassword"
-  ssl {
+  username = "user"
+  password = "secret"
+  ssl = {
     enable = false
   }
-  tags = []
-  description = ""
-  resource_opts {
+  tags = [
+    "tag1",
+    "tag2"
+  ]
+  description = "Description of the connector"
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
   }
 }

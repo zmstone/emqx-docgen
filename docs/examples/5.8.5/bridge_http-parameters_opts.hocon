@@ -1,4 +1,4 @@
-actions.http.mywebhook1.parameters {
+actions.http.my_action.parameters {
   path = "/room/${room_no}"
   method = post
   headers = {
@@ -8,6 +8,6 @@ actions.http.mywebhook1.parameters {
     content-type = "application/json"
     keep-alive = "timeout=5"
   }
-  body = "Your request body here"
+  body = "/body_template"
   max_retries = 2
 }

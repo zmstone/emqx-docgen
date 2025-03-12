@@ -1,17 +1,14 @@
 opentelemetry {
-  #substruct(opentelemetry:otel_metrics)
-  metrics {
+  metrics = {
+    #substruct(opentelemetry:otel_metrics)
   }
-
-  #substruct(opentelemetry:otel_logs)
-  logs {
+  logs = {
+    #substruct(opentelemetry:otel_logs)
   }
-
-  #substruct(opentelemetry:otel_traces)
-  traces {
+  traces = {
+    #substruct(opentelemetry:otel_traces)
   }
-
-  #substruct(opentelemetry:otel_exporter)
-  exporter {
+  exporter = {
+    #substruct(opentelemetry:otel_exporter)
   }
 }

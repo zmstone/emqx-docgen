@@ -1,53 +1,8 @@
-gateway.coap.listeners.udp.mylistener1 {
-  health_check {
+gateway.coap.listeners.udp.my_listener {
+  health_check = {
     #substruct(gateway:udp_health_check)
   }
-  udp_options {
-    #substruct(gateway:udp_opts)
-  }
-  bind = "0.0.0.0:5683"
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""
-  access_rules = []
-}
-
-gateway.exproto.listeners.udp.mylistener1 {
-  health_check {
-    #substruct(gateway:udp_health_check)
-  }
-  udp_options {
-    #substruct(gateway:udp_opts)
-  }
-  bind = "0.0.0.0:5683"
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""
-  access_rules = []
-}
-
-gateway.lwm2m.listeners.udp.mylistener1 {
-  health_check {
-    #substruct(gateway:udp_health_check)
-  }
-  udp_options {
-    #substruct(gateway:udp_opts)
-  }
-  bind = "0.0.0.0:5683"
-  max_connections = 1024
-  max_conn_rate = 1000
-  enable_authn = true
-  mountpoint = ""
-  access_rules = []
-}
-
-gateway.mqttsn.listeners.udp.mylistener1 {
-  health_check {
-    #substruct(gateway:udp_health_check)
-  }
-  udp_options {
+  udp_options = {
     #substruct(gateway:udp_opts)
   }
   bind = "0.0.0.0:5683"

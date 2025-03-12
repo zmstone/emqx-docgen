@@ -1,4 +1,4 @@
-connectors.pulsar.myconnector1 {
+connectors.pulsar.my_pulsar_connector {
   tags = []
   description = ""
   servers = "pulsar://localhost:6650"
@@ -7,7 +7,7 @@ connectors.pulsar.myconnector1 {
   ssl = {
     enable = false
   }
-  resource_opts {
+  resource_opts = {
     #substruct(pulsar:connector_resource_opts)
   }
 }

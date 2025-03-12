@@ -1,4 +1,4 @@
-actions.mqtt.myaction1.resource_opts {
+actions.mqtt.my_mqtt_publisher.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

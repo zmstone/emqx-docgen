@@ -1,18 +1,18 @@
 authorization.sources = [
   {
     type = postgresql
-    server = "localhost:5432"
+    server = "your_host:5432"
     disable_prepared_statements = false
-    database = "my_database"
+    database = "your_database"
     pool_size = 8
-    username = "db_user"
-    password = "db_password"
-    ssl {
+    username = "your_username"
+    password = "your_password"
+    ssl = {
       enable = false
     }
-    prepare_statement {
-      mypreparestatement1 = "SELECT * FROM table WHERE column = ?"
+    prepare_statement = {
+      # Add your SQL prepared statements here
     }
-    query = "SELECT * FROM users WHERE username = ?"
+    query = "your_query"
   }
 ]

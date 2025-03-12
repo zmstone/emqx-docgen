@@ -1,10 +1,15 @@
-actions.influxdb.myinfluxdb1 {
-  local_topic = ""
-  parameters {
+actions.influxdb.my_influxdb_action {
+  local_topic = "example/topic"
+  parameters = {
     #substruct(bridge_influxdb:action_parameters)
   }
-  connector = ""
-  tags = []
+  connector = "my_connector"
+  tags = [
+    "tag1",
+    "tag2"
+  ]
   description = ""
-  resource_opts {}
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
 }

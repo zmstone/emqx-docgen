@@ -1,6 +1,6 @@
-actions.azure_event_hub_producer.my_producer.parameters {
+actions.azure_event_hub_producer.my_event_hub.parameters {
   topic = "t-${payload.t}"
-  message {
+  message = {
     #substruct(bridge_azure_event_hub:kafka_message)
   }
   max_linger_time = "0ms"
@@ -18,7 +18,7 @@ actions.azure_event_hub_producer.my_producer.parameters {
   partition_count_refresh_interval = "60s"
   partitions_limit = all_partitions
   max_inflight = 10
-  buffer {
+  buffer = {
     #substruct(bridge_kafka:producer_buffer)
   }
   query_mode = async

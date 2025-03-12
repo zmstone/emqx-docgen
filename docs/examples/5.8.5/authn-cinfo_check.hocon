@@ -1,13 +1,4 @@
-authentication = [
-  {
-    checks = [
-      {
-        is_match = [
-          "expression1",
-          "expression2"
-        ]
-        result = allow
-      }
-    ]
-  }
-]
+authentication[0].checks[0] {
+  is_match = "username == 'admin'"
+  result = "allow"
+}

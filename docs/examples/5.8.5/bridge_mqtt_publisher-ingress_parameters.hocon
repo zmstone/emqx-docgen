@@ -1,4 +1,4 @@
-sources.mqtt.myname1.parameters {
+sources.mqtt.my_mqtt_source.parameters {
   no_local = false
   topic = "example/topic"
   qos = 1

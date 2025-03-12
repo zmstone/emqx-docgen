@@ -1,6 +1,6 @@
-actions.kafka_producer.myproducer1.parameters {
+actions.kafka_producer.my_kafka_producer.parameters {
   topic = "t-${payload.t}"
-  message {
+  message = {
     #substruct(bridge_kafka:kafka_message)
   }
   max_linger_time = "0ms"
@@ -19,7 +19,7 @@ actions.kafka_producer.myproducer1.parameters {
   partition_count_refresh_interval = "60s"
   partitions_limit = all_partitions
   max_inflight = 10
-  buffer {
+  buffer = {
     #substruct(bridge_kafka:producer_buffer)
   }
   query_mode = async

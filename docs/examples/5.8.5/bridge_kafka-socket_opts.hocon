@@ -1,25 +1,4 @@
-connectors.azure_event_hub_producer.myazureeventhub1.socket_opts {
-  sndbuf = "1MB"
-  recbuf = "1MB"
-  nodelay = true
-  tcp_keepalive = none
-}
-
-connectors.confluent_producer.myconfluentproducer1.socket_opts {
-  sndbuf = "1MB"
-  recbuf = "1MB"
-  nodelay = true
-  tcp_keepalive = none
-}
-
-connectors.kafka_consumer.mykafkaconsumer1.socket_opts {
-  sndbuf = "1MB"
-  recbuf = "1MB"
-  nodelay = true
-  tcp_keepalive = none
-}
-
-connectors.kafka_producer.mykafkaproducer1.socket_opts {
+connectors.azure_event_hub_producer.my_producer.socket_opts {
   sndbuf = "1MB"
   recbuf = "1MB"
   nodelay = true

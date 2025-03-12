@@ -1,9 +1,8 @@
-listeners.quic.myquiclistener1.ssl_options {
+listeners.quic.my_quic_listener.ssl_options {
   cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
   certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
   keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
   verify = verify_none
-  # Assuming the password is not set by default, leaving it empty
-  password = ""
+  # password is intentionally left out as there is no default or example provided
   hibernate_after = "5s"
 }

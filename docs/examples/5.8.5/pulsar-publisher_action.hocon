@@ -1,13 +1,12 @@
-actions.pulsar.myaction1 {
+actions.pulsar.my_pulsar_action {
   local_topic = "example/topic"
-  parameters {
+  parameters = {
     #substruct(pulsar:action_parameters)
   }
-  connector = "example_connector"
-  tags = [
-    "tag1",
-    "tag2"
-  ]
+  connector = "pulsar-connector"
+  tags = ["tag1", "tag2"]
   description = ""
-  resource_opts = {}
+  resource_opts = {
+    #substruct(pulsar:action_resource_opts)
+  }
 }

@@ -1,26 +1,13 @@
-connectors.s3.myconnector1.transport_options {
+connectors.s3.my_s3_instance.transport_options {
   ipv6_probe = false
   connect_timeout = "15s"
   pool_size = 8
-  ssl {
-    enable = false
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
   }
-  headers {
-    "example-header" = "value"
-  }
-  max_retries = 3
-  request_timeout = "30s"
-}
-
-file_transfer.storage.local.exporter.s3.transport_options {
-  ipv6_probe = false
-  connect_timeout = "15s"
-  pool_size = 8
-  ssl {
-    enable = false
-  }
-  headers {
-    "example-header" = "value"
+  headers = {
+    # Example header
+    "Content-Type" = "application/json"
   }
   max_retries = 3
   request_timeout = "30s"

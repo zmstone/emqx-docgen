@@ -1,17 +1,17 @@
 gateway.exproto {
-  server {
+  server = {
     #substruct(gateway:exproto_grpc_server)
   }
-  handler {
+  handler = {
     #substruct(gateway:exproto_grpc_handler)
   }
   mountpoint = ""
-  listeners {
+  listeners = {
     #substruct(gateway:tcp_udp_listeners)
   }
   enable_stats = true
   idle_timeout = "30s"
-  clientinfo_override {
+  clientinfo_override = {
     #substruct(gateway:clientinfo_override)
   }
 }

@@ -7,7 +7,7 @@ retainer {
   stop_publish_clear_msg = false
   delivery_rate = "1000/s"
   max_publish_rate = "1000/s"
-  backend {
+  backend = {
     #substruct(retainer:mnesia_config)
   }
 }

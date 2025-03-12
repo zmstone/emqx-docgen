@@ -1,11 +1,11 @@
 gateway.ocpp.listeners {
   ws {
-    mywebsocket1 {
+    my_ws_listener = {
       #substruct(gateway_ocpp:ws_listener)
     }
   }
   wss {
-    mywebsocket1 {
+    my_wss_listener = {
       #substruct(gateway_ocpp:wss_listener)
     }
   }

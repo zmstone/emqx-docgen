@@ -1,11 +1,3 @@
-actions.azure_event_hub_producer.myazurehub1.resource_opts {
-  health_check_interval = "15s"
-}
-
-actions.confluent_producer.myconfluentproducer1.resource_opts {
-  health_check_interval = "15s"
-}
-
-actions.kafka_producer.mykafkaproducer1.resource_opts {
+actions.azure_event_hub_producer.my_producer.resource_opts {
   health_check_interval = "15s"
 }

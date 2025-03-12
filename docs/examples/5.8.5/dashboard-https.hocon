@@ -1,6 +1,6 @@
 dashboard.listeners.https {
   bind = 0
-  ssl_options {
+  ssl_options = {
     #substruct(dashboard:ssl_options)
   }
   num_acceptors = 20

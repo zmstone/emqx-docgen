@@ -1,24 +1,4 @@
 gateway.lwm2m.translators.command {
-  topic = "exampleTopic"
-  qos = 0
-}
-
-gateway.lwm2m.translators.notify {
-  topic = "exampleTopic"
-  qos = 0
-}
-
-gateway.lwm2m.translators.register {
-  topic = "exampleTopic"
-  qos = 0
-}
-
-gateway.lwm2m.translators.response {
-  topic = "exampleTopic"
-  qos = 0
-}
-
-gateway.lwm2m.translators.update {
-  topic = "exampleTopic"
+  topic = "example_topic"
   qos = 0
 }

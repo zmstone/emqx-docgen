@@ -1,4 +1,4 @@
-actions.rabbitmq.myaction1.parameters {
+actions.rabbitmq.my_rabbitmq_instance.parameters {
   wait_for_publish_confirmations = true
   publish_confirmation_timeout = "30s"
   exchange = "e-${payload.e}"

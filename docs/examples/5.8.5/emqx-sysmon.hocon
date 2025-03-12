@@ -1,8 +1,8 @@
 sysmon {
-  vm {
+  vm = {
     #substruct(emqx:sysmon_vm)
   }
-  os {
+  os = {
     #substruct(emqx:sysmon_os)
   }
   mnesia_tm_mailbox_size_alarm_threshold = 500

@@ -1,4 +1,4 @@
-actions.clickhouse.myaction1.parameters {
+actions.clickhouse.my_clickhouse.parameters {
   sql = "INSERT INTO messages(data, arrived) VALUES ('${payload}', ${timestamp})"
   undefined_vars_as_null = false
   batch_value_separator = ", "

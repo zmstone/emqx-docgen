@@ -1,6 +1,5 @@
-actions.syskeeper_forwarder.myaction1.parameters {
+actions.syskeeper_forwarder.my_forwarder.parameters {
   target_topic = "${topic}"
-  # The QoS for the forwarded message. To preserve the original QoS of the forwarded message, the value can be omitted.
-  target_qos = 1
+  target_qos = 0
   template = "${payload}"
 }

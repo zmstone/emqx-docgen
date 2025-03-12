@@ -1,63 +1,7 @@
-gateway.coap.listeners.dtls.mylistener1.udp_options {
+gateway.coap.listeners.dtls.my_listener.udp_options {
   active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.coap.listeners.udp.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.exproto.listeners.dtls.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.exproto.listeners.udp.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.lwm2m.listeners.dtls.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.lwm2m.listeners.udp.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.mqttsn.listeners.dtls.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
-  reuseaddr = true
-}
-
-gateway.mqttsn.listeners.udp.mylistener1.udp_options {
-  active_n = 100
-  recbuf = "1024KB"
-  sndbuf = "1024KB"
-  buffer = "512KB"
+  recbuf = "512KB"
+  sndbuf = "512KB"
+  buffer = "1MB"
   reuseaddr = true
 }

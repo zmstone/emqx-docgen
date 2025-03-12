@@ -1,12 +1,15 @@
-actions.mysql.myaction1 {
-  local_topic = ""
-  parameters {
+actions.mysql.my_mysql_action {
+  local_topic = "example/topic"
+  parameters = {
     #substruct(bridge_mysql:action_parameters)
   }
-  connector = ""
+  connector = "my_connector"
   tags = [
-    # Add tags here
+    "tag1",
+    "tag2"
   ]
   description = ""
-  resource_opts {}
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
 }

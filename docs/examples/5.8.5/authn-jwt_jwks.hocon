@@ -1,13 +1,11 @@
 authentication = [
   {
     use_jwks = true
-    endpoint = "http://example.com/jwks"
+    endpoint = "https://example.com/jwks"
     headers = {Accept = "application/json"}
     pool_size = 8
     refresh_interval = 300
-    ssl = {
-      enable = false
-    }
+    ssl = {enable = false}
     mechanism = jwt
     acl_claim_name = acl
     verify_claims = {}

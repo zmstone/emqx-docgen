@@ -1,8 +1,8 @@
 authentication = [
   {
     password_hash_algorithm {
-      name = "plain"
-      salt_position = "prefix"
+      name = plain
+      salt_position = prefix
     }
   }
 ]

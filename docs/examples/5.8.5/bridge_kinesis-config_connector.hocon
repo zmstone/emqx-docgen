@@ -1,12 +1,12 @@
-connectors.kinesis.myconnector1 {
+connectors.kinesis.my_kinesis_connector {
   tags = []
   description = ""
-  aws_access_key_id = "your-access-key-id"
-  aws_secret_access_key = "your-secret-access-key"
+  aws_access_key_id = ""
+  aws_secret_access_key = ""
   endpoint = "https://kinesis.us-east-1.amazonaws.com"
   max_retries = 2
   pool_size = 8
-  resource_opts {
+  resource_opts = {
     #substruct(bridge_kinesis:connector_resource_opts)
   }
 }
