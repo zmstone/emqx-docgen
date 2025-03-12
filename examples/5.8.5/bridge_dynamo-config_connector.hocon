@@ -1,0 +1,12 @@
+connectors.dynamo.myconnector1 {
+  tags = []
+  description = ""
+  url = "example-dynamodb-url"
+  region = "us-west-2"
+  aws_access_key_id = "your-access-key-id"
+  aws_secret_access_key = "your-secret-access-key"
+  pool_size = 8
+  resource_opts {
+    #substruct(bridge_dynamo:connector_resource_opts)
+  }
+}

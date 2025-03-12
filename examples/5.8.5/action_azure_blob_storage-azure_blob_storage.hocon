@@ -1,0 +1,11 @@
+actions.azure_blob_storage.myaction1 {
+  local_topic = ""
+  parameters {
+    #substruct(action_azure_blob_storage:aggreg_parameters)
+    #substruct(action_azure_blob_storage:direct_parameters)
+  }
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts {}
+}

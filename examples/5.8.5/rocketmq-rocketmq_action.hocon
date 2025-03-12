@@ -1,0 +1,12 @@
+actions.rocketmq.myrocketmq1 {
+  local_topic = "example_topic"
+  parameters {
+    #substruct(rocketmq:action_parameters)
+  }
+  connector = "example_connector"
+  tags = ["tag1", "tag2"]
+  description = ""
+  resource_opts {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

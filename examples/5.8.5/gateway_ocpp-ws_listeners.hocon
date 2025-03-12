@@ -1,0 +1,12 @@
+gateway.ocpp.listeners {
+  ws {
+    mywebsocket1 {
+      #substruct(gateway_ocpp:ws_listener)
+    }
+  }
+  wss {
+    mywebsocket1 {
+      #substruct(gateway_ocpp:wss_listener)
+    }
+  }
+}

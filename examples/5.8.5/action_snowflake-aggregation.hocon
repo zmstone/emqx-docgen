@@ -1,0 +1,7 @@
+actions.snowflake.myaction1.parameters.aggregation {
+  container {
+    type = csv
+  }
+  time_interval = "1h"
+  max_records = 1000000
+}

@@ -1,0 +1,11 @@
+actions.s3.myaction1 {
+  local_topic = "example/topic"
+  parameters {
+    #substruct(bridge_s3:s3_aggregated_upload_parameters)
+    #substruct(bridge_s3:s3_direct_upload_parameters)
+  }
+  connector = "example_connector"
+  tags = ["tag1", "tag2"]
+  description = ""
+  resource_opts = {}
+}

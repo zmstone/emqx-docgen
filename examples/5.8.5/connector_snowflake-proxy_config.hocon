@@ -1,0 +1,4 @@
+connectors.snowflake.myconnector1.proxy {
+  host = "proxy.example.com"
+  port = 8080
+}

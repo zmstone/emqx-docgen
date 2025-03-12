@@ -1,0 +1,4 @@
+actions.snowflake.myaction1.parameters.proxy {
+  host = "proxy.example.com"
+  port = 8080
+}

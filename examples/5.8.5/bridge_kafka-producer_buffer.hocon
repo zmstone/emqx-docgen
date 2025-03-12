@@ -1,0 +1,20 @@
+actions.azure_event_hub_producer.mybuffer.parameters.buffer {
+  mode = memory
+  per_partition_limit = "256MB"
+  segment_bytes = "10MB"
+  memory_overload_protection = true
+}
+
+actions.confluent_producer.mybuffer.parameters.buffer {
+  mode = memory
+  per_partition_limit = "256MB"
+  segment_bytes = "10MB"
+  memory_overload_protection = true
+}
+
+actions.kafka_producer.mybuffer.parameters.buffer {
+  mode = memory
+  per_partition_limit = "256MB"
+  segment_bytes = "10MB"
+  memory_overload_protection = true
+}

@@ -1,0 +1,4 @@
+actions.confluent_producer.myproducer1.parameters.message {
+  key = "${.clientid}"
+  value = "${.}"
+}

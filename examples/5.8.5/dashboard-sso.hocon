@@ -1,0 +1,5 @@
+dashboard.sso {
+  #substruct(sso:ldap)
+  #substruct(sso:oidc)
+  #substruct(dashboard:saml)
+}

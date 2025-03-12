@@ -1,0 +1,5 @@
+connectors.mongodb.myconnector1.parameters {
+  mongo_type = single
+  server = "localhost:27017"
+  w_mode = unsafe
+}

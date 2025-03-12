@@ -1,0 +1,14 @@
+actions.tablestore.myaction1.parameters {
+  storage_model_type = timeseries
+  table_name = "my_table"
+  measurement = "temperature"
+  tags {
+    my_tag_key = "my_tag_value"
+  }
+  fields = [
+    #substruct(bridge_tablestore:tablestore_fields)
+  ]
+  data_source = "sensor_1"
+  timestamp = 1633024800000000
+  meta_update_model = MUM_NORMAL
+}

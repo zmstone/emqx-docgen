@@ -1,0 +1,4 @@
+schema_registry.external.myregistry1.auth {
+  username = "your-username"
+  password = "your-password"
+}

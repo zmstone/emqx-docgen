@@ -1,0 +1,17 @@
+connectors.elasticsearch.myresource1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}
+
+connectors.http.myresource1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}
+
+connectors.iotdb.myresource1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}

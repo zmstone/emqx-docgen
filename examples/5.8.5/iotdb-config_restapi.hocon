@@ -1,0 +1,16 @@
+connectors.iotdb.myconnector1 {
+  tags = []
+  description = ""
+  connect_timeout = "15s"
+  pool_type = random
+  pool_size = 8
+  enable_pipelining = 100
+  ssl = {
+    enable = false
+  }
+  resource_opts = {}
+  driver = restapi
+  base_url = "http://example.com"
+  iotdb_version = "v1.3.x"
+  #substruct(iotdb:authentication)
+}

@@ -1,0 +1,32 @@
+listeners {
+  tcp {
+    mytcp1 {
+      #substruct(emqx:mqtt_tcp_listener)
+    }
+    mytcp2 = marked_for_deletion
+  }
+  ssl {
+    myssl1 {
+      #substruct(emqx:mqtt_ssl_listener)
+    }
+    myssl2 = marked_for_deletion
+  }
+  ws {
+    myws1 {
+      #substruct(emqx:mqtt_ws_listener)
+    }
+    myws2 = marked_for_deletion
+  }
+  wss {
+    mywss1 {
+      #substruct(emqx:mqtt_wss_listener)
+    }
+    mywss2 = marked_for_deletion
+  }
+  quic {
+    myquic1 {
+      #substruct(emqx:mqtt_quic_listener)
+    }
+    myquic2 = marked_for_deletion
+  }
+}

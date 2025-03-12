@@ -1,0 +1,17 @@
+authorization.sources = [
+  {
+    type = mysql
+    server = "example.com:3306"
+    database = "my_database"
+    pool_size = 8
+    username = "root"
+    password = "your_secret_password"
+    ssl = {
+      enable = false
+    }
+    prepare_statement = {
+      "myquery1" = "SELECT * FROM table WHERE condition"
+    }
+    query = "SELECT * FROM users WHERE id = ?"
+  }
+]

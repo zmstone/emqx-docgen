@@ -1,0 +1,9 @@
+connectors.kafka_consumer.myconnector1.authentication {
+  kerberos_principal = "kafka/node1.example.com@EXAMPLE.COM"
+  kerberos_keytab_file = "/path/to/keytab/file"
+}
+
+connectors.kafka_producer.myconnector1.authentication {
+  kerberos_principal = "kafka/node1.example.com@EXAMPLE.COM"
+  kerberos_keytab_file = "/path/to/keytab/file"
+}

@@ -1,0 +1,23 @@
+connectors.mongodb.myconnector1 {
+  tags = []
+  description = ""
+  parameters {
+    #substruct(mongo:connector_single)
+    #substruct(mongo:connector_sharded)
+    #substruct(mongo:connector_rs)
+  }
+  srv_record = false
+  pool_size = 8
+  username = "username_here"
+  password = "password_here"
+  use_legacy_protocol = auto
+  auth_source = "auth_db_name"
+  database = "database_name"
+  topology {
+    #substruct(mongo:topology)
+  }
+  ssl {
+    enable = false
+  }
+  resource_opts {}
+}

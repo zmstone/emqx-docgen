@@ -1,0 +1,27 @@
+connectors.s3.myconnector1.transport_options {
+  ipv6_probe = false
+  connect_timeout = "15s"
+  pool_size = 8
+  ssl {
+    enable = false
+  }
+  headers {
+    "example-header" = "value"
+  }
+  max_retries = 3
+  request_timeout = "30s"
+}
+
+file_transfer.storage.local.exporter.s3.transport_options {
+  ipv6_probe = false
+  connect_timeout = "15s"
+  pool_size = 8
+  ssl {
+    enable = false
+  }
+  headers {
+    "example-header" = "value"
+  }
+  max_retries = 3
+  request_timeout = "30s"
+}

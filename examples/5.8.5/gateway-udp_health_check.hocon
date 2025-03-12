@@ -1,0 +1,39 @@
+gateway.coap.listeners.dtls.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.coap.listeners.udp.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.exproto.listeners.dtls.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.exproto.listeners.udp.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.lwm2m.listeners.dtls.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.lwm2m.listeners.udp.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.mqttsn.listeners.dtls.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}
+
+gateway.mqttsn.listeners.udp.mylistener1.health_check {
+  request = "some-request-content"
+  reply = "some-reply-content"
+}

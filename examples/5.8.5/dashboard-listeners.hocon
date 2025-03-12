@@ -1,0 +1,4 @@
+dashboard.listeners {
+  #substruct(dashboard:http)
+  #substruct(dashboard:https)
+}

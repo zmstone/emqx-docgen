@@ -1,0 +1,4 @@
+actions.s3.myaction1.parameters.container {
+  type = csv
+  column_order = []
+}

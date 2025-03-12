@@ -1,0 +1,34 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = mongodb
+    collection = "example_collection"
+    filter {
+      # Use default empty map for filter
+    }
+    password_hash_field = "password_hash"
+    salt_field = "salt"
+    is_superuser_field = "is_superuser"
+    password_hash_algorithm {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    mongo_type = sharded
+    servers = "localhost:27017"
+    w_mode = unsafe
+    srv_record = false
+    pool_size = 8
+    username = "example_user"
+    password = "example_password"
+    use_legacy_protocol = auto
+    auth_source = "auth_db"
+    database = "example_db"
+    topology {
+      #substruct(mongo:topology)
+    }
+    ssl {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

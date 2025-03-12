@@ -1,0 +1,4 @@
+actions.couchbase.myaction1.parameters {
+  sql = "SELECT * FROM bucket WHERE ...;"
+  max_retries = 3
+}

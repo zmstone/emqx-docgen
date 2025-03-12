@@ -1,0 +1,18 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = redis
+    cmd = ""
+    password_hash_algorithm = {name = sha256, salt_position = prefix}
+    servers = "127.0.0.1:6379"
+    redis_type = sentinel
+    sentinel = "mymaster"
+    pool_size = 8
+    username = ""
+    password = ""
+    database = 0
+    ssl {
+      enable = false
+    }
+  }
+]

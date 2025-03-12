@@ -1,0 +1,12 @@
+actions.mqtt.myaction1 {
+  local_topic = "example/topic"
+  parameters {
+    #substruct(bridge_mqtt_publisher:action_parameters)
+  }
+  connector = "example_connector"
+  tags = ["tag1", "tag2"]
+  description = ""
+  resource_opts {
+    #substruct(bridge_mqtt_publisher:action_resource_opts)
+  }
+}

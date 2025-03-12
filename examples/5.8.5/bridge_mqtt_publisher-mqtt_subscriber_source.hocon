@@ -1,0 +1,9 @@
+sources.mqtt.my_mqtt_source {
+  parameters {
+    #substruct(bridge_mqtt_publisher:ingress_parameters)
+  }
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts {}
+}

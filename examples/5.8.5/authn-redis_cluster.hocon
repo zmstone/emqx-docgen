@@ -1,0 +1,20 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = redis
+    cmd = "HGET" # Example command
+    password_hash_algorithm = {
+      name = sha256
+      salt_position = prefix
+    }
+    servers = "127.0.0.1,127.0.0.2" # Example server list
+    redis_type = cluster
+    pool_size = 8
+    username = "user" # Example username
+    password = "secret" # Example password
+    ssl = {
+      enable = false
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

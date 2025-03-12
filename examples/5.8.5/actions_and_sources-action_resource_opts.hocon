@@ -1,0 +1,271 @@
+actions {
+  cassandra {
+    mycassandra1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  clickhouse {
+    myclickhouse1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  datalayers {
+    mydatalayers1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  dynamo {
+    mydynamo1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  gcp_pubsub_producer {
+    mygcp_pubsub_producer1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  greptimedb {
+    mygreptimedb1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  hstreamdb {
+    myhstreamdb1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  influxdb {
+    myinfluxdb1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  matrix {
+    mymatrix1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  mysql {
+    mymysql1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  opents {
+    myopents1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  oracle {
+    myoracle1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  pgsql {
+    mypgsql1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  rocketmq {
+    myrocketmq1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  sqlserver {
+    mysqlserver1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  tablestore {
+    mytablestore1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  tdengine {
+    mytdengine1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+
+  timescale {
+    mytimescale1 {
+      resource_opts {
+        worker_pool_size = 16
+        health_check_interval = "15s"
+        query_mode = async
+        request_ttl = "45s"
+        inflight_window = 100
+        batch_size = 1
+        batch_time = "0ms"
+        max_buffer_bytes = "256MB"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+sources.gcp_pubsub_consumer.myconsumer1.parameters {
+  topic = "your-gcp-pubsub-topic"
+  pull_max_messages = 100
+}

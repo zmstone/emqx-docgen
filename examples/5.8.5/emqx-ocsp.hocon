@@ -1,0 +1,71 @@
+gateway.coap.listeners.dtls.mylistener1.dtls_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.exproto.listeners.dtls.mylistener2.dtls_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.exproto.listeners.ssl.mylistener3.ssl_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.gbt32960.listeners.ssl.mylistener4.ssl_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.jt808.listeners.ssl.mylistener5.ssl_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.lwm2m.listeners.dtls.mylistener6.dtls_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.mqttsn.listeners.dtls.mylistener7.dtls_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+gateway.stomp.listeners.ssl.mylistener8.ssl_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}
+
+listeners.ssl.mylistener9.ssl_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://ocsp.example.com"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}

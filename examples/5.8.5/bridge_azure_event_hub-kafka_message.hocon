@@ -1,0 +1,10 @@
+actions.azure_event_hub_producer {
+  myazureeventhub1 {
+    parameters {
+      message {
+        key = "${.clientid}"
+        value = "${.}"
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+connectors.pulsar.myconnector1.authentication {
+  jwt = "your-jwt-token"
+}

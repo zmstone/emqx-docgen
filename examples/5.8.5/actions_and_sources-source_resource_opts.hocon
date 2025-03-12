@@ -1,0 +1,7 @@
+sources.kafka_consumer.myconsumer1.resource_opts {
+  health_check_interval = "15s"
+}
+
+sources.rabbitmq.myrabbit1.resource_opts {
+  health_check_interval = "15s"
+}

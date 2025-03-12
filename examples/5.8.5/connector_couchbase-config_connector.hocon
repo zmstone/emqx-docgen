@@ -1,0 +1,17 @@
+connectors.couchbase.myconnector1 {
+  tags = []
+  description = ""
+  server = "localhost:8093"
+  connect_timeout = "15s"
+  pipelining = 100
+  pool_size = 8
+  username = "user"
+  password = "secret"
+  resource_opts {
+    #substruct(connector:resource_opts)
+  }
+  ssl {
+    enable = false
+    #substruct(emqx:ssl_client_opts)
+  }
+}

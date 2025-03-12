@@ -1,0 +1,32 @@
+actions.matrix.myaction1 {
+  local_topic = ""
+  parameters {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts = {}
+}
+
+actions.pgsql.myaction2 {
+  local_topic = ""
+  parameters {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts = {}
+}
+
+actions.timescale.myaction3 {
+  local_topic = ""
+  parameters {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts = {}
+}

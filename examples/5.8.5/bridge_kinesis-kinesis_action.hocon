@@ -1,0 +1,12 @@
+actions.kinesis.myaction1 {
+  local_topic = "example/topic"
+  parameters {
+    #substruct(bridge_kinesis:action_parameters)
+  }
+  connector = "my-connector"
+  tags = ["tag1", "tag2"]
+  description = ""
+  resource_opts {
+    #substruct(bridge_kinesis:action_resource_opts)
+  }
+}

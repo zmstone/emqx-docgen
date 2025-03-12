@@ -1,0 +1,209 @@
+gateway.exproto.listeners.ssl.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.exproto.listeners.tcp.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.gbt32960.listeners.ssl.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.gbt32960.listeners.tcp.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.jt808.listeners.ssl.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.jt808.listeners.tcp.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.ocpp.listeners.ws.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.ocpp.listeners.wss.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.stomp.listeners.ssl.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+gateway.stomp.listeners.tcp.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+listeners.ssl.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+listeners.tcp.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+listeners.ws.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}
+
+listeners.wss.mylistener1.tcp_options {
+  active_n = 100
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  high_watermark = "1MB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}

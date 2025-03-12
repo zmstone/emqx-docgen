@@ -1,0 +1,193 @@
+connectors {
+  mqtt {
+    mymqtt1 {
+      #substruct(connector_mqtt:config_connector)
+    }
+  }
+  azure_event_hub_producer {
+    myazureeventhubproducer1 {
+      #substruct(bridge_azure_event_hub:config_connector)
+    }
+  }
+  elasticsearch {
+    myelasticsearch1 {
+      #substruct(elasticsearch:config)
+    }
+  }
+  kafka_producer {
+    mykafkaproducer1 {
+      #substruct(bridge_kafka:config_connector)
+    }
+  }
+  datalayers {
+    mydatalayers1 {
+      #substruct(bridge_datalayers:config_connector)
+    }
+  }
+  oracle {
+    myoracle1 {
+      #substruct(bridge_oracle:config_connector)
+    }
+  }
+  azure_blob_storage {
+    myazureblobstorage1 {
+      #substruct(connector_azure_blob_storage:config_connector)
+    }
+  }
+  s3 {
+    mys3connector1 {
+      #substruct(bridge_s3:config_connector)
+    }
+  }
+  tdengine {
+    mytdengine1 {
+      #substruct(tdengine_connector:config_connector)
+    }
+  }
+  pulsar {
+    mypulsar1 {
+      #substruct(pulsar:config_connector)
+    }
+  }
+  sqlserver {
+    mysqlserver1 {
+      #substruct(bridge_sqlserver:config_connector)
+    }
+  }
+  opents {
+    myopents1 {
+      #substruct(opents_connector:config_connector)
+    }
+  }
+  clickhouse {
+    myclickhouse1 {
+      #substruct(bridge_clickhouse:config_connector)
+    }
+  }
+  couchbase {
+    mycouchbase1 {
+      #substruct(connector_couchbase:config_connector)
+    }
+  }
+  syskeeper_forwarder {
+    mysyskeeperforwarder1 {
+      #substruct(syskeeper_forwarder:config)
+    }
+  }
+  cassandra {
+    mycassandra1 {
+      #substruct(bridge_cassa:config_connector)
+    }
+  }
+  mongodb {
+    mymongodb1 {
+      #substruct(bridge_mongodb:config_connector)
+    }
+  }
+  iotdb {
+    myiotdb1 {
+      #substruct(iotdb:config_restapi)
+      #substruct(iotdb:config_thrift)
+    }
+  }
+  tablestore {
+    mytablestore1 {
+      #substruct(bridge_tablestore:config_connector)
+    }
+  }
+  dynamo {
+    mydynamo1 {
+      #substruct(bridge_dynamo:config_connector)
+    }
+  }
+  greptimedb {
+    mygreptimedb1 {
+      #substruct(bridge_greptimedb:config_connector)
+    }
+  }
+  hstreamdb {
+    myhstreamdb1 {
+      #substruct(bridge_hstreamdb:config_connector)
+    }
+  }
+  rocketmq {
+    myrocketmq1 {
+      #substruct(rocketmq:config_connector)
+    }
+  }
+  gcp_pubsub_producer {
+    mygcppubsubproducer1 {
+      #substruct(gcp_pubsub_producer:config_connector)
+    }
+  }
+  pgsql {
+    mypgsql1 {
+      #substruct(bridge_pgsql:config_connector)
+    }
+  }
+  kinesis {
+    mykinesis1 {
+      #substruct(bridge_kinesis:config_connector)
+    }
+  }
+  snowflake {
+    mysnowflake1 {
+      #substruct(connector_snowflake:config_connector)
+    }
+  }
+  redis {
+    myredis1 {
+      #substruct(redis:config_connector)
+    }
+  }
+  rabbitmq {
+    myrabbitmq1 {
+      #substruct(rabbitmq:config_connector)
+    }
+  }
+  timescale {
+    mytimescale1 {
+      #substruct(bridge_timescale:config_connector)
+    }
+  }
+  http {
+    myhttp1 {
+      #substruct(bridge_http:config_connector)
+    }
+  }
+  syskeeper_proxy {
+    mysyskeeperproxy1 {
+      #substruct(connector_syskeeper_proxy:config)
+    }
+  }
+  mysql {
+    mymysql1 {
+      #substruct(bridge_mysql:config_connector)
+    }
+  }
+  confluent_producer {
+    myconfluentproducer1 {
+      #substruct(confluent:config_connector)
+    }
+  }
+  kafka_consumer {
+    mykafkaconsumer1 {
+      #substruct(kafka_consumer:config_connector)
+    }
+  }
+  influxdb {
+    myinfluxdb1 {
+      #substruct(bridge_influxdb:config_connector)
+    }
+  }
+  matrix {
+    mymatrix1 {
+      #substruct(bridge_matrix:config_connector)
+    }
+  }
+  gcp_pubsub_consumer {
+    mygcppubsubconsumer1 {
+      #substruct(gcp_pubsub_consumer:config_connector)
+    }
+  }
+}

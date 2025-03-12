@@ -1,0 +1,7 @@
+durable_storage {
+  messages {
+    layout {
+      type = reference
+    }
+  }
+}

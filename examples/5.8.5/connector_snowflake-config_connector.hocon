@@ -1,0 +1,15 @@
+connectors.snowflake.myconnector1 {
+  tags = []
+  description = ""
+  server = "your-snowflake-server-address"
+  account = "your-account-id"
+  dsn = "your-dsn"
+  proxy = none
+  pool_size = 8
+  username = "your-username"
+  password = "your-password"
+  resource_opts {}
+  ssl {
+    enable = false
+  }
+}

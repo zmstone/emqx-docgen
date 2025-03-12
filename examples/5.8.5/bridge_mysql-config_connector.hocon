@@ -1,0 +1,15 @@
+connectors.mysql.myconnector {
+  tags = []
+  description = ""
+  server = "localhost:3306"
+  database = "mydatabase"
+  pool_size = 8
+  username = "root"
+  password = "yourpassword"
+  ssl {
+    enable = false
+  }
+  resource_opts {
+    #substruct(bridge_mysql:connector_resource_opts)
+  }
+}

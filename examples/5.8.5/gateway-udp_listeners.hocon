@@ -1,0 +1,38 @@
+gateway.coap.listeners {
+  udp {
+    mycoaplistener1 {
+      #substruct(gateway:udp_listener)
+    }
+  }
+  dtls {
+    mycoaplistener1 {
+      #substruct(gateway:dtls_listener)
+    }
+  }
+}
+
+gateway.lwm2m.listeners {
+  udp {
+    mylwm2mlistener1 {
+      #substruct(gateway:udp_listener)
+    }
+  }
+  dtls {
+    mylwm2mlistener1 {
+      #substruct(gateway:dtls_listener)
+    }
+  }
+}
+
+gateway.mqttsn.listeners {
+  udp {
+    mymqttsnlistener1 {
+      #substruct(gateway:udp_listener)
+    }
+  }
+  dtls {
+    mymqttsnlistener1 {
+      #substruct(gateway:dtls_listener)
+    }
+  }
+}

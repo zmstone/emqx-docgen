@@ -1,0 +1,6 @@
+connectors.mqtt.myconnector1.static_clientids = [
+  {
+    node = "emqx@10.0.0.1"
+    ids = ["clientid1", "clientid2"]
+  }
+]

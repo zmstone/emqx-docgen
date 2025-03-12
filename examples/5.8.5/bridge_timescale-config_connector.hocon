@@ -1,0 +1,15 @@
+connectors.timescale.myconnector1 {
+  server = "localhost:5432"
+  disable_prepared_statements = false
+  database = "mydatabase"
+  pool_size = 8
+  username = "myusername"
+  password = "mypassword"
+  ssl {
+    enable = false
+  }
+  tags = []
+  description = ""
+  resource_opts {
+  }
+}

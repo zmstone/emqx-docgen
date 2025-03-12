@@ -1,0 +1,17 @@
+connectors.matrix.myconnector1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}
+
+connectors.pgsql.myconnector1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}
+
+connectors.timescale.myconnector1.resource_opts {
+  health_check_interval = "15s"
+  start_after_created = true
+  start_timeout = "5s"
+}

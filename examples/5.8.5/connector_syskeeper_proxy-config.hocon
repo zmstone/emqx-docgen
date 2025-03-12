@@ -1,0 +1,12 @@
+connectors.syskeeper_proxy.myconnector1 {
+  tags = [
+    # Add tags here
+  ]
+  description = ""
+  listen = "Specify the listening address here"
+  acceptors = 16
+  handshake_timeout = "10s"
+  resource_opts {
+    #substruct(connector_syskeeper_proxy:connector_resource_opts)
+  }
+}

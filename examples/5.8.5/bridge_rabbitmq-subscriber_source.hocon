@@ -1,0 +1,13 @@
+sources.rabbitmq.myname {
+  parameters {
+    #substruct(bridge_rabbitmq:source_parameters)
+  }
+  connector = ""
+  tags = [
+    ""
+  ]
+  description = ""
+  resource_opts {
+    #substruct(actions_and_sources:source_resource_opts)
+  }
+}

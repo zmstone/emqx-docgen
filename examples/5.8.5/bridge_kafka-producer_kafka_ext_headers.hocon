@@ -1,0 +1,20 @@
+actions.azure_event_hub_producer.myproducer1.parameters.kafka_ext_headers = [
+  {
+    kafka_ext_header_key = "myKey1"
+    kafka_ext_header_value = "myValue1"
+  }
+]
+
+actions.confluent_producer.myproducer2.parameters.kafka_ext_headers = [
+  {
+    kafka_ext_header_key = "myKey2"
+    kafka_ext_header_value = "myValue2"
+  }
+]
+
+actions.kafka_producer.myproducer3.parameters.kafka_ext_headers = [
+  {
+    kafka_ext_header_key = "myKey3"
+    kafka_ext_header_value = "myValue3"
+  }
+]

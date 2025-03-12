@@ -1,0 +1,54 @@
+authentication = [
+  {
+    topology {
+      max_overflow = 0
+      overflow_ttl = "1000ms"
+      overflow_check_period = "500ms"
+      local_threshold_ms = "15ms"
+      connect_timeout_ms = "10000ms"
+      socket_timeout_ms = "0ms"
+      server_selection_timeout_ms = "30000ms"
+      wait_queue_timeout_ms = "0ms"
+      heartbeat_frequency_ms = "200s"
+      min_heartbeat_frequency_ms = "500ms"
+    }
+  }
+]
+
+authorization {
+  sources = [
+    {
+      topology {
+        max_overflow = 0
+        overflow_ttl = "1000ms"
+        overflow_check_period = "500ms"
+        local_threshold_ms = "15ms"
+        connect_timeout_ms = "10000ms"
+        socket_timeout_ms = "0ms"
+        server_selection_timeout_ms = "30000ms"
+        wait_queue_timeout_ms = "0ms"
+        heartbeat_frequency_ms = "200s"
+        min_heartbeat_frequency_ms = "500ms"
+      }
+    }
+  ]
+}
+
+connectors {
+  mongodb {
+    mymongodb1 {
+      topology {
+        max_overflow = 0
+        overflow_ttl = "1000ms"
+        overflow_check_period = "500ms"
+        local_threshold_ms = "15ms"
+        connect_timeout_ms = "10000ms"
+        socket_timeout_ms = "0ms"
+        server_selection_timeout_ms = "30000ms"
+        wait_queue_timeout_ms = "0ms"
+        heartbeat_frequency_ms = "200s"
+        min_heartbeat_frequency_ms = "500ms"
+      }
+    }
+  }
+}

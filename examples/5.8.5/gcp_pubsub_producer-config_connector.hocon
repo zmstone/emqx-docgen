@@ -1,0 +1,12 @@
+connectors.gcp_pubsub_producer.myconnector1 {
+  tags = []
+  description = ""
+  connect_timeout = "15s"
+  pool_size = 8
+  pipelining = 100
+  max_retries = 2
+  service_account_json = ""
+  resource_opts {
+    #substruct(gcp_pubsub_producer:connector_resource_opts)
+  }
+}

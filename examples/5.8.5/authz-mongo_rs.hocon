@@ -1,0 +1,27 @@
+authorization.sources = [
+  {
+    type = mongodb
+    collection = my_collection
+    filter = {}
+    limit = 1000
+    skip = 0
+    mongo_type = rs
+    servers = "localhost:27017"
+    w_mode = unsafe
+    r_mode = master
+    replica_set_name = my_replica_set
+    srv_record = false
+    pool_size = 8
+    username = my_username
+    password = my_password
+    use_legacy_protocol = auto
+    auth_source = my_auth_db
+    database = my_db
+    topology {
+      #substruct(mongo:topology)
+    }
+    ssl {
+      enable = false
+    }
+  }
+]

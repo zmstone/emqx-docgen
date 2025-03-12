@@ -1,0 +1,109 @@
+gateway.exproto.listeners.ssl.mysslname.ssl_options {
+  cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
+  certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
+  keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = ""
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  #substruct(emqx:ocsp)
+  fail_if_no_peer_cert = false
+  honor_cipher_order = true
+  client_renegotiation = true
+  handshake_timeout = "15s"
+  gc_after_handshake = false
+  enable_crl_check = false
+}
+
+gateway.gbt32960.listeners.ssl.mysslname.ssl_options {
+  cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
+  certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
+  keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = ""
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  #substruct(emqx:ocsp)
+  fail_if_no_peer_cert = false
+  honor_cipher_order = true
+  client_renegotiation = true
+  handshake_timeout = "15s"
+  gc_after_handshake = false
+  enable_crl_check = false
+}
+
+gateway.jt808.listeners.ssl.mysslname.ssl_options {
+  cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
+  certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
+  keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = ""
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  #substruct(emqx:ocsp)
+  fail_if_no_peer_cert = false
+  honor_cipher_order = true
+  client_renegotiation = true
+  handshake_timeout = "15s"
+  gc_after_handshake = false
+  enable_crl_check = false
+}
+
+gateway.stomp.listeners.ssl.mysslname.ssl_options {
+  cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
+  certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
+  keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = ""
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  #substruct(emqx:ocsp)
+  fail_if_no_peer_cert = false
+  honor_cipher_order = true
+  client_renegotiation = true
+  handshake_timeout = "15s"
+  gc_after_handshake = false
+  enable_crl_check = false
+}
+
+listeners.ssl.mysslname.ssl_options {
+  cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
+  certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
+  keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = ""
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  #substruct(emqx:ocsp)
+  fail_if_no_peer_cert = false
+  honor_cipher_order = true
+  client_renegotiation = true
+  handshake_timeout = "15s"
+  gc_after_handshake = false
+  enable_crl_check = false
+}

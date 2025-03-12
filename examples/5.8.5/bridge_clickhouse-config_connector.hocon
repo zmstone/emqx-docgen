@@ -1,0 +1,13 @@
+connectors.clickhouse.myclickhouse1 {
+  tags = []
+  description = ""
+  url = "http://myhostname:8123"
+  connect_timeout = "15s"
+  database = "mydatabase"
+  pool_size = 8
+  username = "myusername"
+  password = "mypassword"
+  resource_opts {
+    #substruct(bridge_clickhouse:connector_resource_opts)
+  }
+}

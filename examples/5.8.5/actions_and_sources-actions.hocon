@@ -1,0 +1,177 @@
+actions {
+  mqtt {
+    mymqtt1 {
+      #substruct(bridge_mqtt_publisher:mqtt_publisher_action)
+    }
+  }
+  azure_event_hub_producer {
+    myazureeventhubproducer1 {
+      #substruct(bridge_azure_event_hub:actions)
+    }
+  }
+  elasticsearch {
+    myelasticsearch1 {
+      #substruct(bridge_elasticsearch:action_config)
+    }
+  }
+  kafka_producer {
+    mykafkaproducer1 {
+      #substruct(bridge_kafka:kafka_producer_action)
+    }
+  }
+  datalayers {
+    mydatalayers1 {
+      #substruct(bridge_datalayers:datalayers_action)
+    }
+  }
+  oracle {
+    myoracle1 {
+      #substruct(bridge_oracle:oracle_action)
+    }
+  }
+  azure_blob_storage {
+    myazureblobstorage1 {
+      #substruct(action_azure_blob_storage:azure_blob_storage)
+    }
+  }
+  s3 {
+    mys3upload1 {
+      #substruct(bridge_s3:s3)
+    }
+  }
+  tdengine {
+    mytdengine1 {
+      #substruct(bridge_tdengine:action_config)
+    }
+  }
+  pulsar {
+    mypulsar1 {
+      #substruct(pulsar:publisher_action)
+    }
+  }
+  sqlserver {
+    mysqlserver1 {
+      #substruct(bridge_sqlserver:sqlserver_action)
+    }
+  }
+  opents {
+    myopents1 {
+      #substruct(bridge_opents:action_config)
+    }
+  }
+  clickhouse {
+    myclickhouse1 {
+      #substruct(bridge_clickhouse:clickhouse_action)
+    }
+  }
+  couchbase {
+    mycouchbase1 {
+      #substruct(action_couchbase:couchbase)
+    }
+  }
+  syskeeper_forwarder {
+    mysyskeeperforwarder1 {
+      #substruct(syskeeper:config)
+    }
+  }
+  cassandra {
+    mycassandra1 {
+      #substruct(bridge_cassa:cassandra_action)
+    }
+  }
+  mongodb {
+    mymongodb1 {
+      #substruct(bridge_mongodb:mongodb_action)
+    }
+  }
+  iotdb {
+    myiotdb1 {
+      #substruct(bridge_iotdb:action_config)
+    }
+  }
+  tablestore {
+    mytablestore1 {
+      #substruct(bridge_tablestore:tablestore_action)
+    }
+  }
+  dynamo {
+    mydynamo1 {
+      #substruct(bridge_dynamo:dynamo_action)
+    }
+  }
+  greptimedb {
+    mygreptimedb1 {
+      #substruct(bridge_greptimedb:greptimedb_action)
+    }
+  }
+  hstreamdb {
+    myhstreamdb1 {
+      #substruct(bridge_hstreamdb:hstreamdb_action)
+    }
+  }
+  rocketmq {
+    myrocketmq1 {
+      #substruct(rocketmq:rocketmq_action)
+    }
+  }
+  gcp_pubsub_producer {
+    mygcppubsubproducer1 {
+      #substruct(gcp_pubsub_producer:producer_action)
+    }
+  }
+  pgsql {
+    mypgsql1 {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  kinesis {
+    mykinesis1 {
+      #substruct(bridge_kinesis:kinesis_action)
+    }
+  }
+  snowflake {
+    mysnowflake1 {
+      #substruct(action_snowflake:snowflake)
+    }
+  }
+  redis {
+    myredis1 {
+      #substruct(redis:redis_action)
+    }
+  }
+  rabbitmq {
+    myrabbitmq1 {
+      #substruct(bridge_rabbitmq:publisher_action)
+    }
+  }
+  timescale {
+    mytimescale1 {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  http {
+    myhttp1 {
+      #substruct(bridge_http:http_action)
+    }
+  }
+  mysql {
+    mymysql1 {
+      #substruct(bridge_mysql:mysql_action)
+    }
+  }
+  confluent_producer {
+    myconfluentproducer1 {
+      #substruct(confluent:actions)
+    }
+  }
+  influxdb {
+    myinfluxdb1 {
+      #substruct(bridge_influxdb:influxdb_action)
+    }
+  }
+  matrix {
+    mymatrix1 {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+}

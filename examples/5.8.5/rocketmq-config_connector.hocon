@@ -1,0 +1,16 @@
+connectors.rocketmq.myconnector1 {
+  tags = []
+  description = ""
+  servers = "localhost:9876"
+  namespace = "default_namespace"
+  access_key = ""
+  secret_key = ""
+  security_token = ""
+  pool_size = 8
+  ssl {
+    enable = false
+  }
+  resource_opts {
+    #substruct(rocketmq:connector_resource_opts)
+  }
+}

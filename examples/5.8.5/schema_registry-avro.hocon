@@ -1,0 +1,5 @@
+schema_registry.schemas.myavro1 {
+  type = avro
+  source = "{ \"type\": \"record\", \"name\": \"example\", \"fields\": [{ \"name\": \"field1\", \"type\": \"string\" }] }"
+  description = ""
+}

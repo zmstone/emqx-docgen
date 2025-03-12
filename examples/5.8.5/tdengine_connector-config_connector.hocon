@@ -1,0 +1,13 @@
+connectors.tdengine.mytdengine1 {
+  tags = [
+    # Add your tags here, for example: "tag1", "tag2"
+  ]
+  description = ""
+  server = "example.com:6041"
+  pool_size = 8
+  username = "root"
+  password = # Add your password here
+  resource_opts {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

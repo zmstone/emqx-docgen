@@ -1,0 +1,11 @@
+actions.opents.myaction.parameters.data = [
+  {
+    timestamp = "${timestamp_var}"
+    metric = "${metric_var}"
+    tags = {
+      key1 = "value1"
+      key2 = "value2"
+    }
+    value = 123
+  }
+]

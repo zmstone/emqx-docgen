@@ -1,0 +1,22 @@
+log {
+  console {
+    #substruct(emqx:console_handler)
+  }
+
+  file {
+    #substruct(emqx:log_file_handler)
+    myfilehandler1 {
+      #substruct(emqx:log_file_handler)
+    }
+  }
+
+  throttling {
+    #substruct(emqx:log_throttling)
+  }
+
+  audit {
+    enable = false
+    level = info
+    #substruct(emqx:log_audit_handler)
+  }
+}

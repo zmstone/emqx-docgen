@@ -1,0 +1,9 @@
+actions.azure_blob_storage.mycontainer1.parameters.aggregation.container {
+  type = csv
+  column_order = []
+}
+
+actions.snowflake.mycontainer1.parameters.aggregation.container {
+  type = csv
+  column_order = []
+}

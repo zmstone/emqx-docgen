@@ -1,0 +1,17 @@
+connectors.pgsql.myconnector1 {
+  server = "Host[:Port]"
+  disable_prepared_statements = false
+  database = "mydatabase"
+  pool_size = 8
+  username = "myusername"
+  password = "mypassword"
+  ssl {
+    enable = false
+  }
+  tags = [
+    "tag1",
+    "tag2"
+  ]
+  description = ""
+  resource_opts {}
+}

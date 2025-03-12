@@ -85,11 +85,9 @@ cat<<EOF > index.html
     <div class="tab" onclick="switchTab(event, 'Chinese')">中文</div>
   </div>
     <div id="English" class="tab-content" style="display: block;">
-      <h1>Enterprise Edition</h1>
       <ul>${EN_LIST_ENTERPRISE}</ul>
     </div>
     <div id="Chinese" class="tab-content">
-      <h1>Enterprise Edition</h1>
       <ul>${ZH_LIST_ENTERPRISE}</ul>
     </div>
 </body>

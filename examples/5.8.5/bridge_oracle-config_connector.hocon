@@ -1,0 +1,14 @@
+connectors.oracle.myconnector1 {
+  tags = []
+  description = ""
+  server = "hostname:1521"
+  sid = "exampleSid"
+  service_name = "exampleService"
+  role = normal
+  pool_size = 8
+  username = "exampleUser"
+  password = "examplePassword"
+  resource_opts {
+    #substruct(bridge_oracle:connector_resource_opts)
+  }
+}

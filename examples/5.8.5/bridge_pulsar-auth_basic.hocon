@@ -1,0 +1,4 @@
+connectors.pulsar.myconnector1.authentication {
+  username = "exampleUsername"
+  password = "examplePassword"
+}

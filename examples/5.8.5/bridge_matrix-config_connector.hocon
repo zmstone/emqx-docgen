@@ -1,0 +1,14 @@
+connectors.matrix.myconnector1 {
+  server = "Host:Port"
+  disable_prepared_statements = false
+  database = "my_database"
+  pool_size = 8
+  username = "my_username"
+  password = "my_password"
+  ssl {
+    enable = false
+  }
+  tags = []
+  description = ""
+  resource_opts {}
+}

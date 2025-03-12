@@ -1,0 +1,14 @@
+connectors.opents.myopents1 {
+  tags = [
+    "tag1",
+    "tag2"
+  ]
+  description = ""
+  server = "http://opentsdb.example.com"
+  pool_size = 8
+  summary = true
+  details = false
+  resource_opts {
+    #substruct(opents_connector:connector_resource_opts)
+  }
+}

@@ -1,0 +1,9 @@
+actions.elasticsearch.myaction1 {
+  #substruct(bridge_elasticsearch:action_create)
+  #substruct(bridge_elasticsearch:action_delete)
+  #substruct(bridge_elasticsearch:action_update)
+  connector = ""
+  tags = []
+  description = ""
+  resource_opts = {}
+}

@@ -1,0 +1,12 @@
+connectors.greptimedb.myconnector1 {
+  tags = []
+  description = ""
+  server = "127.0.0.1:4001"
+  dbname = ""
+  username = ""
+  password = ""
+  ssl {
+    enable = false
+  }
+  resource_opts {}
+}
