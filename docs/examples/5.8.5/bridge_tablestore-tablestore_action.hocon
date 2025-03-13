@@ -5,10 +5,9 @@ actions.tablestore.my_tablestore_action {
   }
   connector = ""
   tags = [
-    ""
+    "tag1",
+    "tag2"
   ]
   description = ""
-  resource_opts = {
-    #substruct(actions_and_sources:action_resource_opts)
-  }
+  resource_opts = {}
 }

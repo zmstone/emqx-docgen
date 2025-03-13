@@ -1,17 +1,16 @@
-actions.tablestore.my_tablestore.parameters {
+actions.tablestore.my_table.parameters {
   storage_model_type = timeseries
-  table_name = "my_table"
-  measurement = "my_measurement"
+  table_name = "example_table"
+  measurement = "example_measurement"
   tags = {
     "tag_key1" = "tag_value1"
-    "tag_key2" = "tag_value2"
   }
   fields = [
     {
       #substruct(bridge_tablestore:tablestore_fields)
     }
   ]
-  data_source = "my_data_source"
+  data_source = "example_data_source"
   timestamp = "NOW"
   meta_update_model = MUM_NORMAL
 }

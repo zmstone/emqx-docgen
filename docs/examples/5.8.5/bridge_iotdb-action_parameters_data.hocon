@@ -1,8 +1,8 @@
-actions.iotdb.my_action.parameters.data = [
-    {
-      timestamp = "now"
-      measurement = "${measurement_placeholder}"
-      data_type = "int32"
-      value = "${value_placeholder}"
-    }
+actions.iotdb.my_iotdb.parameters.data = [
+  {
+    timestamp = now
+    measurement = "sensor_temp"
+    data_type = "float"
+    value = "${temp_value}"
+  }
 ]

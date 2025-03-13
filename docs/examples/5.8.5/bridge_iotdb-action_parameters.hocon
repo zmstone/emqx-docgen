@@ -1,6 +1,6 @@
-actions.iotdb.my_device.parameters {
+actions.iotdb.my_iotdb_action.parameters {
   is_aligned = false
-  device_id = ""
+  device_id = "<template>"
   data = [
     {
       #substruct(bridge_iotdb:action_parameters_data)

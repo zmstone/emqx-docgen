@@ -7,6 +7,6 @@ connectors.influxdb.my_influxdb {
     #substruct(connector_influxdb:connector_influxdb_api_v1)
     #substruct(connector_influxdb:connector_influxdb_api_v2)
   }
-  ssl = {enable = false}
+  ssl = { enable = false }
   resource_opts = {}
 }

@@ -1,4 +1,4 @@
-actions.oracle.my_oracle {
+actions.oracle.my_oracle_action {
   local_topic = ""
   parameters = {
     #substruct(bridge_oracle:action_parameters)
@@ -6,5 +6,7 @@ actions.oracle.my_oracle {
   connector = ""
   tags = []
   description = ""
-  resource_opts = {}
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
 }

@@ -1,4 +1,4 @@
-actions.mongodb.my_mongodb.parameters {
+actions.mongodb.my_mongodb_instance.parameters {
   collection = mqtt
-  payload_template = "Specify your template here"
+  payload_template = "Your template for formatting messages"
 }

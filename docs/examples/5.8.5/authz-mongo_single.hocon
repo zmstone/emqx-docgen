@@ -1,25 +1,26 @@
 authorization.sources = [
   {
     type = mongodb
-    collection = "auth_collection"
+    collection = "your_collection_name"
     filter = {}
     limit = 1000
     skip = 0
     mongo_type = single
-    server = "localhost:27017"
+    server = "hostname_or_ip"
     w_mode = unsafe
     srv_record = false
     pool_size = 8
-    username = "db_user"
-    password = "db_password"
+    username = "your_username"
+    password = "your_password"
     use_legacy_protocol = auto
-    auth_source = "admin"
-    database = "auth_db"
+    auth_source = "your_auth_source"
+    database = "your_database_name"
     topology = {
       #substruct(mongo:topology)
     }
     ssl = {
       enable = false
+      #substruct(emqx:ssl_client_opts)
     }
   }
 ]

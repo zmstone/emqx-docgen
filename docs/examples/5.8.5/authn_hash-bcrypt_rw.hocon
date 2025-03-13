@@ -1,6 +1,8 @@
 authentication = [
   {
-    name = bcrypt
-    salt_rounds = 10
+    password_hash_algorithm {
+      name = bcrypt
+      salt_rounds = 10
+    }
   }
 ]

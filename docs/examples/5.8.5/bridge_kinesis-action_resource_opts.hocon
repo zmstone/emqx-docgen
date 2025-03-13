@@ -1,4 +1,4 @@
-actions.kinesis.my_kinesis_instance.resource_opts {
+actions.kinesis.my_kinesis_action.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

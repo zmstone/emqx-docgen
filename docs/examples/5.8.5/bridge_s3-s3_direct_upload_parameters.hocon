@@ -1,9 +1,9 @@
 actions.s3.my_s3_action.parameters {
-  bucket = "my-s3-bucket"
+  bucket = "your-s3-bucket-name"
   key = "path/to/object"
-  acl = "private"
+  acl = private
   headers = {
-    "Content-Type" = "application/octet-stream"
+    "Content-Type": "application/json"
   }
   mode = direct
   content = "${.}"

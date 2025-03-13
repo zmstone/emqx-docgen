@@ -1,10 +1,7 @@
-connectors.syskeeper_proxy.my_proxy {
-  tags = [
-    "tag1",
-    "tag2"
-  ]
+connectors.syskeeper_proxy.my_syskeeper_proxy {
+  tags = []
   description = ""
-  listen = "0.0.0.0:8080"
+  listen = # A sample IP or hostname should be added here, e.g., "0.0.0.0:1883"
   acceptors = 16
   handshake_timeout = "10s"
   resource_opts = {

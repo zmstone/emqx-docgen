@@ -7,6 +7,8 @@ connectors.tablestore.my_tablestore {
   access_key_id = "NTS**********************"
   access_key_secret = "7NR2****************************************"
   pool_size = 8
-  ssl = {enable = false}
+  ssl = {
+    enable = false
+  }
   resource_opts = {}
 }

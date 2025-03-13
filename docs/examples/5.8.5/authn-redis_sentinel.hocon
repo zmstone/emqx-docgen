@@ -4,12 +4,12 @@ authentication = [
     backend = redis
     cmd = "HGET"
     password_hash_algorithm = {name = sha256, salt_position = prefix}
-    servers = "127.0.0.1:6379,127.0.0.2:6379"
+    servers = "127.0.0.1:6379"
     redis_type = sentinel
-    sentinel = "mymaster"
+    sentinel = "my_cluster"
     pool_size = 8
     username = "user"
-    password = "password"
+    password = "secret"
     database = 0
     ssl = {enable = false}
   }

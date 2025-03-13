@@ -1,4 +1,4 @@
-listeners.tcp.my_listener.tcp_options {
+listeners.ssl.my_listener.tcp_options {
   active_n = 100
   backlog = 1024
   send_timeout = "15s"

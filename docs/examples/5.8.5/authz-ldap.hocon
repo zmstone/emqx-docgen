@@ -7,8 +7,8 @@ authorization.sources = [
     query_timeout = "5s"
     server = "ldap.example.com:389"
     pool_size = 8
-    username = "ldap_user"
-    password = "ldap_password"
+    username = "cn=admin,dc=example,dc=com"
+    password = "secret_password"
     base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
     filter = "(objectClass=mqttUser)"
     request_timeout = "10s"

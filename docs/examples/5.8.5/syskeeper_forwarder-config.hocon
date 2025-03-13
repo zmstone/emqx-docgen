@@ -1,7 +1,7 @@
-connectors.syskeeper_forwarder.my_syskeeper {
+connectors.syskeeper_forwarder.my_forwarder {
   tags = []
   description = ""
-  server = "example.server.com"
+  server = "example.syskeeper.server"
   ack_mode = no_ack
   ack_timeout = "10s"
   pool_size = 16

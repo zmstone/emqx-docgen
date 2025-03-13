@@ -1,4 +1,4 @@
-actions.confluent_producer.my_producer.parameters {
+actions.confluent_producer.my_confluent_producer.parameters {
   topic = "t-${payload.t}"
   message = {
     #substruct(confluent:kafka_message)

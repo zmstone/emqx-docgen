@@ -9,7 +9,5 @@ actions.mysql.my_mysql_action {
     "tag2"
   ]
   description = ""
-  resource_opts = {
-    #substruct(actions_and_sources:action_resource_opts)
-  }
+  resource_opts = {}
 }

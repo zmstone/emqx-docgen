@@ -1,8 +1,5 @@
 connectors.azure_blob_storage.my_blob_storage {
-  tags = [
-    "tag1",
-    "tag2"
-  ]
+  tags = []
   description = ""
   account_name = "your_account_name"
   account_key = "your_account_key"

@@ -1,6 +1,6 @@
-actions.hstreamdb.my_hstreamdb_action.parameters {
+actions.hstreamdb.my_stream.parameters {
   stream = "example_stream"
-  partition_key = "example_partition_key"
+  partition_key = "#{client_id}"
   grpc_flush_timeout = "10s"
   record_template = "${payload}"
   aggregation_pool_size = 8

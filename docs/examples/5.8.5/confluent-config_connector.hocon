@@ -1,7 +1,7 @@
-connectors.confluent_producer.my_confluent_producer {
+connectors.confluent_producer.my_producer {
   tags = [
-    "tag1",
-    "tag2"
+    "example_tag1",
+    "example_tag2"
   ]
   description = ""
   bootstrap_hosts = "localhost:9092"
@@ -15,7 +15,9 @@ connectors.confluent_producer.my_confluent_producer {
     #substruct(bridge_kafka:socket_opts)
   }
   health_check_topic = "health_check_topic_name"
-  ssl = {enable = true}
+  ssl = {
+    enable = true
+  }
   resource_opts = {
     #substruct(bridge_kafka:connector_resource_opts)
   }

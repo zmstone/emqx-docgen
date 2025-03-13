@@ -3,10 +3,10 @@ authentication = [
     mechanism = password_based
     backend = ldap
     query_timeout = "5s"
-    server = "ldap.example.com"
+    server = "example.com:389"
     pool_size = 8
-    username = "admin"
-    password = "secret"
+    username = "example_user"
+    password = "example_password"
     base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
     filter = "(objectClass=mqttUser)"
     request_timeout = "10s"

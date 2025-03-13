@@ -3,6 +3,6 @@ actions.azure_blob_storage.my_blob_storage.parameters {
   aggregation = {
     #substruct(action_azure_blob_storage:aggregation)
   }
-  container = "example_container"
+  container = "my-container"
   blob = "${action}/${node}/${datetime.rfc3339utc}/${sequence}"
 }

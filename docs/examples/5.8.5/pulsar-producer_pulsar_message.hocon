@@ -1,4 +1,4 @@
-actions.pulsar.my_pulsar_action.parameters.message {
+actions.pulsar.my_action.parameters.message {
   key = "${.clientid}"
   value = "${.}"
 }

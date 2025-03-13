@@ -1,3 +1,9 @@
-sources.kafka_consumer.my_consumer.resource_opts {
-    health_check_interval = "15s"
+sources {
+  kafka_consumer {
+    my_kafka_consumer {
+      resource_opts {
+        health_check_interval = "15s"
+      }
+    }
+  }
 }

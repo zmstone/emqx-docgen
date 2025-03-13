@@ -1,9 +1,9 @@
-connectors.redis.my_redis_sentinel.parameters {
-  servers = "127.0.0.1:6379,192.168.1.1:6379"
+connectors.redis.my_redis_connector.parameters {
+  servers = "127.0.0.1:6379,192.168.1.1"
   redis_type = sentinel
-  sentinel = "my_sentinel_cluster"
+  sentinel = "mymaster"
   pool_size = 8
-  username = "redis_user"
-  password = "secret_password"
+  username = "user123"
+  password = "mysecretpassword"
   database = 0
 }

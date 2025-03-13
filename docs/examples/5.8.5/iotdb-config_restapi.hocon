@@ -5,10 +5,14 @@ connectors.iotdb.my_iotdb_connector {
   pool_type = random
   pool_size = 8
   enable_pipelining = 100
-  ssl = { enable = false }
-  resource_opts = {}
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_http:connector_resource_opts)
+  }
   driver = restapi
-  base_url = "http://example.com/iotdb"
+  base_url = "http://example.com"
   iotdb_version = "v1.3.x"
   authentication = {
     #substruct(iotdb:authentication)

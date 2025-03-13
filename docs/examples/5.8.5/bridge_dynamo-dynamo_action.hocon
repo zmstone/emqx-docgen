@@ -1,9 +1,9 @@
 actions.dynamo.my_action {
-  local_topic = ""
+  local_topic = "example/topic"
   parameters = {
     #substruct(bridge_dynamo:action_parameters)
   }
-  connector = ""
+  connector = "my_connector"
   tags = [
     "tag1",
     "tag2"

@@ -3,12 +3,12 @@ authentication = [
     mechanism = password_based
     backend = ldap
     query_timeout = "5s"
-    server = "ldap.example.com:389"
+    server = "ldap.example.com"
     pool_size = 8
-    username = "ldap_user"
-    password = "secret_password"
+    username = "cn=admin,dc=example,dc=com"
+    password = "supersecretpassword"
     base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
-    filter = "(objectClass=mqttUser)"
+    filter = "(& (objectClass=mqttUser) (uid=${username}))"
     request_timeout = "10s"
     ssl = {
       enable = false

@@ -1,10 +1,10 @@
-actions.elasticsearch.my_action.parameters {
+actions.elasticsearch.my_update_action.parameters {
   action = update
-  index = ${payload.index}
-  id = ${payload.id}
-  doc = ${payload.doc}
+  index = "${payload.index}"
+  id = "${payload.id}"
+  doc = "${payload.doc}"
   doc_as_upsert = false
-  routing = ${payload.routing}
+  routing = "${payload.routing}"
   require_alias = false
   max_retries = 2
 }

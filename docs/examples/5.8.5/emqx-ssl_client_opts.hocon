@@ -1,18 +1,26 @@
-cluster.etcd.ssl_options {
-  cacertfile = "/path/to/ca_cert.pem"
-  certfile = "/path/to/cert_chain.pem"
-  keyfile = "/path/to/private_key.pem"
+connectors.mysql.my_connection.ssl {
+  cacertfile = "/path/to/cacertfile.pem"
+  certfile = "/path/to/certfile.pem"
+  keyfile = "/path/to/keyfile.pem"
   verify = verify_none
   reuse_sessions = true
   depth = 10
   password = "your_password"
-  versions = ["tlsv1.3", "tlsv1.2"]
+  versions = [
+    "tlsv1.3",
+    "tlsv1.2"
+  ]
   ciphers = []
   secure_renegotiate = true
   log_level = notice
   hibernate_after = "5s"
-  partial_chain = "false"
-  verify_peer_ext_key_usage = "clientAuth,serverAuth"
+  partial_chain = {
+    #substruct(true)
+    #substruct(false)
+    #substruct(two_cacerts_from_cacertfile)
+    #substruct(cacert_from_cacertfile)
+  }
+  verify_peer_ext_key_usage = "clientAuth"
   enable = false
   server_name_indication = {
     #substruct(disable)

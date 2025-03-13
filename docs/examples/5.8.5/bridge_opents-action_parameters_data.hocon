@@ -2,7 +2,9 @@ actions.opents.my_action.parameters.data = [
   {
     timestamp = "${timestamp_var}"
     metric = "${metric_var}"
-    tags = "${tags_var}"
-    value = 42
+    tags = {
+      # You can use either a map or a template here
+    }
+    value = 123
   }
 ]

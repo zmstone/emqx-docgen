@@ -1,10 +1,15 @@
-actions.opents.my_opents {
+actions.opents.my_opents_action {
   local_topic = ""
   parameters = {
     #substruct(bridge_opents:action_parameters)
   }
   connector = ""
-  tags = []
+  tags = [
+    "example_tag1",
+    "example_tag2"
+  ]
   description = ""
-  resource_opts = {}
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
 }

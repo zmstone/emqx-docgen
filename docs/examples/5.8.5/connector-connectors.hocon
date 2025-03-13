@@ -1,192 +1,192 @@
 connectors {
   mqtt {
-    name {
+    my_mqtt_connector = {
       #substruct(connector_mqtt:config_connector)
     }
   }
   azure_event_hub_producer {
-    name {
+    my_azure_event_hub_producer = {
       #substruct(bridge_azure_event_hub:config_connector)
     }
   }
   elasticsearch {
-    name {
+    my_elasticsearch_connector = {
       #substruct(elasticsearch:config)
     }
   }
   kafka_producer {
-    name {
+    my_kafka_producer = {
       #substruct(bridge_kafka:config_connector)
     }
   }
   datalayers {
-    name {
+    my_datalayers_connector = {
       #substruct(bridge_datalayers:config_connector)
     }
   }
   oracle {
-    name {
+    my_oracle_connector = {
       #substruct(bridge_oracle:config_connector)
     }
   }
   azure_blob_storage {
-    name {
+    my_azure_blob_storage = {
       #substruct(connector_azure_blob_storage:config_connector)
     }
   }
   s3 {
-    name {
+    my_s3_connector = {
       #substruct(bridge_s3:config_connector)
     }
   }
   tdengine {
-    name {
+    my_tdengine_connector = {
       #substruct(tdengine_connector:config_connector)
     }
   }
   pulsar {
-    name {
+    my_pulsar_connector = {
       #substruct(pulsar:config_connector)
     }
   }
   sqlserver {
-    name {
+    my_sqlserver_connector = {
       #substruct(bridge_sqlserver:config_connector)
     }
   }
   opents {
-    name {
+    my_opents_connector = {
       #substruct(opents_connector:config_connector)
     }
   }
   clickhouse {
-    name {
+    my_clickhouse_connector = {
       #substruct(bridge_clickhouse:config_connector)
     }
   }
   couchbase {
-    name {
+    my_couchbase_connector = {
       #substruct(connector_couchbase:config_connector)
     }
   }
   syskeeper_forwarder {
-    name {
+    my_syskeeper_forwarder = {
       #substruct(syskeeper_forwarder:config)
     }
   }
   cassandra {
-    name {
+    my_cassandra_connector = {
       #substruct(bridge_cassa:config_connector)
     }
   }
   mongodb {
-    name {
+    my_mongodb_connector = {
       #substruct(bridge_mongodb:config_connector)
     }
   }
   iotdb {
-    name {
+    my_iotdb_connector = {
       #substruct(iotdb:config_restapi)
       #substruct(iotdb:config_thrift)
     }
   }
   tablestore {
-    name {
+    my_tablestore_connector = {
       #substruct(bridge_tablestore:config_connector)
     }
   }
   dynamo {
-    name {
+    my_dynamo_connector = {
       #substruct(bridge_dynamo:config_connector)
     }
   }
   greptimedb {
-    name {
+    my_greptimedb_connector = {
       #substruct(bridge_greptimedb:config_connector)
     }
   }
   hstreamdb {
-    name {
+    my_hstreamdb_connector = {
       #substruct(bridge_hstreamdb:config_connector)
     }
   }
   rocketmq {
-    name {
+    my_rocketmq_connector = {
       #substruct(rocketmq:config_connector)
     }
   }
   gcp_pubsub_producer {
-    name {
+    my_gcp_pubsub_producer = {
       #substruct(gcp_pubsub_producer:config_connector)
     }
   }
   pgsql {
-    name {
+    my_pgsql_connector = {
       #substruct(bridge_pgsql:config_connector)
     }
   }
   kinesis {
-    name {
+    my_kinesis_connector = {
       #substruct(bridge_kinesis:config_connector)
     }
   }
   snowflake {
-    name {
+    my_snowflake_connector = {
       #substruct(connector_snowflake:config_connector)
     }
   }
   redis {
-    name {
+    my_redis_connector = {
       #substruct(redis:config_connector)
     }
   }
   rabbitmq {
-    name {
+    my_rabbitmq_connector = {
       #substruct(rabbitmq:config_connector)
     }
   }
   timescale {
-    name {
+    my_timescale_connector = {
       #substruct(bridge_timescale:config_connector)
     }
   }
   http {
-    name {
+    my_http_connector = {
       #substruct(bridge_http:config_connector)
     }
   }
   syskeeper_proxy {
-    name {
+    my_syskeeper_proxy = {
       #substruct(connector_syskeeper_proxy:config)
     }
   }
   mysql {
-    name {
+    my_mysql_connector = {
       #substruct(bridge_mysql:config_connector)
     }
   }
   confluent_producer {
-    name {
+    my_confluent_producer = {
       #substruct(confluent:config_connector)
     }
   }
   kafka_consumer {
-    name {
+    my_kafka_consumer = {
       #substruct(kafka_consumer:config_connector)
     }
   }
   influxdb {
-    name {
+    my_influxdb_connector = {
       #substruct(bridge_influxdb:config_connector)
     }
   }
   matrix {
-    name {
+    my_matrix_connector = {
       #substruct(bridge_matrix:config_connector)
     }
   }
   gcp_pubsub_consumer {
-    name {
+    my_gcp_pubsub_consumer = {
       #substruct(gcp_pubsub_consumer:config_connector)
     }
   }

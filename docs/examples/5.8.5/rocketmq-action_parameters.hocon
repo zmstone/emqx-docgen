@@ -1,4 +1,4 @@
-actions.rocketmq.my_rocketmq_action.parameters {
+actions.rocketmq.my_action.parameters {
   template = ""
   strategy = roundrobin
   topic = TopicTest

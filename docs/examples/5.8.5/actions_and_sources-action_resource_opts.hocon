@@ -1,4 +1,4 @@
-actions.cassandra.my_resource.resource_opts {
+actions.cassandra.my_action.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

@@ -1,26 +1,26 @@
 listeners {
   tcp {
-    my_tcp_listener = {
+    example_tcp_listener = {
       #substruct(emqx:mqtt_tcp_listener)
     }
   }
   ssl {
-    my_ssl_listener = {
+    example_ssl_listener = {
       #substruct(emqx:mqtt_ssl_listener)
     }
   }
   ws {
-    my_ws_listener = {
+    example_ws_listener = {
       #substruct(emqx:mqtt_ws_listener)
     }
   }
   wss {
-    my_wss_listener = {
+    example_wss_listener = {
       #substruct(emqx:mqtt_wss_listener)
     }
   }
   quic {
-    my_quic_listener = {
+    example_quic_listener = {
       #substruct(emqx:mqtt_quic_listener)
     }
   }

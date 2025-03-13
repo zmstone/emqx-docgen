@@ -8,7 +8,7 @@ authentication = [
     body = {}
     request_timeout = "5s"
     request = {
-        #substruct(connector_http:request)
+      #substruct(connector_http:request)
     }
     ssl = {enable = false}
     pool_size = 8

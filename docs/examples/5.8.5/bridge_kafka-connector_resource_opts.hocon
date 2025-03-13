@@ -1,4 +1,4 @@
-connectors.azure_event_hub_producer.my_resource.resource_opts {
+connectors.azure_event_hub_producer.my_producer.resource_opts {
   health_check_interval = "15s"
   start_after_created = true
   start_timeout = "5s"

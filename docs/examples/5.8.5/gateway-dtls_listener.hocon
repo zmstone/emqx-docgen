@@ -1,4 +1,4 @@
-gateway.coap.listeners.dtls.my_dtls_listener {
+gateway.coap.listeners.dtls.my_listener {
   acceptors = 16
   health_check = {
     #substruct(gateway:udp_health_check)

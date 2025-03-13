@@ -1,4 +1,4 @@
-connectors.influxdb.my_influxdb.parameters {
+connectors.influxdb.my_influxdb_instance.parameters {
   influxdb_type = influxdb_api_v1
   database = "example_database"
   username = "example_user"

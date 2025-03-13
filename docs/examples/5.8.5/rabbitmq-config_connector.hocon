@@ -3,8 +3,8 @@ connectors.rabbitmq.my_rabbitmq_connector {
   description = ""
   server = "localhost"
   port = 5672
-  username = "user"
-  password = "secret"
+  username = "guest"
+  password = "guest"
   pool_size = 8
   timeout = "5s"
   virtual_host = "/"

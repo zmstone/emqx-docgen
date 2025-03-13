@@ -25,6 +25,8 @@ Below is the schema format:
   - Other than "struct" or "map" kind, the other complex types are "array" and "union" (oneOf).
   - The "default" and "raw_default" fields are the default value of the field if it is not provided, you should generate the example based on the "default" field.
   - If "default" or "raw_default" are empty, the "desc" field is to be used as hints to generate the example.
+- A 'singleton' kind type is a single-symbol enum, do not confuse it with a struct.
+- A 'primitive' kind type is not a struct, it's a scalar type like "string", "int", "bool", etc.
 - The "paths" field is an array of dot-separated strings that enumerate all the possible paths to the struct from the root of the config tree.
 - If a struct is embedded in a map, the path may have a placeholder like "$name" where the actual key name is to be generated based on the context. For example, when it's a webhook type, the path may be like "path.to.webhook.$NAME.config", and the actual value in the config would look like:
     path.to.webhook.my_webhook_1.config {
@@ -38,7 +40,7 @@ Below is the schema format:
   ]
 Below are the requirements for the generated example:
 - Generate exactly one example for the given struct schema.
-- If there are more than one paths, generate the shortest path.
+- If there are more than one paths, generate one example based on user inputs about the enclosing structs. If nothing is provided, generate the first path. Note: the enclosing-structs is not exactly the value path, but provides enough information to determine which path is to be used.
 - For the struct, directly generate fields with their values, no {} wrapping. For example:
   path.to.parent_field {
     struct_field1 = ...
@@ -55,10 +57,9 @@ Below are the requirements for the generated example:
 - If a union member is not a substruct, simply generate a config value for the union member.
 - While colon is a valid delimiter for key-value pair, you should use "=" as the delimiter in the generated example.
 - I prefer to have clean examples, so no need to include comments in the generated example.
-- Do not quote the generated example in backticks.
+- Do not quote the generated example in backticks or markdown code blocks.
 - The type information is inherited from Eralng type specs, so you should generate the example based on the type specs. For example "binary()" is binary string, etc.
 - The bytes configs such as "1MB", and duration configs such as "1d" should be quoted.
-- A 'singleton' kind type is a single-symbol enum, do not confuse it with a struct.
 - After generated, go through the requirements and make sure the generated example meets all the above requirements.
 """
 

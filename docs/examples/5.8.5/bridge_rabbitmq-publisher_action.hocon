@@ -1,4 +1,4 @@
-actions.rabbitmq.my_rabbitmq_action {
+actions.rabbitmq.my_name {
   local_topic = ""
   parameters = {
     #substruct(bridge_rabbitmq:action_parameters)

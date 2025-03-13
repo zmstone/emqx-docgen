@@ -1,14 +1,12 @@
 connectors.sqlserver.my_sqlserver {
   driver = "ms-sql"
-  tags = [
-    "example-tag"
-  ]
+  tags = []
   description = ""
-  server = "example-host:1433"
-  database = "example_db"
+  server = "your-server-hostname-or-ip"
+  database = "your-database-name"
   pool_size = 8
   username = "sa"
-  password = "your_password_here"
+  password = #substruct(emqx_schema_secret:secret)
   resource_opts = {
     #substruct(bridge_sqlserver:connector_resource_opts)
   }

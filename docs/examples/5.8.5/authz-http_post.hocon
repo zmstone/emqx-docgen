@@ -4,8 +4,8 @@ authorization.sources = [
     url = "http://example.com/auth"
     request_timeout = "30s"
     body = {
-      "key1" = "value1"
-      "key2" = "value2"
+      key1 = "value1"
+      key2 = "value2"
     }
     connect_timeout = "15s"
     pool_size = 8
@@ -13,9 +13,7 @@ authorization.sources = [
     request = {
       #substruct(connector_http:request)
     }
-    ssl = {
-      enable = false
-    }
+    ssl = {enable = false}
     method = post
     headers = {
       accept = "application/json"

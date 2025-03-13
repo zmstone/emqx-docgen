@@ -1,4 +1,4 @@
-listeners.wss.my_websocket_listener {
+listeners.wss.my_listener {
   bind = 8084
   acceptors = 16
   max_connections = infinity

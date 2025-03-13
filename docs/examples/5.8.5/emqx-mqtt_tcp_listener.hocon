@@ -8,9 +8,7 @@ listeners.tcp.my_tcp_listener {
   max_conn_rate = infinity
   messages_rate = "500/s"
   bytes_rate = "100MB/s"
-  access_rules = [
-    "allow all"
-  ]
+  access_rules = ["allow all"]
   proxy_protocol = false
   proxy_protocol_timeout = "3s"
   tcp_options = {

@@ -1,17 +1,19 @@
-connectors.iotdb.my_iotdb_connector {
+connectors.iotdb.my_iotdb_config {
   tags = []
   description = ""
-  driver = restapi
-  server = "host:port"
+  driver = thrift
+  server = "localhost:6667"
   protocol_version = protocol_v3
   zoneId = "Asia/Shanghai"
   pool_size = 8
   connect_timeout = "10s"
   recv_timeout = "10s"
-  username = "your_username"
-  password = "your_password"
+  username = "iotdb_user"
+  password = "iotdb_password"
   ssl = {
-    enable = false
+    #substruct(emqx:ssl_client_opts)
   }
-  resource_opts = {}
+  resource_opts = {
+    #substruct(iotdb:connector_resource_opts)
+  }
 }

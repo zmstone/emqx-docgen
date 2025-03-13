@@ -1,5 +1,5 @@
 connectors.mongodb.my_mongodb_instance.parameters {
   mongo_type = sharded
-  servers = "host1:27017,host2:27017"
+  servers = "localhost:27017,localhost:27018"
   w_mode = unsafe
 }

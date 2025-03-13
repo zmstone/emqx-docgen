@@ -1,9 +1,9 @@
 connectors.snowflake.my_snowflake_connector {
   tags = []
   description = ""
-  server = "your_snowflake_server_address"
-  account = "your_snowflake_account_id"
-  dsn = "your_snowflake_dsn"
+  server = "your.snowflake.server.com"
+  account = "your_account_id"
+  dsn = "your_dsn"
   proxy = none
   pool_size = 8
   username = "your_username"

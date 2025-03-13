@@ -1,4 +1,4 @@
-connectors.s3.my_connector.resource_opts {
+connectors.s3.my_s3_connector.resource_opts {
   health_check_interval = "15s"
   start_after_created = true
   start_timeout = "5s"

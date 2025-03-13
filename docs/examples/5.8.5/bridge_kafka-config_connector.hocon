@@ -1,5 +1,8 @@
 connectors.kafka_producer.my_kafka_producer {
-  tags = []
+  tags = [
+    "tag1",
+    "tag2"
+  ]
   description = ""
   bootstrap_hosts = "localhost:9092"
   connect_timeout = "5s"
@@ -9,11 +12,9 @@ connectors.kafka_producer.my_kafka_producer {
   socket_opts = {
     #substruct(bridge_kafka:socket_opts)
   }
-  health_check_topic = "health_check_topic_name"
+  health_check_topic = "health-check-topic"
   ssl = {
     #substruct(bridge_kafka:ssl_client_opts)
   }
-  resource_opts = {
-    #substruct(bridge_kafka:connector_resource_opts)
-  }
+  resource_opts = {}
 }

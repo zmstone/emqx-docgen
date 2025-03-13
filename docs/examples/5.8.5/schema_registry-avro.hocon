@@ -1,5 +1,5 @@
 schema_registry.schemas.my_schema {
   type = avro
-  source = "{ \"type\": \"record\", \"name\": \"example\", \"fields\": [{ \"name\": \"field1\", \"type\": \"string\" }] }"
+  source = # Here you should provide the JSON binary content for the Avro schema
   description = ""
 }

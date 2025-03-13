@@ -11,9 +11,6 @@ gateway.exproto.server.ssl_options {
   secure_renegotiate = true
   log_level = notice
   hibernate_after = "5s"
-  partial_chain = false
-  verify_peer_ext_key_usage = ""
-  dhfile = ""
   fail_if_no_peer_cert = false
   honor_cipher_order = true
   client_renegotiation = true

@@ -1,9 +1,9 @@
-actions.pulsar.my_pulsar_action.parameters {
+actions.pulsar.my_action.parameters {
   message = {
     #substruct(pulsar:producer_pulsar_message)
   }
   sync_timeout = "3s"
-  pulsar_topic = "example-topic"
+  pulsar_topic = "your_topic_name"
   batch_size = 100
   compression = no_compression
   send_buffer = "1MB"

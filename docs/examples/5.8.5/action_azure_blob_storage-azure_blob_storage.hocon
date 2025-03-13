@@ -1,10 +1,10 @@
-actions.azure_blob_storage.my_azure_blob_storage {
+actions.azure_blob_storage.my_blob_storage {
   local_topic = "example/topic"
   parameters = {
     #substruct(action_azure_blob_storage:aggreg_parameters)
     #substruct(action_azure_blob_storage:direct_parameters)
   }
-  connector = "my_connector_name"
+  connector = "my_connector"
   tags = [
     "tag1",
     "tag2"

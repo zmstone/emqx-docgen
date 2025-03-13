@@ -1,4 +1,4 @@
-connectors.datalayers.my_datalayer {
+connectors.datalayers.my_connector {
   tags = []
   description = ""
   server = "127.0.0.1:8361"

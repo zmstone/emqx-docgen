@@ -1,11 +1,18 @@
-connectors.cassandra.my_connector {
-  tags = []
+connectors.cassandra.my_cassandra_connector {
+  tags = [
+    "example_tag1",
+    "example_tag2"
+  ]
   description = ""
-  servers = "127.0.0.1:9042"
-  keyspace = "my_keyspace"
+  servers = "192.168.1.1:9042"
+  keyspace = "example_keyspace"
   pool_size = 8
-  username = "my_username"
-  password = "my_password"
-  ssl = {enable = false}
-  resource_opts = {}
+  username = "example_user"
+  password = "example_password"
+  ssl = {
+    enable = false
+  }
+  resource_opts = {
+    #substruct(bridge_cassa:connector_resource_opts)
+  }
 }

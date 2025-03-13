@@ -8,6 +8,6 @@ actions.http.my_action.parameters {
     content-type = "application/json"
     keep-alive = "timeout=5"
   }
-  body = "/body_template"
+  body = ""
   max_retries = 2
 }

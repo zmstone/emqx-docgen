@@ -1,4 +1,4 @@
-actions.redis.my_redis_instance.resource_opts {
+actions.redis.my_redis_action.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

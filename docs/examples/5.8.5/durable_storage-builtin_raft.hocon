@@ -2,7 +2,7 @@ durable_storage.messages {
   backend = builtin_raft
   replication_factor = 3
   n_sites = 1
-  data_dir = "node.data_dir"
+  data_dir = "/path/to/data/dir"
   n_shards = 16
   layout = {
     #substruct(durable_storage:layout_builtin_wildcard_optimized_v2)

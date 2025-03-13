@@ -1,4 +1,4 @@
-sources.gcp_pubsub_consumer.my_pubsub_consumer {
+sources.gcp_pubsub_consumer.my_consumer {
   parameters = {
     #substruct(gcp_pubsub_consumer:source_parameters)
   }

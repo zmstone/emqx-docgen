@@ -1,6 +1,6 @@
-actions.mqtt.my_mqtt_publisher.parameters {
-  topic = "<topic_template>"
+actions.mqtt.my_mqtt_action.parameters {
+  topic = "example/topic"
   qos = 1
   retain = false
-  payload = "<payload_template>"
+  payload = "example payload"
 }

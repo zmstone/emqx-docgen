@@ -6,7 +6,7 @@ listeners.ws.my_websocket_listener {
   zone = default
   enable_authn = true
   max_conn_rate = infinity
-  messages_rate = "500/s"
+  messages_rate = "1000/s"
   bytes_rate = "100MB/s"
   access_rules = ["allow all"]
   proxy_protocol = false

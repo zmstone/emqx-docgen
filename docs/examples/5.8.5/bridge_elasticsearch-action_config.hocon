@@ -1,10 +1,10 @@
-actions.elasticsearch.my_action_name {
+actions.elasticsearch.my_action {
   parameters = {
     #substruct(bridge_elasticsearch:action_create)
     #substruct(bridge_elasticsearch:action_delete)
     #substruct(bridge_elasticsearch:action_update)
   }
-  connector = "your_connector_name"
+  connector = "example_connector"
   tags = [
     "tag1",
     "tag2"

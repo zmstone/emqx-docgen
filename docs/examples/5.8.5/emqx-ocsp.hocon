@@ -1,4 +1,4 @@
-listeners.ssl.my_listener.ssl_options.ocsp {
+gateway.coap.listeners.dtls.my_listener.dtls_options.ocsp {
   enable_ocsp_stapling = false
   responder_url = "http://ocsp.example.com"
   issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"

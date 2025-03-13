@@ -1,8 +1,8 @@
-connectors.kinesis.my_kinesis_connector {
+connectors.kinesis.my_kinesis_client {
   tags = []
   description = ""
-  aws_access_key_id = ""
-  aws_secret_access_key = ""
+  aws_access_key_id = "your_access_key_id"
+  aws_secret_access_key = "your_secret_access_key"
   endpoint = "https://kinesis.us-east-1.amazonaws.com"
   max_retries = 2
   pool_size = 8

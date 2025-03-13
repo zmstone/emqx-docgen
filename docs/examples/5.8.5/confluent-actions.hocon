@@ -1,4 +1,4 @@
-actions.confluent_producer.my_confluent_action {
+actions.confluent_producer.my_producer {
   local_topic = ""
   parameters = {
     #substruct(confluent:producer_kafka_opts)

@@ -6,7 +6,10 @@ connectors.matrix.my_connector {
   username = "your_username"
   password = "your_password"
   ssl = {enable = false}
-  tags = []
+  tags = [
+    "tag1",
+    "tag2"
+  ]
   description = ""
   resource_opts = {}
 }

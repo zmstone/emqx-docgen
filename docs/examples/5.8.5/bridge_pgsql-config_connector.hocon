@@ -1,5 +1,5 @@
 connectors.pgsql.my_pgsql_connector {
-  server = "localhost:5432"
+  server = "Host:5432"
   disable_prepared_statements = false
   database = "my_database"
   pool_size = 8

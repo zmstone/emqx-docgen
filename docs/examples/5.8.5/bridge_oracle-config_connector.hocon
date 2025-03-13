@@ -1,13 +1,16 @@
 connectors.oracle.my_oracle_connector {
-  tags = []
+  tags = [
+    "tag1",
+    "tag2"
+  ]
   description = ""
-  server = "your.database.server:1521"
-  sid = "your_sid"
-  service_name = "your_service_name"
+  server = "oracle.example.com:1521"
+  sid = "ORCL"
+  service_name = "orcl_service"
   role = normal
   pool_size = 8
-  username = "your_username"
-  password = "your_password"
+  username = "db_user"
+  password = "supersecret"
   resource_opts = {
     #substruct(bridge_oracle:connector_resource_opts)
   }

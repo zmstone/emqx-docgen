@@ -1,4 +1,4 @@
-connectors.mongodb.my_mongodb_connector.parameters {
+connectors.mongodb.my_mongodb_instance.parameters {
   mongo_type = rs
   servers = "127.0.0.1:27017,127.0.0.2:27017"
   w_mode = unsafe

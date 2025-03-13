@@ -1,5 +1,5 @@
-schema_registry.schemas.my_schema {
+schema_registry.schemas.my_protobuf_schema {
   type = protobuf
-  source = ""
+  source = "..."
   description = ""
 }

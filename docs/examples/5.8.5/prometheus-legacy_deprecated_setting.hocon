@@ -1,1 +1,1 @@
-Since all fields in the schema are marked as deprecated, according to the requirements, no example should be generated for deprecated fields. Therefore, the resulting HOCON example is empty.
+The schema describes a deprecated Prometheus configuration with all fields marked as deprecated. According to the requirements, we should not generate examples for deprecated fields. Therefore, for this schema, no HOCON example should be generated.

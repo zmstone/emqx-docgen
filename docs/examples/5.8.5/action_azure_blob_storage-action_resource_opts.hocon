@@ -1,4 +1,4 @@
-actions.azure_blob_storage.my_azure_blob_storage.resource_opts {
+actions.azure_blob_storage.my_blob_storage.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

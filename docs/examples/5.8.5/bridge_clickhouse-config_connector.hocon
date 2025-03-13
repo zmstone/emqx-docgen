@@ -3,10 +3,10 @@ connectors.clickhouse.my_clickhouse_connector {
   description = ""
   url = "http://myhostname:8123"
   connect_timeout = "15s"
-  database = "example_database"
+  database = "my_database"
   pool_size = 8
-  username = "example_user"
-  password = "example_password"
+  username = "my_username"
+  password = "my_password"
   resource_opts = {
     #substruct(bridge_clickhouse:connector_resource_opts)
   }

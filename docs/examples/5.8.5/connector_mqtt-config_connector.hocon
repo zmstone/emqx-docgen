@@ -6,12 +6,8 @@ connectors.mqtt.my_mqtt_connector {
     #substruct(connector_mqtt:resource_opts)
   }
   server = "mqtt.example.com:1883"
-  clientid_prefix = "myClientPrefix"
-  static_clientids = [
-    {
-      #substruct(connector_mqtt:static_clientid_entry)
-    }
-  ]
+  clientid_prefix = "myClientIDPrefix"
+  static_clientids = []
   proto_ver = v4
   bridge_mode = false
   username = "mqtt_user"
