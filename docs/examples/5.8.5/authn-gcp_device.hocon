@@ -1,7 +1,5 @@
 authentication = [
   {
-    mechanism = {
-      #substruct(authn:gcp_device)
-    }
+    mechanism = gcp_device
   }
 ]
