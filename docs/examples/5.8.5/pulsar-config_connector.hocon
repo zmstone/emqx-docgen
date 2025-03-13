@@ -1,15 +1,11 @@
 connectors.pulsar.my_webhook_1 {
-  servers = "pulsar://host:6650"
-  authentication = none
-  #authentication = {
-  #  #substruct(bridge_pulsar:auth_basic)
-  #}
-  #authentication = {
-  #  #substruct(bridge_pulsar:auth_token)
-  }
-  connect_timeout = "5s"
-  ssl = {
-    enable = false
-  }
-  resource_opts = {}
+    servers = "pulsar://localhost:6650"
+    authentication = none
+    connect_timeout = "5s"
+    ssl = {
+        #substruct(emqx:ssl_client_opts)
+    }
+    resource_opts = {
+        #substruct(pulsar:connector_resource_opts)
+    }
 }

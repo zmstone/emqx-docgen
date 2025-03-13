@@ -1,4 +1,4 @@
 gateway.mqttsn.predefined[0] {
-  id = 1
-  topic = "example/topic"
+    id = 1
+    topic = "my/topic/name"
 }

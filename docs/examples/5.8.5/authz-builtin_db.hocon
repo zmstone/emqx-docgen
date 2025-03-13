@@ -1,4 +1,4 @@
 authorization.sources[0] {
-  type = built_in_database
-  max_rules = 100
+    type = "built_in_database"
+    max_rules = 100
 }

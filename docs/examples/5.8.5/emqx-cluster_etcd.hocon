@@ -1,8 +1,8 @@
 cluster.etcd {
-  server = "http://etcd1.example.com,http://etcd2.example.com"
-  prefix = "emqxcl"
-  node_ttl = "1m"
-  ssl_options = {
-    #substruct(emqx:ssl_client_opts)
-  }
+    server = "http://localhost:2379,http://localhost:2380"
+    prefix = "emqxcl"
+    node_ttl = "1m"
+    ssl_options = {
+        #substruct(emqx:ssl_client_opts)
+    }
 }

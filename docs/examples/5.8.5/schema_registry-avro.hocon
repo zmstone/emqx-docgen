@@ -1,4 +1,5 @@
 schema_registry.schemas.my_avro_schema {
-  type = avro
-  source = "binary_schema_string"
+    type = avro
+    source = "{\"type\": \"record\", \"name\": \"example\", \"fields\": [{\"name\": \"field1\", \"type\": \"string\"}]}"
+    description = ""
 }

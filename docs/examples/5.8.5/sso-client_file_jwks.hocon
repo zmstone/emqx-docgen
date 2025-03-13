@@ -1,4 +1,4 @@
 dashboard.sso.oidc.client_jwks {
-  type = "file"
-  file = "binary string content"
+    type = "file"
+    file = "your_jwks_content_here"
 }

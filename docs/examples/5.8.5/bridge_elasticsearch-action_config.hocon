@@ -1,11 +1,11 @@
 actions.elasticsearch.my_action_1 {
-  parameters {
-    #bridge_elasticsearch:action_create
-    #bridge_elasticsearch:action_delete
-    #bridge_elasticsearch:action_update
-  }
-  connector = "example_connector"
-  resource_opts = {
-    #bridge_elasticsearch:action_resource_opts
-  }
+    parameters {
+        #substruct(bridge_elasticsearch:action_create)
+        #substruct(bridge_elasticsearch:action_delete)
+        #substruct(bridge_elasticsearch:action_update)
+    }
+    connector = "my_connector"
+    resource_opts = {
+        #substruct(bridge_elasticsearch:action_resource_opts)
+    }
 }

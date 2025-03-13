@@ -1,4 +1,4 @@
 actions.gcp_pubsub_producer.my_webhook_1.parameters.attributes_template[0] {
-  key = "key1"
-  value = "value1"
+    key = "example_key"
+    value = "example_value"
 }

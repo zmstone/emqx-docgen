@@ -1,4 +1,4 @@
-authorization.sources[0] = {
-  type = "file"
-  path = "/path/to/acl_rules_file"
+authorization.sources[0] {
+    type = "file"
+    path = "/path/to/acl_rules.conf"
 }

@@ -1,8 +1,8 @@
 authentication[0] {
-  mechanism = "cinfo"
-  checks = [
-    {
-      #substruct(authn:cinfo_check)
-    }
-  ]
+    mechanism = "cinfo"
+    checks = [
+        {
+            #substruct(authn:cinfo_check)
+        }
+    ]
 }

@@ -1,5 +1,5 @@
 connectors.mongodb.my_webhook_1.parameters {
-  mongo_type = "single"
-  server = "127.0.0.1:27017"
-  w_mode = "unsafe"
+    mongo_type = "single"
+    server = "localhost:27017"
+    w_mode = "unsafe"
 }

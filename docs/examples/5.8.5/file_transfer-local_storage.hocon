@@ -1,4 +1,4 @@
-file_transfer.storage.local = {
+file_transfer.storage.local {
     segments = {
         #substruct(file_transfer:local_storage_segments)
     }

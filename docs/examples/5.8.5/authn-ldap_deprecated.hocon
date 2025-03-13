@@ -1,17 +1,17 @@
 authentication[0] {
-  mechanism = password_based
-  backend = ldap
-  query_timeout = "5s"
-  server = "localhost:389"
-  pool_size = 8
-  username = "user"
-  password = "secret"
-  base_dn = "uid=user,ou=testdevice,dc=emqx,dc=io"
-  filter = "(objectClass=mqttUser)"
-  request_timeout = "10s"
-  ssl = {
-    #substruct(ldap:ssl)
-  }
-  password_attribute = userPassword
-  is_superuser_attribute = isSuperuser
+    mechanism = password_based
+    backend = ldap
+    query_timeout = "5s"
+    server = "example.com:389"
+    pool_size = 8
+    username = "admin"
+    password = "secret"
+    base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
+    filter = "(objectClass=mqttUser)"
+    request_timeout = "10s"
+    ssl = {
+        #substruct(ldap:ssl)
+    }
+    password_attribute = "userPassword"
+    is_superuser_attribute = "isSuperuser"
 }

@@ -1,15 +1,15 @@
-authorization.sources[0] = {
-  type = "mysql"
-  server = "localhost:3306"
-  database = "my_database"
-  pool_size = 8
-  username = "root"
-  password = "my_secure_password"
-  ssl = {
-    #substruct(emqx:ssl_client_opts)
-  }
-  prepare_statement = {
-    # key-value pairs of SQL prepared statements
-  }
-  query = "SELECT * FROM auth_table WHERE user_id = ?"
+authorization.sources[0] {
+    type = "mysql"
+    server = "localhost:3306"
+    database = "auth_db"
+    pool_size = 8
+    username = "root"
+    password = "your_password_here"
+    ssl = {
+        #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {
+        statement1 = "SELECT * FROM users WHERE id = ?"
+    }
+    query = "SELECT permission FROM permissions WHERE user_id = ?"
 }
