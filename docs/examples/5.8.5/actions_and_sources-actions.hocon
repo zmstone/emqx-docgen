@@ -1,176 +1,176 @@
 actions {
   mqtt {
-    example_mqtt_action = {
+    my_mqtt_action = {
       #substruct(bridge_mqtt_publisher:mqtt_publisher_action)
     }
   }
   azure_event_hub_producer {
-    example_azure_event_hub_action = {
+    my_azure_event_hub_action = {
       #substruct(bridge_azure_event_hub:actions)
     }
   }
   elasticsearch {
-    example_elasticsearch_action = {
+    my_elasticsearch_action = {
       #substruct(bridge_elasticsearch:action_config)
     }
   }
   kafka_producer {
-    example_kafka_producer_action = {
+    my_kafka_action = {
       #substruct(bridge_kafka:kafka_producer_action)
     }
   }
   datalayers {
-    example_datalayers_action = {
+    my_datalayers_action = {
       #substruct(bridge_datalayers:datalayers_action)
     }
   }
   oracle {
-    example_oracle_action = {
+    my_oracle_action = {
       #substruct(bridge_oracle:oracle_action)
     }
   }
   azure_blob_storage {
-    example_azure_blob_storage_action = {
+    my_azure_blob_storage_action = {
       #substruct(action_azure_blob_storage:azure_blob_storage)
     }
   }
   s3 {
-    example_s3_action = {
+    my_s3_action = {
       #substruct(bridge_s3:s3)
     }
   }
   tdengine {
-    example_tdengine_action = {
+    my_tdengine_action = {
       #substruct(bridge_tdengine:action_config)
     }
   }
   pulsar {
-    example_pulsar_action = {
+    my_pulsar_action = {
       #substruct(pulsar:publisher_action)
     }
   }
   sqlserver {
-    example_sqlserver_action = {
+    my_sqlserver_action = {
       #substruct(bridge_sqlserver:sqlserver_action)
     }
   }
   opents {
-    example_opents_action = {
+    my_opents_action = {
       #substruct(bridge_opents:action_config)
     }
   }
   clickhouse {
-    example_clickhouse_action = {
+    my_clickhouse_action = {
       #substruct(bridge_clickhouse:clickhouse_action)
     }
   }
   couchbase {
-    example_couchbase_action = {
+    my_couchbase_action = {
       #substruct(action_couchbase:couchbase)
     }
   }
   syskeeper_forwarder {
-    example_syskeeper_forwarder_action = {
+    my_syskeeper_forwarder_action = {
       #substruct(syskeeper:config)
     }
   }
   cassandra {
-    example_cassandra_action = {
+    my_cassandra_action = {
       #substruct(bridge_cassa:cassandra_action)
     }
   }
   mongodb {
-    example_mongodb_action = {
+    my_mongodb_action = {
       #substruct(bridge_mongodb:mongodb_action)
     }
   }
   iotdb {
-    example_iotdb_action = {
+    my_iotdb_action = {
       #substruct(bridge_iotdb:action_config)
     }
   }
   tablestore {
-    example_tablestore_action = {
+    my_tablestore_action = {
       #substruct(bridge_tablestore:tablestore_action)
     }
   }
   dynamo {
-    example_dynamo_action = {
+    my_dynamo_action = {
       #substruct(bridge_dynamo:dynamo_action)
     }
   }
   greptimedb {
-    example_greptimedb_action = {
+    my_greptimedb_action = {
       #substruct(bridge_greptimedb:greptimedb_action)
     }
   }
   hstreamdb {
-    example_hstreamdb_action = {
+    my_hstreamdb_action = {
       #substruct(bridge_hstreamdb:hstreamdb_action)
     }
   }
   rocketmq {
-    example_rocketmq_action = {
+    my_rocketmq_action = {
       #substruct(rocketmq:rocketmq_action)
     }
   }
   gcp_pubsub_producer {
-    example_gcp_pubsub_action = {
+    my_gcp_pubsub_producer_action = {
       #substruct(gcp_pubsub_producer:producer_action)
     }
   }
   pgsql {
-    example_pgsql_action = {
+    my_pgsql_action = {
       #substruct(bridge_pgsql:pgsql_action)
     }
   }
   kinesis {
-    example_kinesis_action = {
+    my_kinesis_action = {
       #substruct(bridge_kinesis:kinesis_action)
     }
   }
   snowflake {
-    example_snowflake_action = {
+    my_snowflake_action = {
       #substruct(action_snowflake:snowflake)
     }
   }
   redis {
-    example_redis_action = {
+    my_redis_action = {
       #substruct(redis:redis_action)
     }
   }
   rabbitmq {
-    example_rabbitmq_action = {
+    my_rabbitmq_action = {
       #substruct(bridge_rabbitmq:publisher_action)
     }
   }
   timescale {
-    example_timescale_action = {
+    my_timescale_action = {
       #substruct(bridge_pgsql:pgsql_action)
     }
   }
   http {
-    example_http_action = {
+    my_http_action = {
       #substruct(bridge_http:http_action)
     }
   }
   mysql {
-    example_mysql_action = {
+    my_mysql_action = {
       #substruct(bridge_mysql:mysql_action)
     }
   }
   confluent_producer {
-    example_confluent_action = {
+    my_confluent_action = {
       #substruct(confluent:actions)
     }
   }
   influxdb {
-    example_influxdb_action = {
+    my_influxdb_action = {
       #substruct(bridge_influxdb:influxdb_action)
     }
   }
   matrix {
-    example_matrix_action = {
+    my_matrix_action = {
       #substruct(bridge_pgsql:pgsql_action)
     }
   }

@@ -1,6 +1,4 @@
-connectors.clickhouse.my_clickhouse_connector {
-  tags = []
-  description = ""
+connectors.clickhouse.my_webhook_1 {
   url = "http://myhostname:8123"
   connect_timeout = "15s"
   database = "my_database"

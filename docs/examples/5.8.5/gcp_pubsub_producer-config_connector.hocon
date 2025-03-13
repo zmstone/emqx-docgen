@@ -1,6 +1,4 @@
-connectors.gcp_pubsub_producer.my_gcp_pubsub_producer {
-  tags = []
-  description = ""
+connectors.gcp_pubsub_producer.my_webhook_1 {
   connect_timeout = "15s"
   pool_size = 8
   pipelining = 100

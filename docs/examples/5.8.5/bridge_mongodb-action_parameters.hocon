@@ -1,4 +1,4 @@
-actions.mongodb.my_mongodb_instance.parameters {
+actions.mongodb.my_webhook_1.parameters {
   collection = mqtt
-  payload_template = "Your template for formatting messages"
+  payload_template = "JSON"
 }

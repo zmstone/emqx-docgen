@@ -1,1 +1,2 @@
-The schema describes a deprecated Prometheus configuration with all fields marked as deprecated. According to the requirements, we should not generate examples for deprecated fields. Therefore, for this schema, no HOCON example should be generated.
+prometheus {
+}

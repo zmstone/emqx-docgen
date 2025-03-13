@@ -1,26 +1,23 @@
-authorization.sources = [
-  {
-    type = mongodb
-    collection = "your_collection_name"
-    filter = {}
-    limit = 1000
-    skip = 0
-    mongo_type = single
-    server = "hostname_or_ip"
-    w_mode = unsafe
-    srv_record = false
-    pool_size = 8
-    username = "your_username"
-    password = "your_password"
-    use_legacy_protocol = auto
-    auth_source = "your_auth_source"
-    database = "your_database_name"
-    topology = {
-      #substruct(mongo:topology)
-    }
-    ssl = {
-      enable = false
-      #substruct(emqx:ssl_client_opts)
-    }
+authorization.sources[0] = {
+  type = "mongodb"
+  collection = "auth_data"
+  filter = {}
+  limit = 1000
+  skip = 0
+  mongo_type = "single"
+  server = "localhost:27017"
+  w_mode = "unsafe"
+  srv_record = false
+  pool_size = 8
+  username = "username"
+  password = "password"
+  use_legacy_protocol = "auto"
+  auth_source = "auth_db"
+  database = "main_db"
+  topology = {
+    #substruct(mongo:topology)
   }
-]
+  ssl = {
+    enable = false
+  }
+}

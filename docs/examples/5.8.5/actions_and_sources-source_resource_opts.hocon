@@ -1,9 +1,3 @@
-sources {
-  kafka_consumer {
-    my_kafka_consumer {
-      resource_opts {
-        health_check_interval = "15s"
-      }
-    }
-  }
+sources.kafka_consumer.my_webhook_1.resource_opts {
+  health_check_interval = "15s"
 }

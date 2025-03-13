@@ -1,6 +1,6 @@
 psk_authentication {
   enable = false
-  init_file = "/path/to/psk_file"
+  init_file = "/path/to/psk_init_file"
   separator = ":"
   chunk_size = 50
 }

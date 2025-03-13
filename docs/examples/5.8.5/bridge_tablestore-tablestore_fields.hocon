@@ -1,8 +1,9 @@
-actions.tablestore.my_table.parameters.fields = [
-    {
-        column = "example_column"
-        value = "example_value" # This can be a boolean, number, or string.
-        isint = false # This can be a boolean or string.
-        isbinary = false # This can be a boolean or string.
-    }
-]
+actions.tablestore.my_webhook_1.parameters.fields[0] {
+  column = "my_column_name"
+  value = {
+    # "boolean()" or "number()" or "binary()"
+  }
+  isint = {
+    # "boolean()" or "binary()"
+  }
+}

@@ -1,14 +1,9 @@
-actions.opents.my_opents_action {
-  local_topic = ""
+actions.opents.my_webhook_1 {
+  local_topic = "your/topic/here"
   parameters = {
     #substruct(bridge_opents:action_parameters)
   }
-  connector = ""
-  tags = [
-    "example_tag1",
-    "example_tag2"
-  ]
-  description = ""
+  connector = "your_connector_name"
   resource_opts = {
     #substruct(actions_and_sources:action_resource_opts)
   }

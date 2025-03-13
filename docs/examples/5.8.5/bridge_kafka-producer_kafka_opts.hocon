@@ -1,4 +1,4 @@
-actions.kafka_producer.my_kafka_producer.parameters {
+actions.kafka_producer.my_webhook_1.parameters {
   topic = "t-${payload.t}"
   message = {
     #substruct(bridge_kafka:kafka_message)

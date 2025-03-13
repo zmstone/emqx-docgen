@@ -1,4 +1,4 @@
-actions.pulsar.my_action.parameters {
+actions.pulsar.my_webhook_1.parameters {
   message = {
     #substruct(pulsar:producer_pulsar_message)
   }

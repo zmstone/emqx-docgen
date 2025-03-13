@@ -1,10 +1,10 @@
-actions.tdengine.my_tdengine_action {
-  local_topic = ""
+actions.tdengine.my_action {
+  local_topic = "my/mqtt/topic"
   parameters = {
     #substruct(bridge_tdengine:action_parameters)
   }
-  connector = ""
-  tags = []
-  description = ""
-  resource_opts = {}
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
 }

@@ -1,4 +1,4 @@
-dashboard.sso {
+dashboard.sso = {
   ldap = {
     #substruct(sso:ldap)
   }

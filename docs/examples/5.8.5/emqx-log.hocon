@@ -3,13 +3,14 @@ log {
     #substruct(emqx:console_handler)
   }
   file = {
-    level = warning
+    #substruct(emqx:log_file_handler)
+    #map(handler_name:emqx:log_file_handler)
   }
   throttling = {
     #substruct(emqx:log_throttling)
   }
   audit = {
     enable = false
-    level = info
+    level = "info"
   }
 }

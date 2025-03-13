@@ -6,9 +6,6 @@ rpc {
   server_port = 5369
   client_num = 10
   connect_timeout = "5s"
-  certfile = "/path/to/certfile.pem"
-  keyfile = "/path/to/keyfile.pem"
-  cacertfile = "/path/to/cacertfile.pem"
   send_timeout = "5s"
   authentication_timeout = "5s"
   call_receive_timeout = "15s"

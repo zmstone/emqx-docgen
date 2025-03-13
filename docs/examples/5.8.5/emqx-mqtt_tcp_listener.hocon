@@ -1,11 +1,11 @@
-listeners.tcp.my_tcp_listener {
+listeners.tcp.my_webhook_1 {
   bind = 1883
   acceptors = 16
-  max_connections = infinity
+  max_connections = "infinity"
   mountpoint = ""
   zone = default
   enable_authn = true
-  max_conn_rate = infinity
+  max_conn_rate = "infinity"
   messages_rate = "500/s"
   bytes_rate = "100MB/s"
   access_rules = ["allow all"]

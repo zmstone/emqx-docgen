@@ -1,11 +1,10 @@
-listeners.ssl.my_ssl_listener.ssl_options {
+listeners.ssl.my_webhook_1.ssl_options {
   cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
   certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
   keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
   verify = verify_none
   reuse_sessions = true
   depth = 10
-  password = ""
   versions = ["tlsv1.3", "tlsv1.2"]
   ciphers = []
   secure_renegotiate = true

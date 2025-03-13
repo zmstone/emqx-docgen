@@ -1,7 +1,5 @@
-connectors.syskeeper_forwarder.my_forwarder {
-  tags = []
-  description = ""
-  server = "example.syskeeper.server"
+connectors.syskeeper_forwarder.my_webhook_1 {
+  server = "your.syskeeper.proxy.server"
   ack_mode = no_ack
   ack_timeout = "10s"
   pool_size = 16

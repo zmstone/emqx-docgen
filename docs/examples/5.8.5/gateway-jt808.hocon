@@ -1,4 +1,4 @@
-gateway.jt808 {
+gateway.jt808 = {
   frame = {
     #substruct(gateway:jt808_frame)
   }

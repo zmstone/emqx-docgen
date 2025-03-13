@@ -1,4 +1,4 @@
-actions.kinesis.my_stream.parameters {
+actions.kinesis.my_webhook_1.parameters {
   payload_template = "${.}"
   stream_name = "example_stream"
   partition_key = "${partition_key}"

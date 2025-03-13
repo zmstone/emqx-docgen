@@ -1,4 +1,4 @@
-actions.elasticsearch.my_action.parameters {
+actions.elasticsearch.my_action_name.parameters {
   action = create
   index = "${payload.index}"
   id = "${payload.id}"

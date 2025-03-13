@@ -1,12 +1,8 @@
-actions.sqlserver.my_sqlserver_action {
-  local_topic = ""
+actions.sqlserver.my_webhook_1 {
+  local_topic = "your/topic/here"
   parameters = {
     #substruct(bridge_sqlserver:action_parameters)
   }
-  connector = ""
-  tags = []
-  description = ""
-  resource_opts = {
-    #substruct(actions_and_sources:action_resource_opts)
-  }
+  connector = "sqlserver_connector"
+  resource_opts = {}
 }

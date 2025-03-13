@@ -1,4 +1,4 @@
-actions.http.my_action.parameters {
+actions.http.my_webhook_1.parameters {
   path = "/room/${room_no}"
   method = post
   headers = {
@@ -8,6 +8,6 @@ actions.http.my_action.parameters {
     content-type = "application/json"
     keep-alive = "timeout=5"
   }
-  body = ""
+  body = "${mqtt_payload}"
   max_retries = 2
 }

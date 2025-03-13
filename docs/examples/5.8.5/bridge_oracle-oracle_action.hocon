@@ -1,11 +1,9 @@
 actions.oracle.my_oracle_action {
-  local_topic = ""
+  local_topic = "example/topic"
   parameters = {
     #substruct(bridge_oracle:action_parameters)
   }
-  connector = ""
-  tags = []
-  description = ""
+  connector = "example_connector"
   resource_opts = {
     #substruct(actions_and_sources:action_resource_opts)
   }

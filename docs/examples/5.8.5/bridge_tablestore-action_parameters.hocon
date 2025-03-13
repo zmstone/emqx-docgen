@@ -1,16 +1,16 @@
-actions.tablestore.my_table.parameters {
-  storage_model_type = timeseries
-  table_name = "example_table"
-  measurement = "example_measurement"
+actions.tablestore.my_webhook_1.parameters {
+  storage_model_type = "timeseries"
+  table_name = "static_table_name_or_${payload.table_name}"
+  measurement = "static_measurement_or_${payload.measurement}"
   tags = {
-    "tag_key1" = "tag_value1"
+    # Map of tag keys and values, e.g., tag_key1 = "value1"
   }
   fields = [
     {
       #substruct(bridge_tablestore:tablestore_fields)
     }
   ]
-  data_source = "example_data_source"
-  timestamp = "NOW"
-  meta_update_model = MUM_NORMAL
+  data_source = "static_data_source_or_${payload.data_source}"
+  timestamp = "static_timestamp_or_${payload.microsecond_timestamp}"
+  meta_update_model = "MUM_NORMAL"
 }

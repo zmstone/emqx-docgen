@@ -1,8 +1,8 @@
 plugins {
   states = [
     {
-      #substruct(plugin:state)
+      #plugin:state
     }
   ]
-  install_dir = plugins
+  install_dir = "plugins"
 }

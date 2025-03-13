@@ -1,4 +1,4 @@
-listeners.ws.my_websocket.websocket {
+listeners.ws.my_webhook_1.websocket {
   mqtt_path = "/mqtt"
   mqtt_piggyback = multiple
   compress = false

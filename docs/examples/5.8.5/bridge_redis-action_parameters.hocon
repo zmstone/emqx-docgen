@@ -1,4 +1,4 @@
-actions.redis.my_redis_action.parameters {
+actions.redis.my_webhook_1.parameters {
   command_template = [
     "rpush",
     "msgs",

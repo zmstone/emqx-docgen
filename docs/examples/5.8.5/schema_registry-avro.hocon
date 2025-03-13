@@ -1,5 +1,4 @@
-schema_registry.schemas.my_schema {
+schema_registry.schemas.my_avro_schema {
   type = avro
-  source = # Here you should provide the JSON binary content for the Avro schema
-  description = ""
+  source = "binary_schema_string"
 }

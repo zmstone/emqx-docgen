@@ -1,4 +1,4 @@
-gateway.coap.listeners.dtls.example_listener.health_check {
+gateway.coap.listeners.udp.my_webhook_1.health_check {
   request = "example_request_content"
   reply = "example_reply_content"
 }

@@ -1,29 +1,18 @@
-connectors.mysql.my_connection.ssl {
+connectors.cassandra.my_webhook_1.ssl {
   cacertfile = "/path/to/cacertfile.pem"
   certfile = "/path/to/certfile.pem"
   keyfile = "/path/to/keyfile.pem"
   verify = verify_none
   reuse_sessions = true
   depth = 10
-  password = "your_password"
-  versions = [
-    "tlsv1.3",
-    "tlsv1.2"
-  ]
+  password = "your_secret_password"
+  versions = ["tlsv1.3", "tlsv1.2"]
   ciphers = []
   secure_renegotiate = true
   log_level = notice
   hibernate_after = "5s"
-  partial_chain = {
-    #substruct(true)
-    #substruct(false)
-    #substruct(two_cacerts_from_cacertfile)
-    #substruct(cacert_from_cacertfile)
-  }
+  partial_chain = false
   verify_peer_ext_key_usage = "clientAuth"
   enable = false
-  server_name_indication = {
-    #substruct(disable)
-    #substruct(string())
-  }
+  server_name_indication = "disable"
 }

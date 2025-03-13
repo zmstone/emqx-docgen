@@ -1,4 +1,4 @@
-connectors.pulsar.my_pulsar_connector.authentication {
-  username = "example_username"
-  password = "example_password"
+connectors.pulsar.my_webhook_1.authentication {
+  username = "your_username"
+  password = "your_password"
 }

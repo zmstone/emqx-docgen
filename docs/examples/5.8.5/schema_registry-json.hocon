@@ -1,5 +1,4 @@
-schema_registry.schemas.my_schema {
+schema_registry.schemas.my_webhook_1 {
   type = json
-  source = "{}"
-  description = ""
+  source = "binary_string"
 }

@@ -1,34 +1,32 @@
-authentication = [
-  {
-    mechanism = password_based
-    backend = mongodb
-    collection = "auth_data_collection"
-    filter = {}
-    password_hash_field = "password_hash"
-    salt_field = "salt"
-    is_superuser_field = "is_superuser"
-    password_hash_algorithm = {
-      #substruct(authn_hash:bcrypt)
-      #substruct(authn_hash:pbkdf2)
-      #substruct(authn_hash:simple)
-    }
-    mongo_type = rs
-    servers = "localhost:27017"
-    w_mode = unsafe
-    r_mode = master
-    replica_set_name = "replica_set_1"
-    srv_record = false
-    pool_size = 8
-    username = "dbuser"
-    password = "secret_password"
-    use_legacy_protocol = auto
-    auth_source = "auth_db"
-    database = "main_db"
-    topology = {
-      #substruct(mongo:topology)
-    }
-    ssl = {
-      #substruct(emqx:ssl_client_opts)
-    }
+authentication[0] {
+  mechanism = password_based
+  backend = mongodb
+  collection = "auth_collection"
+  filter = {}
+  password_hash_field = "password_hash"
+  salt_field = "salt"
+  is_superuser_field = "is_superuser"
+  password_hash_algorithm {
+    #authn_hash:bcrypt
+    #authn_hash:pbkdf2
+    #authn_hash:simple
   }
-]
+  mongo_type = rs
+  servers = "localhost:27017"
+  w_mode = unsafe
+  r_mode = master
+  replica_set_name = "myReplicaSet"
+  srv_record = false
+  pool_size = 8
+  username = "auth_user"
+  password = "secret"
+  use_legacy_protocol = auto
+  auth_source = "admin"
+  database = "auth_db"
+  topology = {
+    #substruct(mongo:topology)
+  }
+  ssl = {
+    enable = false
+  }
+}

@@ -1,4 +1,4 @@
-exhook.servers[0].socket_options {
+exhook.servers[0].socket_options = {
   keepalive = true
   nodelay = true
   recbuf = "64KB"

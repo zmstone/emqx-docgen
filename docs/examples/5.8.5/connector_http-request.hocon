@@ -1,12 +1,11 @@
-authentication = [
-  {
-    method = "GET"
-    path = "/api/resource"
-    body = "{}"
-    headers = {
-      "Content-Type" = "application/json"
-    }
-    max_retries = 3
-    request_timeout = "5000"
+authentication[0].request {
+  method = "GET"
+  path = "/api/v1/resource"
+  body = "{ \"key\": \"value\" }"
+  headers = {
+    "Content-Type" = "application/json"
+    "Authorization" = "Bearer token"
   }
-]
+  max_retries = 3
+  request_timeout = "5000ms"
+}

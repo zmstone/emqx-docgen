@@ -1,19 +1,19 @@
-gateway.coap.listeners.dtls.my_listener.dtls_options {
+gateway.coap.listeners.dtls.my_webhook_1.dtls_options {
   cacertfile = "${EMQX_ETC_DIR}/certs/cacert.pem"
   certfile = "${EMQX_ETC_DIR}/certs/cert.pem"
   keyfile = "${EMQX_ETC_DIR}/certs/key.pem"
   verify = verify_none
   reuse_sessions = true
   depth = 10
-  password = ""
+  password = ""  # Provide the password if the keyfile is password-protected
   versions = ["dtlsv1.2"]
   ciphers = []
   secure_renegotiate = true
   log_level = notice
   hibernate_after = "5s"
   partial_chain = false
-  verify_peer_ext_key_usage = ""
-  dhfile = ""
+  verify_peer_ext_key_usage = ""  # Specify extended key usage if needed
+  dhfile = ""  # Specify path to Diffie-Hellman parameters if required
   fail_if_no_peer_cert = false
   honor_cipher_order = true
   client_renegotiation = true

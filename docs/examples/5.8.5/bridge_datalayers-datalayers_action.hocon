@@ -1,15 +1,8 @@
 actions.datalayers.my_datalayer_action {
-  local_topic = ""
+  local_topic = "my/topic/filter"
   parameters = {
     #substruct(bridge_datalayers:action_parameters)
   }
-  connector = ""
-  tags = [
-    "tag1",
-    "tag2"
-  ]
-  description = ""
-  resource_opts = {
-    #substruct(actions_and_sources:action_resource_opts)
-  }
+  connector = "my_connector"
+  resource_opts = {}
 }

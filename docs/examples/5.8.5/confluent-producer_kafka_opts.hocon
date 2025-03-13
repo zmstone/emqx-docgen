@@ -1,4 +1,4 @@
-actions.confluent_producer.my_confluent_producer.parameters {
+actions.confluent_producer.my_producer.parameters {
   topic = "t-${payload.t}"
   message = {
     #substruct(confluent:kafka_message)
@@ -11,9 +11,7 @@ actions.confluent_producer.my_confluent_producer.parameters {
   required_acks = all_isr
   kafka_headers = "${pub_props}"
   kafka_ext_headers = [
-    {
-      #substruct(bridge_kafka:producer_kafka_ext_headers)
-    }
+    #substruct(bridge_kafka:producer_kafka_ext_headers)
   ]
   kafka_header_value_encode_mode = none
   partition_count_refresh_interval = "60s"

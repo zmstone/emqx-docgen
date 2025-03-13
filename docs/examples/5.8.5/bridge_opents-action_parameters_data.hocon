@@ -1,10 +1,10 @@
-actions.opents.my_action.parameters.data = [
-  {
-    timestamp = "${timestamp_var}"
-    metric = "${metric_var}"
-    tags = {
-      # You can use either a map or a template here
-    }
-    value = 123
+actions.opents.my_webhook_1.parameters.data[0] {
+  timestamp = "${timestamp_var}"
+  metric = "${metric_var}"
+  #tags = {
+    #union(map, emqx_schema:template())
   }
-]
+  #value = {
+    #union(integer, float, emqx_schema:template())
+  }
+}

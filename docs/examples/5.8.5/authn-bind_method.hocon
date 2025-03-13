@@ -1,6 +1,4 @@
-authentication = [
-  {
-    type = bind
-    bind_password = "${password}"
-  }
-]
+authentication[0].method {
+  type = bind
+  bind_password = "${password}"
+}

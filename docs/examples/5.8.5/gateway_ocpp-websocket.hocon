@@ -1,4 +1,4 @@
-gateway.ocpp.listeners.ws.my_listener.websocket {
+gateway.ocpp.listeners.ws.my_webhook_1.websocket = {
   path = "/ocpp"
   piggyback = single
   compress = false

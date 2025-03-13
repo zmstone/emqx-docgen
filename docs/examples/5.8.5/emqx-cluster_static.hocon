@@ -1,3 +1,6 @@
 cluster.static {
-  seeds = []
+  seeds = [
+    # union(emqx_schema:comma_separated_atoms())
+    # union(array(atom()))
+  ]
 }

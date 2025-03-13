@@ -1,4 +1,4 @@
-actions.elasticsearch.my_action.resource_opts {
+actions.elasticsearch.my_webhook_1.resource_opts {
   worker_pool_size = 16
   health_check_interval = "15s"
   query_mode = async

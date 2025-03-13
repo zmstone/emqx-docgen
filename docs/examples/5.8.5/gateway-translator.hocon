@@ -1,4 +1,4 @@
 gateway.lwm2m.translators.command {
-  topic = "example_topic"
+  topic = "example/topic"
   qos = 0
 }

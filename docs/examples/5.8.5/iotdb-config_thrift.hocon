@@ -1,15 +1,13 @@
-connectors.iotdb.my_iotdb_config {
-  tags = []
-  description = ""
-  driver = thrift
-  server = "localhost:6667"
+connectors.iotdb.my_webhook_1 {
+  driver = restapi
+  server = "host:port"
   protocol_version = protocol_v3
   zoneId = "Asia/Shanghai"
   pool_size = 8
   connect_timeout = "10s"
   recv_timeout = "10s"
-  username = "iotdb_user"
-  password = "iotdb_password"
+  username = "user"
+  password = "secret"
   ssl = {
     #substruct(emqx:ssl_client_opts)
   }

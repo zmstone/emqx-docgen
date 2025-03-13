@@ -1,8 +1,6 @@
-actions.iotdb.my_iotdb.parameters.data = [
-  {
-    timestamp = now
-    measurement = "sensor_temp"
-    data_type = "float"
-    value = "${temp_value}"
-  }
-]
+actions.iotdb.my_webhook_1.parameters.data[0] {
+  timestamp = "now"
+  measurement = "${measurement_var}"
+  data_type = "text"
+  value = "${value_var}"
+}

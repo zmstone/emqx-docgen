@@ -1,4 +1,4 @@
-gateway.coap.listeners.dtls.my_listener.udp_options {
+gateway.coap.listeners.dtls.my_webhook_1.udp_options {
   active_n = 100
   recbuf = "256KB"
   sndbuf = "256KB"

@@ -1,11 +1,11 @@
 dashboard.sso.ldap {
   enable = false
-  backend = ldap
+  backend = "ldap"
   query_timeout = "5s"
-  server = "example.ldap.server"
+  server = "ldap.example.com"
   pool_size = 8
-  username = "example_user"
-  password = "example_password"
+  username = "username"
+  password = "password"
   base_dn = "dc=example,dc=com"
   filter = "(& (objectClass=person) (uid=${username}))"
   request_timeout = "10s"

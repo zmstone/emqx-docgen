@@ -1,10 +1,12 @@
-actions.s3.my_s3_upload.parameters {
+actions.s3.my_webhook_1.parameters {
   mode = aggregated
-  container = {type = csv}
-  aggregation = {
-    #substruct(bridge_s3:s3_aggregation)
+  container = {
+    #bridge_s3:s3_aggregated_container_csv
   }
-  bucket = "your-s3-bucket-name"
+  aggregation = {
+    #bridge_s3:s3_aggregation
+  }
+  bucket = "my_bucket_name"
   key = "${action}/${node}/${datetime.rfc3339utc}/${sequence}"
   acl = private
   headers = {

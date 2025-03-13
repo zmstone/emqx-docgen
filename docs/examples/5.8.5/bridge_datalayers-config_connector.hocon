@@ -1,13 +1,13 @@
-connectors.datalayers.my_connector {
-  tags = []
-  description = ""
+connectors.datalayers.my_webhook_1 {
   server = "127.0.0.1:8361"
   pool_size = 8
   parameters = {
-    #substruct(connector_datalayers:datalayers_influxdb_v1_parameters)
+    #connector_datalayers:datalayers_influxdb_v1_parameters
   }
   ssl = {
     enable = false
   }
-  resource_opts = {}
+  resource_opts = {
+    #bridge_datalayers:connector_resource_opts
+  }
 }

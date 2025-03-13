@@ -1,5 +1,5 @@
 gateway.jt808.proto.auth {
   allow_anonymous = true
-  registry = "http://device-registry.example.com"
-  authentication = "http://auth.example.com"
+  registry = "http://example.com/registry"
+  authentication = "http://example.com/authentication"
 }

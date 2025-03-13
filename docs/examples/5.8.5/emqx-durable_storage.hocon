@@ -1,6 +1,7 @@
 durable_storage {
+  # Configuration related to the durable storage of MQTT messages.
   messages = {
-    #substruct(durable_storage:builtin_raft)
-    #substruct(durable_storage:builtin_local)
+    #durable_storage:builtin_raft
+    #durable_storage:builtin_local
   }
 }

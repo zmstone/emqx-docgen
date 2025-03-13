@@ -5,5 +5,5 @@ dashboard.sso.saml {
   idp_metadata_url = "https://idp.example.com"
   sp_sign_request = false
   sp_public_key = "Pub Key"
-  sp_private_key = "YourPrivateKey"
+  sp_private_key = ""
 }

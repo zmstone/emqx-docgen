@@ -1,4 +1,4 @@
-actions.azure_event_hub_producer.my_event_hub.parameters {
+actions.azure_event_hub_producer.my_webhook_1.parameters {
   topic = "t-${payload.t}"
   message = {
     #substruct(bridge_azure_event_hub:kafka_message)
@@ -10,9 +10,7 @@ actions.azure_event_hub_producer.my_event_hub.parameters {
   required_acks = all_isr
   kafka_headers = "${pub_props}"
   kafka_ext_headers = [
-    {
-      #substruct(bridge_kafka:producer_kafka_ext_headers)
-    }
+    #substruct(bridge_kafka:producer_kafka_ext_headers)
   ]
   kafka_header_value_encode_mode = none
   partition_count_refresh_interval = "60s"

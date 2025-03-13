@@ -1,6 +1,6 @@
-actions.hstreamdb.my_stream.parameters {
+actions.hstreamdb.my_webhook_1.parameters {
   stream = "example_stream"
-  partition_key = "#{client_id}"
+  partition_key = "example_partition_key"
   grpc_flush_timeout = "10s"
   record_template = "${payload}"
   aggregation_pool_size = 8

@@ -1,15 +1,15 @@
-gateway.ocpp.listeners.wss.my_listener {
+gateway.ocpp.listeners.wss.my_webhook_1 {
   acceptors = 16
   tcp_options = {
     #substruct(emqx:tcp_opts)
   }
   proxy_protocol = false
   proxy_protocol_timeout = "3s"
-  bind = "0.0.0.0:8080"
+  bind = "127.0.0.1:8080"
   max_connections = 1024
   max_conn_rate = 1000
   enable_authn = true
-  mountpoint = ""
+  mountpoint = "/example/mountpoint"
   access_rules = []
   ssl_options = {
     #substruct(emqx:listener_wss_opts)

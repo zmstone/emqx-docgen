@@ -4,9 +4,7 @@ gateway.mqttsn {
   enable_qos3 = true
   subs_resume = false
   predefined = [
-    {
-      #substruct(gateway:mqttsn_predefined)
-    }
+    #substruct(gateway:mqttsn_predefined)
   ]
   mountpoint = ""
   listeners = {

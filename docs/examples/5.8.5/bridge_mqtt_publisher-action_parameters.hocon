@@ -1,4 +1,4 @@
-actions.mqtt.my_mqtt_action.parameters {
+actions.mqtt.my_webhook_1.parameters {
   topic = "example/topic"
   qos = 1
   retain = false
