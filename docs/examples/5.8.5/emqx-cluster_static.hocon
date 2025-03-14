@@ -1,6 +1,3 @@
 cluster.static = {
-  seeds = [
-    #union(emqx_schema:comma_separated_atoms())
-    #union(array(atom()))
-  ]
+  seeds = "emqx@127.0.0.1,emqx@127.0.0.2,emqx@127.0.0.3"
 }
