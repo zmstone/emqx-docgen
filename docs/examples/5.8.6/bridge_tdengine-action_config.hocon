@@ -1,0 +1,8 @@
+actions.tdengine.my_webhook_1 {
+  local_topic = "my/topic"
+  parameters = {
+    #substruct(bridge_tdengine:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {}
+}

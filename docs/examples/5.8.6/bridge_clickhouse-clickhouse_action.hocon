@@ -1,0 +1,10 @@
+actions.clickhouse.my_clickhouse_action {
+  local_topic = "my/topic/filter"
+  parameters = {
+    #substruct(bridge_clickhouse:action_parameters)
+  }
+  connector = "clickhouse_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

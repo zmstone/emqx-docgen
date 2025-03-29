@@ -1,0 +1,10 @@
+authentication = [
+  {
+    checks = [
+      {
+        is_match = "some_expression"
+        result = "allow"
+      }
+    ]
+  }
+]

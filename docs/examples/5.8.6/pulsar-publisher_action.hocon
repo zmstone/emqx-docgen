@@ -1,0 +1,10 @@
+actions.pulsar.my_pulsar_publisher = {
+  local_topic = "my/local/topic"
+  parameters = {
+    #substruct(pulsar:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(pulsar:action_resource_opts)
+  }
+}

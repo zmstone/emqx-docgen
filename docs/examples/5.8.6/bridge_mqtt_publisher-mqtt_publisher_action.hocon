@@ -1,0 +1,10 @@
+actions.mqtt.my_mqtt_publisher {
+  local_topic = "your/topic/here"
+  parameters = {
+    #substruct(bridge_mqtt_publisher:action_parameters)
+  }
+  connector = "your_connector_name"
+  resource_opts = {
+    #substruct(bridge_mqtt_publisher:action_resource_opts)
+  }
+}

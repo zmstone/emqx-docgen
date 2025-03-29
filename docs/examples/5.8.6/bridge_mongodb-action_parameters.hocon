@@ -1,0 +1,4 @@
+actions.mongodb.my_webhook_1.parameters {
+  collection = mqtt
+  payload_template = "Specify a template for formatting the outgoing messages"
+}

@@ -1,0 +1,14 @@
+gateway.exproto.listeners {
+  tcp = {
+    #substruct(gateway:tcp_listener)
+  }
+  ssl = {
+    #substruct(gateway:ssl_listener)
+  }
+  udp = {
+    #substruct(gateway:udp_listener)
+  }
+  dtls = {
+    #substruct(gateway:dtls_listener)
+  }
+}

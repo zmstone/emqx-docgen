@@ -1,0 +1,4 @@
+gateway.coap.listeners.dtls.my_listener_1.health_check {
+  request = "request content"
+  reply = "reply content"
+}

@@ -1,0 +1,10 @@
+actions.datalayers.my_datalayer_action {
+  local_topic = ""
+  parameters = {
+    #substruct(bridge_datalayers:action_parameters)
+  }
+  connector = ""
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

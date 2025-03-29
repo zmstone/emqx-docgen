@@ -1,0 +1,4 @@
+actions.couchbase.my_webhook_1.parameters = {
+  sql = "SELECT * FROM `default` WHERE type = $type"
+  max_retries = 3
+}

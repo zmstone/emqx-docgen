@@ -1,0 +1,7 @@
+actions.azure_blob_storage.my_azure_blob.parameters.aggregation {
+  container {
+    #substruct(connector_aggregator:container_csv)
+  }
+  time_interval = "1h"
+  max_records = 1000000
+}

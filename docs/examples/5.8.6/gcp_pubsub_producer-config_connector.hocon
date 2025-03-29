@@ -1,0 +1,10 @@
+connectors.gcp_pubsub_producer.my_gcp_connector {
+  connect_timeout = "15s"
+  pool_size = 8
+  pipelining = 100
+  max_retries = 2
+  service_account_json = ""  # Please provide your GCP Service Account JSON
+  resource_opts = {
+    #substruct(gcp_pubsub_producer:connector_resource_opts)
+  }
+}

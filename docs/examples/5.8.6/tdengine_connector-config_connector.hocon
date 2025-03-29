@@ -1,0 +1,10 @@
+connectors.tdengine.my_tdengine_connector {
+  server = "https://example.tdengine.com"
+  pool_size = 8
+  username = "root"
+  password = "my_secret_password"
+  token = "my_token"
+  resource_opts = {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

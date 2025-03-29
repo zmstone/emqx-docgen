@@ -1,0 +1,3 @@
+actions.azure_event_hub_producer.my_azure_event_hub.resource_opts {
+  health_check_interval = "15s"
+}

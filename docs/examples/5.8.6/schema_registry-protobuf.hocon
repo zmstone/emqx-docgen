@@ -1,0 +1,4 @@
+schema_registry.schemas.my_protobuf_schema {
+  type = "protobuf"
+  source = "source text for the schema"
+}

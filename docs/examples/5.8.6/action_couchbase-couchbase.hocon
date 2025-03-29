@@ -1,0 +1,10 @@
+actions.couchbase.my_couchbase_action {
+  local_topic = ""
+  parameters = {
+    #substruct(action_couchbase:parameters)
+  }
+  connector = ""
+  resource_opts = {
+    #substruct(action_couchbase:action_resource_opts)
+  }
+}
