@@ -1,0 +1,4 @@
+actions.couchbase.my_action_1.parameters {
+  sql = "SELECT * FROM my_table"
+  max_retries = 3
+}

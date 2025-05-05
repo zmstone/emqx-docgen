@@ -1,0 +1,12 @@
+actions.rabbitmq.my_action {
+  local_topic = "your/local/topic"
+  parameters = {
+    #substruct(bridge_rabbitmq:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector"
+  resource_opts = {}
+}

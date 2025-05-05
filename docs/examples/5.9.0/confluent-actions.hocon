@@ -1,0 +1,14 @@
+actions.confluent_producer.my_action {
+  local_topic = "my_topic"
+  parameters = {
+    #substruct(confluent:producer_kafka_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_kafka:resource_opts)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+}

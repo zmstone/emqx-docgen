@@ -1,0 +1,8 @@
+actions.azure_blob_storage.my_fallback_action_name.fallback_actions = [
+  {
+    kind = republish
+    args = {
+      #substruct(rule_engine:republish_args)
+    }
+  }
+]

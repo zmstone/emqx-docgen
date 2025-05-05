@@ -1,0 +1,11 @@
+actions.snowflake.my_snowflake_action = {
+  local_topic = "sample/topic"
+  parameters {
+    #substruct(action_snowflake:aggreg_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(action_snowflake:action_resource_opts)
+  }
+}

@@ -1,0 +1,14 @@
+actions.tdengine.my_tdengine_action {
+  local_topic = "my/local/topic"
+  parameters = {
+    #substruct(bridge_tdengine:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

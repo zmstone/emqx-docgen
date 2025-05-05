@@ -1,0 +1,8 @@
+gateway.gbt32960.listeners {
+  tcp = {
+    #substruct(gateway:tcp_listener)
+  }
+  ssl = {
+    #substruct(gateway:ssl_listener)
+  }
+}

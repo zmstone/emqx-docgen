@@ -1,0 +1,9 @@
+sources.gcp_pubsub_consumer.my_gcp_pubsub_consumer = {
+  parameters = {
+    #substruct(gcp_pubsub_consumer:source_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(gcp_pubsub_consumer:source_resource_opts)
+  }
+}

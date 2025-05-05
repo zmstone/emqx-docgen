@@ -1,0 +1,16 @@
+actions.opents.my_action {
+  local_topic = "my/topic"
+  parameters = {
+    #substruct(bridge_opents:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+  resource_opts = {}
+}

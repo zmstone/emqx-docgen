@@ -1,0 +1,5 @@
+actions.syskeeper_forwarder.my_syskeeper_action.parameters = {
+  target_topic = "${topic}"
+  target_qos = 0
+  template = "${payload}"
+}

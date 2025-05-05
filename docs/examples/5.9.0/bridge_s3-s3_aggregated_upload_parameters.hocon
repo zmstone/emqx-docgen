@@ -1,0 +1,18 @@
+actions.s3.my_webhook_1.parameters {
+  mode = aggregated
+  container {
+    #substruct(connector_aggregator:container_csv)
+    #substruct(connector_aggregator:container_json_lines)
+  }
+  aggregation {
+    #substruct(bridge_s3:s3_aggregation)
+  }
+  bucket = "your-bucket-name"
+  key = "your-key-template"
+  acl = private
+  headers = {
+    "Content-Type" = "application/json"
+  }
+  min_part_size = "5mb"
+  max_part_size = "5gb"
+}

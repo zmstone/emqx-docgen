@@ -1,0 +1,15 @@
+connectors.snowflake.my_webhook_1 {
+  server = "your.snowflake.server"
+  account = "your_account_id"
+  dsn = "your_dsn"
+  proxy = none
+  pool_size = 8
+  username = "your_username"
+  password = "your_password_secret"
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

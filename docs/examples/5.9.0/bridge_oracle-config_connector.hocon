@@ -1,0 +1,12 @@
+connectors.oracle.my_oracle_config {
+  server = "example.com"
+  sid = "my_sid"
+  service_name = "my_service"
+  role = normal
+  pool_size = 8
+  username = "my_user"
+  password = "my_secret_password"
+  resource_opts = {
+    #substruct(bridge_oracle:connector_resource_opts)
+  }
+}

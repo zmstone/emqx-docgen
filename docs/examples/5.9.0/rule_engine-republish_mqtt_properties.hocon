@@ -1,0 +1,13 @@
+actions.azure_blob_storage.my_example_action.fallback_actions = [
+  {
+    args {
+      mqtt_properties {
+        Payload-Format-Indicator = "${.payload.content_type}"
+        Message-Expiry-Interval = "${.payload.message_expiry}"
+        Content-Type = "${.payload.content_type}"
+        Response-Topic = "${.response_topic}"
+        Correlation-Data = "${.correlation_data}"
+      }
+    }
+  }
+]

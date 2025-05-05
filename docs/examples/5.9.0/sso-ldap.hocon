@@ -1,0 +1,15 @@
+dashboard.sso.ldap {
+  enable = false
+  backend = ldap
+  query_timeout = "5s"
+  server = "example.com"
+  pool_size = 8
+  username = "user1"
+  password = "secret123"
+  base_dn = "dc=example,dc=com"
+  filter = "(& (objectClass=person) (uid=${username}))"
+  request_timeout = "10s"
+  ssl = {
+    #substruct(ldap:ssl)
+  }
+}

@@ -1,0 +1,8 @@
+actions.tablestore.my_webhook_1.parameters.fields = [
+  {
+    column = "some_column_name"
+    value = 
+    #substruct(bridge_tablestore:tablestore_fields.value)
+    isint = false
+  }
+]

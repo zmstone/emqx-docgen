@@ -1,0 +1,12 @@
+gateway.ocpp.listeners {
+  ws {
+    my_webhook_1 {
+      #substruct(gateway_ocpp:ws_listener)
+    }
+  }
+  wss {
+    my_webhook_2 {
+      #substruct(gateway_ocpp:wss_listener)
+    }
+  }
+}

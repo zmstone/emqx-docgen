@@ -1,0 +1,13 @@
+actions.opents.my_webhook_1.parameters.data = [
+  {
+    timestamp = "${timestamp_var}"
+    metric = "${metric_var}"
+    tags = {
+      #substruct(bridge_opents:action_parameters_data_tags_map)
+    }
+    tags = "${tags_template}"
+    value = 42
+    value = 3.14
+    value = "${value_template}"
+  }
+]

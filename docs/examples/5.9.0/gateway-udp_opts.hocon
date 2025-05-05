@@ -1,0 +1,7 @@
+gateway.coap.listeners.dtls.my_listener.udp_options {
+  active_n = 100
+  recbuf = "256KB"
+  sndbuf = "256KB"
+  buffer = "128KB"
+  reuseaddr = true
+}

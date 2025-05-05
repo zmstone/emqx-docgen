@@ -1,0 +1,4 @@
+actions.disk_log.my_disk_log.parameters {
+  write_mode = sync
+  template = "${.}"
+}

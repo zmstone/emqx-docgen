@@ -1,0 +1,22 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = redis
+    cmd = "HGET"
+    password_hash_algorithm = {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    precondition = ""
+    server = "localhost:6379"
+    redis_type = single
+    pool_size = 8
+    username = "redis_user"
+    password = "secret_password"
+    database = 0
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

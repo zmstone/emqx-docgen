@@ -1,0 +1,12 @@
+actions.tablestore.my_webhook_1 {
+  local_topic = "some/topic"
+  parameters = {
+    #substruct(bridge_tablestore:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "connector_name"
+  resource_opts = {}
+}

@@ -1,0 +1,4 @@
+actions.influxdb.my_influxdb_action.parameters = {
+  write_syntax = "measurement,tag_set field_set timestamp"
+  precision = "ms"
+}

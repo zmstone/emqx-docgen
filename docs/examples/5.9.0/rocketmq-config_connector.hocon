@@ -1,0 +1,14 @@
+connectors.rocketmq.my_rocketmq_connector = {
+  servers = "localhost:9876"
+  namespace = "my_namespace"
+  access_key = ""
+  secret_key = ""
+  security_token = ""
+  pool_size = 8
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(rocketmq:connector_resource_opts)
+  }
+}
