@@ -79,7 +79,7 @@ if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
         -e PROFILE="$PROFILE" \
         "$BUILDER" \
         bash -c "git config --global --add safe.directory /emqx && make"
-    sudo chown -R $USER:$USER ./emqx
+    sudo chown -R $(id -u):$(id -g) ./emqx
 fi
 popd
 INPUT_DIR="$(pwd)/tmp/emqx/_build/docgen/${PROFILE}"
