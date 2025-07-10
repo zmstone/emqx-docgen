@@ -1,0 +1,18 @@
+gateway.nats {
+  server_id = "emqx_nats_gateway"
+  server_name = "emqx_nats_gateway"
+  default_heartbeat_interval = "30s"
+  heartbeat_wait_timeout = "5s"
+  protocol = {
+    #substruct(gateway:protocol)
+  }
+  mountpoint = ""
+  listeners = {
+    #substruct(gateway:tcp_ws_listeners)
+  }
+  enable_stats = true
+  idle_timeout = "30s"
+  clientinfo_override = {
+    #substruct(gateway:clientinfo_override)
+  }
+}

@@ -1,0 +1,8 @@
+connectors.disk_log.my_webhook_1 = {
+  filepath = "/path/to/logfile"
+  max_file_size = "100MB"
+  max_file_number = 5
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

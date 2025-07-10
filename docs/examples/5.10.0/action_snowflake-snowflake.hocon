@@ -1,0 +1,18 @@
+actions.snowflake.my_webhook_1 = {
+  local_topic = "your/local/topic"
+  parameters {
+    #substruct(action_snowflake:aggreg_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    },
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "your_connector_name"
+  resource_opts {
+    #substruct(action_snowflake:action_resource_opts)
+  }
+}

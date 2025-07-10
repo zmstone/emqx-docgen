@@ -1,0 +1,9 @@
+connectors.redis.my_webhook_1.parameters = {
+  servers = "192.168.1.1:6379,192.168.1.2:6379"
+  redis_type = sentinel
+  sentinel = "mymaster"
+  pool_size = 8
+  username = "my_username"
+  password = "my_password"
+  database = 0
+}

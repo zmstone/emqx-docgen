@@ -1,0 +1,12 @@
+connectors.mongodb.my_webhook_1.topology = {
+  max_overflow = 0
+  overflow_ttl = "1000ms"  # Example value
+  overflow_check_period = "1000ms"  # Example value
+  local_threshold_ms = "1000ms"  # Example value
+  connect_timeout_ms = "1000ms"  # Example value
+  socket_timeout_ms = "1000ms"  # Example value
+  server_selection_timeout_ms = "1000ms"  # Example value
+  wait_queue_timeout_ms = "1000ms"  # Example value
+  heartbeat_frequency_ms = "200s"
+  min_heartbeat_frequency_ms = "1000ms"  # Example value
+}

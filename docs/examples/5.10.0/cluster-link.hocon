@@ -1,0 +1,15 @@
+cluster.links = [
+  {
+    name = "remote_cluster_name"
+    server = "mqtt.example.com:1883"
+    clientid = "optional_client_id"
+    username = "optional_username"
+    password = "optional_password"
+    ssl = {enable = false}
+    topics = ["topic/1", "topic/2"]
+    pool_size = 8
+    retry_interval = "15s"
+    max_inflight = 32
+    resource_opts = {}
+  }
+]

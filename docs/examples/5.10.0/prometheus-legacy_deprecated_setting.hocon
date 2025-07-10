@@ -1,0 +1,1 @@
+The entire schema is marked as deprecated, and all fields have descriptions that start with "Deprecated". Thus, according to the instructions, no HOCON example should be generated for this schema.

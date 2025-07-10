@@ -1,0 +1,8 @@
+ai.providers = [
+  {
+    name = "provider_name"
+    type = openai
+    api_key = "secret_api_key"
+    base_url = "https://api.openai.com/v1"
+  }
+]

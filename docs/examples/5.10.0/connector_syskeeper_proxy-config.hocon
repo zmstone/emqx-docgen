@@ -1,0 +1,8 @@
+connectors.syskeeper_proxy.my_syskeeper_proxy {
+  listen = "127.0.0.1:8080"
+  acceptors = 16
+  handshake_timeout = "10s"
+  resource_opts = {
+    #substruct(connector_syskeeper_proxy:connector_resource_opts)
+  }
+}

@@ -1,0 +1,13 @@
+actions.azure_blob_storage.my_webhook_1.fallback_actions = [
+  {
+    args {
+      mqtt_properties {
+        Payload-Format-Indicator = "binary_value"
+        Message-Expiry-Interval = "binary_value"
+        Content-Type = "binary_value"
+        Response-Topic = "binary_value"
+        Correlation-Data = "binary_value"
+      }
+    }
+  }
+]

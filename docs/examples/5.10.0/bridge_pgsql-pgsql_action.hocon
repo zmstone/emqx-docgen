@@ -1,0 +1,12 @@
+actions.pgsql.my_pgsql_action {
+  local_topic = "your/mqtt/topic"
+  parameters = {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector_name"
+  resource_opts = {}
+}

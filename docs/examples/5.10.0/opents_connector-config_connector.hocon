@@ -1,0 +1,9 @@
+connectors.opents.my_opents_connector {
+  server = ""
+  pool_size = 8
+  summary = true
+  details = false
+  resource_opts = {
+    #substruct(opents_connector:connector_resource_opts)
+  }
+}

@@ -1,0 +1,12 @@
+connectors.s3tables.my_webhook_1 = {
+  access_key_id = "your_access_key_id"
+  secret_access_key = "your_secret_access_key"
+  s3tables_arn = "your_s3tables_arn"
+  request_timeout = "30s"
+  s3_client = {
+    #substruct(connector_s3tables:s3_client_params)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

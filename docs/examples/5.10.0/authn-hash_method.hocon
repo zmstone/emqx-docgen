@@ -1,0 +1,9 @@
+authentication = [
+  {
+    method {
+      type = hash
+      password_attribute = "userPassword"
+      is_superuser_attribute = "isSuperuser"
+    }
+  }
+]

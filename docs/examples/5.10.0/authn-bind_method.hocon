@@ -1,0 +1,9 @@
+authentication = [
+  {
+    method {
+      type = "bind"
+      is_superuser_attribute = "isSuperuser"
+      bind_password = "${password}"
+    }
+  }
+]

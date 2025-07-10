@@ -1,0 +1,9 @@
+actions.syskeeper_forwarder.my_webhook_1 {
+  local_topic = ""
+  parameters = {
+    #substruct(syskeeper:parameters)
+  }
+  fallback_actions = []
+  connector = ""
+  resource_opts = {}
+}

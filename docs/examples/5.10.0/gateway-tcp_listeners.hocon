@@ -1,0 +1,8 @@
+gateway.gbt32960.listeners {
+  tcp = {
+    #map(name:gateway:tcp_listener)
+  }
+  ssl = {
+    #map(name:gateway:ssl_listener)
+  }
+}

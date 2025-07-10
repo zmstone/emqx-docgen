@@ -1,0 +1,14 @@
+actions.datalayers.my_webhook_1 {
+  local_topic = "some/topic"
+  parameters = {
+    #substruct(bridge_datalayers:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "example_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

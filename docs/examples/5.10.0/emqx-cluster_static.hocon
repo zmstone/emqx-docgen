@@ -1,0 +1,8 @@
+cluster.static {
+  seeds = [
+    # This can be a comma-separated list
+    # Example for array of atoms
+    'node1@hostname',
+    'node2@hostname'
+  ]
+}
