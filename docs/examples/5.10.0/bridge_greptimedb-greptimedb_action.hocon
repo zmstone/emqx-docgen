@@ -1,0 +1,12 @@
+actions.greptimedb.my_greptimedb_action {
+  local_topic = "my/mqtt/topic"
+  parameters = {
+    #substruct(bridge_greptimedb:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector_name"
+  resource_opts = {}
+}

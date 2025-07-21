@@ -1,0 +1,18 @@
+actions.pulsar.my_publisher_action {
+  local_topic = "sample/topic"
+  parameters = {
+    #substruct(pulsar:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(pulsar:action_resource_opts)
+  }
+}

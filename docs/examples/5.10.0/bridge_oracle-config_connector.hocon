@@ -1,0 +1,12 @@
+connectors.oracle.my_connector {
+  server = "host.example.com:1521"
+  sid = "my_sid"
+  service_name = "my_service"
+  role = normal
+  pool_size = 8
+  username = "user123"
+  password = "secret_password"
+  resource_opts = {
+    #substruct(bridge_oracle:connector_resource_opts)
+  }
+}

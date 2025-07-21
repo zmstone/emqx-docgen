@@ -1,0 +1,9 @@
+ai.completion_profiles = [
+  {
+    name = "example_profile"
+    type = openai
+    provider_name = "OpenAI"
+    system_prompt = ""
+    model = "gpt-4o"
+  }
+]

@@ -21,7 +21,7 @@ For example, to update the content for `e5.9.0`, execute:
 
 ```bash
 ./gen e5.9.0 --rebuild
-env OPENAI_API_KEY=MYKEY python3 ./generate-examples.py ./docs/en/e5.9.0
+env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py ./docs/en/e5.9.0.json
 ```
 
 The generated content will be placed in the `docs/{en,zh}/v5.0.20.json`

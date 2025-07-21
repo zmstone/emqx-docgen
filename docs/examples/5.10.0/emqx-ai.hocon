@@ -1,0 +1,11 @@
+ai {
+  providers = [
+    {
+      #substruct(ai:provider)
+    }
+  ]
+  completion_profiles = [
+    #substruct(ai:anthropic_completion_profile)
+    #substruct(ai:openai_completion_profile)
+  ]
+}

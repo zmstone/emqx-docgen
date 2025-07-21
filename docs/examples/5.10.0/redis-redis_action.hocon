@@ -1,0 +1,11 @@
+actions.redis.my_redis_action {
+  local_topic = "example/topic"
+  parameters = {
+    #substruct(bridge_redis:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+}

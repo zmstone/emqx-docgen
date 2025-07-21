@@ -1,0 +1,21 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = postgresql
+    password_hash_algorithm {
+      name = sha256
+      salt_position = prefix
+    }
+    query = "SELECT password_hash FROM users WHERE username = ?"
+    precondition = ""
+    server = "localhost:5432"
+    disable_prepared_statements = false
+    database = "my_database"
+    pool_size = 8
+    username = "db_user"
+    password = "db_password"
+    ssl = {
+      enable = false
+    }
+  }
+]

@@ -1,0 +1,5 @@
+actions.azure_event_hub_producer.my_producer.resource_opts {
+  health_check_interval = "15s"
+  health_check_timeout = "60s"
+  # "health_check_timeout" can also be set to "infinity".
+}

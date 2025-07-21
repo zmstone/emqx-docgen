@@ -1,0 +1,7 @@
+actions.azure_blob_storage.my_action.fallback_actions = [
+  {
+    kind = reference
+    type = rabbitmq
+    name = "fallback_action_name_1"
+  }
+]

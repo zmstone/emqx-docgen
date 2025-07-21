@@ -1,0 +1,7 @@
+schema_registry.schemas.my_protobuf_schema = {
+  type = "protobuf"
+  source = 
+    #substruct(schema_registry:protobuf_bundle_source)
+    # Or use a binary string for the source
+  description = ""
+}
