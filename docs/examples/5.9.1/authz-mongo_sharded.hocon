@@ -1,0 +1,25 @@
+authorization.sources = [
+  {
+    type = "mongodb"
+    collection = "yourCollectionName"
+    filter = {}
+    limit = 1000
+    skip = 0
+    mongo_type = "sharded"
+    servers = "localhost:27017"
+    w_mode = "unsafe"
+    srv_record = false
+    pool_size = 8
+    username = "yourUsername"
+    password = "yourPassword"
+    use_legacy_protocol = "auto"
+    auth_source = "yourAuthSource"
+    database = "yourDatabaseName"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {
+      enable = false
+    }
+  }
+]

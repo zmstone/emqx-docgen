@@ -1,0 +1,4 @@
+connectors.pulsar.my_webhook_1.authentication {
+  username = "user123"
+  password = "secretPassword"
+}

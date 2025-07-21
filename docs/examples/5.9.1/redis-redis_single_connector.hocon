@@ -1,0 +1,8 @@
+connectors.redis.my_webhook_1.parameters {
+  server = "localhost:6379"
+  redis_type = single
+  pool_size = 8
+  username = "default_user"
+  password = "secret_password"
+  database = 0
+}

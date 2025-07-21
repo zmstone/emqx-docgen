@@ -1,0 +1,11 @@
+actions.s3.my_webhook_1.parameters {
+  bucket = "my_bucket"
+  key = "object/key/path"
+  acl = "private"
+  headers = {
+    "Content-Type" = "text/plain"
+    "Cache-Control" = "no-cache"
+  }
+  mode = direct
+  content = "${.}"
+}

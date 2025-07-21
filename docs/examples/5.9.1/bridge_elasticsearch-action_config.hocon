@@ -1,0 +1,20 @@
+actions.elasticsearch.my_action {
+  local_topic = "some/topic"
+  parameters {
+    #substruct(bridge_elasticsearch:action_create)
+    #substruct(bridge_elasticsearch:action_delete)
+    #substruct(bridge_elasticsearch:action_update)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    },
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+  resource_opts {
+    #substruct(bridge_elasticsearch:action_resource_opts)
+  }
+}

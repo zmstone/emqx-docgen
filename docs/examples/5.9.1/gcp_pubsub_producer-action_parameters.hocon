@@ -1,0 +1,10 @@
+actions.gcp_pubsub_producer.my_webhook_1.parameters {
+  attributes_template = [
+    {
+      #substruct(bridge_gcp_pubsub:key_value_pair)
+    }
+  ]
+  ordering_key_template = ""
+  payload_template = ""
+  pubsub_topic = "your-topic-name"
+}

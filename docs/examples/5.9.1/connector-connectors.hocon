@@ -1,0 +1,200 @@
+connectors {
+  syskeeper_forwarder {
+    my_syskeeper_instance = {
+      #substruct(syskeeper_forwarder:config)
+    }
+  }
+  influxdb {
+    my_influxdb_instance = {
+      #substruct(bridge_influxdb:config_connector)
+    }
+  }
+  matrix {
+    my_matrix_instance = {
+      #substruct(bridge_matrix:config_connector)
+    }
+  }
+  mqtt {
+    my_mqtt_instance = {
+      #substruct(connector_mqtt:config_connector)
+    }
+  }
+  greptimedb {
+    my_greptimedb_instance = {
+      #substruct(bridge_greptimedb:config_connector)
+    }
+  }
+  datalayers {
+    my_datalayers_instance = {
+      #substruct(bridge_datalayers:config_connector)
+    }
+  }
+  azure_event_hub_producer {
+    my_azure_event_hub_instance = {
+      #substruct(bridge_azure_event_hub:config_connector)
+    }
+  }
+  timescale {
+    my_timescale_instance = {
+      #substruct(bridge_timescale:config_connector)
+    }
+  }
+  mysql {
+    my_mysql_instance = {
+      #substruct(bridge_mysql:config_connector)
+    }
+  }
+  cassandra {
+    my_cassandra_instance = {
+      #substruct(bridge_cassa:config_connector)
+    }
+  }
+  opents {
+    my_opents_instance = {
+      #substruct(opents_connector:config_connector)
+    }
+  }
+  hstreamdb {
+    my_hstreamdb_instance = {
+      #substruct(bridge_hstreamdb:config_connector)
+    }
+  }
+  pulsar {
+    my_pulsar_instance = {
+      #substruct(pulsar:config_connector)
+    }
+  }
+  http {
+    my_http_instance = {
+      #substruct(bridge_http:config_connector)
+    }
+  }
+  s3 {
+    my_s3_instance = {
+      #substruct(bridge_s3:config_connector)
+    }
+  }
+  kafka_consumer {
+    my_kafka_consumer_instance = {
+      #substruct(kafka_consumer:config_connector)
+    }
+  }
+  snowflake {
+    my_snowflake_instance = {
+      #substruct(connector_snowflake:config_connector)
+    }
+  }
+  gcp_pubsub_producer {
+    my_gcp_pubsub_producer_instance = {
+      #substruct(gcp_pubsub_producer:config_connector)
+    }
+  }
+  clickhouse {
+    my_clickhouse_instance = {
+      #substruct(bridge_clickhouse:config_connector)
+    }
+  }
+  syskeeper_proxy {
+    my_syskeeper_proxy_instance = {
+      #substruct(connector_syskeeper_proxy:config)
+    }
+  }
+  rocketmq {
+    my_rocketmq_instance = {
+      #substruct(rocketmq:config_connector)
+    }
+  }
+  redis {
+    my_redis_instance = {
+      #substruct(redis:config_connector)
+    }
+  }
+  elasticsearch {
+    my_elasticsearch_instance = {
+      #substruct(elasticsearch:config)
+    }
+  }
+  gcp_pubsub_consumer {
+    my_gcp_pubsub_consumer_instance = {
+      #substruct(gcp_pubsub_consumer:config_connector)
+    }
+  }
+  tdengine {
+    my_tdengine_instance = {
+      #substruct(tdengine_connector:config_connector)
+    }
+  }
+  kafka_producer {
+    my_kafka_producer_instance = {
+      #substruct(bridge_kafka:config_connector)
+    }
+  }
+  couchbase {
+    my_couchbase_instance = {
+      #substruct(connector_couchbase:config_connector)
+    }
+  }
+  iotdb {
+    my_iotdb_instance_restapi {
+      #substruct(iotdb:config_restapi)
+    }
+    my_iotdb_instance_thrift {
+      #substruct(iotdb:config_thrift)
+    }
+  }
+  sqlserver {
+    my_sqlserver_instance = {
+      #substruct(bridge_sqlserver:config_connector)
+    }
+  }
+  oracle {
+    my_oracle_instance = {
+      #substruct(bridge_oracle:config_connector)
+    }
+  }
+  kinesis {
+    my_kinesis_instance = {
+      #substruct(bridge_kinesis:config_connector)
+    }
+  }
+  pgsql {
+    my_pgsql_instance = {
+      #substruct(bridge_pgsql:config_connector)
+    }
+  }
+  dynamo {
+    my_dynamo_instance = {
+      #substruct(bridge_dynamo:config_connector)
+    }
+  }
+  disk_log {
+    my_disk_log_instance = {
+      #substruct(connector_disk_log:config_connector)
+    }
+  }
+  mongodb {
+    my_mongodb_instance = {
+      #substruct(bridge_mongodb:config_connector)
+    }
+  }
+  confluent_producer {
+    my_confluent_producer_instance = {
+      #substruct(confluent:config_connector)
+    }
+  }
+  tablestore {
+    my_tablestore_instance = {
+      #substruct(bridge_tablestore:config_connector)
+    }
+  }
+  azure_blob_storage {
+    my_azure_blob_storage_instance = {
+      #substruct(connector_azure_blob_storage:config_connector)
+    }
+  }
+  rabbitmq {
+    my_rabbitmq_instance = {
+      #substruct(rabbitmq:config_connector)
+    }
+  }
+}

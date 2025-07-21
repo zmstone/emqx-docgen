@@ -1,0 +1,5 @@
+actions.mongodb.my_webhook_1.parameters {
+  collection = "mqtt"
+  # The template for formatting the outgoing messages. If undefined, rule engine will use JSON format to serialize all visible inputs, such as clientid, topic, payload etc.
+  payload_template = "json_template"
+}

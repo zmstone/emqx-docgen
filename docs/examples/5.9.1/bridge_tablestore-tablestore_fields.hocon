@@ -1,0 +1,17 @@
+actions.tablestore.my_webhook_1.parameters.fields = [
+  {
+    column = "${payload.column}"
+    value = [
+      #union
+      #boolean()
+      #number()
+      #binary()
+    ]
+    isint = [
+      #union
+      #boolean()
+      #binary()
+    ]
+    #isbinary field is not included due to deprecation
+  }
+]

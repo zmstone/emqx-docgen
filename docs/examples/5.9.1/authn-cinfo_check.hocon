@@ -1,0 +1,13 @@
+authentication = [
+  {
+    checks = [
+      {
+        is_match = [
+          # You can use a single expression or multiple expressions
+          "str_eq(clientid, cert_common_name)"
+        ]
+        result = "ignore"
+      }
+    ]
+  }
+]
