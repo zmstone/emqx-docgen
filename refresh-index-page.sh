@@ -11,7 +11,7 @@ gen_lang_list() {
     lang="$1"
     tag_prefix="$2"
     # Find all JSON files in the subdirectories and sort in reverse order
-    find "$lang" -type f -iname "${tag_prefix}*.json" | sort -r | while read -r file; do
+    find "$lang" -type f -iname "${tag_prefix}*.json" | sort -r --version-sort | while read -r file; do
         echo "<li><a href=\"v.html?s=$file\">$file</a></li>"
     done
 }
