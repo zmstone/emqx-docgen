@@ -45,14 +45,6 @@ while [[ $# -gt 0 ]]; do
         e5.8.*)
             export PROFILE='emqx-enterprise'
             VERSION="${1}"
-            DEFAULT_REPO="https://github.com/emqx/emqx-platform.git"
-            EMQX_BUILDER="ghcr.io/emqx/emqx-builder/5.4-3:1.15.7-26.2.5.2-2-ubuntu24.04"
-            shift
-            ;;
-
-        e*)
-            export PROFILE='emqx-enterprise'
-            VERSION="${1}"
             DEFAULT_REPO="https://github.com/emqx/emqx.git"
             shift
             ;;
@@ -82,12 +74,14 @@ pushd tmp
 if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
     rm -rf emqx
     git clone "${GIT_REPO}" -b "${GIT_REF}" --depth 1 ./emqx
+    chmod -R u+w ./emqx
     docker run --rm -t -v "$(pwd)"/emqx:/emqx \
+        -u $(id -u):$(id -g) \
         -w /emqx \
         -e PROFILE="$PROFILE" \
+        --name docgen \
         "$BUILDER" \
         bash -c "git config --global --add safe.directory /emqx && make"
-    sudo chown -R $(id -u):$(id -g) ./emqx
 fi
 popd
 INPUT_DIR="$(pwd)/tmp/emqx/_build/docgen/${PROFILE}"
