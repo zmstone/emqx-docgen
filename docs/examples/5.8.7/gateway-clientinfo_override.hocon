@@ -1,0 +1,5 @@
+gateway.coap.clientinfo_override {
+  username = "override-username"
+  password = "override-password"
+  clientid = "override-clientid"
+}

@@ -1,0 +1,10 @@
+connectors.tdengine.my_webhook_1 = {
+  server = "example.tdengine.com"
+  pool_size = 8
+  username = "root"
+  password = "secret_password"
+  token = ""
+  resource_opts = {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

@@ -1,0 +1,10 @@
+actions.syskeeper_forwarder.my_webhook_1 {
+  local_topic = "binary_string"
+  parameters = {
+    #substruct(syskeeper:parameters)
+  }
+  connector = "binary_string"
+  resource_opts = {
+    #substruct(syskeeper:creation_opts)
+  }
+}

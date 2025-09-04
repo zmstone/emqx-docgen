@@ -1,0 +1,22 @@
+sources = {
+  gcp_pubsub_consumer {
+    my_gcp_pubsub_1 {
+      #substruct(gcp_pubsub_consumer:consumer_source)
+    }
+  }
+  rabbitmq {
+    my_rabbitmq_1 {
+      #substruct(bridge_rabbitmq:subscriber_source)
+    }
+  }
+  mqtt {
+    my_mqtt_1 {
+      #substruct(bridge_mqtt_publisher:mqtt_subscriber_source)
+    }
+  }
+  kafka_consumer {
+    my_kafka_consumer_1 {
+      #substruct(kafka_consumer:consumer_source)
+    }
+  }
+}

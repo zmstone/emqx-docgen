@@ -1,0 +1,19 @@
+authorization.sources = [
+  {
+    type = postgresql
+    server = "hostname:5432"
+    disable_prepared_statements = false
+    database = "database_name"
+    pool_size = 8
+    username = "username"
+    password = "password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {
+      # key1 = "statement1",
+      # key2 = "statement2"
+    }
+    query = "SELECT * FROM auth_table WHERE user_id = ?"
+  }
+]

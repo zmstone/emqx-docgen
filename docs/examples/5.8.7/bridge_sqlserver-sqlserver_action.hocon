@@ -1,0 +1,8 @@
+actions.sqlserver.my_webhook_1 {
+  local_topic = "example/topic"
+  parameters = {
+    #substruct(bridge_sqlserver:action_parameters)
+  }
+  connector = "example_connector"
+  resource_opts = {}
+}

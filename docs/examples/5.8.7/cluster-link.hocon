@@ -1,0 +1,22 @@
+cluster.links = [
+  {
+    name = "remote_cluster_name"
+    server = "mqtt://remote-emqx-broker:1883"
+    clientid = "baseClientID"
+    username = "mqttUser"
+    password = "mqttPassword"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    topics = [
+      "topic1",
+      "topic2/#"
+    ]
+    pool_size = 8
+    retry_interval = "15s"
+    max_inflight = 32
+    resource_opts = {
+      #substruct(cluster:creation_opts)
+    }
+  }
+]

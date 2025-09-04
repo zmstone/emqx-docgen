@@ -1,0 +1,9 @@
+gateway.jt808.proto {
+  auth {
+    #substruct(gateway:anonymous_true)
+    #substruct(gateway:anonymous_false)
+  }
+  up_topic = "jt808/${clientid}/${phone}/up"
+  dn_topic = "jt808/${clientid}/${phone}/dn"
+  ignore_unsupported_frames = true
+}

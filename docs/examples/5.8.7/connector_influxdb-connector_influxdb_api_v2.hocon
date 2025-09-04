@@ -1,0 +1,6 @@
+connectors.influxdb.my_webhook_1.parameters {
+  influxdb_type = influxdb_api_v2
+  bucket = "my_influxdb_bucket"
+  org = "my_organization"
+  token = "my_secure_token"
+}

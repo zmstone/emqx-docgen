@@ -1,0 +1,8 @@
+actions.mongodb.my_mongodb_action {
+  local_topic = "my/topic"
+  parameters = {
+    #substruct(bridge_mongodb:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {}
+}

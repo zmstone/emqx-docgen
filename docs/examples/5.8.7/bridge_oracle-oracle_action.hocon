@@ -1,0 +1,8 @@
+actions.oracle.my_webhook_1 {
+  local_topic = "binary_topic"
+  parameters = {
+    #substruct(bridge_oracle:action_parameters)
+  }
+  connector = "binary_connector"
+  resource_opts = {}
+}

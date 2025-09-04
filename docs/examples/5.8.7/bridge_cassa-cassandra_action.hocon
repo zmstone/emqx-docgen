@@ -1,0 +1,10 @@
+actions.cassandra.my_webhook_1 {
+  local_topic = "my/mqtt/topic"
+  parameters = {
+    #substruct(bridge_cassa:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

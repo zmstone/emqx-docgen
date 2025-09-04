@@ -1,0 +1,11 @@
+actions.elasticsearch.my_action_1 = {
+  connector = "my_connector"
+  parameters = {
+    #substruct(bridge_elasticsearch:action_create)
+    #substruct(bridge_elasticsearch:action_delete)
+    #substruct(bridge_elasticsearch:action_update)
+  }
+  resource_opts = {
+    #substruct(bridge_elasticsearch:action_resource_opts)
+  }
+}

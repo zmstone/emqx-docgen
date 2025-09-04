@@ -1,0 +1,19 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = ldap
+    query_timeout = "5s"
+    server = "localhost:389"
+    pool_size = 8
+    username = "user@example.com"
+    password = "secret_password"
+    base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
+    filter = "(objectClass=mqttUser)"
+    request_timeout = "10s"
+    ssl = {
+      #substruct(ldap:ssl)
+    }
+    #substruct(authn:hash_method)
+    #substruct(authn:bind_method)
+  }
+]
