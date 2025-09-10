@@ -1,0 +1,13 @@
+authentication = [
+  {
+    checks = [
+      {
+        is_match = [
+          "binary_expression_1",
+          "binary_expression_2"
+        ]
+        result = "allow"
+      }
+    ]
+  }
+]

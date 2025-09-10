@@ -1,0 +1,3 @@
+cluster.static {
+  seeds = [] # List EMQX node names in the static cluster. See node.name.
+}

@@ -1,0 +1,5 @@
+schema_registry.schemas.my_protobuf_schema {
+  type = "protobuf"
+  source = "your_proto_source_here"
+  # Note: the description field is not included in the example as per the instructions.
+}

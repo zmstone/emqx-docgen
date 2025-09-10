@@ -1,0 +1,12 @@
+actions.tablestore.my_webhook_1.parameters.fields = [
+  {
+    column = "${payload.column}"
+    value = 
+    #union(bridge_tablestore:boolean())
+    #union(bridge_tablestore:number())
+    #union(bridge_tablestore:binary())
+    isint = 
+    #union(bridge_tablestore:boolean())
+    #union(bridge_tablestore:binary())
+  }
+]

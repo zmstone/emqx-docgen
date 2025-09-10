@@ -1,0 +1,8 @@
+actions.pulsar.my_pulsar_action {
+  local_topic = "example_topic"
+  parameters = {
+    #substruct(pulsar:action_parameters)
+  }
+  connector = "example_connector"
+  resource_opts = {}
+}

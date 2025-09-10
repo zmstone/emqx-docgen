@@ -1,0 +1,10 @@
+connectors.tdengine.my_connector = {
+  server = "Host[:Port]"
+  pool_size = 8
+  username = "root"
+  password = "secret_value"
+  token = ""
+  resource_opts = {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

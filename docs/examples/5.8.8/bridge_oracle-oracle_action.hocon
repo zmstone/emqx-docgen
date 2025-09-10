@@ -1,0 +1,10 @@
+actions.oracle.my_oracle_action {
+  local_topic = "my/local/topic"
+  parameters = {
+    #substruct(bridge_oracle:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

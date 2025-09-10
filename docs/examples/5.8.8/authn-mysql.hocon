@@ -1,0 +1,21 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = mysql
+    password_hash_algorithm {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    query = "SELECT password_hash FROM users WHERE username = ?"
+    query_timeout = "5s"
+    server = "localhost:3306"
+    database = "auth_db"
+    pool_size = 8
+    username = "root"
+    password = "your_secret_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

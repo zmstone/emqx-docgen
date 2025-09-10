@@ -1,0 +1,10 @@
+actions.syskeeper_forwarder.my_syskeeper_action {
+  local_topic = "example_topic"
+  parameters = {
+    #substruct(syskeeper:parameters)
+  }
+  connector = "example_connector"
+  resource_opts = {
+    #substruct(syskeeper:creation_opts)
+  }
+}

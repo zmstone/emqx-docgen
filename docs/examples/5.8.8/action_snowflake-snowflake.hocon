@@ -1,0 +1,10 @@
+actions.snowflake.my_webhook_1 {
+  local_topic = "example/topic"
+  parameters {
+    #substruct(action_snowflake:aggreg_parameters)
+  }
+  connector = "example_connector"
+  resource_opts = {
+    #substruct(action_snowflake:action_resource_opts)
+  }
+}
