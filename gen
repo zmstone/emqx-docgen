@@ -42,7 +42,7 @@ while [[ $# -gt 0 ]]; do
             DEFAULT_REPO="https://github.com/emqx/emqx.git"
             shift
             ;;
-        e5.8.*)
+        e*)
             export PROFILE='emqx-enterprise'
             VERSION="${1}"
             DEFAULT_REPO="https://github.com/emqx/emqx.git"
@@ -68,7 +68,7 @@ if [[ -z "${GIT_REPO:-}" ]]; then
     GIT_REPO="$DEFAULT_REPO"
 fi
 
-BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/5.5-2:1.18.3-27.2-3-ubuntu24.04}"
+BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/5.6-2:1.18.3-27.3.4.2-3-ubuntu24.04}"
 mkdir -p tmp
 pushd tmp
 if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
@@ -79,9 +79,10 @@ if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
         -u $(id -u):$(id -g) \
         -w /emqx \
         -e PROFILE="$PROFILE" \
+        -e REBAR_CACHE_DIR='/emqx' \
         --name docgen \
         "$BUILDER" \
-        bash -c "git config --global --add safe.directory /emqx && make"
+        bash -c "git config --local --add safe.directory /emqx && make"
 fi
 popd
 INPUT_DIR="$(pwd)/tmp/emqx/_build/docgen/${PROFILE}"
