@@ -1,0 +1,5 @@
+schema_registry.schemas.my_avro_schema {
+  type = avro
+  source = "<<your_avro_schema_source_here>>"
+  description = ""
+}

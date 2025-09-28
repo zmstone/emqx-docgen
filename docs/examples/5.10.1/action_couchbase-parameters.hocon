@@ -1,0 +1,4 @@
+actions.couchbase.my_webhook_1.parameters = {
+  sql = "SELECT * FROM bucket WHERE field = $value"
+  max_retries = 3
+}

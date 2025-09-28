@@ -1,0 +1,4 @@
+The given schema describes a configuration struct that is deprecated, and all of its fields are marked as deprecated as well. Since the schema specifies not to generate examples for deprecated fields, the HOCON example will not include any fields. Here is the configuration path based on the schema:
+
+prometheus {  
+}

@@ -1,0 +1,9 @@
+sources.kafka_consumer.my_webhook_1 = {
+  parameters = {
+    #substruct(kafka_consumer:source_parameters)
+  }
+  connector = "example_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:source_resource_opts)
+  }
+}

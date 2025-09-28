@@ -1,0 +1,4 @@
+actions.s3tables.my_container.parameters.aggregation.container = {
+  type = parquet
+  max_row_group_bytes = "128MB"
+}

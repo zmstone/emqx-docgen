@@ -1,0 +1,4 @@
+schema_registry.schemas.my_protobuf_schema.source {
+  type = bundle
+  root_proto_path = "root.proto"
+}

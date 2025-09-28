@@ -1,0 +1,8 @@
+actions.iotdb.my_action.parameters.data = [
+  {
+    timestamp = now
+    measurement = "your_measurement_template"
+    data_type = text
+    value = "your_value_template"
+  }
+]

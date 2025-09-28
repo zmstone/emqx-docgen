@@ -1,0 +1,25 @@
+connectors.mqtt.my_webhook_1 = {
+  pool_size = 8
+  resource_opts = {
+    #substruct(connector_mqtt:resource_opts)
+  }
+  server = "example.com:1883"
+  clientid_prefix = "prefix_value"
+  static_clientids = [
+    {
+      #substruct(connector_mqtt:static_clientid_entry)
+    }
+  ]
+  proto_ver = v4
+  bridge_mode = false
+  username = "user"
+  password = "secret"
+  clean_start = true
+  keepalive = "160s"
+  connect_timeout = "10s"
+  retry_interval = "15s"
+  max_inflight = 32
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}
