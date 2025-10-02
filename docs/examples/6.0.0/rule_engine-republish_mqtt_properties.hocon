@@ -1,0 +1,13 @@
+actions.alloydb.my_webhook_1.fallback_actions = [
+  {
+    args {
+      mqtt_properties {
+        Payload-Format-Indicator = "binary data"
+        Message-Expiry-Interval = "binary data"
+        Content-Type = "binary data"
+        Response-Topic = "binary data"
+        Correlation-Data = "binary data"
+      }
+    }
+  }
+]

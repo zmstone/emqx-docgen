@@ -1,0 +1,11 @@
+actions.influxdb.my_webhook_1 {
+  parameters = {
+    #substruct(bridge_influxdb:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  resource_opts = {}
+}

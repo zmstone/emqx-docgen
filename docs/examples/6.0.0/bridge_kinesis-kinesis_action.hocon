@@ -1,0 +1,17 @@
+actions.kinesis.my_kinesis_action {
+  parameters = {
+    #substruct(bridge_kinesis:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "your_connector_name"
+  resource_opts = {
+    #substruct(bridge_kinesis:action_resource_opts)
+  }
+}

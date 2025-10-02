@@ -1,0 +1,22 @@
+gateway.nats.listeners = {
+  ws {
+    my_webhook_1 = {
+      #substruct(gateway:ws_listener)
+    }
+  }
+  wss {
+    my_webhook_2 = {
+      #substruct(gateway:wss_listener)
+    }
+  }
+  tcp {
+    my_listener_1 = {
+      #substruct(gateway:tcp_listener)
+    }
+  }
+  ssl {
+    my_listener_2 = {
+      #substruct(gateway:ssl_listener)
+    }
+  }
+}

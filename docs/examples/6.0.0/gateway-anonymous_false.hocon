@@ -1,0 +1,5 @@
+gateway.jt808.proto.auth = {
+  allow_anonymous = false
+  registry = "http://central-registry.example.com"
+  authentication = "http://central-authentication.example.com"
+}

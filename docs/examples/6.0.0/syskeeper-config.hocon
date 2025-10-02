@@ -1,0 +1,13 @@
+actions.syskeeper_forwarder.my_webhook_1 {
+  parameters = {
+    #substruct(syskeeper:parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "external_resource_name"
+  resource_opts = {
+    #substruct(syskeeper:creation_opts)
+  }
+}

@@ -1,0 +1,18 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = postgresql
+    password_hash_algorithm = {name = sha256, salt_position = prefix}
+    query = "Your SQL query here"
+    precondition = ""
+    server = "your.server.address:5432"
+    disable_prepared_statements = false
+    database = "your_database_name"
+    pool_size = 8
+    username = "your_username"
+    password = "your_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

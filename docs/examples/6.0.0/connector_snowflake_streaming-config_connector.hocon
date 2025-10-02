@@ -1,0 +1,18 @@
+connectors.snowflake_streaming.my_webhook_1 {
+  connect_timeout = "15s"
+  pipelining = 100
+  max_retries = 3
+  max_inactive = "10s"
+  server = ""
+  account = ""
+  pipe_user = ""
+  private_key = ""
+  private_key_password = ""
+  proxy = none
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

@@ -1,0 +1,8 @@
+actions.alloydb.my_webhook_1.fallback_actions = [
+  {
+    kind = "republish"
+    args = {
+      #substruct(rule_engine:republish_args)
+    }
+  }
+]

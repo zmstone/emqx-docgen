@@ -1,0 +1,10 @@
+ai.completion_profiles = [
+  {
+    name = "example_profile_name"
+    type = anthropic
+    provider_name = "example_provider_name"
+    system_prompt = ""
+    model = "claude-3-5-sonnet-20240620"
+    max_tokens = 100
+  }
+]

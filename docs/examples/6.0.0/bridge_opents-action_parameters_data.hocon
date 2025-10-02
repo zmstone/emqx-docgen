@@ -1,0 +1,12 @@
+actions.opents.my_action.parameters.data = [
+  {
+    timestamp = "${timestamp_var}"
+    metric = "${metric_var}"
+    tags = {
+      #map()
+    }
+    #emqx_schema:template()
+    value = 100
+    #emqx_schema:template()
+  }
+]

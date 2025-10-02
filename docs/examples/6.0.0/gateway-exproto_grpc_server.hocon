@@ -1,0 +1,6 @@
+gateway.exproto.server {
+  bind = "0.0.0.0:8080"
+  ssl_options = {
+    #substruct(gateway:ssl_server_opts)
+  }
+}

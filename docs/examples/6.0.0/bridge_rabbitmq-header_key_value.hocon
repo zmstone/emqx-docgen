@@ -1,0 +1,6 @@
+actions.rabbitmq.my_webhook_1.parameters.headers_template = [
+  {
+    key = "example_key_template"
+    value = "example_value_template"
+  }
+]

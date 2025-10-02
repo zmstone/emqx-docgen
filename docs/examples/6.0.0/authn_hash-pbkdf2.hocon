@@ -1,0 +1,10 @@
+authentication = [
+  {
+    password_hash_algorithm = {
+      name = "pbkdf2"
+      mac_fun = "sha512"
+      iterations = 100000
+      dk_length = 32
+    }
+  }
+]

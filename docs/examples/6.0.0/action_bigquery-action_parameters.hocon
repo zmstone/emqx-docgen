@@ -1,0 +1,4 @@
+actions.bigquery.my_webhook_1.parameters = {
+  dataset = "example_dataset"
+  table = "example_table"
+}

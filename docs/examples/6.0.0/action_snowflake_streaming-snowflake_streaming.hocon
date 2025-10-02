@@ -1,0 +1,13 @@
+actions.snowflake_streaming.my_webhook_1 {
+  parameters = {
+    #substruct(action_snowflake_streaming:parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "example_connector"
+  resource_opts = {
+    #substruct(action_snowflake_streaming:action_resource_opts)
+  }
+}

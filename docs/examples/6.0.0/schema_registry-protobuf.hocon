@@ -1,0 +1,7 @@
+schema_registry.schemas.my_webhook_1 {
+  type = protobuf
+  source = {
+    #substruct(schema_registry:protobuf_bundle_source)
+  }
+  description = ""
+}

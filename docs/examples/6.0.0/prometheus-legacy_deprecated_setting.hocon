@@ -1,0 +1,4 @@
+The schema provided contains deprecated fields, and according to the instructions, we should not generate examples for deprecated fields. As all fields in this schema are marked as deprecated, the HOCON example will not include any field definitions. Therefore, the resulting HOCON configuration is simply:
+
+prometheus {
+}

@@ -1,0 +1,6 @@
+schema_registry.schemas.my_webhook_1 {
+  type = external_http
+  parameters = {
+    #substruct(schema_registry:external_http_params)
+  }
+}

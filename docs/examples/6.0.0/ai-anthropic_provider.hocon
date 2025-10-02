@@ -1,0 +1,12 @@
+ai.providers = [
+  {
+    name = "my_ai_provider"
+    type = "openai"
+    api_key = "my_secret_api_key"
+    transport_options = {
+      #substruct(ai:transport_options)
+    }
+    anthropic_version = "2023-06-01"
+    base_url = "https://api.anthropic.com/v1"
+  }
+]

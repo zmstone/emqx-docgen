@@ -1,0 +1,4 @@
+actions.mongodb.my_action.parameters {
+  collection = "mqtt"
+  payload_template = "JSON format template"
+}

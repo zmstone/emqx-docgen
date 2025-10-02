@@ -1,0 +1,11 @@
+ai.providers = [
+  {
+    name = "string_value"
+    type = "openai"
+    api_key = "secret_value"
+    transport_options = {
+      #substruct(ai:transport_options)
+    }
+    base_url = "https://api.openai.com/v1"
+  }
+]

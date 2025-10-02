@@ -1,0 +1,4 @@
+gateway.coap.listeners.udp.my_listener.health_check {
+  request = "Request content here"
+  reply = "Reply content here"
+}

@@ -1,0 +1,18 @@
+authentication = [
+  {
+    use_jwks = true
+    endpoint = "https://example.com/jwks"
+    headers = {Accept = "application/json"}
+    pool_size = 8
+    refresh_interval = 300
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    mechanism = "jwt"
+    acl_claim_name = "acl"
+    verify_claims = {}
+    disconnect_after_expire = true
+    from = "password"
+    precondition = ""
+  }
+]

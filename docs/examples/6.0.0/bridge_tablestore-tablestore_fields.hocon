@@ -1,0 +1,8 @@
+actions.tablestore.my_webhook_1.parameters.fields = [
+  {
+    column = "example_column"
+    value = "example_value"
+    isint = false
+    isbinary = false
+  }
+]

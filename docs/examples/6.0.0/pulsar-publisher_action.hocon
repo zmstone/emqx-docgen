@@ -1,0 +1,13 @@
+actions.pulsar.my_pulsar_action {
+  parameters = {
+    #substruct(pulsar:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector_name"
+  resource_opts = {
+    #substruct(pulsar:action_resource_opts)
+  }
+}

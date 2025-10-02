@@ -1,0 +1,11 @@
+actions.datalayers.my_webhook_1 {
+  parameters = {
+    #substruct(bridge_datalayers:action_parameters_influx)
+    #substruct(bridge_datalayers:action_parameters_arrow_flight)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

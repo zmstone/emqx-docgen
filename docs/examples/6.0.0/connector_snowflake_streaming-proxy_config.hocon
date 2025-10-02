@@ -1,0 +1,4 @@
+connectors.snowflake_streaming.my_proxy.proxy {
+  host = "proxy.example.com"
+  port = 8080
+}

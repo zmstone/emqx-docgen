@@ -1,0 +1,11 @@
+connectors.mqtt.my_webhook_1.static_clientids = [
+  {
+    ids = [
+      {
+        clientid = "static_client_id_example"
+        username = "username_example"
+        password = "secret_password_example"
+      }
+    ]
+  }
+]

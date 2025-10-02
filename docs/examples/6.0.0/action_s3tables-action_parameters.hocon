@@ -1,0 +1,8 @@
+actions.s3tables.my_webhook_1.parameters {
+  aggregation = {
+    #substruct(action_s3tables:aggregation)
+  }
+  namespace = "my.namespace"
+  table = "table_name"
+  s3 = {max_part_size = "5gb", min_part_size = "5mb"}
+}

@@ -1,0 +1,9 @@
+durable_sessions {
+  enable = false
+  batch_size = 100
+  checkpoint_interval = "5s"
+  message_retention_period = "1d"
+  shared_subs = {
+    #substruct(emqx:durable_shared_subs)
+  }
+}

@@ -1,0 +1,10 @@
+actions.pgsql.my_pgsql_action {
+  parameters = {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

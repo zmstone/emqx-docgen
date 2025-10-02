@@ -1,0 +1,7 @@
+durable_storage.messages.layout {
+  type = wildcard_optimized
+  wildcard_thresholds = [
+    100,
+    10
+  ]
+}

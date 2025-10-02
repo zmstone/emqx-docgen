@@ -1,0 +1,5 @@
+mq {
+  gc_interval = "1h"
+  regular_queue_retention_period = "7d"
+  find_queue_retry_interval = "10s"
+}

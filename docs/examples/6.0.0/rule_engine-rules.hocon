@@ -1,0 +1,17 @@
+rule_engine.rules.my_rule_1 {
+  name = "foo"
+  sql = "SELECT * FROM \"test/topic\" WHERE payload.x = 1"
+  actions = [
+    "http:my_webhook",
+    {
+      #substruct(rule_engine:builtin_action_republish)
+    },
+    {
+      #substruct(rule_engine:builtin_action_console)
+    },
+    {
+      #substruct(rule_engine:user_provided_function)
+    }
+  ]
+  enable = true
+}

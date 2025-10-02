@@ -1,0 +1,16 @@
+authorization.sources = [
+  {
+    type = postgresql
+    server = "localhost:5432"
+    disable_prepared_statements = false
+    database = "my_database"
+    pool_size = 8
+    username = "db_user"
+    password = "secret_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {}
+    query = "SELECT * FROM permissions WHERE user_id = ?"
+  }
+]

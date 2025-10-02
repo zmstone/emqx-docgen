@@ -1,0 +1,7 @@
+actions.alloydb.my_fallback.fallback_actions = [
+  {
+    kind = reference
+    type = rabbitmq
+    name = "fallback_action_name"
+  }
+]
