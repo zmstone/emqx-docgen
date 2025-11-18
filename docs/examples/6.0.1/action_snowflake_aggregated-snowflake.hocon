@@ -1,0 +1,13 @@
+actions.snowflake.my_webhook_1 {
+  parameters {
+    #substruct(action_snowflake_aggregated:aggreg_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector_name"
+  resource_opts = {
+    #substruct(action_snowflake_aggregated:action_resource_opts)
+  }
+}

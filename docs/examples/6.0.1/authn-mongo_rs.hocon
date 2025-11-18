@@ -1,0 +1,37 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = mongodb
+    collection = "auth_data_collection"
+    filter = {}
+    password_hash_field = "password_hash"
+    salt_field = "salt"
+    is_superuser_field = "is_superuser"
+    clientid_override_field = "clientid_override"
+    password_hash_algorithm {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    precondition = ""
+    mongo_type = rs
+    servers = "host1:27017,host2:27017"
+    w_mode = unsafe
+    r_mode = master
+    replica_set_name = "my_replica_set"
+    srv_record = false
+    pool_size = 8
+    username = "db_username"
+    password = "secret_password"
+    use_legacy_protocol = auto
+    auth_source = "auth_db"
+    database = "user_db"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {
+      enable = false
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

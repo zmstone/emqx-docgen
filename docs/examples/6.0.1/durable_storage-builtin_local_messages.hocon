@@ -1,0 +1,14 @@
+durable_storage.messages {
+  backend = builtin_local
+  data_dir = "node.data_dir/ds/"
+  n_shards = 16
+  rocksdb = {
+    #substruct(durable_storage:rocksdb_options)
+  }
+  transaction = {
+    #substruct(durable_storage:optimistic_transaction)
+  }
+  layout = {
+    #substruct(durable_storage:layout_builtin_wildcard_optimized)
+  }
+}

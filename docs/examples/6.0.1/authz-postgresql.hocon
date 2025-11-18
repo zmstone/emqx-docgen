@@ -1,0 +1,16 @@
+authorization.sources = [
+  {
+    type = postgresql
+    server = "host:5432"
+    disable_prepared_statements = false
+    database = "your_database_name"
+    pool_size = 8
+    username = "your_username"
+    password = "your_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {}
+    query = "your_query"
+  }
+]

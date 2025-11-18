@@ -1,0 +1,212 @@
+actions {
+  alloydb {
+    my_alloydb_action = {
+      #substruct(action_alloydb:alloydb)
+    }
+  }
+  elasticsearch {
+    my_elasticsearch_action = {
+      #substruct(bridge_elasticsearch:action_config)
+    }
+  }
+  mqtt {
+    my_mqtt_action = {
+      #substruct(bridge_mqtt_publisher:mqtt_publisher_action)
+    }
+  }
+  doris {
+    my_doris_action = {
+      #substruct(action_doris:doris)
+    }
+  }
+  iotdb {
+    my_iotdb_action = {
+      #substruct(bridge_iotdb:action_config)
+    }
+  }
+  greptimedb {
+    my_greptimedb_action = {
+      #substruct(bridge_greptimedb:greptimedb_action)
+    }
+  }
+  oracle {
+    my_oracle_action = {
+      #substruct(bridge_oracle:oracle_action)
+    }
+  }
+  dynamo {
+    my_dynamo_action = {
+      #substruct(bridge_dynamo:dynamo_action)
+    }
+  }
+  datalayers {
+    my_datalayers_action = {
+      #substruct(bridge_datalayers:datalayers_action)
+    }
+  }
+  rocketmq {
+    my_rocketmq_action = {
+      #substruct(rocketmq:rocketmq_action)
+    }
+  }
+  http {
+    my_http_action = {
+      #substruct(bridge_http:http_action)
+    }
+  }
+  snowflake {
+    my_snowflake_action = {
+      #substruct(action_snowflake_aggregated:snowflake)
+    }
+  }
+  confluent_producer {
+    my_confluent_action = {
+      #substruct(confluent:actions)
+    }
+  }
+  mongodb {
+    my_mongodb_action = {
+      #substruct(bridge_mongodb:mongodb_action)
+    }
+  }
+  rabbitmq {
+    my_rabbitmq_action = {
+      #substruct(bridge_rabbitmq:publisher_action)
+    }
+  }
+  pgsql {
+    my_pgsql_action = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  matrix {
+    my_matrix_action = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  s3 {
+    my_s3_action = {
+      #substruct(bridge_s3:s3)
+    }
+  }
+  pulsar {
+    my_pulsar_action = {
+      #substruct(pulsar:publisher_action)
+    }
+  }
+  tdengine {
+    my_tdengine_action = {
+      #substruct(bridge_tdengine:action_config)
+    }
+  }
+  syskeeper_forwarder {
+    my_syskeeper_action = {
+      #substruct(syskeeper:config)
+    }
+  }
+  gcp_pubsub_producer {
+    my_gcp_pubsub_action = {
+      #substruct(gcp_pubsub_producer:producer_action)
+    }
+  }
+  kinesis {
+    my_kinesis_action = {
+      #substruct(bridge_kinesis:kinesis_action)
+    }
+  }
+  cockroachdb {
+    my_cockroachdb_action = {
+      #substruct(action_cockroachdb:cockroachdb)
+    }
+  }
+  redshift {
+    my_redshift_action = {
+      #substruct(action_redshift:redshift)
+    }
+  }
+  clickhouse {
+    my_clickhouse_action = {
+      #substruct(bridge_clickhouse:clickhouse_action)
+    }
+  }
+  redis {
+    my_redis_action = {
+      #substruct(redis:redis_action)
+    }
+  }
+  influxdb {
+    my_influxdb_action = {
+      #substruct(bridge_influxdb:influxdb_action)
+    }
+  }
+  tablestore {
+    my_tablestore_action = {
+      #substruct(bridge_tablestore:tablestore_action)
+    }
+  }
+  s3tables {
+    my_s3tables_action = {
+      #substruct(action_s3tables:s3tables)
+    }
+  }
+  snowflake_streaming {
+    my_snowflake_streaming_action = {
+      #substruct(action_snowflake_streaming:snowflake_streaming)
+    }
+  }
+  sqlserver {
+    my_sqlserver_action = {
+      #substruct(bridge_sqlserver:sqlserver_action)
+    }
+  }
+  cassandra {
+    my_cassandra_action = {
+      #substruct(bridge_cassa:cassandra_action)
+    }
+  }
+  azure_blob_storage {
+    my_azure_blob_storage_action = {
+      #substruct(action_azure_blob_storage:azure_blob_storage)
+    }
+  }
+  bigquery {
+    my_bigquery_action = {
+      #substruct(action_bigquery:bigquery)
+    }
+  }
+  couchbase {
+    my_couchbase_action = {
+      #substruct(action_couchbase:couchbase)
+    }
+  }
+  opents {
+    my_opents_action = {
+      #substruct(bridge_opents:action_config)
+    }
+  }
+  timescale {
+    my_timescale_action = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  kafka_producer {
+    my_kafka_producer_action = {
+      #substruct(bridge_kafka:kafka_producer_action)
+    }
+  }
+  disk_log {
+    my_disk_log_action = {
+      #substruct(action_disk_log:disk_log)
+    }
+  }
+  azure_event_hub_producer {
+    my_azure_event_hub_action = {
+      #substruct(bridge_azure_event_hub:actions)
+    }
+  }
+  mysql {
+    my_mysql_action = {
+      #substruct(bridge_mysql:mysql_action)
+    }
+  }
+}

@@ -1,0 +1,11 @@
+durable_storage.mq_messages {
+  backend = builtin_local
+  data_dir = "node.data_dir/ds/"
+  n_shards = 16
+  rocksdb = {
+    #substruct(durable_storage:rocksdb_options)
+  }
+  transaction = {
+    #substruct(durable_storage:optimistic_transaction)
+  }
+}

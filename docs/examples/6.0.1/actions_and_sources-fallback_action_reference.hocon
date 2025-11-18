@@ -1,0 +1,7 @@
+actions.alloydb.my_webhook_1.fallback_actions = [
+  {
+    kind = reference
+    type = alloydb
+    name = "fallback_action_name"
+  }
+]

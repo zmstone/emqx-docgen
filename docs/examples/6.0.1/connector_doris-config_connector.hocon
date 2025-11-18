@@ -1,0 +1,13 @@
+connectors.doris.my_webhook_1 {
+  server = "Host[:Port]"
+  database = "database_name"
+  pool_size = 8
+  username = "root"
+  password = "secret_value"
+  ssl = {
+    #substruct(connector_doris:ssl)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

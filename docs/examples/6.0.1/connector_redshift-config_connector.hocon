@@ -1,0 +1,14 @@
+connectors.redshift.my_redshift_instance = {
+  server = "example-host:5432"
+  disable_prepared_statements = false
+  database = "my_database"
+  pool_size = 8
+  username = "my_username"
+  password = "my_secret_password"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}

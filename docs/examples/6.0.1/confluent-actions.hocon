@@ -1,0 +1,11 @@
+actions.confluent_producer.my_producer {
+  parameters = {
+    #substruct(confluent:producer_kafka_opts)
+  }
+  resource_opts = {}
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "connector_name"
+}

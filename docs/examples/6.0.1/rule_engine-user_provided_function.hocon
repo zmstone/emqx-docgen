@@ -1,0 +1,6 @@
+rule_engine.rules.my_rule_id.actions = [
+  {
+    function = "module:function"
+    args = {}
+  }
+]

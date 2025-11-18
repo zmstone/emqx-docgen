@@ -1,0 +1,13 @@
+actions.cockroachdb.my_cockroachdb_action {
+  parameters = {
+    #substruct(action_cockroachdb:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector_name"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}
