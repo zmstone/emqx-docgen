@@ -20,8 +20,12 @@ After a new EMQX version 5.x.y is released, execute `gen.sh <version>` to update
 For example, to update the content for `e5.9.0`, execute:
 
 ```bash
+# build schema
 ./gen e5.9.0 --rebuild
-env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py ./docs/en/e5.9.0.json
+# inspect schema changes
+uv run ./generate-examples.py --list--changes -b 5.8.8 ./docs/en/e5.9.0.json
+# generate examples
+env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py -b 5.8.8 ./docs/en/e5.9.0.json
 ```
 
 The generated content will be placed in the `docs/{en,zh}/v5.0.20.json`
