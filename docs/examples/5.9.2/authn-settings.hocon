@@ -1,0 +1,5 @@
+authentication_settings = {
+  node_cache = {
+    #substruct(auth_cache:config)
+  }
+}

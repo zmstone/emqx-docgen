@@ -1,0 +1,19 @@
+actions.snowflake.my_webhook_1.parameters {
+  mode = aggregated
+  aggregation = {
+    #substruct(action_snowflake:aggregation)
+  }
+  private_key = "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
+  private_key_password = "my_secret_password"
+  database = "my_database"
+  schema = "my_schema"
+  stage = "my_stage"
+  pipe = "my_pipe"
+  pipe_user = "my_pipe_user"
+  connect_timeout = "15s"
+  pipelining = 100
+  pool_size = 8
+  max_retries = 3
+  max_inactive = "10s"
+  proxy = none
+}

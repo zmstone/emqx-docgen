@@ -1,0 +1,6 @@
+schema_registry.external.my_webhook_1 {
+  type = confluent
+  url = "http://example.com/registry"
+  auth = none
+  #substruct(schema_registry:confluent_schema_registry_auth_basic)
+}

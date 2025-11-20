@@ -1,0 +1,5 @@
+cluster.static = {
+  seeds = [
+    # Example: ['node1@hostname', 'node2@hostname']
+  ]
+}

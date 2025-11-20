@@ -1,0 +1,7 @@
+actions.azure_blob_storage.my_webhook_1.fallback_actions = [
+  {
+    kind = reference
+    type = azure_blob_storage
+    name = "fallback_action_name"
+  }
+]

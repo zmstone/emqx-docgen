@@ -1,0 +1,11 @@
+connectors.mqtt.my_name.static_clientids = [
+  {
+    ids = [
+      {
+        clientid = "static_client_id_1"
+        username = "user1"
+        password = "secret_password"
+      }
+    ]
+  }
+]

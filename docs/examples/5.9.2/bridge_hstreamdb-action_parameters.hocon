@@ -1,0 +1,11 @@
+actions.hstreamdb.my_webhook_1.parameters = {
+  stream = "HStreamDB Stream Name"
+  partition_key = "HStreamDB Partition Key. Placeholders supported."
+  grpc_flush_timeout = "10s"
+  record_template = "${payload}"
+  aggregation_pool_size = 8
+  max_batches = 500
+  writer_pool_size = 8
+  batch_size = 100
+  batch_interval = "500ms"
+}

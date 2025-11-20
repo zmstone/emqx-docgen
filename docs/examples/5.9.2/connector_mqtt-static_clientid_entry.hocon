@@ -1,0 +1,11 @@
+connectors.mqtt.my_webhook_1.static_clientids = [
+  {
+    node = "emqx@10.0.0.1"
+    ids = [
+      "clientId1",
+      {
+        #substruct(connector_mqtt:static_clientid_entry_tuple)
+      }
+    ]
+  }
+]

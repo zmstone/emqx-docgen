@@ -1,0 +1,6 @@
+connectors.datalayers.my_webhook_1.parameters {
+  driver_type = influxdb_v1
+  database = "your_database_name"
+  username = "your_username"
+  password = "your_password"
+}

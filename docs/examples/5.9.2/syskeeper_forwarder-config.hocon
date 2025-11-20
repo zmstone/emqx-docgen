@@ -1,0 +1,9 @@
+connectors.syskeeper_forwarder.my_webhook_1 {
+  server = "string_value"
+  ack_mode = no_ack
+  ack_timeout = "10s"
+  pool_size = 16
+  resource_opts = {
+    #substruct(syskeeper_forwarder:connector_resource_opts)
+  }
+}

@@ -1,0 +1,14 @@
+authorization.sources = [
+  {
+    type = redis
+    servers = "127.0.0.1:6379,127.0.0.2:6379"
+    redis_type = cluster
+    pool_size = 8
+    username = "example_user"
+    password = "example_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    cmd = "HGETALL mqtt_authz"
+  }
+]

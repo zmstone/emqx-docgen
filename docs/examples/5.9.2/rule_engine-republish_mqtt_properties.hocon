@@ -1,0 +1,13 @@
+actions.azure_blob_storage.my_azure_blob_storage_action.fallback_actions = [
+  {
+    args {
+      mqtt_properties {
+        Payload-Format-Indicator = "binary_payload_format"
+        Message-Expiry-Interval = "binary_message_expiry"
+        Content-Type = "binary_content_type"
+        Response-Topic = "binary_response_topic"
+        Correlation-Data = "binary_correlation_data"
+      }
+    }
+  }
+]

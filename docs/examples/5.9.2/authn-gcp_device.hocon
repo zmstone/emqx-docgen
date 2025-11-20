@@ -1,0 +1,6 @@
+authentication = [
+  {
+    mechanism = gcp_device
+    precondition = ""
+  }
+]

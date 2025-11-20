@@ -1,0 +1,7 @@
+gateway.exproto.handler {
+  address = "your.grpc.server.address"
+  service_name = ConnectionUnaryHandler
+  ssl_options = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}
