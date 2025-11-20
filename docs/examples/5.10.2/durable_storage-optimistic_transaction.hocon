@@ -1,0 +1,5 @@
+durable_storage.messages.transaction {
+  flush_interval = "5s"
+  idle_flush_interval = "1ms"
+  conflict_window = "5s"
+}

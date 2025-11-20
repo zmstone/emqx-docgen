@@ -1,0 +1,10 @@
+connectors.dynamo.my_webhook_1 {
+  url = "http://localhost:8000"
+  region = "us-west-2"
+  aws_access_key_id = "your_access_key_id"
+  aws_secret_access_key = "your_secret_access_key"
+  pool_size = 8
+  resource_opts = {
+    #substruct(bridge_dynamo:connector_resource_opts)
+  }
+}

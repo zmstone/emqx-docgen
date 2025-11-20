@@ -1,0 +1,12 @@
+connectors.s3tables.my_s3table {
+  access_key_id = "your_access_key_id_here"
+  secret_access_key = "your_secret_access_key_here"
+  s3tables_arn = "your_s3tables_arn_here"
+  request_timeout = "30s"
+  s3_client = {
+    #substruct(connector_s3tables:s3_client_params)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

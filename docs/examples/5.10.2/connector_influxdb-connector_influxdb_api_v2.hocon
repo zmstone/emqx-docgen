@@ -1,0 +1,6 @@
+connectors.influxdb.my_influxdb_connector.parameters {
+  influxdb_type = influxdb_api_v2
+  bucket = "example-bucket"
+  org = "example-org"
+  token = "example-token"
+}
