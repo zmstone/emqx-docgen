@@ -75,6 +75,9 @@ if [[ -z "${GIT_REPO:-}" ]]; then
 fi
 
 case "$VERSION" in
+    e5.8.*)
+        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.0-9:1.15.7-26.2.5.14-1-ubuntu22.04}"
+        ;;
     6.1.*)
         BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.0-9:1.19.1-28.2-2-ubuntu22.04}"
         ;;
