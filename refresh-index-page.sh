@@ -10,7 +10,7 @@ cd docs/
 gen_lang_list() {
     lang="$1"
     # Find all JSON files in the subdirectories and sort in reverse order
-    find "$lang" -type f -iname "*.json" | grep -v -E 'v|e' | sort -r --version-sort | while read -r file; do
+    find "$lang" -type f -iname "*.json" | grep -v -E "$lang/[v|e]" | sort -r --version-sort | while read -r file; do
         echo "<li><a href=\"v.html?s=$file\">$file</a></li>"
     done
     find "$lang" -type f -iname "e*.json" | sort -r --version-sort | while read -r file; do
