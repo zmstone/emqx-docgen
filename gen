@@ -48,6 +48,12 @@ while [[ $# -gt 0 ]]; do
             DEFAULT_REPO="https://github.com/emqx/emqx.git"
             shift
             ;;
+        6.*)
+            export PROFILE='emqx-enterprise'
+            VERSION="${1}"
+            DEFAULT_REPO="https://github.com/emqx/emqx.git"
+            shift
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
@@ -68,7 +74,14 @@ if [[ -z "${GIT_REPO:-}" ]]; then
     GIT_REPO="$DEFAULT_REPO"
 fi
 
-BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/5.6-3:1.18.3-27.3.4.2-4-ubuntu24.04}"
+case "$VERSION" in
+    6.1.*)
+        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.0-9:1.19.1-28.2-2-ubuntu22.04}"
+        ;;
+    *)
+        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/5.6-3:1.18.3-27.3.4.2-4-ubuntu24.04}"
+        ;;
+esac
 mkdir -p tmp
 pushd tmp
 if [ ! -d emqx ] || [ "${REBUILD:-}" = true ]; then
