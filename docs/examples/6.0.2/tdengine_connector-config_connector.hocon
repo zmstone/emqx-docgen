@@ -1,0 +1,10 @@
+connectors.tdengine.my_webhook_1 = {
+  server = "Host[:Port]"
+  pool_size = 8
+  username = "your_username"
+  password = "your_password"
+  token = ""
+  resource_opts = {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

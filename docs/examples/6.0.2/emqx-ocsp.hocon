@@ -1,0 +1,7 @@
+gateway.coap.listeners.dtls.my_listener.dtls_options.ocsp {
+  enable_ocsp_stapling = false
+  responder_url = "http://example.com/ocsp"
+  issuer_pem = "-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----"
+  refresh_interval = "5m"
+  refresh_http_timeout = "15s"
+}

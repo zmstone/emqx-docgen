@@ -1,0 +1,5 @@
+gateway.jt808.proto.auth = {
+  allow_anonymous = true
+  registry = "binary_string"
+  authentication = "binary_string"
+}

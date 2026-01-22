@@ -1,0 +1,6 @@
+actions.rabbitmq.my_webhook_1.parameters.properties_template = [
+  {
+    key = "app_id"
+    value = "<<template_value>>"
+  }
+]

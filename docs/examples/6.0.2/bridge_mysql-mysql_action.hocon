@@ -1,0 +1,13 @@
+actions.mysql.my_mysql_action {
+  parameters = {
+    #substruct(bridge_mysql:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "binary_connector_name"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

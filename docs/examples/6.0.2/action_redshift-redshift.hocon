@@ -1,0 +1,13 @@
+actions.redshift.my_redshift_action {
+  parameters = {
+    #substruct(action_redshift:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "binary_string_here"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

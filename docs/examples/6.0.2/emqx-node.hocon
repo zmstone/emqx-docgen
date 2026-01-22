@@ -1,0 +1,12 @@
+node {
+  name = "emqx@127.0.0.1"
+  cookie = "your_secret_cookie"
+  max_ports = 1048576
+  dist_buffer_size = 8192
+  data_dir = "/path/to/data/directory"
+  global_gc_interval = disabled
+  role = core
+  tls_server_session_tickets_amount = 1
+  tls_server_session_ticket_lifetime = 7200
+  tls_stateless_tickets_seed = ""
+}

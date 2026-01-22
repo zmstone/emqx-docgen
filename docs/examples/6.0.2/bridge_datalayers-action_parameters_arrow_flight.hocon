@@ -1,0 +1,3 @@
+actions.datalayers.my_webhook_1.parameters {
+  sql = "insert into mqtt.t_mqtt_msg(time, msgid, sender, topic, qos, payload, arrived) values (${timestamp}, ${id}, ${clientid}, ${topic}, ${qos}, ${payload}, ${timestamp})"
+}
