@@ -137,18 +137,25 @@ def main():
     base_schema_lookup = None
     base_examples_dir = None
     if args.compare_base:
-        # Find base schema file (could be v{version} or e{version})
+        # Find base schema file. 5.x often uses v/e prefixes, 6.x uses plain version file names.
         base_schema_dir = schema_path.parent
-        base_schema_v = base_schema_dir / f"v{args.compare_base}.json"
-        base_schema_e = base_schema_dir / f"e{args.compare_base}.json"
+        base_schema_candidates = [
+            base_schema_dir / f"{args.compare_base}.json",
+            base_schema_dir / f"v{args.compare_base}.json",
+            base_schema_dir / f"e{args.compare_base}.json",
+        ]
 
         base_schema_path = None
-        if base_schema_v.exists():
-            base_schema_path = base_schema_v
-        elif base_schema_e.exists():
-            base_schema_path = base_schema_e
-        else:
-            print(f"Warning: Base schema file not found for version {args.compare_base}. Will generate all examples from scratch.")
+        for candidate in base_schema_candidates:
+            if candidate.exists():
+                base_schema_path = candidate
+                break
+        if not base_schema_path:
+            print(
+                f"Warning: Base schema file not found for version {args.compare_base}. "
+                f"Checked: {', '.join(str(p.name) for p in base_schema_candidates)}. "
+                "Will generate all examples from scratch."
+            )
 
         if base_schema_path:
             print(f"Loading base schema from: {base_schema_path}")
