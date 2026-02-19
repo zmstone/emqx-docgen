@@ -1,0 +1,4 @@
+actions.couchbase.my_webhook_1.parameters {
+  sql = "Your SQL template here"
+  max_retries = 3
+}

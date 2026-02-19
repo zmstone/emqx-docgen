@@ -1,0 +1,5 @@
+connectors.influxdb.my_influxdb_1.parameters {
+  influxdb_type = influxdb_api_v3
+  database = "my_influxdb_db"
+  token = "my_influxdb_token"
+}

@@ -1,0 +1,4 @@
+actions.emqx_tables.my_greptimedb_action_1.parameters {
+  write_syntax = "weather,location=us-midwest temperature=${payload.temp}i ${timestamp}"
+  precision = ms
+}

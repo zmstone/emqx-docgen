@@ -1,0 +1,4 @@
+multi_tenancy {
+  default_max_sessions = infinity
+  allow_only_managed_namespaces = false
+}

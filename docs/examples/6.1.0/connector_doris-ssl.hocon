@@ -1,0 +1,22 @@
+connectors.doris.my_doris_1.ssl {
+  cacertfile = "/etc/ssl/certs/ca-bundle.pem"
+  certfile = "/etc/ssl/certs/client.pem"
+  keyfile = "/etc/ssl/private/client.key"
+  verify = verify_none
+  reuse_sessions = true
+  depth = 10
+  password = "secret_password"
+  versions = ["tlsv1.3", "tlsv1.2"]
+  ciphers = []
+  secure_renegotiate = true
+  log_level = notice
+  hibernate_after = "5s"
+  partial_chain = false
+  verify_peer_ext_key_usage = "serverAuth,OID:1.3.6.1.5.5.7.3.2"
+  enable = false
+  middlebox_comp_mode = false
+  server_name_indication = disable
+  managed_certs = {
+    #substruct(emqx:managed_certs)
+  }
+}

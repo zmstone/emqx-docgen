@@ -1,0 +1,3 @@
+dashboard.default_mfa = {
+  mechanism = "totp"
+}

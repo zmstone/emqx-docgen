@@ -1,0 +1,7 @@
+streams.auto_create.regular {
+  key_expression = "message.from"
+  data_retention_period = "7d"
+  limits = {
+    #substruct(streams:stream_individual_limits)
+  }
+}

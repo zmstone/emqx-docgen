@@ -1,0 +1,9 @@
+actions.azure_blob_storage.my_container_1.parameters.aggregation.container {
+  type = parquet
+  schema = {
+    #substruct(connector_aggregator:parquet_schema_avro_inline)
+    #substruct(connector_aggregator:parquet_schema_avro_ref)
+  }
+  default_compression = snappy
+  max_row_group_bytes = "128MB"
+}

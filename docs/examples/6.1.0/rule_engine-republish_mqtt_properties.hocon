@@ -1,0 +1,13 @@
+actions.alloydb.my_action_1.fallback_actions = [
+  {
+    args {
+      mqtt_properties {
+        "Payload-Format-Indicator" = <<"${.payload.format_indicator}">>
+        "Message-Expiry-Interval" = <<"${.payload.expiry_interval}">>
+        "Content-Type" = <<"${.payload.content_type}">>
+        "Response-Topic" = <<"${.payload.response_topic}">>
+        "Correlation-Data" = <<"${.payload.correlation_data}">>
+      }
+    }
+  }
+]

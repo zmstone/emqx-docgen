@@ -1,0 +1,17 @@
+actions.datalayers.my_datalayers_1{
+  parameters = {
+    #substruct(bridge_datalayers:action_parameters_influx)
+    #substruct(bridge_datalayers:action_parameters_arrow_flight)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  tags = [
+    "tag1"
+  ]
+  resource_opts = {
+    #substruct(bridge_datalayers:action_resource_opts)
+  }
+}

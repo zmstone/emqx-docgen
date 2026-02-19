@@ -1,0 +1,13 @@
+actions.clickhouse.my_clickhouse_1 {
+  parameters = {
+    #substruct(bridge_clickhouse:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(bridge_clickhouse:action_resource_opts)
+  }
+}

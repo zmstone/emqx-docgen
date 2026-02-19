@@ -1,0 +1,8 @@
+mq.auto_create.lastvalue {
+  data_retention_period = "7d"
+  dispatch_strategy = "random"
+  limits = {
+    #substruct(mq:mq_individual_limits)
+  }
+  key_expression = "message.from"
+}

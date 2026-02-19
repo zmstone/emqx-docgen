@@ -1,0 +1,4 @@
+actions.bigquery.my_action.parameters {
+  dataset = "example_dataset"
+  table = "example_table"
+}

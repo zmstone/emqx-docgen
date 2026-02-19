@@ -1,0 +1,17 @@
+actions.emqx_tables.my_emqx_tables_1 {
+  parameters = {
+    #substruct(bridge_greptimedb:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(action_emqx_tables:action_resource_opts)
+  }
+}
