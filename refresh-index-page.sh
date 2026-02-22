@@ -6,6 +6,8 @@ cd "$(dirname "$0")"
 
 cd docs/
 
+sed -i "s/HOCON Schema Explorer/EMQX Config Schema/g" v.html
+
 
 gen_lang_list() {
     lang="$1"
