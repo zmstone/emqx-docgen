@@ -1,0 +1,26 @@
+authentication = [
+  {
+    ssl {
+      cacertfile = "/path/to/ca.pem"
+      certfile = "/path/to/cert.pem"
+      keyfile = "/path/to/key.pem"
+      verify = verify_none
+      reuse_sessions = true
+      depth = 10
+      password = "my_password"
+      versions = ["tlsv1.3", "tlsv1.2"]
+      ciphers = []
+      secure_renegotiate = true
+      log_level = notice
+      hibernate_after = "5s"
+      partial_chain = false
+      verify_peer_ext_key_usage = "serverAuth"
+      enable = false
+      middlebox_comp_mode = true
+      server_name_indication = "server.example.net"
+      managed_certs = {
+        #substruct(emqx:managed_certs)
+      }
+    }
+  }
+]

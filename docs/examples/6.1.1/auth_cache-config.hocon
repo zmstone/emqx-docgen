@@ -1,0 +1,6 @@
+authentication_settings.node_cache {
+  enable = false
+  cache_ttl = "1m"
+  max_count = 1000000
+  max_memory = "100MB"
+}

@@ -1,0 +1,6 @@
+connectors.s3tables.my_s3_client.s3_client {
+  access_method = path
+  transport_options = {
+    #substruct(s3:transport_options)
+  }
+}

@@ -1,0 +1,222 @@
+actions {
+  rabbitmq = {
+    my_rabbitmq_1 = {
+      #substruct(bridge_rabbitmq:publisher_action)
+    }
+  }
+  rocketmq = {
+    my_rocketmq_1 = {
+      #substruct(rocketmq:rocketmq_action)
+    }
+  }
+  oracle = {
+    my_oracle_1 = {
+      #substruct(bridge_oracle:oracle_action)
+    }
+  }
+  disk_log = {
+    my_disk_log_1 = {
+      #substruct(action_disk_log:disk_log)
+    }
+  }
+  snowflake_streaming = {
+    my_snowflake_streaming_1 = {
+      #substruct(action_snowflake_streaming:snowflake_streaming)
+    }
+  }
+  confluent_producer = {
+    my_confluent_producer_1 = {
+      #substruct(confluent:actions)
+    }
+  }
+  syskeeper_forwarder = {
+    my_syskeeper_forwarder_1 = {
+      #substruct(syskeeper:config)
+    }
+  }
+  greptimedb = {
+    my_greptimedb_1 = {
+      #substruct(bridge_greptimedb:greptimedb_action)
+    }
+  }
+  kinesis = {
+    my_kinesis_1 = {
+      #substruct(bridge_kinesis:kinesis_action)
+    }
+  }
+  azure_event_hub_producer = {
+    my_azure_event_hub_producer_1 = {
+      #substruct(bridge_azure_event_hub:actions)
+    }
+  }
+  iotdb = {
+    my_iotdb_1 = {
+      #substruct(bridge_iotdb:action_config)
+    }
+  }
+  datalayers = {
+    my_datalayers_1 = {
+      #substruct(bridge_datalayers:datalayers_action)
+    }
+  }
+  kafka_producer = {
+    my_kafka_producer_1 = {
+      #substruct(bridge_kafka:kafka_producer_action)
+    }
+  }
+  clickhouse = {
+    my_clickhouse_1 = {
+      #substruct(bridge_clickhouse:clickhouse_action)
+    }
+  }
+  cockroachdb = {
+    my_cockroachdb_1 = {
+      #substruct(action_cockroachdb:cockroachdb)
+    }
+  }
+  mysql = {
+    my_mysql_1 = {
+      #substruct(bridge_mysql:mysql_action)
+    }
+  }
+  opents = {
+    my_opents_1 = {
+      #substruct(bridge_opents:action_config)
+    }
+  }
+  tdengine = {
+    my_tdengine_1 = {
+      #substruct(bridge_tdengine:action_config)
+    }
+  }
+  sqlserver = {
+    my_sqlserver_1 = {
+      #substruct(bridge_sqlserver:sqlserver_action)
+    }
+  }
+  redshift = {
+    my_redshift_1 = {
+      #substruct(action_redshift:redshift)
+    }
+  }
+  pgsql = {
+    my_pgsql_1 = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  s3tables = {
+    my_s3tables_1 = {
+      #substruct(action_s3tables:s3tables)
+    }
+  }
+  alloydb = {
+    my_alloydb_1 = {
+      #substruct(action_alloydb:alloydb)
+    }
+  }
+  pulsar = {
+    my_pulsar_1 = {
+      #substruct(pulsar:publisher_action)
+    }
+  }
+  elasticsearch = {
+    my_elasticsearch_1 = {
+      #substruct(bridge_elasticsearch:action_config)
+    }
+  }
+  redis = {
+    my_redis_1 = {
+      #substruct(redis:redis_action)
+    }
+  }
+  bigquery = {
+    my_bigquery_1 = {
+      #substruct(action_bigquery:bigquery)
+    }
+  }
+  http = {
+    my_http_1 = {
+      #substruct(bridge_http:http_action)
+    }
+  }
+  couchbase = {
+    my_couchbase_1 = {
+      #substruct(action_couchbase:couchbase)
+    }
+  }
+  matrix = {
+    my_matrix_1 = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  gcp_pubsub_producer = {
+    my_gcp_pubsub_producer_1 = {
+      #substruct(gcp_pubsub_producer:producer_action)
+    }
+  }
+  dynamo = {
+    my_dynamo_1 = {
+      #substruct(bridge_dynamo:dynamo_action)
+    }
+  }
+  snowflake = {
+    my_snowflake_1 = {
+      #substruct(action_snowflake_aggregated:snowflake)
+    }
+  }
+  mongodb = {
+    my_mongodb_1 = {
+      #substruct(bridge_mongodb:mongodb_action)
+    }
+  }
+  mqtt = {
+    my_mqtt_1 = {
+      #substruct(bridge_mqtt_publisher:mqtt_publisher_action)
+    }
+  }
+  timescale = {
+    my_timescale_1 = {
+      #substruct(bridge_pgsql:pgsql_action)
+    }
+  }
+  doris = {
+    my_doris_1 = {
+      #substruct(action_doris:doris)
+    }
+  }
+  emqx_tables = {
+    my_emqx_tables_1 = {
+      #substruct(action_emqx_tables:emqx_tables)
+    }
+  }
+  s3 = {
+    my_s3_1 = {
+      #substruct(bridge_s3:s3)
+    }
+  }
+  tablestore = {
+    my_tablestore_1 = {
+      #substruct(bridge_tablestore:tablestore_action)
+    }
+  }
+  azure_blob_storage = {
+    my_azure_blob_storage_1 = {
+      #substruct(action_azure_blob_storage:azure_blob_storage)
+    }
+  }
+  influxdb = {
+    my_influxdb_1 = {
+      #substruct(bridge_influxdb:influxdb_action)
+    }
+  }
+  aws_timestream = {
+    my_aws_timestream_1 = {
+      #substruct(action_aws_timestream:aws_timestream)
+    }
+  }
+  cassandra = {
+    my_cassandra_1 = {
+      #substruct(bridge_cassa:cassandra_action)
+    }
+  }
+}

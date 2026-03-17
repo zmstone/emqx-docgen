@@ -1,0 +1,15 @@
+actions.alloydb.my_alloydb_1.fallback_actions = [
+  {
+    args = {
+      topic = "t/${clientid}"
+      qos = "${qos}"
+      retain = "${retain}"
+      payload = "${payload}"
+      mqtt_properties = {
+        #substruct(rule_engine:republish_mqtt_properties)
+      }
+      user_properties = "${user_properties}"
+      direct_dispatch = false
+    }
+  }
+]

@@ -1,0 +1,11 @@
+actions.tdengine.my_tdengine_1 {
+  parameters = {
+    #substruct(bridge_tdengine:action_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  tags = ["tag1", "tag2"]
+  resource_opts = {
+    #substruct(bridge_tdengine:action_resource_opts)
+  }
+}

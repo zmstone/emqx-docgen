@@ -1,0 +1,3 @@
+prometheus.namespaced_metrics_limiter {
+  rate = "1/5s"
+}

@@ -1,0 +1,9 @@
+actions.azure_blob_storage.my_action_1.parameters.aggregation {
+  container = {
+    #substruct(connector_aggregator:container_csv)
+    #substruct(connector_aggregator:container_json_lines)
+    #substruct(connector_aggregator:container_parquet)
+  }
+  time_interval = "1h"
+  max_records = 1000000
+}

@@ -1,0 +1,14 @@
+actions.iotdb.my_iotdb_action_1 {
+  parameters = {
+    #substruct(bridge_iotdb:action_parameters_tree)
+    #substruct(bridge_iotdb:action_parameters_table)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_iotdb_connector"
+  resource_opts = {
+    #substruct(bridge_iotdb:action_resource_opts)
+  }
+}
