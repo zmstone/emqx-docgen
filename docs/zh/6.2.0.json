@@ -588,14 +588,14 @@
       "a2a_registry"
     ],
     "full_name" : "a2a_registry",
-    "desc" : "Agent-to-Agent Card Registry.",
+    "desc" : "Agent-to-Agent 卡片注册表。",
     "fields" : [
       {
         "raw_default" : false,
         "aliases" : [
           
         ],
-        "desc" : "Whether to enable the A2A Registry feature.  Default is disabled.",
+        "desc" : "是否启用 A2A Registry 功能。默认禁用。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -611,7 +611,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to enable validation of Agent Card Schema during writes.",
+        "desc" : "是否在写入时启用 Agent Card Schema 校验。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -1526,14 +1526,14 @@
       "connectors.influxdb.$name.parameters"
     ],
     "full_name" : "connector_influxdb:connector_influxdb_api_v2",
-    "desc" : "InfluxDB 的协议。支持 InfluxDB v2.0 直到 v3.0。",
+    "desc" : "InfluxDB 的协议。支持 InfluxDB v2.0 到 v3.0。",
     "fields" : [
       {
         "raw_default" : "influxdb_api_v2",
         "aliases" : [
           
         ],
-        "desc" : "InfluxDB 的协议。支持 InfluxDB v2.0 直到 v3.0。",
+        "desc" : "InfluxDB 的协议。支持 InfluxDB v2.0 到 v3.0。",
         "type" : {
           "kind" : "singleton",
           "name" : "influxdb_api_v2"
@@ -2155,7 +2155,7 @@
         "aliases" : [
           
         ],
-        "desc" : "TLS settings for the dashboard HTTPS listener.",
+        "desc" : "Dashboard HTTPS 监听器的 TLS 设置。",
         "type" : {
           "kind" : "struct",
           "name" : "dashboard:https"
@@ -2541,7 +2541,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable TLS 1.3 session resumption using stateless session tickets.\n\nPossible values:\n\n- `disabled`: Disable session tickets (default).\n- `stateless`: Enable stateless session tickets. The server sends encrypted tickets that clients can use to resume sessions without storing session state on the server.\n- `stateless_with_cert`: Enable stateless session tickets with certificate information included. This allows session resumption even when the server certificate changes, but increases network bandwidth usage as each ticket includes certificate data.\n\nNote: EMQX only supports stateless session tickets without support for client early data (0-RTT).\nThe number of tickets sent after a full handshake is controlled by the config `node.tls_server_session_tickets_amount`.\nThe seed key is configured at `node.tls_stateless_tickets_seed`.",
+        "desc" : "启用使用无状态会话票据的 TLS 1.3 会话恢复。\n\n可能的值：\n\n- `disabled`：禁用会话票据（默认）。\n- `stateless`：启用无状态会话票据。服务器发送加密票据，客户端可以使用这些票据恢复会话，而无需在服务器上存储会话状态。\n- `stateless_with_cert`：启用包含证书信息的无状态会话票据。这允许即使服务器证书更改也能恢复会话，但会增加网络带宽使用，因为每个票据都包含证书数据。\n\n注意：EMQX 仅支持无状态会话票据，不支持客户端早期数据（0-RTT）。\n完全握手后发送的票据数量由配置 `node.tls_server_session_tickets_amount` 控制。\n种子密钥在 `node.tls_stateless_tickets_seed` 中配置。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -2637,7 +2637,7 @@
       "durable_storage.timers"
     ],
     "full_name" : "durable_storage:builtin_local",
-    "desc" : "使用嵌入式 RocksDB 键值存储的内置存储后端。\n此后端不支持集群。",
+    "desc" : "没有网络功能的嵌入式持久化存储后端。\n\n此后端不支持集群，但其开销低于 `builtin_raft`。\n建议在严格的单节点部署中使用。",
     "fields" : [
       {
         "raw_default" : "builtin_local",
@@ -2645,7 +2645,7 @@
         "aliases" : [
           
         ],
-        "desc" : "后端类型。",
+        "desc" : "持久化存储后端。\n\n请注意，无法在不丢失数据的情况下更改现有持久化存储的后端。",
         "type" : {
           "kind" : "singleton",
           "name" : "builtin_local"
@@ -2661,7 +2661,7 @@
         "aliases" : [
           
         ],
-        "desc" : "数据库所在的文件系统目录。\n\n默认情况下，它等于 node.data_dir。",
+        "desc" : "内置存储后端相关数据的根目录。\n\n默认情况下，它等于 `node.data_dir/ds/`。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -2674,7 +2674,7 @@
         "aliases" : [
           
         ],
-        "desc" : "内置的持久存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
+        "desc" : "持久化存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久化存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -2730,7 +2730,7 @@
       "durable_storage.messages"
     ],
     "full_name" : "durable_storage:builtin_local_messages",
-    "desc" : "使用嵌入式 RocksDB 键值存储的内置存储后端。\n此后端不支持集群。",
+    "desc" : "没有网络功能的嵌入式持久化存储后端。\n\n此后端不支持集群，但其开销低于 `builtin_raft`。\n建议在严格的单节点部署中使用。",
     "fields" : [
       {
         "raw_default" : "builtin_local",
@@ -2738,7 +2738,7 @@
         "aliases" : [
           
         ],
-        "desc" : "后端类型。",
+        "desc" : "持久化存储后端。\n\n请注意，无法在不丢失数据的情况下更改现有持久化存储的后端。",
         "type" : {
           "kind" : "singleton",
           "name" : "builtin_local"
@@ -2754,7 +2754,7 @@
         "aliases" : [
           
         ],
-        "desc" : "数据库所在的文件系统目录。\n\n默认情况下，它等于 node.data_dir。",
+        "desc" : "内置存储后端相关数据的根目录。\n\n默认情况下，它等于 `node.data_dir/ds/`。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -2767,7 +2767,7 @@
         "aliases" : [
           
         ],
-        "desc" : "内置的持久存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
+        "desc" : "持久化存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久化存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -2853,7 +2853,7 @@
       "durable_storage.timers"
     ],
     "full_name" : "durable_storage:builtin_raft",
-    "desc" : "使用嵌入式 RocksDB 键值存储的内置存储后端。",
+    "desc" : "支持数据复制的嵌入式持久化存储后端。\n\n此后端旨在用于集群化的 EMQX 部署。\n它在多个 EMQX 节点上复制每个持久化存储分片的数据。",
     "fields" : [
       {
         "raw_default" : "builtin_raft",
@@ -2861,7 +2861,7 @@
         "aliases" : [
           
         ],
-        "desc" : "后端类型。",
+        "desc" : "持久化存储后端。\n\n请注意，无法在不丢失数据的情况下更改现有持久化存储的后端。",
         "type" : {
           "kind" : "singleton",
           "name" : "builtin_raft"
@@ -2895,7 +2895,7 @@
         "aliases" : [
           
         ],
-        "desc" : "在遇到可恢复的间歇性故障时的最大重试次数。",
+        "desc" : "遇到可恢复的间歇性故障时的最大重试次数。",
         "type" : {
           "kind" : "primitive",
           "name" : "non_neg_integer()"
@@ -2928,7 +2928,7 @@
         "aliases" : [
           
         ],
-        "desc" : "数据库所在的文件系统目录。\n\n默认情况下，它等于 node.data_dir。",
+        "desc" : "内置存储后端相关数据的根目录。\n\n默认情况下，它等于 `node.data_dir/ds/`。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -2941,7 +2941,7 @@
         "aliases" : [
           
         ],
-        "desc" : "内置的持久存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
+        "desc" : "持久化存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久化存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -2997,7 +2997,7 @@
       "durable_storage.messages"
     ],
     "full_name" : "durable_storage:builtin_raft_messages",
-    "desc" : "使用嵌入式 RocksDB 键值存储的内置存储后端。",
+    "desc" : "支持数据复制的嵌入式持久化存储后端。\n\n此后端旨在用于集群化的 EMQX 部署。\n它在多个 EMQX 节点上复制每个持久化存储分片的数据。",
     "fields" : [
       {
         "raw_default" : "builtin_raft",
@@ -3005,7 +3005,7 @@
         "aliases" : [
           
         ],
-        "desc" : "后端类型。",
+        "desc" : "持久化存储后端。\n\n请注意，无法在不丢失数据的情况下更改现有持久化存储的后端。",
         "type" : {
           "kind" : "singleton",
           "name" : "builtin_raft"
@@ -3039,7 +3039,7 @@
         "aliases" : [
           
         ],
-        "desc" : "在遇到可恢复的间歇性故障时的最大重试次数。",
+        "desc" : "遇到可恢复的间歇性故障时的最大重试次数。",
         "type" : {
           "kind" : "primitive",
           "name" : "non_neg_integer()"
@@ -3072,7 +3072,7 @@
         "aliases" : [
           
         ],
-        "desc" : "数据库所在的文件系统目录。\n\n默认情况下，它等于 node.data_dir。",
+        "desc" : "内置存储后端相关数据的根目录。\n\n默认情况下，它等于 `node.data_dir/ds/`。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -3085,7 +3085,7 @@
         "aliases" : [
           
         ],
-        "desc" : "内置的持久存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
+        "desc" : "持久化存储将数据分成多个分片。\n此配置参数定义分片的数量。\n请注意，它仅在持久化存储数据库初始化期间生效。\n在数据库已经创建后更改此配置参数将不会产生任何效果。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -3373,7 +3373,7 @@
         "aliases" : [
           
         ],
-        "desc" : "指定操作在提交到存储之前可能在缓冲区中停留的最长时间。",
+        "desc" : "指定操作在提交到存储之前可能在缓冲区中停留的最长时间。\n参数的较大值可能会提高吞吐量，但会对延迟产生负面影响。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:duration_ms()"
@@ -3498,7 +3498,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Allow RocksDB to perform file space preallocation through `fallocate`, if supported\nby the OS and the file system.\nFile space preallocation is used to increase the file write/append performance at the\ncost of considerable disk usage per each shard, especially for an empty or sparsely\npopulated DB.\n\nIf enabled, make sure that the data directory resides on the volume with enough free\nspace, e.g. at least several gigabytes.\n\nIf the data directory is using `btrfs` file system, keeping it disabled is recommended.\nOn `btrfs` the extra allocated space cannot be freed. This could be significant for DS\ndatabases, where having a lot of shards on a single site is common.\n\nRefer to RocksDB C++ API documentation of `allow_fallocate` flag for further details.",
+        "desc" : "如果 OS 和文件系统支持，允许 RocksDB 通过 `fallocate` 进行文件空间预分配。\n文件空间预分配用于提升文件写入/追加性能，但会以每个分片显著的磁盘占用为代价，尤其是在空或稀疏的 DB 中。\n\n如果启用，请确保数据目录所在卷有足够的可用空间，例如至少数 GB。\n\n如果数据目录使用 `btrfs` 文件系统，建议保持禁用。\n在 `btrfs` 上，额外分配的空间无法释放。对于 DS 数据库这可能很显著，因为在单个站点上拥有大量分片很常见。\n\n更多细节请参考 RocksDB C++ API 文档中的 `allow_fallocate` 标志。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -3772,7 +3772,7 @@
       "cluster.durable_timers"
     ],
     "full_name" : "emqx:durable_timers",
-    "desc" : "持久定时器的配置。\n持久定时器用于调度即使创建它们的节点关闭也应发生的动作。",
+    "desc" : "持久化定时器的配置。\n持久化定时器用于调度即使创建它们的节点关闭也应发生的动作。",
     "fields" : [
       {
         "raw_default" : 100,
@@ -3984,7 +3984,7 @@
         "aliases" : [
           
         ],
-        "desc" : "EMQX 集群名称。每个集群都有一个唯一的名称。服务发现时会用于做路径的一部分。",
+        "desc" : "EMQX 集群的友好名称。\n注意：集群名称只能包含 `a-z`、`A-Z`、`0-9`、`_`、`-` 中的字符，并且第一个字符必须是 `a-z` 或 `A-Z`，\n否则您将无法将其配置为集群连接的对等集群。",
         "type" : {
           "kind" : "primitive",
           "name" : "atom()"
@@ -5105,7 +5105,7 @@
         "aliases" : [
           
         ],
-        "desc" : "是否启用消息队列。",
+        "desc" : "是否启用消息队列。如果设置为 `auto`，消息队列默认禁用，仅在已有消息队列时启用。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -5380,7 +5380,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Log throttling configuration.",
+        "desc" : "日志限流配置。",
         "type" : {
           "kind" : "struct",
           "name" : "emqx:log_throttling"
@@ -5486,7 +5486,7 @@
         "aliases" : [
           "max_filter_size"
         ],
-        "desc" : "Store the latest N log entries in a database for allow `/audit` HTTP API to filter and retrieval of log data.\nThe interval for purging redundant log records is maintained within a range of 10~20 seconds.",
+        "desc" : "将最新的 N 条日志记录存储在数据库中，以便 `/audit` HTTP API 过滤和检索日志数据。\n清理冗余日志记录的间隔保持在 10~20 秒之间。",
         "type" : {
           "kind" : "primitive",
           "name" : "10..30000"
@@ -5619,7 +5619,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Erlang 系统同时存在的最大端口数。\n实际选择的最大值可能比设置的数字大得多。\n参考: https://www.erlang.org/doc/man/erl.html",
+        "desc" : "转换为 Erlang VM 的 `+Q` 标志。\n指定此 Erlang 系统允许同时打开的最大端口数（文件、socket 等）。\n\n注意：运行时选择的实际限制可能大于此处配置的数字。\n在大多数情况下，为了提高内部效率，VM 会将该值向上取整为下一个 2 的幂。\n\nEMQX 会自动将 Erlang 进程限制（`+P` 标志）设置为该值的两倍，因此用户只需配置 `max_ports`。\n对应的 `+P` 标志用于控制 Erlang 进程的最大数量。\n\n可以从 Dashboard 节点监控标签页中观察到有效值。",
         "type" : {
           "kind" : "primitive",
           "name" : "1024..134217727"
@@ -5691,7 +5691,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Specify which IP address to use for Erlang distribution.\nThis should be an IP address (e.g., \"192.168.1.100\" for IPv4 or \"::1\" for IPv6).\nWhen set, Erlang distribution will bind to the specified IP address.\nNote: If an IPv6 address is used, <code>cluster.proto_dist</code> must be set to <code>inet6_tcp</code>.",
+        "desc" : "指定用于 Erlang 分布式通信的 IP 地址。\n这应为 IP 地址（例如 IPv4 的 \"192.168.1.100\" 或 IPv6 的 \"::1\"）。\n设置后，Erlang 分布式通信将绑定到指定的 IP 地址。\n注意：如果使用 IPv6 地址，必须将 <code>cluster.proto_dist</code> 设置为 <code>inet6_tcp</code>。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -5723,7 +5723,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of session tickets sent by the server after a successful handshake or resumption. It must be greater than 0. Defaults to 1.\n\nEMQX only supports stateless session tickets. Configuring a larger number increases resource usage,\nespecially network bandwidth usage when <code>stateless_with_cert</code> is enabled in the listener SSL options,\nas each ticket includes certificate information.",
+        "desc" : "在成功握手或恢复后，服务器发送的会话票据数量。必须大于 0。默认值为 1。\n\nEMQX 仅支持无状态会话票据。配置较大的数量会增加资源使用，尤其是在监听器 SSL 选项中启用 <code>stateless_with_cert</code> 时，会增加网络带宽使用，因为每个票据都包含证书信息。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -5739,7 +5739,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Lifetime of session tickets sent by the server in seconds.\nServers must not use any value greater than 604800 seconds (7 days).\nDefaults to 7200 seconds (2 hours).",
+        "desc" : "服务器发送的会话票据的生命周期，以秒为单位。服务器不得使用超过 604800 秒（7 天）的值。默认值为 7200 秒（2 小时）。",
         "type" : {
           "kind" : "primitive",
           "name" : "1..604800"
@@ -5755,7 +5755,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Secret key seed for generating TLS 1.3 stateless session tickets. This must be a string no less than 16 bytes.\n\nIf set to an empty string (default), no session tickets will be generated regardless of the <code>session_tickets</code> setting in listener SSL options.\n\nImportant:\n\n- This configuration cannot be changed at runtime. A node restart is required to make config take effect after any change.\n- The same key must be configured for all nodes in the cluster to ensure session tickets work correctly across the cluster.\n- The key should be kept secret and secure, as it is used to encrypt session tickets.",
+        "desc" : "用于生成 TLS 1.3 无状态会话票据的密钥种子。必须是长度不少于 16 字节的字符串。\n\n如果设置为空字符串（默认），无论监听器 SSL 选项中的 <code>session_tickets</code> 设置如何，都不会生成会话票据。\n\n重要提示：\n\n- 此配置无法在运行时更改。更改后需要重启节点以使配置生效。\n- 集群中的所有节点必须配置相同的密钥，以确保会话票据在集群中正常工作。\n- 该密钥应保持机密和安全，因为它用于加密会话票据。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -5799,7 +5799,7 @@
         "aliases" : [
           
         ],
-        "desc" : "共享订阅领导者在此期间积累对组的更改（例如订阅者加入或离开组）\n然后重新分配订阅者之间的工作。\n\n这样做是为了避免在多个订阅者短时间内加入或离开组时进行不必要的工作。",
+        "desc" : "共享订阅领导者在此期间积累对组的更改（例如订阅者加入或离开组）\n然后在订阅者之间重新分配工作。\n\n这样做是为了避免在多个订阅者短时间内加入或离开组时进行不必要的工作。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration()"
@@ -5815,7 +5815,7 @@
         "aliases" : [
           
         ],
-        "desc" : "给共享订阅者完成最后一批消息处理的最大时间。\n\n共享订阅组的重新平衡可能涉及将工作从一个订阅者转移到另一个订阅者。\n第一个订阅者被允许在此间隔内完成被撤销任务的剩余工作。\n\n如果订阅者未能及时回复，则将其从组中踢出，其所有工作将被重新分配。",
+        "desc" : "给共享订阅者完成最后一批消息处理的最大时间。\n\n共享订阅组的重新平衡可能涉及从一个订阅者那里获取工作并将其转移给另一个订阅者。\n在此期间，允许第一个订阅者完成被撤销任务的剩余工作。\n\n如果订阅者未能及时回复，则会被踢出组，其所有工作将被重新分配。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration()"
@@ -5879,7 +5879,7 @@
         "aliases" : [
           
         ],
-        "desc" : "与 MQTT 消息的持久存储相关的配置。",
+        "desc" : "MQTT 消息持久化存储的配置。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -6255,7 +6255,7 @@
         "aliases" : [
           
         ],
-        "desc" : "单行表达式，用于解析一组预定义的字符串函数（类似规则引擎 SQL 语句中的函数）。\n表达式可以是带有嵌套调用的函数调用，或直接变量引用。\n目前，它不提供用户定义的变量绑定（如 `var a=1`）或用户定义的函数。\n例如，提取以点分隔的客户端 ID 的前缀：`nth(1, tokens(clientid, '.'))`。\n\n预绑定的变量包括：\n- `clientid`：MQTT 客户端 ID。\n- `username`：MQTT 客户端的用户名。\n- `user_property.{NAME}`：连接包中的用户属性。\n- `zone`：监听器的配置区域。\n- `listener`：客户端连接的监听器 ID（如 `tcp:default`）。\n对于 TLS 客户端，直接连接或通过启用代理协议（v2）负载均衡器连接时，\n还可以使用一些额外的变量：\n- `cn`：客户端的 TLS 证书公共名称。\n- `dn`：客户端的 TLS 证书区分名称（主体）。\n- `peersni`：客户端发送的 TLS 服务器名称指示。\n\n您可以在 EMQX 文档中阅读更多关于变量表达式的信息。",
+        "desc" : "单行表达式，用于解析一组预定义的字符串函数（类似规则引擎 SQL 语句中的函数）。\n表达式可以是带有嵌套调用的函数调用，或直接变量引用。\n目前，它不提供用户定义的变量绑定（如 `var a=1`）或用户定义的函数。\n例如，提取以点分隔的客户端 ID 的前缀：`nth(1, tokens(clientid, '.'))`。\n\n预绑定的变量包括：\n- `clientid`：MQTT 客户端 ID。\n- `username`：MQTT 客户端的用户名。\n- `user_property.{NAME}`：CONNECT 包中的用户属性。\n- `zone`：监听器的配置区域。\n- `listener`：客户端连接的监听器 ID（如 `tcp:default`）。\n对于 TLS 客户端，直接连接或通过启用代理协议（v2）负载均衡器连接时，\n还可以使用一些额外的变量：\n- `cn`：客户端的 TLS 证书公共名称。\n- `cert_common_name`：`cn` 的别名。\n- `dn`：客户端的 TLS 证书区分名称（主体）。\n- `cert_subject`：`dn` 的别名。\n- `peersni`：客户端发送的 TLS 服务器名称指示。\n\n您可以在 EMQX 文档中阅读更多关于变量表达式的信息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -7234,7 +7234,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable TLS 1.3 session resumption using stateless session tickets.\n\nPossible values:\n\n- `disabled`: Disable session tickets (default).\n- `stateless`: Enable stateless session tickets. The server sends encrypted tickets that clients can use to resume sessions without storing session state on the server.\n- `stateless_with_cert`: Enable stateless session tickets with certificate information included. This allows session resumption even when the server certificate changes, but increases network bandwidth usage as each ticket includes certificate data.\n\nNote: EMQX only supports stateless session tickets without support for client early data (0-RTT).\nThe number of tickets sent after a full handshake is controlled by the config `node.tls_server_session_tickets_amount`.\nThe seed key is configured at `node.tls_stateless_tickets_seed`.",
+        "desc" : "启用使用无状态会话票据的 TLS 1.3 会话恢复。\n\n可能的值：\n\n- `disabled`：禁用会话票据（默认）。\n- `stateless`：启用无状态会话票据。服务器发送加密票据，客户端可以使用这些票据恢复会话，而无需在服务器上存储会话状态。\n- `stateless_with_cert`：启用包含证书信息的无状态会话票据。这允许即使服务器证书更改也能恢复会话，但会增加网络带宽使用，因为每个票据都包含证书数据。\n\n注意：EMQX 仅支持无状态会话票据，不支持客户端早期数据（0-RTT）。\n完全握手后发送的票据数量由配置 `node.tls_server_session_tickets_amount` 控制。\n种子密钥在 `node.tls_stateless_tickets_seed` 中配置。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -7671,7 +7671,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable TLS 1.3 session resumption using stateless session tickets.\n\nPossible values:\n\n- `disabled`: Disable session tickets (default).\n- `stateless`: Enable stateless session tickets. The server sends encrypted tickets that clients can use to resume sessions without storing session state on the server.\n- `stateless_with_cert`: Enable stateless session tickets with certificate information included. This allows session resumption even when the server certificate changes, but increases network bandwidth usage as each ticket includes certificate data.\n\nNote: EMQX only supports stateless session tickets without support for client early data (0-RTT).\nThe number of tickets sent after a full handshake is controlled by the config `node.tls_server_session_tickets_amount`.\nThe seed key is configured at `node.tls_stateless_tickets_seed`.",
+        "desc" : "启用使用无状态会话票据的 TLS 1.3 会话恢复。\n\n可能的值：\n\n- `disabled`：禁用会话票据（默认）。\n- `stateless`：启用无状态会话票据。服务器发送加密票据，客户端可以使用这些票据恢复会话，而无需在服务器上存储会话状态。\n- `stateless_with_cert`：启用包含证书信息的无状态会话票据。这允许即使服务器证书更改也能恢复会话，但会增加网络带宽使用，因为每个票据都包含证书数据。\n\n注意：EMQX 仅支持无状态会话票据，不支持客户端早期数据（0-RTT）。\n完全握手后发送的票据数量由配置 `node.tls_server_session_tickets_amount` 控制。\n种子密钥在 `node.tls_stateless_tickets_seed` 中配置。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -8210,7 +8210,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to enable support for EMQX subscription message filters appended to topic filters with `?`.",
+        "desc" : "是否启用对在主题过滤器中以 `?` 附加的 EMQX 订阅消息过滤器的支持。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -8910,7 +8910,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of bytes the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nThe unit of the bytes could be: B, KB, MB, GB.\n\nFor example:\n\n- `500KB/s`: Only 500 kilobytes per second will be received, and the remaining bytes will be dropped/rejected/queued.\n- `500MB/10s`: Only 500 megabytes will be received every 10 seconds, and the remaining bytes will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的字节数。注意，这与 `bytes_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n字节单位可以是：B、KB、MB、GB。\n\n例如：\n\n- `500KB/s`：每秒只接收 500 KB，其余字节将被丢弃/拒绝/入队。\n- `500MB/10s`：每 10 秒只接收 500 MB，其余字节将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -8921,7 +8921,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of bytes that can be sent in a burst, on top of regular `delivery_bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `100MB/60m`: Once every 60 minutes, up to 100 megabytes can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_bytes_rate` 之上，允许突发发送的字节数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`100MB/60m`：每 60 分钟一次，短时间内最多可发送 100 MB。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -8932,7 +8932,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of messages the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `messages_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nFor example:\n\n- `500/s`: Only 500 messages will be received per second, and the remaining messages will be dropped/rejected/queued.\n- `500/10s`: Only 500 messages will be received every 10 seconds and the remaining messages will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的消息数。注意，这与 `messages_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n例如：\n\n- `500/s`：每秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。\n- `500/10s`：每 10 秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -8943,7 +8943,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of messages that can be sent in a burst, on top of regular `delivery_messages_rate`, per each node.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `10000/60m`: Once in 60 minutes, up to 10000 messages can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_messages_rate` 之上，允许突发发送的消息数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`10000/60m`：每 60 分钟一次，短时间内最多可发送 10000 条消息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9143,7 +9143,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of bytes the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nThe unit of the bytes could be: B, KB, MB, GB.\n\nFor example:\n\n- `500KB/s`: Only 500 kilobytes per second will be received, and the remaining bytes will be dropped/rejected/queued.\n- `500MB/10s`: Only 500 megabytes will be received every 10 seconds, and the remaining bytes will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的字节数。注意，这与 `bytes_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n字节单位可以是：B、KB、MB、GB。\n\n例如：\n\n- `500KB/s`：每秒只接收 500 KB，其余字节将被丢弃/拒绝/入队。\n- `500MB/10s`：每 10 秒只接收 500 MB，其余字节将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9154,7 +9154,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of bytes that can be sent in a burst, on top of regular `delivery_bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `100MB/60m`: Once every 60 minutes, up to 100 megabytes can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_bytes_rate` 之上，允许突发发送的字节数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`100MB/60m`：每 60 分钟一次，短时间内最多可发送 100 MB。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9165,7 +9165,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of messages the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `messages_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nFor example:\n\n- `500/s`: Only 500 messages will be received per second, and the remaining messages will be dropped/rejected/queued.\n- `500/10s`: Only 500 messages will be received every 10 seconds and the remaining messages will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的消息数。注意，这与 `messages_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n例如：\n\n- `500/s`：每秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。\n- `500/10s`：每 10 秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9176,7 +9176,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of messages that can be sent in a burst, on top of regular `delivery_messages_rate`, per each node.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `10000/60m`: Once in 60 minutes, up to 10000 messages can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_messages_rate` 之上，允许突发发送的消息数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`10000/60m`：每 60 分钟一次，短时间内最多可发送 10000 条消息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9469,7 +9469,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of bytes the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nThe unit of the bytes could be: B, KB, MB, GB.\n\nFor example:\n\n- `500KB/s`: Only 500 kilobytes per second will be received, and the remaining bytes will be dropped/rejected/queued.\n- `500MB/10s`: Only 500 megabytes will be received every 10 seconds, and the remaining bytes will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的字节数。注意，这与 `bytes_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n字节单位可以是：B、KB、MB、GB。\n\n例如：\n\n- `500KB/s`：每秒只接收 500 KB，其余字节将被丢弃/拒绝/入队。\n- `500MB/10s`：每 10 秒只接收 500 MB，其余字节将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9480,7 +9480,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of bytes that can be sent in a burst, on top of regular `delivery_bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `100MB/60m`: Once every 60 minutes, up to 100 megabytes can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_bytes_rate` 之上，允许突发发送的字节数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`100MB/60m`：每 60 分钟一次，短时间内最多可发送 100 MB。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9491,7 +9491,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of messages the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `messages_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nFor example:\n\n- `500/s`: Only 500 messages will be received per second, and the remaining messages will be dropped/rejected/queued.\n- `500/10s`: Only 500 messages will be received every 10 seconds and the remaining messages will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的消息数。注意，这与 `messages_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n例如：\n\n- `500/s`：每秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。\n- `500/10s`：每 10 秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9502,7 +9502,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of messages that can be sent in a burst, on top of regular `delivery_messages_rate`, per each node.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `10000/60m`: Once in 60 minutes, up to 10000 messages can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_messages_rate` 之上，允许突发发送的消息数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`10000/60m`：每 60 分钟一次，短时间内最多可发送 10000 条消息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9805,7 +9805,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of bytes the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nThe unit of the bytes could be: B, KB, MB, GB.\n\nFor example:\n\n- `500KB/s`: Only 500 kilobytes per second will be received, and the remaining bytes will be dropped/rejected/queued.\n- `500MB/10s`: Only 500 megabytes will be received every 10 seconds, and the remaining bytes will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的字节数。注意，这与 `bytes_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n字节单位可以是：B、KB、MB、GB。\n\n例如：\n\n- `500KB/s`：每秒只接收 500 KB，其余字节将被丢弃/拒绝/入队。\n- `500MB/10s`：每 10 秒只接收 500 MB，其余字节将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9816,7 +9816,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of bytes that can be sent in a burst, on top of regular `delivery_bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `100MB/60m`: Once every 60 minutes, up to 100 megabytes can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_bytes_rate` 之上，允许突发发送的字节数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`100MB/60m`：每 60 分钟一次，短时间内最多可发送 100 MB。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9827,7 +9827,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of messages the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `messages_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nFor example:\n\n- `500/s`: Only 500 messages will be received per second, and the remaining messages will be dropped/rejected/queued.\n- `500/10s`: Only 500 messages will be received every 10 seconds and the remaining messages will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的消息数。注意，这与 `messages_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n例如：\n\n- `500/s`：每秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。\n- `500/10s`：每 10 秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -9838,7 +9838,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of messages that can be sent in a burst, on top of regular `delivery_messages_rate`, per each node.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `10000/60m`: Once in 60 minutes, up to 10000 messages can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_messages_rate` 之上，允许突发发送的消息数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`10000/60m`：每 60 分钟一次，短时间内最多可发送 10000 条消息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -10111,7 +10111,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of bytes the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nThe unit of the bytes could be: B, KB, MB, GB.\n\nFor example:\n\n- `500KB/s`: Only 500 kilobytes per second will be received, and the remaining bytes will be dropped/rejected/queued.\n- `500MB/10s`: Only 500 megabytes will be received every 10 seconds, and the remaining bytes will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的字节数。注意，这与 `bytes_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n字节单位可以是：B、KB、MB、GB。\n\n例如：\n\n- `500KB/s`：每秒只接收 500 KB，其余字节将被丢弃/拒绝/入队。\n- `500MB/10s`：每 10 秒只接收 500 MB，其余字节将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -10122,7 +10122,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of bytes that can be sent in a burst, on top of regular `delivery_bytes_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `100MB/60m`: Once every 60 minutes, up to 100 megabytes can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_bytes_rate` 之上，允许突发发送的字节数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`100MB/60m`：每 60 分钟一次，短时间内最多可发送 100 MB。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -10133,7 +10133,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Limits the number of messages the broker can send to a single client, per each node.  Note that this is for the opposite direction than that of `messages_rate`.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nOnce the limit is reached, EMQX will drop QoS 0 messages and enqueue QoS 1 and QoS 2 messages in the client's internal queue and retried later.\n\nFor example:\n\n- `500/s`: Only 500 messages will be received per second, and the remaining messages will be dropped/rejected/queued.\n- `500/10s`: Only 500 messages will be received every 10 seconds and the remaining messages will be dropped/rejected/queued.",
+        "desc" : "限制每个节点 Broker 向单个客户端发送的消息数。注意，这与 `messages_rate` 的方向相反。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n达到限制后，EMQX 将丢弃 QoS 0 消息，并将 QoS 1 和 QoS 2 消息放入客户端内部队列，稍后重试。\n\n例如：\n\n- `500/s`：每秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。\n- `500/10s`：每 10 秒只接收 500 条消息，其余消息将被丢弃/拒绝/入队。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -10144,7 +10144,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Number of messages that can be sent in a burst, on top of regular `delivery_messages_rate`, per each node.\n\nThis only takes effect when using in-memory sessions (i.e., when `durable_sessions.enable = false`).\n\nFor example: `10000/60m`: Once in 60 minutes, up to 10000 messages can be sent in a short period of time.",
+        "desc" : "每个节点在常规 `delivery_messages_rate` 之上，允许突发发送的消息数。\n\n仅在使用内存会话时生效（即 `durable_sessions.enable = false`）。\n\n例如：`10000/60m`：每 60 分钟一次，短时间内最多可发送 10000 条消息。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -13216,7 +13216,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable TLS 1.3 session resumption using stateless session tickets.\n\nPossible values:\n\n- `disabled`: Disable session tickets (default).\n- `stateless`: Enable stateless session tickets. The server sends encrypted tickets that clients can use to resume sessions without storing session state on the server.\n- `stateless_with_cert`: Enable stateless session tickets with certificate information included. This allows session resumption even when the server certificate changes, but increases network bandwidth usage as each ticket includes certificate data.\n\nNote: EMQX only supports stateless session tickets without support for client early data (0-RTT).\nThe number of tickets sent after a full handshake is controlled by the config `node.tls_server_session_tickets_amount`.\nThe seed key is configured at `node.tls_stateless_tickets_seed`.",
+        "desc" : "启用使用无状态会话票据的 TLS 1.3 会话恢复。\n\n可能的值：\n\n- `disabled`：禁用会话票据（默认）。\n- `stateless`：启用无状态会话票据。服务器发送加密票据，客户端可以使用这些票据恢复会话，而无需在服务器上存储会话状态。\n- `stateless_with_cert`：启用包含证书信息的无状态会话票据。这允许即使服务器证书更改也能恢复会话，但会增加网络带宽使用，因为每个票据都包含证书数据。\n\n注意：EMQX 仅支持无状态会话票据，不支持客户端早期数据（0-RTT）。\n完全握手后发送的票据数量由配置 `node.tls_server_session_tickets_amount` 控制。\n种子密钥在 `node.tls_stateless_tickets_seed` 中配置。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -14388,7 +14388,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to process and forward unrecognized Message IDs. <br/>\n- <code>true</code>: Unrecognized Message IDs are processed, and their body is encoded in Base64 and forwarded.<br/>\n- <code>false</code>: An error is reported and logged when an unrecognized Message ID is received.<br/>\nDefault is true.",
+        "desc" : "是否处理并转发无法识别的 Message ID。<br/>\n- <code>true</code>：处理无法识别的 Message ID，其消息体以 Base64 编码后转发。<br/>\n- <code>false</code>：收到无法识别的 Message ID 时报告并记录错误。<br/>\n默认值为 true。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -14404,7 +14404,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Character encoding for STRING type fields on the JT/T 808 wire protocol.<br/>\n- <code>utf8</code>: Strings are treated as UTF-8 encoded (legacy behavior, default).<br/>\n- <code>gbk</code>: Strings are treated as GBK encoded per JT/T 808 specification; converted to/from UTF-8 for MQTT payloads.<br/>\nNote: MQTT payloads always use UTF-8 regardless of this setting. Set to <code>gbk</code> if Chinese text appears garbled (Mojibake).",
+        "desc" : "JT/T 808 线协议中 STRING 类型字段的字符编码。<br/>\n- <code>utf8</code>：字符串按 UTF-8 编码处理（兼容旧行为，默认）。<br/>\n- <code>gbk</code>：字符串按 JT/T 808 规范的 GBK 编码处理；与 MQTT 负载之间转换为 UTF-8。<br/>\n注意：无论此设置如何，MQTT 负载始终使用 UTF-8。如果中文文本出现乱码（Mojibake），请设为 <code>gbk</code>。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -14518,7 +14518,7 @@
         "aliases" : [
           
         ],
-        "desc" : "LwM2M Resource 定义的 XML 文件目录路径。",
+        "desc" : "LwM2M 资源定义 XML 文件的目录。\n请设置为本地 XML 目录（必需）。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -14530,7 +14530,7 @@
         "aliases" : [
           
         ],
-        "desc" : "允许 LwM2M 客户端允许设置的心跳最小值。",
+        "desc" : "网关接受的客户端 lifetime 下限。\n用于防止设备产生过于频繁的更新流量。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_lwm2m_schema:duration()"
@@ -14546,7 +14546,7 @@
         "aliases" : [
           
         ],
-        "desc" : "允许 LwM2M 客户端允许设置的心跳最大值。",
+        "desc" : "网关接受的客户端 lifetime 上限。\n用于防止设备设置过长的保活间隔。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_lwm2m_schema:duration()"
@@ -14562,7 +14562,7 @@
         "aliases" : [
           
         ],
-        "desc" : "在 QMode 模式下，LwM2M 网关认为网络链接有效的时间窗口的值。\n例如，在收到客户端的更新信息后，在这个时间窗口内的任何信息都会直接发送到 LwM2M 客户端，而超过这个时间窗口的所有信息都会暂时储存在内存中。",
+        "desc" : "在 QMode 下，这是 UPDATE 之后的“链路仍有效”窗口。\n窗口内：直接发送消息。\n窗口外：将消息缓存在内存中，直到客户端可达。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_lwm2m_schema:duration_s()"
@@ -14578,7 +14578,7 @@
         "aliases" : [
           
         ],
-        "desc" : "自动 Observe REGISTER 数据包的 Object 列表。",
+        "desc" : "从 REGISTER 对象列表自动创建 Observe 订阅。\n支持的值：<br/>\n  - false / \"off\"：禁用自动 observe<br/>\n  - true / \"on\"：observe REGISTER 对象列表中的所有路径<br/>\n  - \"/3/0,/3/0/1\" 或 [\"/3/0\", \"/3/0/1\"]：仅 observe 指定路径",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -14611,7 +14611,7 @@
         "aliases" : [
           
         ],
-        "desc" : "发布 UPDATE 事件消息的策略。<br/>\n  - always: 只要收到 UPDATE 请求，就发送更新事件。<br/>\n  - contains_object_list: 仅当 UPDATE 请求携带 Object 列表时才发送更新事件。",
+        "desc" : "何时发布 UPDATE 事件。<br/>\n  - always：发布每个 UPDATE 请求<br/>\n  - contains_object_list：仅当 UPDATE 包含 Object 列表时发布<br/>\n使用 <code>contains_object_list</code> 可以减少无意义的更新事件。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -14629,7 +14629,7 @@
         "aliases" : [
           
         ],
-        "desc" : "LwM2M 网关订阅/发布消息的主题映射配置。",
+        "desc" : "LwM2M 事件与 MQTT 命令之间的主题映射。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:lwm2m_translators"
@@ -14640,7 +14640,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Settings for large payload transfer.\nBlock-wise transfer splits one large payload into smaller CoAP blocks.\nUse defaults unless you see payload-size or packet-loss issues.",
+        "desc" : "大负载传输设置。\n分块传输将一个大负载拆分为更小的 CoAP 块。\n除非遇到负载大小或丢包问题，否则使用默认值即可。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:lwm2m_blockwise"
@@ -14733,7 +14733,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable block-wise transfer for large payloads.\nKeep enabled unless all payloads are small and fixed.",
+        "desc" : "启用大负载的分块传输。\n除非所有负载都很小且固定，否则保持启用。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -14749,7 +14749,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Size of each CoAP block in bytes.\nLarger value: fewer packets, but retransmission cost is higher on loss.\nSmaller value: more packets, but loss impact is smaller.",
+        "desc" : "每个 CoAP 块的大小（字节）。\n较大的值：更少的数据包，但丢包时重传代价更高。\n较小的值：更多的数据包，但丢包影响更小。",
         "type" : {
           "kind" : "primitive",
           "name" : "block_size()"
@@ -14765,7 +14765,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Maximum final payload size after reassembly.\nIf exceeded, the message is rejected to protect memory.",
+        "desc" : "重组后的最终负载最大大小。\n超过此大小的消息将被拒绝以保护内存。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:bytesize()"
@@ -14781,7 +14781,7 @@
         "aliases" : [
           
         ],
-        "desc" : "How long temporary block-wise state is kept.\nToo short can break slow transfers; too long consumes memory longer.",
+        "desc" : "临时分块状态的保留时长。\n过短可能导致慢速传输中断；过长会占用更多内存。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -14808,7 +14808,7 @@
         "aliases" : [
           
         ],
-        "desc" : "下行命令主题。\n对于每个成功上线的新 LwM2M 客户端，网关会创建一个订阅关系来接收下行消息并将其发送给客户端",
+        "desc" : "发送下行命令到 LwM2M 客户端的 MQTT 主题。\n方向：MQTT -> LwM2M 设备。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:translator"
@@ -14819,7 +14819,7 @@
         "aliases" : [
           
         ],
-        "desc" : "用于网关发布来自 LwM2M 客户端的确认事件的主题。",
+        "desc" : "发布命令响应/ACK 事件的 MQTT 主题。\n方向：LwM2M 设备 -> MQTT。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:translator"
@@ -14830,7 +14830,7 @@
         "aliases" : [
           
         ],
-        "desc" : "用于发布来自 LwM2M 客户端的通知事件的主题。\n在成功 Observe 到 LwM2M 客户端的资源后，如果客户端报告任何资源状态的变化，网关将通过该主题发送通知事件",
+        "desc" : "发布来自 LwM2M 客户端的 NOTIFY 事件的 MQTT 主题。\n方向：LwM2M 设备 -> MQTT。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:translator"
@@ -14841,7 +14841,7 @@
         "aliases" : [
           
         ],
-        "desc" : "用于发布来自 LwM2M 客户端的注册事件的主题。",
+        "desc" : "发布 REGISTER 事件的 MQTT 主题。\n方向：LwM2M 设备 -> MQTT。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:translator"
@@ -14852,7 +14852,7 @@
         "aliases" : [
           
         ],
-        "desc" : "用于发布来自 LwM2M 客户端的更新事件的主题。",
+        "desc" : "发布 UPDATE 事件的 MQTT 主题。\n方向：LwM2M 设备 -> MQTT。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:translator"
@@ -14879,7 +14879,7 @@
         "aliases" : [
           
         ],
-        "desc" : "主题名称",
+        "desc" : "MQTT 主题名称/模板。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -14891,7 +14891,7 @@
         "aliases" : [
           
         ],
-        "desc" : "QoS 等级",
+        "desc" : "发布此事件主题时使用的 QoS。",
         "type" : {
           "kind" : "primitive",
           "name" : "qos()"
@@ -14990,14 +14990,14 @@
       "message_transformation.transformations.$INDEX.log_failure"
     ],
     "full_name" : "message_transformation:log_failure",
-    "desc" : "Configuration for logging transformation failures.",
+    "desc" : "记录转换失败的配置。",
     "fields" : [
       {
         "raw_default" : "info",
         "aliases" : [
           
         ],
-        "desc" : "Log level for recording transformation failures.",
+        "desc" : "记录转换失败的日志级别。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -15025,7 +15025,7 @@
       "message_transformation"
     ],
     "full_name" : "message_transformation",
-    "desc" : "Message transformation configuration.",
+    "desc" : "消息转换配置。",
     "fields" : [
       {
         "raw_default" : [
@@ -15034,7 +15034,7 @@
         "aliases" : [
           
         ],
-        "desc" : "List of message transformation rules.",
+        "desc" : "消息转换规则列表。",
         "type" : {
           "elements" : {
             "kind" : "struct",
@@ -15058,13 +15058,13 @@
       "message_transformation.transformations.$INDEX.operations.$INDEX"
     ],
     "full_name" : "message_transformation:operation",
-    "desc" : "A transformation operation that assigns a value to a key.",
+    "desc" : "将值赋给键的转换操作。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Target key path to update.",
+        "desc" : "要更新的目标键路径。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -15075,7 +15075,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Value or template assigned to the key.",
+        "desc" : "分配给该键的值或模板。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -15092,7 +15092,7 @@
       "message_transformation.transformations.$INDEX"
     ],
     "full_name" : "message_transformation:transformation",
-    "desc" : "A single message transformation rule.",
+    "desc" : "单条消息转换规则。",
     "fields" : [
       {
         "importance" : "low",
@@ -15130,7 +15130,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Transformation name.",
+        "desc" : "转换名称。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -15141,7 +15141,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Topic filters to apply this transformation.",
+        "desc" : "应用该转换的主题过滤器。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -15165,7 +15165,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action when transformation fails.",
+        "desc" : "转换失败时的动作。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -15183,7 +15183,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Log level for recording transformation failures.",
+        "desc" : "记录转换失败的日志级别。",
         "type" : {
           "kind" : "struct",
           "name" : "message_transformation:log_failure"
@@ -15201,7 +15201,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Payload decoder configuration.",
+        "desc" : "负载解码器配置。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -15241,7 +15241,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Payload encoder configuration.",
+        "desc" : "负载编码器配置。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -15281,7 +15281,7 @@
         "aliases" : [
           
         ],
-        "desc" : "List of transformation operations.",
+        "desc" : "转换操作列表。",
         "type" : {
           "elements" : {
             "kind" : "struct",
@@ -19382,7 +19382,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Configurations related to Sparkplug B encoding/decoding.",
+        "desc" : "与 Sparkplug B 编码/解码相关的配置。",
         "type" : {
           "kind" : "struct",
           "name" : "schema_registry:sparkplugb"
@@ -19403,14 +19403,14 @@
       "schema_registry.sparkplugb"
     ],
     "full_name" : "schema_registry:sparkplugb",
-    "desc" : "Configurations related to Sparkplug B encoding/decoding.",
+    "desc" : "与 Sparkplug B 编码/解码相关的配置。",
     "fields" : [
       {
         "raw_default" : true,
         "aliases" : [
           
         ],
-        "desc" : "Whether to analyze `NBIRTH` and `DBIRTH` messages to track alias-name mappings.\n\nNote: any `NBIRTH` and `DBIRTH` messages received while alias-name mapping is disabled will not take effect after this config is later enabled.",
+        "desc" : "是否分析 `NBIRTH` 和 `DBIRTH` 消息以跟踪别名名称映射。\n\n注意：在禁用别名名称映射时接收到的任何 `NBIRTH` 和 `DBIRTH` 消息在此配置稍后启用后将不会生效。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -19431,7 +19431,7 @@
       "schema_validation.validations.$INDEX.checks.$INDEX"
     ],
     "full_name" : "schema_validation:check_avro",
-    "desc" : "Validate using an Avro schema.",
+    "desc" : "使用 Avro Schema 进行验证。",
     "fields" : [
       {
         "raw_default" : "avro",
@@ -19470,7 +19470,7 @@
       "schema_validation.validations.$INDEX.checks.$INDEX"
     ],
     "full_name" : "schema_validation:check_external_http",
-    "desc" : "Validate using an external HTTP schema.",
+    "desc" : "使用外部 HTTP Schema 进行验证。",
     "fields" : [
       {
         "raw_default" : "external_http",
@@ -19509,7 +19509,7 @@
       "schema_validation.validations.$INDEX.checks.$INDEX"
     ],
     "full_name" : "schema_validation:check_json",
-    "desc" : "Validate using a JSON schema.",
+    "desc" : "使用 JSON Schema 进行验证。",
     "fields" : [
       {
         "raw_default" : "json",
@@ -19548,7 +19548,7 @@
       "schema_validation.validations.$INDEX.checks.$INDEX"
     ],
     "full_name" : "schema_validation:check_protobuf",
-    "desc" : "Validate using a Protobuf schema.",
+    "desc" : "使用 Protobuf Schema 进行验证。",
     "fields" : [
       {
         "raw_default" : "protobuf",
@@ -19598,7 +19598,7 @@
       "schema_validation.validations.$INDEX.checks.$INDEX"
     ],
     "full_name" : "schema_validation:check_sql",
-    "desc" : "Validate using a SQL expression.",
+    "desc" : "使用 SQL 表达式进行验证。",
     "fields" : [
       {
         "raw_default" : "sql",
@@ -19637,7 +19637,7 @@
       "schema_validation.validations.$INDEX.log_failure"
     ],
     "full_name" : "schema_validation:log_failure",
-    "desc" : "Configuration for logging validation failures.",
+    "desc" : "记录验证失败的配置。",
     "fields" : [
       {
         "raw_default" : "info",
@@ -19672,7 +19672,7 @@
       "schema_validation"
     ],
     "full_name" : "schema_validation",
-    "desc" : "Schema validation configuration.",
+    "desc" : "Schema 验证配置。",
     "fields" : [
       {
         "raw_default" : [
@@ -19681,7 +19681,7 @@
         "aliases" : [
           
         ],
-        "desc" : "List of schema validation rules.",
+        "desc" : "Schema 验证规则列表。",
         "type" : {
           "elements" : {
             "kind" : "struct",
@@ -19705,7 +19705,7 @@
       "schema_validation.validations.$INDEX"
     ],
     "full_name" : "schema_validation:validation",
-    "desc" : "A single schema validation rule.",
+    "desc" : "单条 Schema 验证规则。",
     "fields" : [
       {
         "importance" : "low",
@@ -19744,7 +19744,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether this feature is enabled.",
+        "desc" : "是否启用此功能。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -19759,7 +19759,7 @@
         "aliases" : [
           
         ],
-        "desc" : "名称",
+        "desc" : "此校验的名称。在所有校验中必须唯一。只能使用字母、数字和下划线的组合，且不能以数字或下划线开头。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -19794,7 +19794,7 @@
         "aliases" : [
           
         ],
-        "desc" : "验证策略",
+        "desc" : "校验如何判定检查是否成功。\n\n  <code>all_pass</code>：所有检查都会执行且必须全部通过。\n  <code>any_pass</code>：任一检查通过即可。遇到第一个成功即停止。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -20174,7 +20174,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_alloydb:action_parameters"
@@ -21192,7 +21192,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_bigquery:action_parameters"
@@ -21335,7 +21335,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_cockroachdb:action_parameters"
@@ -22010,7 +22010,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_disk_log:action_parameters"
@@ -22365,7 +22365,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_doris:action_parameters"
@@ -22676,7 +22676,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Set of parameters for the action.",
+        "desc" : "动作的参数集。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_greptimedb:action_parameters"
@@ -22785,13 +22785,13 @@
       "actions.quasardb.$name.parameters"
     ],
     "full_name" : "action_quasardb:action_parameters",
-    "desc" : "Set of parameters for the action.",
+    "desc" : "动作的参数集合。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "SQL for inserting data.  Supports placeholder variables like `${clientid}`.\n\nNote: QuasarDB ODBC driver does not support prepared statements.  Therefore, any values that are known to resolve to `STRING` or `BLOB` types must be manually quoted (`'`) in your SQL query.",
+        "desc" : "用于插入数据的 SQL。支持 `${clientid}` 等占位符变量。\n\n注意：QuasarDB ODBC 驱动不支持预处理语句。因此，任何已知解析为 `STRING` 或 `BLOB` 类型的值，必须在 SQL 查询中手动加引号（`'`）。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:template()"
@@ -22802,7 +22802,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Table name to use in Action health checks.  Currently, it's not possible to infer the table name directly from the SQL.  If set, this value will be used in a `SHOW TABLE <table>` statement to probe the table existence during Action health checks.",
+        "desc" : "用于动作健康检查的表名。目前无法直接从 SQL 推断表名。若设置此值，将在动作健康检查期间使用 `SHOW TABLE <table>` 语句探测表是否存在。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -23015,13 +23015,13 @@
       "actions.quasardb.$name"
     ],
     "full_name" : "action_quasardb:quasardb",
-    "desc" : "Action that takes incoming events and appends them to QuasarDB.",
+    "desc" : "将传入事件追加到 QuasarDB 的动作。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Set of parameters for the action.",
+        "desc" : "动作的参数集合。",
         "type" : {
           "kind" : "struct",
           "name" : "action_quasardb:action_parameters"
@@ -23164,7 +23164,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_redshift:action_parameters"
@@ -23717,7 +23717,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Action-specific parameters.",
+        "desc" : "动作特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "action_s3tables:action_parameters"
@@ -24898,7 +24898,7 @@
       "actions.azure_event_grid.$name"
     ],
     "full_name" : "action_source_azure_event_grid:action_config",
-    "desc" : "Action that takes incoming events and appends them to Azure Event Grid.",
+    "desc" : "将传入事件追加到 Azure Event Grid 的动作。",
     "fields" : [
       {
         "aliases" : [
@@ -25013,13 +25013,13 @@
       "sources.azure_event_grid.$name"
     ],
     "full_name" : "action_source_azure_event_grid:source_config",
-    "desc" : "Source that takes incoming events from Azure Event Grid.",
+    "desc" : "从 Azure Event Grid 接收传入事件的源。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Source-specific parameters.",
+        "desc" : "Source 特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_mqtt_publisher:ingress_parameters"
@@ -29384,7 +29384,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The IPv4 or IPv6 address or the hostname to connect to.<br/>\nA host entry has the following form: `Host[:Port]`.<br/>\nThe MySQL default port 3306 is used if `[:Port]` is not specified.",
+        "desc" : "要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。<br/>\n若未指定 `[:Port]`，则使用 MySQL 默认端口 3306。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -29396,7 +29396,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The timeout for the connection to the database.",
+        "desc" : "连接数据库的超时时间。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -29412,7 +29412,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -29604,7 +29604,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The IPv4 or IPv6 address or the hostname to connect to.<br/>\nA host entry has the following form: `Host[:Port]`.<br/>\nThe PostgreSQL default port 5432 is used if `[:Port]` is not specified.",
+        "desc" : "要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。<br/>\n若未指定 `[:Port]`，则使用 PostgreSQL 默认端口 5432。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -29616,7 +29616,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The timeout for the connection to the database.",
+        "desc" : "连接数据库的超时时间。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -29632,7 +29632,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -30348,7 +30348,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authentication cache settings.",
+        "desc" : "认证缓存设置。",
         "type" : {
           "kind" : "struct",
           "name" : "auth_cache:config"
@@ -32777,7 +32777,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The IPv4 or IPv6 address or the hostname to connect to.<br/>\nA host entry has the following form: `Host[:Port]`.<br/>\nThe MySQL default port 3306 is used if `[:Port]` is not specified.",
+        "desc" : "要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。<br/>\n若未指定 `[:Port]`，则使用 MySQL 默认端口 3306。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -32789,7 +32789,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The timeout for the connection to the database.",
+        "desc" : "连接数据库的超时时间。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -32805,7 +32805,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -32937,7 +32937,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The IPv4 or IPv6 address or the hostname to connect to.<br/>\nA host entry has the following form: `Host[:Port]`.<br/>\nThe PostgreSQL default port 5432 is used if `[:Port]` is not specified.",
+        "desc" : "要连接的 IPv4 或 IPv6 地址或主机名。<br/>\n主机条目的格式为：`Host[:Port]`。<br/>\n若未指定 `[:Port]`，则使用 PostgreSQL 默认端口 5432。",
         "type" : {
           "kind" : "primitive",
           "name" : "string()"
@@ -32949,7 +32949,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The timeout for the connection to the database.",
+        "desc" : "连接数据库的超时时间。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -32965,7 +32965,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -33193,7 +33193,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Redis ACL compatibility mode. Set to `v4` to accept legacy ACL values `1|2|3` and placeholders `%u/%c`.",
+        "desc" : "Redis ACL 兼容模式。设置为 `v4` 以接受旧版 ACL 值 `1|2|3` 和占位符 `%u/%c`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -33373,7 +33373,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Redis ACL compatibility mode. Set to `v4` to accept legacy ACL values `1|2|3` and placeholders `%u/%c`.",
+        "desc" : "Redis ACL 兼容模式。设置为 `v4` 以接受旧版 ACL 值 `1|2|3` 和占位符 `%u/%c`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -33542,7 +33542,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Redis ACL compatibility mode. Set to `v4` to accept legacy ACL values `1|2|3` and placeholders `%u/%c`.",
+        "desc" : "Redis ACL 兼容模式。设置为 `v4` 以接受旧版 ACL 值 `1|2|3` 和占位符 `%u/%c`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -33586,7 +33586,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Resource options.",
+        "desc" : "资源选项。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_kafka:resource_opts"
@@ -39605,7 +39605,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Column category, required to construct an insert request to an IoTDB table. Valid values include:\n- <code>tag</code>\n- <code>field</code>\n- <code>attribute</code>",
+        "desc" : "列类别，用于构建对 IoTDB 表的插入请求。有效值包括：\n- <code>tag</code>\n- <code>field</code>\n- <code>attribute</code>",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -39787,7 +39787,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to write the data to IoTDB table or timeseries.\nNote: When it's true, the connector must also have \"SQL Dialect\" set to \"table\".",
+        "desc" : "是否将数据写入 IoTDB 表或时序。\n注意：当为 true 时，连接器还必须将 \"SQL Dialect\" 设置为 \"table\"。",
         "type" : {
           "kind" : "singleton",
           "name" : "true"
@@ -39802,7 +39802,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The name of the IoTDB table to which the data will be written.",
+        "desc" : "要写入数据的 IoTDB 表名。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -39872,7 +39872,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to write the data to IoTDB table or timeseries.\nNote: When it's true, the connector must also have \"SQL Dialect\" set to \"table\".",
+        "desc" : "是否将数据写入 IoTDB 表或时序。\n注意：当为 true 时，连接器还必须将 \"SQL Dialect\" 设置为 \"table\"。",
         "type" : {
           "kind" : "singleton",
           "name" : "false"
@@ -40482,7 +40482,7 @@
       "actions.kafka_producer.$name"
     ],
     "full_name" : "bridge_kafka:kafka_producer_action",
-    "desc" : "Kafka 生产者动作。",
+    "desc" : "Kafka 生产者动作",
     "fields" : [
       {
         "raw_default" : [
@@ -40576,7 +40576,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Resource options.",
+        "desc" : "资源选项。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_kafka:resource_opts"
@@ -42277,7 +42277,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -43538,7 +43538,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Source-specific parameters.",
+        "desc" : "Source 特定参数。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_mqtt_publisher:ingress_parameters"
@@ -45588,7 +45588,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -49168,7 +49168,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -49694,7 +49694,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Resource options.",
+        "desc" : "资源选项。",
         "type" : {
           "kind" : "struct",
           "name" : "bridge_kafka:resource_opts"
@@ -51043,7 +51043,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Configuration for a connector to Azure Event Grid.",
+        "desc" : "连接到 Azure Event Grid 的连接器配置。",
         "type" : {
           "kind" : "map",
           "values" : {
@@ -51518,7 +51518,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Configuration for a connector to QuasarDB.",
+        "desc" : "连接到 QuasarDB 的连接器配置。",
         "type" : {
           "kind" : "map",
           "values" : {
@@ -51871,7 +51871,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -52339,7 +52339,7 @@
       "connectors.azure_event_grid.$name"
     ],
     "full_name" : "connector_azure_event_grid:config_connector",
-    "desc" : "Configuration for a connector to Azure Event Grid.",
+    "desc" : "连接到 Azure Event Grid 的连接器配置。",
     "fields" : [
       {
         "raw_default" : {
@@ -52532,7 +52532,7 @@
         "aliases" : [
           
         ],
-        "desc" : "MQTT 协议的用户名",
+        "desc" : "MQTT 协议的用户名。使用静态 clientid 时，如果定义了该值且该静态 clientid 没有关联特定用户名，则使用此值。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -52543,7 +52543,7 @@
         "aliases" : [
           
         ],
-        "desc" : "MQTT 协议的密码",
+        "desc" : "MQTT 协议的密码。使用静态 clientid 时，如果定义了该值且该静态 clientid 没有关联特定密码，则使用此值。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema_secret:secret()"
@@ -52758,7 +52758,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authentication method to be used with GCP.",
+        "desc" : "与 GCP 一起使用的认证方式。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -52821,7 +52821,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -54116,7 +54116,7 @@
         "aliases" : [
           
         ],
-        "desc" : "MQTT 协议的密码",
+        "desc" : "MQTT 协议的密码。使用静态 clientid 时，如果定义了该值且该静态 clientid 没有关联特定密码，则使用此值。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema_secret:secret()"
@@ -54308,7 +54308,7 @@
         "aliases" : [
           
         ],
-        "desc" : "MQTT 协议的用户名",
+        "desc" : "MQTT 协议的用户名。使用静态 clientid 时，如果定义了该值且该静态 clientid 没有关联特定用户名，则使用此值。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -54319,7 +54319,7 @@
         "aliases" : [
           
         ],
-        "desc" : "MQTT 协议的密码",
+        "desc" : "MQTT 协议的密码。使用静态 clientid 时，如果定义了该值且该静态 clientid 没有关联特定密码，则使用此值。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema_secret:secret()"
@@ -54525,7 +54525,7 @@
       "connectors.quasardb.$name"
     ],
     "full_name" : "connector_quasardb:config_connector",
-    "desc" : "Configuration for a connector to QuasarDB.",
+    "desc" : "连接到 QuasarDB 的连接器配置。",
     "fields" : [
       {
         "importance" : "low",
@@ -54563,7 +54563,7 @@
         "aliases" : [
           
         ],
-        "desc" : "ODBC Data Source Name, usually defined at `/etc/odbc.ini`.",
+        "desc" : "ODBC 数据源名称，通常定义在 `/etc/odbc.ini`。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -54574,7 +54574,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Server URI to connect to.  For example: `qdb://127.0.0.1:2836`.",
+        "desc" : "要连接的服务器 URI。例如：`qdb://127.0.0.1:2836`。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -54585,7 +54585,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Username, if any.",
+        "desc" : "用户名（如有）。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -54596,7 +54596,7 @@
         "aliases" : [
           
         ],
-        "desc" : "User secret key, if any.",
+        "desc" : "用户密钥（如有）。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema_secret:secret()"
@@ -54607,7 +54607,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Cluster Public Key, if any.",
+        "desc" : "集群公钥（如有）。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -54619,7 +54619,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Connection pool size.",
+        "desc" : "连接池大小。",
         "type" : {
           "kind" : "primitive",
           "name" : "pos_integer()"
@@ -54635,7 +54635,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Timeout for establishing connection to the server.",
+        "desc" : "与服务器建立连接的超时时间。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -54692,7 +54692,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Disables the usage of prepared statements in the connections.\nSome endpoints, like PGBouncer or Supabase in Transaction mode, do not\nsupport session features such as prepared statements.  For such connections,\nthis option should be enabled.",
+        "desc" : "禁用在连接中使用预处理语句。\n一些端点（如 Transaction 模式下的 PGBouncer 或 Supabase）不支持诸如预处理语句之类的会话特性。对于此类连接，应启用此选项。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -55810,7 +55810,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to require IDP to sign SAML Response envelopes (outer signature). For security, at least one of envelope or assertion signature should be enabled in production.",
+        "desc" : "是否要求 IDP 对 SAML Response 信封进行签名（外部签名）。出于安全考虑，生产环境应至少启用 envelope 或 assertion 签名之一。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -55826,7 +55826,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Whether to require IDP to sign SAML Assertions (inner signature). For security, at least one of envelope or assertion signature should be enabled in production.",
+        "desc" : "是否要求 IDP 对 SAML Assertion 进行签名（内部签名）。出于安全考虑，生产环境应至少启用 envelope 或 assertion 签名之一。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -56107,7 +56107,7 @@
         "aliases" : [
           
         ],
-        "desc" : "CoAP 网关要求客户端的最小心跳间隔时间。\n当 <code>connection_required</code> 开启后，该参数用于检查客户端连接是否存活",
+        "desc" : "已连接客户端的最小心跳间隔。\n仅在 <code>connection_required = true</code> 时使用。\n如果心跳间隔大于此值，会话可能被视为离线。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:duration_s()"
@@ -56123,7 +56123,7 @@
         "aliases" : [
           
         ],
-        "desc" : "是否开启连接模式。\n连接模式是非标准协议的功能。它维护 CoAP 客户端上线、认证、和连接状态的保持",
+        "desc" : "客户端是否必须维护连接上下文。\n  - false（默认）：无状态请求/响应。\n  - true：必须创建、认证并保持客户端会话。\n仅在设备流程依赖连接状态时启用。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -56139,7 +56139,7 @@
         "aliases" : [
           
         ],
-        "desc" : "投递给 CoAP 客户端的通知消息类型。当客户端 Observe 一个资源（或订阅某个主题）时，网关会向客户端推送新产生的消息。其消息类型可设置为：<br/>\n\n  - non: 不需要客户端返回确认消息;<br/>\n  - con: 需要客户端返回一个确认消息;<br/>\n  - qos: 取决于消息的 QoS 等级; QoS 0 会以 `non` 类型下发，QoS 1/2 会以 `con` 类型下发",
+        "desc" : "转发已观察主题消息时使用的 CoAP 消息类型。<br/>\n  - non：发送 NON（更快，无需 ACK）<br/>\n  - con：发送 CON（可靠，需要 ACK）<br/>\n  - qos：根据 MQTT QoS 自动映射（QoS 0 -> NON，QoS 1/2 -> CON）",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56159,7 +56159,7 @@
         "aliases" : [
           
         ],
-        "desc" : "客户端订阅请求的默认 QoS 等级。\n当 CoAP 客户端发起订阅请求时，如果未携带 `qos` 参数则会使用该默认值。默认值可设置为：<br/>\n  - qos0、 qos1、qos2: 设置为固定的 QoS 等级<br/>\n  - coap: 依据订阅操作的 CoAP 报文类型来动态决定<br/>\n    * 当订阅请求为 `non-confirmable` 类型时，取值为 qos0<br/>\n    * 当订阅请求为 `confirmable` 类型时，取值为 qos1",
+        "desc" : "CoAP 订阅请求未提供 <code>qos</code> 时的默认 MQTT QoS。<br/>\n  - qos0 | qos1 | qos2：使用固定 QoS<br/>\n  - coap：根据消息类型推导（NON -> qos0，CON -> qos1）",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56180,7 +56180,7 @@
         "aliases" : [
           
         ],
-        "desc" : "客户端发布请求的默认 QoS 等级。\n当 CoAP 客户端发起发布请求时，如果未携带 `qos` 参数则会使用该默认值。默认值可设置为：<br/>\n\n  - qos0、qos1、qos2: 设置为固定的 QoS 等级<br/>\n  - coap: 依据发布操作的 CoAP 报文类型来动态决定<br/>\n    * 当发布请求为 `non-confirmable` 类型时，取值为 qos0<br/>\n    * 当发布请求为 `confirmable` 类型时，取值为 qos1",
+        "desc" : "CoAP 发布请求未提供 <code>qos</code> 时的默认 MQTT QoS。<br/>\n  - qos0 | qos1 | qos2：使用固定 QoS<br/>\n  - coap：根据消息类型推导（NON -> qos0，CON -> qos1）",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56201,7 +56201,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Settings for large payload transfer.\nBlock-wise transfer splits one large payload into smaller CoAP blocks.\nUse defaults unless you see payload-size or packet-loss issues.",
+        "desc" : "大负载传输设置。\n分块传输将一个大负载拆分为更小的 CoAP 块。\n除非遇到负载大小或丢包问题，否则使用默认值即可。",
         "type" : {
           "kind" : "struct",
           "name" : "gateway:coap_blockwise"
@@ -56295,7 +56295,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Enable block-wise transfer for large payloads.\nKeep enabled unless all payloads are small and fixed.",
+        "desc" : "启用大负载的分块传输。\n除非所有负载都很小且固定，否则保持启用。",
         "type" : {
           "kind" : "primitive",
           "name" : "boolean()"
@@ -56312,7 +56312,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Size of each CoAP block in bytes.\nLarger value: fewer packets, but retransmission cost is higher on loss.\nSmaller value: more packets, but loss impact is smaller.",
+        "desc" : "每个 CoAP 块的大小（字节）。\n较大的值：更少的数据包，但丢包时重传代价更高。\n较小的值：更多的数据包，但丢包影响更小。",
         "type" : {
           "kind" : "primitive",
           "name" : "block_size()"
@@ -56329,7 +56329,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Maximum final payload size after reassembly.\nIf exceeded, the message is rejected to protect memory.",
+        "desc" : "重组后的最终负载最大大小。\n超过此大小的消息将被拒绝以保护内存。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:bytesize()"
@@ -56346,7 +56346,7 @@
         "aliases" : [
           
         ],
-        "desc" : "How long temporary block-wise state is kept.\nToo short can break slow transfers; too long consumes memory longer.",
+        "desc" : "临时分块状态的保留时长。\n过短可能导致慢速传输中断；过长会占用更多内存。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -56567,13 +56567,13 @@
       "gateway.nats.internal_authn.$INDEX"
     ],
     "full_name" : "gateway:internal_authn_jwt",
-    "desc" : "NATS JWT authentication method.",
+    "desc" : "NATS JWT 认证方法。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Resolver type. Only `memory` is supported.",
+        "desc" : "解析器类型。仅支持 `memory`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56589,7 +56589,7 @@
         "aliases" : [
           
         ],
-        "desc" : "A list of trusted operator public keys. The resolver only accepts account JWTs that can be validated from these operators.",
+        "desc" : "受信任的 operator 公钥列表。解析器仅接受可由这些 operator 验证的账号 JWT。",
         "type" : {
           "elements" : {
             "kind" : "primitive",
@@ -56608,7 +56608,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Account JWT resolver configuration. Currently, only `memory` is supported.",
+        "desc" : "账号 JWT 解析器配置。目前仅支持 `memory`。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -56639,13 +56639,13 @@
       "gateway.nats.internal_authn.$INDEX"
     ],
     "full_name" : "gateway:internal_authn_nkey",
-    "desc" : "NKEY challenge/response authentication method.",
+    "desc" : "NKEY 挑战/响应认证方法。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Resolver type. Only `memory` is supported.",
+        "desc" : "解析器类型。仅支持 `memory`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56661,7 +56661,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authenticate via allowed NKEY public keys (NATS nkey starting with “U...”). Optional. When configured, only clients with matching NKEYs are allowed to connect and authentication is performed via signed challenge/response (recommended to use nkeys tool to generate keys). Can be used alongside authn_token; if neither is set, username/password authentication applies by default.\nMultiple NKEYs can be configured, one public key per line.",
+        "desc" : "通过允许的 NKEY 公钥进行认证（以 “U...” 开头的 NATS nkey）。可选。配置后，仅允许具有匹配 NKEY 的客户端连接，并通过签名挑战/响应完成认证（建议使用 nkeys 工具生成密钥）。可与 authn_token 一起使用；若两者都未设置，则默认使用用户名/密码认证。\n可配置多个 NKEY，每行一个公钥。",
         "type" : {
           "elements" : {
             "kind" : "primitive",
@@ -56685,13 +56685,13 @@
       "gateway.nats.internal_authn.$INDEX"
     ],
     "full_name" : "gateway:internal_authn_token",
-    "desc" : "Token-based authentication method.",
+    "desc" : "基于 Token 的认证方法。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Resolver type. Only `memory` is supported.",
+        "desc" : "解析器类型。仅支持 `memory`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56704,7 +56704,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authentication Token. Optional. Token authentication and username/password\nauthentication can be configured simultaneously.",
+        "desc" : "认证 Token。可选。可以同时配置 Token 认证和用户名/密码认证。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -56721,13 +56721,13 @@
       "gateway.nats.internal_authn.$INDEX.resolver"
     ],
     "full_name" : "gateway:jwt_resolver_memory",
-    "desc" : "In-memory JWT resolver settings.",
+    "desc" : "内存中的 JWT 解析器设置。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Resolver type. Only `memory` is supported.",
+        "desc" : "解析器类型。仅支持 `memory`。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -56743,7 +56743,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Preloaded account JWT entries for the memory resolver.",
+        "desc" : "内存解析器的预加载账号 JWT 条目。",
         "type" : {
           "elements" : {
             "kind" : "struct",
@@ -56767,13 +56767,13 @@
       "gateway.nats.internal_authn.$INDEX.resolver.resolver_preload.$INDEX"
     ],
     "full_name" : "gateway:jwt_resolver_preload_entry",
-    "desc" : "One preloaded account JWT entry.",
+    "desc" : "一个预加载的账号 JWT 条目。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Account public key used as the lookup key in resolver preload.",
+        "desc" : "在解析器预加载中作为查找键的账号公钥。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -56784,7 +56784,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Account JWT content associated with the account public key.",
+        "desc" : "与账号公钥关联的账号 JWT 内容。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -56884,7 +56884,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Internal authentication methods for NATS clients. Methods are evaluated in array order and stop at the first successful match.",
+        "desc" : "NATS 客户端的内部认证方法。方法按数组顺序评估，并在首次成功匹配时停止。",
         "type" : {
           "elements" : {
             "display_name" : "undefined",
@@ -58946,13 +58946,13 @@
       "connectors.gcp_pubsub_producer.$name.authentication"
     ],
     "full_name" : "gcp_pubsub:auth_service_account_json",
-    "desc" : "Authenticate using a JSON containing the GCP Service Account credentials.",
+    "desc" : "使用包含 GCP Service Account 凭据的 JSON 进行认证。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Authenticate using a JSON containing the GCP Service Account credentials.",
+        "desc" : "使用包含 GCP Service Account 凭据的 JSON 进行认证。",
         "type" : {
           "kind" : "singleton",
           "name" : "service_account_json"
@@ -58963,7 +58963,7 @@
         "aliases" : [
           
         ],
-        "desc" : "JSON containing the GCP Service Account credentials to be used with GCP.\nWhen a GCP Service Account is created (as described in https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount), you have the option of downloading the credentials in JSON form.  That's the file needed.",
+        "desc" : "包含 GCP Service Account 凭据的 JSON，用于与 GCP 一起使用。\n当创建 GCP Service Account（如 https://developers.google.com/identity/protocols/oauth2/service-account#creatinganaccount 所述）时，可以下载 JSON 形式的凭据。所需文件即为该 JSON。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -58982,13 +58982,13 @@
       "connectors.gcp_pubsub_producer.$name.authentication"
     ],
     "full_name" : "gcp_pubsub:auth_wif",
-    "desc" : "Authenticate using federated tokens via GCP's Workload Identity Federation.",
+    "desc" : "通过 GCP 的 Workload Identity Federation 使用联合令牌进行认证。",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "Authenticate using federated tokens via GCP's Workload Identity Federation.",
+        "desc" : "通过 GCP 的 Workload Identity Federation 使用联合令牌进行认证。",
         "type" : {
           "kind" : "singleton",
           "name" : "wif"
@@ -58999,7 +58999,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Configuration to obtain the initial token for the WIF token exchange.",
+        "desc" : "用于获取 WIF 令牌交换初始令牌的配置。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -59016,7 +59016,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The email of the service account that will be impersonated.",
+        "desc" : "将被模拟的服务账号邮箱。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59027,7 +59027,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The Project ID for the resource being accessed by the connector.",
+        "desc" : "连接器访问资源所对应的 Project ID。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59038,7 +59038,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The Project Number for the resource being accessed by the connector.",
+        "desc" : "连接器访问资源所对应的 Project Number。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59049,7 +59049,7 @@
         "aliases" : [
           
         ],
-        "desc" : "ID of the Workload Identity Pool being used in the WIF token exchange.",
+        "desc" : "用于 WIF 令牌交换的 Workload Identity Pool 的 ID。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59060,7 +59060,7 @@
         "aliases" : [
           
         ],
-        "desc" : "ID of the Workload Identity Provider being used in the WIF token exchange.",
+        "desc" : "用于 WIF 令牌交换的 Workload Identity Provider 的 ID。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59079,13 +59079,13 @@
       "connectors.gcp_pubsub_producer.$name.authentication.initial_token"
     ],
     "full_name" : "gcp_pubsub:auth_wif_oidc_client_credentials",
-    "desc" : "OIDC with Client Credentials Grant Type",
+    "desc" : "使用客户端凭据授权类型的 OIDC",
     "fields" : [
       {
         "aliases" : [
           
         ],
-        "desc" : "OIDC with Client Credentials Grant Type",
+        "desc" : "使用客户端凭据授权类型的 OIDC",
         "type" : {
           "kind" : "singleton",
           "name" : "oidc_client_credentials"
@@ -59096,7 +59096,7 @@
         "aliases" : [
           
         ],
-        "desc" : "OAuth Token Endpoint URI from the OIDC provider.",
+        "desc" : "来自 OIDC 提供方的 OAuth 令牌端点 URI。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59107,7 +59107,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Client ID used to request a token from the OAuth server.",
+        "desc" : "用于向 OAuth 服务器请求令牌的客户端 ID。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59118,7 +59118,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Client secret used to request a token from the OAuth server.",
+        "desc" : "用于向 OAuth 服务器请求令牌的客户端密钥。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema_secret:secret()"
@@ -59129,7 +59129,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Specify the `scope` to be provided when requesting the OAuth access token.",
+        "desc" : "指定请求 OAuth 访问令牌时要提供的 `scope`。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59140,7 +59140,7 @@
         "aliases" : [
           
         ],
-        "desc" : "If necessary, specify the `audience` to be provided when requesting the OAuth access token.",
+        "desc" : "如有需要，请指定请求 OAuth 访问令牌时要提供的 `audience`。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -59500,7 +59500,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authentication method to be used with GCP.",
+        "desc" : "与 GCP 一起使用的认证方式。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -60147,7 +60147,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Authentication method to be used with GCP.",
+        "desc" : "与 GCP 一起使用的认证方式。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -60403,14 +60403,14 @@
       "connectors.iotdb.$name.sql"
     ],
     "full_name" : "iotdb:sql_dialect_table",
-    "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+    "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
     "fields" : [
       {
         "raw_default" : "table",
         "aliases" : [
           
         ],
-        "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+        "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
         "type" : {
           "kind" : "singleton",
           "name" : "table"
@@ -60425,7 +60425,7 @@
         "aliases" : [
           
         ],
-        "desc" : "The name of the IoTDB database to connect to.",
+        "desc" : "要连接的 IoTDB 数据库名称。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -60442,14 +60442,14 @@
       "connectors.iotdb.$name.sql"
     ],
     "full_name" : "iotdb:sql_dialect_tree",
-    "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+    "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
     "fields" : [
       {
         "raw_default" : "tree",
         "aliases" : [
           
         ],
-        "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+        "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
         "type" : {
           "kind" : "singleton",
           "name" : "tree"
@@ -60678,7 +60678,7 @@
         "aliases" : [
           
         ],
-        "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+        "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -60814,7 +60814,7 @@
         "aliases" : [
           
         ],
-        "desc" : "IoTDB supports two time-series data models (SQL dialects),\nboth managing devices and measurement points.\n- Tree: Manages data in a hierarchical path manner, where one path corresponds to one measurement point of a device.\n- Table: Manages data in a relational table manner, where one table corresponds to a category of devices.",
+        "desc" : "IoTDB 支持两种时序数据模型（SQL 方言），\n均用于管理设备和测点。\n- Tree：以层级路径方式管理数据，一个路径对应设备的一个测点。\n- Table：以关系表方式管理数据，一个表对应一类设备。",
         "type" : {
           "display_name" : "undefined",
           "members" : [
@@ -61143,7 +61143,7 @@
         "aliases" : [
           
         ],
-        "desc" : "通过 MQTT 转发之前，如何处理 Kafka 消息的 Key。<code>none</code> 使用 Kafka 消息中的 Key 原始值，不进行编码。  注意：在这种情况下，Key 必须是一个有效的 UTF-8 字符串。\n<code>base64</code> 对收到的密钥或值使用 base-64 编码。",
+        "desc" : "通过 MQTT 转发之前，如何处理 Kafka 消息的 Key。<code>none</code> 使用 Kafka 消息中的 Key 原始值，不进行编码。注意：在这种情况下，Key 必须是一个有效的 UTF-8 字符串。\n<code>base64</code> 对收到的 Key 或值使用 base-64 编码。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -62333,14 +62333,14 @@
       "plugins.api_endpoint"
     ],
     "full_name" : "plugin:api_endpoint",
-    "desc" : "Configuration for plugin API endpoint forwarding.",
+    "desc" : "插件 API 端点转发配置。",
     "fields" : [
       {
         "raw_default" : "5s",
         "aliases" : [
           
         ],
-        "desc" : "Request timeout for plugin API callback handling.",
+        "desc" : "插件 API 回调处理的请求超时。",
         "type" : {
           "kind" : "primitive",
           "name" : "emqx_schema:timeout_duration_ms()"
@@ -62406,7 +62406,7 @@
         "aliases" : [
           
         ],
-        "desc" : "Configuration for plugin API endpoint forwarding.",
+        "desc" : "插件 API 端点转发配置。",
         "type" : {
           "kind" : "struct",
           "name" : "plugin:api_endpoint"
@@ -64542,7 +64542,7 @@
         "aliases" : [
           
         ],
-        "desc" : "From which source to extract information to construct the Dashboard username.  Defaults to `userinfo`.\n\n- `userinfo`: Utilizes the response from the `/userinfo` endpoint.\n- `id_token`: Utilizes the claims contained in the access token.",
+        "desc" : "从哪个来源提取信息以构建 Dashboard 用户名。默认为 `userinfo`。\n\n- `userinfo`: 使用 `/userinfo` 端点的响应。\n- `id_token`: 使用访问令牌中包含的声明。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -64561,7 +64561,7 @@
         "aliases" : [
           
         ],
-        "desc" : "From which source to extract information to construct the Dashboard user role.  Defaults to `userinfo`.\n\n- `userinfo`: Utilizes the response from the `/userinfo` endpoint.\n- `id_token`: Utilizes the claims contained in the access token.\n\nNote: Config changes will not immediately reflect the user's role in EMQX DB, the user's role is mapped to EMQX record *after* a successful login.",
+        "desc" : "从哪个来源提取信息以构造 Dashboard 用户角色。默认值为 `userinfo`。\n\n- `userinfo`：使用 `/userinfo` 端点的响应。\n- `id_token`：使用访问令牌中的声明。\n\n注意：配置变更不会立即反映到 EMQX DB 中用户的角色，用户角色会在成功登录后映射到 EMQX 记录。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -64579,7 +64579,7 @@
         "aliases" : [
           
         ],
-        "desc" : "A [`jq`](https://jqlang.org/manual/) program to construct the Dashboard user role.\n\nThis expression must return exactly one string, which must be a valid role.  Current valid roles are:\n- `\"viewer\"`\n- `\"administrator\"`\n\nAny result that is not a single value out of the above will forbid the user from being created.\n\nIf not set, will create a viewer user, or retain the existing role, if the user exists.",
+        "desc" : "用于构造 Dashboard 用户角色的 [`jq`](https://jqlang.org/manual/) 程序。\n\n该表达式必须恰好返回一个字符串，且必须为有效角色。当前有效角色为：\n- `\"viewer\"`\n- `\"administrator\"`\n\n任何不符合上述要求的结果都会禁止创建用户。\n\n如未设置，将创建 viewer 用户，或在用户已存在时保留其现有角色。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
@@ -64591,7 +64591,7 @@
         "aliases" : [
           
         ],
-        "desc" : "From which source to extract information to construct the Dashboard user namespace.  Defaults to `userinfo`.\n\n- `userinfo`: Utilizes the response from the `/userinfo` endpoint.\n- `id_token`: Utilizes the claims contained in the access token.\n\nNote: Config changes will not immediately reflect the user's namespace in EMQX DB, the user's namespace is mapped to EMQX record *after* a successful login.",
+        "desc" : "从哪个来源提取信息以构造 Dashboard 用户命名空间。默认值为 `userinfo`。\n\n- `userinfo`：使用 `/userinfo` 端点的响应。\n- `id_token`：使用访问令牌中的声明。\n\n注意：配置变更不会立即反映到 EMQX DB 中用户的命名空间，用户命名空间会在成功登录后映射到 EMQX 记录。",
         "type" : {
           "kind" : "enum",
           "symbols" : [
@@ -64609,7 +64609,7 @@
         "aliases" : [
           
         ],
-        "desc" : "A [`jq`](https://jqlang.org/manual/) program to construct the Dashboard user namespace.\n\nThis expression must return exactly one string, which must be either a string with the name of an existing namespace, or a `null` value, which represents the global namespace.\n\nAny result other than the described above will forbid the user from being created.\n\nIf not set, will create a user in the global namespace or retain existing namespace, if the user exists.",
+        "desc" : "用于构造 Dashboard 用户命名空间的 [`jq`](https://jqlang.org/manual/) 程序。\n\n该表达式必须恰好返回一个字符串，可以是现有命名空间名称的字符串，或 `null` 值，表示全局命名空间。\n\n任何不符合上述要求的结果都会禁止创建用户。\n\n如未设置，将在全局命名空间创建用户，或在用户已存在时保留其现有命名空间。",
         "type" : {
           "kind" : "primitive",
           "name" : "binary()"
