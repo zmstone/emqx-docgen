@@ -1,0 +1,19 @@
+rule_engine.rules.my_webhook_1{
+  name = "my_rule"
+  sql = "SELECT * FROM \"test/topic\" WHERE payload.x = 1"
+  actions = [
+    "my_bridge_channel"
+    {
+      #substruct(rule_engine:builtin_action_republish)
+    }
+    {
+      #substruct(rule_engine:builtin_action_console)
+    }
+    {
+      #substruct(rule_engine:user_provided_function)
+    }
+  ]
+  enable = true
+  description = "rule description"
+  metadata = {}
+}

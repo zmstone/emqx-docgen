@@ -1,0 +1,11 @@
+actions.opents.my_webhook_1.parameters.data = [
+  {
+    timestamp = "${timestamp_var}"
+    metric = "${metric_var}"
+    tags = ${tags_var}
+    #tags = ${tags_map}
+    value = 42
+    #value = 3.14
+    #value = "${value_var}"
+  }
+]

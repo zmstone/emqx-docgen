@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.8"
 # dependencies = [
@@ -336,6 +337,8 @@ def main():
 
     base_schema_lookup = None
     base_examples_dir = None
+    missing_base_schema = False
+    missing_base_examples = False
     if args.compare_base:
         base_schema_dir = schema_path.parent
         resolved = resolve_base_schema_path(base_schema_dir, args.compare_base)
@@ -346,10 +349,12 @@ def main():
             candidates = []
 
         if not base_schema_path:
+            missing_base_schema = True
             candidate_names = ", ".join([p.name for p in candidates])
             print(
-                f"Warning: Base schema file not found for version {args.compare_base}. "
-                f"Checked: {candidate_names}. Will generate all examples from scratch."
+                f"WARNING: Base schema file not found for version {args.compare_base}. "
+                f"Checked: {candidate_names}. Schema comparison is unavailable, so all examples "
+                "will be generated from scratch."
             )
         else:
             print(f"Loading base schema from: {base_schema_path}")
@@ -357,9 +362,11 @@ def main():
             base_schema_lookup = build_schema_lookup(base_schema_data)
             base_examples_dir = Path("docs/examples") / args.compare_base
             if not base_examples_dir.exists() and not args.list_changes:
+                missing_base_examples = True
                 print(
-                    f"Warning: Base examples directory not found: {base_examples_dir}. "
-                    "Will generate all examples from scratch."
+                    f"WARNING: Base examples directory not found: {base_examples_dir}. "
+                    "Unchanged schemas cannot be copied forward, so every schema in the target "
+                    "version will be sent to the model unless it is already cached."
                 )
                 base_examples_dir = None
 
@@ -505,6 +512,16 @@ def main():
     print(f"Loaded from cache: {stats['cached']}")
     print(f"Generated from model: {stats['generated']}")
     print(f"Failed: {stats['failed']}")
+    if missing_base_schema:
+        print(
+            "Note: base schema was missing, so this run could not compare versions and treated "
+            "all schemas as needing generation."
+        )
+    elif missing_base_examples:
+        print(
+            "Note: base examples were missing, so unchanged schemas could not be copied from "
+            f"{args.compare_base}; high generated counts here do not imply many schema changes."
+        )
 
 
 if __name__ == "__main__":

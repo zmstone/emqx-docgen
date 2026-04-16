@@ -1,0 +1,10 @@
+actions.s3.my_s3_1.parameters {
+  bucket = "my_bucket"
+  key = "my_object_key"
+  acl = private
+  headers = {
+    content-type = "application/json"
+  }
+  mode = direct
+  content = "${.}"
+}

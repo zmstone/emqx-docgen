@@ -1,0 +1,10 @@
+actions.hstreamdb.my_action {
+  local_topic = "your/mqtt/topic"
+  parameters = {
+    #substruct(bridge_hstreamdb:action_parameters)
+  }
+  connector = "connector_name"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

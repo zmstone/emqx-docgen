@@ -1,0 +1,10 @@
+actions.elasticsearch.my_action_1.parameters {
+  action = update
+  index = "my_index"
+  id = "doc_id"
+  doc = "{\"key\":\"value\"}"
+  doc_as_upsert = false
+  routing = "routing_key"
+  require_alias = false
+  max_retries = 2
+}

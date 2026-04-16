@@ -1,0 +1,10 @@
+actions.iotdb.my_iotdb_action {
+  local_topic = "my/topic"
+  parameters = {
+    #substruct(bridge_iotdb:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(bridge_iotdb:action_resource_opts)
+  }
+}

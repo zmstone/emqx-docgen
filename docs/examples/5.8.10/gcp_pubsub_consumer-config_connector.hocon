@@ -1,0 +1,10 @@
+connectors.gcp_pubsub_consumer.my_gcp_pubsub_consumer_1 {
+  connect_timeout = "15s"
+  pool_size = 8
+  pipelining = 100
+  max_retries = 2
+  service_account_json = "{\"type\":\"service_account\",\"project_id\":\"my-gcp-project\"}"
+  resource_opts = {
+    #substruct(gcp_pubsub_consumer:connector_resource_opts)
+  }
+}

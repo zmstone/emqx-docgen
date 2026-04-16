@@ -1,0 +1,10 @@
+actions.elasticsearch.my_action_1.parameters {
+  action = create
+  index = "my_index"
+  id = "doc_id"
+  doc = "{\"key\":\"value\"}"
+  routing = "shard_key"
+  require_alias = false
+  overwrite = true
+  max_retries = 2
+}

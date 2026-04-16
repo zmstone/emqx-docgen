@@ -1,0 +1,8 @@
+actions.mongodb.my_webhook_1 = {
+  local_topic = "example/topic"
+  parameters = {
+    #substruct(bridge_mongodb:action_parameters)
+  }
+  connector = "my_mongodb_connector"
+  resource_opts = {}
+}

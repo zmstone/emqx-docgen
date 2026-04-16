@@ -1,0 +1,4 @@
+connectors.elasticsearch.my_elasticsearch_1.authentication{
+  username = "user1"
+  password = "secret_password"
+}

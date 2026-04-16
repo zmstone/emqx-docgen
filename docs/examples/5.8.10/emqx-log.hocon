@@ -1,0 +1,14 @@
+log {
+  console = {
+    #substruct(emqx:console_handler)
+  }
+  file = {
+    #substruct(emqx:log_file_handler)
+  }
+  throttling = {
+    #substruct(emqx:log_throttling)
+  }
+  audit = {
+    #substruct(emqx:log_audit_handler)
+  }
+}

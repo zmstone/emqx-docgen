@@ -1,0 +1,15 @@
+cluster.links = [
+  {
+    name = "remote_cluster_name"
+    server = "mqtt://remote-emqx-broker:1883"
+    clientid = "optional_client_id"
+    username = "optional_username"
+    password = "secret_password"
+    ssl = {enable = false}
+    topics = ["topic1", "topic2"]
+    pool_size = 8
+    retry_interval = "15s"
+    max_inflight = 32
+    resource_opts = {}
+  }
+]

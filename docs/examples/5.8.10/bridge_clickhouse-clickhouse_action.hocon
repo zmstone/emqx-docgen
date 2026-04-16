@@ -1,0 +1,10 @@
+actions.clickhouse.my_clickhouse_1 {
+  local_topic = "sensor/1"
+  parameters = {
+    #substruct(bridge_clickhouse:action_parameters)
+  }
+  connector = "clickhouse_connector_1"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

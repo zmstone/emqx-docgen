@@ -1,0 +1,6 @@
+actions.azure_blob_storage.my_azure_blob_1.parameters {
+  mode = direct
+  container = "my_container"
+  blob = "my_blob"
+  content = "${.}"
+}

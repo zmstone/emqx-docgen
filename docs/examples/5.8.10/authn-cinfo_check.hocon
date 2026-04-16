@@ -1,0 +1,10 @@
+authentication = [
+  {
+    checks = [
+      {
+        is_match = "username == \"user1\""
+        result = allow
+      }
+    ]
+  }
+]

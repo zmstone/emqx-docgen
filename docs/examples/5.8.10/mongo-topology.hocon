@@ -1,0 +1,16 @@
+authentication = [
+  {
+    topology {
+      max_overflow = 0
+      overflow_ttl = "30s"
+      overflow_check_period = "10s"
+      local_threshold_ms = "15s"
+      connect_timeout_ms = "5s"
+      socket_timeout_ms = "30s"
+      server_selection_timeout_ms = "10s"
+      wait_queue_timeout_ms = "20s"
+      heartbeat_frequency_ms = "200s"
+      min_heartbeat_frequency_ms = "5s"
+    }
+  }
+]

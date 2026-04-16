@@ -1,0 +1,13 @@
+rule_engine.rules.my_rule_1.actions = [
+  {
+    args {
+      mqtt_properties {
+        Payload-Format-Indicator = "utf-8"
+        Message-Expiry-Interval = "3600"
+        Content-Type = "text/plain"
+        Response-Topic = "response/topic"
+        Correlation-Data = "corr-data"
+      }
+    }
+  }
+]

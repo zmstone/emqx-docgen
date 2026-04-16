@@ -1,0 +1,4 @@
+actions.influxdb.my_influxdb_1.parameters {
+  write_syntax = "weather,location=us-midwest temperature=82 1465839830100400200"
+  precision = ms
+}

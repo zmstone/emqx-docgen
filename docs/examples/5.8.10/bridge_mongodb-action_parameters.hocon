@@ -1,0 +1,4 @@
+actions.mongodb.my_mongodb_1.parameters {
+  collection = "mqtt"
+  payload_template = "${payload}"
+}

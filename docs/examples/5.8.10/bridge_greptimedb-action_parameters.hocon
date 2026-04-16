@@ -1,0 +1,4 @@
+actions.greptimedb.my_greptimedb_1.parameters {
+  write_syntax = "measurement,tag1=val1 field1=1i 1672531200000"
+  precision = ms
+}

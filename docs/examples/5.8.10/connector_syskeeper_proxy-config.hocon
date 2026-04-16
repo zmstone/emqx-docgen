@@ -1,0 +1,9 @@
+connectors.syskeeper_proxy.my_syskeeper_proxy_1 {
+  tags = ["tag1"]
+  listen = "0.0.0.0:1234"
+  acceptors = 16
+  handshake_timeout = "10s"
+  resource_opts = {
+    #substruct(connector_syskeeper_proxy:connector_resource_opts)
+  }
+}

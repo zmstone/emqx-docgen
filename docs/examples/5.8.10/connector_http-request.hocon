@@ -1,0 +1,14 @@
+authentication = [
+  {
+    request {
+      method = "POST"
+      path = "/items/${id}"
+      body = "${payload}"
+      headers = {
+        "Content-Type" = "application/json"
+      }
+      max_retries = 3
+      request_timeout = "5s"
+    }
+  }
+]

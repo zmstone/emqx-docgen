@@ -1,0 +1,10 @@
+actions.confluent_producer.my_confluent_producer_1{
+  local_topic = "my/mqtt/topic"
+  parameters = {
+    #substruct(confluent:producer_kafka_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_kafka:resource_opts)
+  }
+  connector = "my_connector"
+}

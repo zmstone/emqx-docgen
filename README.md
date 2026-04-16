@@ -23,7 +23,7 @@ For example, to update the content for `e5.9.0`, execute:
 # build schema
 ./gen e5.9.0 --rebuild
 # inspect schema changes
-uv run ./generate-examples.py --list--changes -b 5.8.8 ./docs/en/e5.9.0.json
+uv run ./generate-examples.py --list-changes -b 5.8.8 ./docs/en/e5.9.0.json
 # generate examples
 env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py -b 5.8.8 ./docs/en/e5.9.0.json
 ```

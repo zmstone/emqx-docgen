@@ -1,0 +1,11 @@
+actions.matrix.my_pgsql_action_1 {
+  local_topic = "t/1"
+  parameters = {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  connector = "my_connector"
+  tags = ["tag1"]
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

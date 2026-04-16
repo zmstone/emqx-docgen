@@ -1,0 +1,14 @@
+schema_registry {
+  external = {
+    my_external_1 = {
+      #substruct(schema_registry:confluent_schema_registry)
+    }
+  }
+  schemas = {
+    my_schema_1 = {
+      #substruct(schema_registry:avro)
+      #substruct(schema_registry:protobuf)
+      #substruct(schema_registry:json)
+    }
+  }
+}

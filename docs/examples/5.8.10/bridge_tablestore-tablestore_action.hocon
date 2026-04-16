@@ -1,0 +1,10 @@
+actions.tablestore.my_tablestore_1 {
+  local_topic = "t/topic"
+  parameters = {
+    #substruct(bridge_tablestore:action_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}
