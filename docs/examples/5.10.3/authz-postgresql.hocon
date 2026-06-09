@@ -1,0 +1,19 @@
+authorization.sources = [
+  {
+    type = postgresql
+    server = "Host[:Port]"
+    disable_prepared_statements = false
+    database = "your_database"
+    pool_size = 8
+    username = "your_username"
+    password = "your_password"
+    ssl = {
+      enable = false
+    }
+    prepare_statement = {
+      # Example of key-value pair for prepared statements
+      # "statement_name" = "SQL query"
+    }
+    query = "SELECT * FROM your_table WHERE condition"
+  }
+]

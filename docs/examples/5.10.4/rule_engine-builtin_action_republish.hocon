@@ -1,0 +1,8 @@
+rule_engine.rules.my_rule_id.actions = [
+  {
+    function = republish
+    args = {
+      #substruct(rule_engine:republish_args)
+    }
+  }
+]

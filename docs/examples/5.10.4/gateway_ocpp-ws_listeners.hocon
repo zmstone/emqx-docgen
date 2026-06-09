@@ -1,0 +1,8 @@
+gateway.ocpp.listeners {
+  ws = {
+    #substruct(gateway_ocpp:ws_listener)
+  }
+  wss = {
+    #substruct(gateway_ocpp:wss_listener)
+  }
+}

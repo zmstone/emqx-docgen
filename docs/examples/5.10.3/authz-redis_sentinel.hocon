@@ -1,0 +1,16 @@
+authorization.sources = [
+  {
+    type = redis
+    servers = "127.0.0.1:6379"
+    redis_type = sentinel
+    sentinel = "my_cluster_name"
+    pool_size = 8
+    username = "user"
+    password = "secret"
+    database = 0
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    cmd = "HGETALL mqtt_authz"
+  }
+]

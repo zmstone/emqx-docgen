@@ -1,0 +1,10 @@
+authentication = [
+  {
+    checks = [
+      {
+        is_match = "str_eq(clientid, cert_common_name)"
+        result = "allow"
+      }
+    ]
+  }
+]

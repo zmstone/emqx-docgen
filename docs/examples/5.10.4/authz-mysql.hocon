@@ -1,0 +1,17 @@
+authorization.sources = [
+  {
+    type = mysql
+    server = "your-hostname:3306"
+    database = "your_database"
+    pool_size = 8
+    username = "root"
+    password = "your_password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {
+      # your_key = "your_prepared_statement"
+    }
+    query = "SELECT * FROM your_table WHERE ..."
+  }
+]

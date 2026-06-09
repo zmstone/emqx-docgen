@@ -1,0 +1,4 @@
+actions.s3tables.my_s3table.parameters.s3 = {
+  min_part_size = "5mb"
+  max_part_size = "5gb"
+}

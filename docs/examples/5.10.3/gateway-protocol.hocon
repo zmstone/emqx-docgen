@@ -1,0 +1,3 @@
+gateway.nats.protocol {
+  max_payload_size = 1048576
+}

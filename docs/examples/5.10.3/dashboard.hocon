@@ -1,0 +1,15 @@
+dashboard {
+  listeners = {
+    #substruct(dashboard:listeners)
+  }
+  default_password = public
+  hwmark_expire_time = "7d"
+  token_expired_time = "60m"
+  password_expired_time = 0
+  cors = false
+  swagger_support = true
+  default_mfa = none
+  sso = {
+    #substruct(dashboard:sso)
+  }
+}

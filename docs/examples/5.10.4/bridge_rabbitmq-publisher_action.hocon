@@ -1,0 +1,11 @@
+actions.rabbitmq.my_action {
+  local_topic = "your/mqtt/topic"
+  parameters = {
+    #substruct(bridge_rabbitmq:action_parameters)
+  }
+  fallback_actions = []
+  connector = "rabbitmq_connector"
+  resource_opts = {
+    #substruct(bridge_rabbitmq:action_resource_opts)
+  }
+}

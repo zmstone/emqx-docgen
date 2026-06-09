@@ -1,0 +1,9 @@
+actions.iotdb.my_webhook_1.parameters.data = [
+  {
+    column_category = field
+    timestamp = now
+    measurement = "your_measurement_template"
+    data_type = text
+    value = "your_value_template"
+  }
+]

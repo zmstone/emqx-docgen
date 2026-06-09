@@ -306,6 +306,15 @@ def main():
         action="store_true",
         help="List changed schemas without generating examples. Requires --compare-base.",
     )
+    parser.add_argument(
+        "--save-requests",
+        metavar="DIR",
+        help=(
+            "Dry-run mode: copy unchanged examples from base as usual, but for schemas "
+            "that would otherwise be sent to OpenAI, write the prepared request payload "
+            "(system prompt + user message) to DIR and skip the API call."
+        ),
+    )
     args = parser.parse_args()
 
     if args.list_changes and not args.compare_base:
@@ -313,7 +322,7 @@ def main():
         return
 
     api_key = None
-    if not args.list_changes:
+    if not args.list_changes and not args.save_requests:
         api_key = os.getenv("OPENAI_API_KEY") or args.api_key
         if not api_key:
             print(
@@ -459,6 +468,38 @@ def main():
 
         if should_generate:
             to_generate.append(struct)
+
+    if args.save_requests and to_generate:
+        requests_dir = Path(args.save_requests)
+        requests_dir.mkdir(parents=True, exist_ok=True)
+        print(
+            f"\nSaving {len(to_generate)} request payloads to {requests_dir} (OpenAI not called)"
+        )
+        saved = 0
+        for struct in to_generate:
+            struct_name = struct["full_name"]
+            slim = slim_struct(struct)
+            user_content = (
+                "Please generate a valid HOCON example for this schema:\n"
+                + json.dumps(slim, indent=2)
+            )
+            payload = {
+                "struct_name": struct_name,
+                "model": args.model,
+                "input": [
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": user_content},
+                ],
+            }
+            out_path = requests_dir / (get_example_filename(struct_name).replace(".hocon", ".json"))
+            with open(out_path, "w") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            saved += 1
+
+        print("\n=== Dry-run Summary ===")
+        print(f"Copied unchanged examples: {stats['copied']}")
+        print(f"Saved request payloads: {saved}")
+        return
 
     if to_generate:
         print(

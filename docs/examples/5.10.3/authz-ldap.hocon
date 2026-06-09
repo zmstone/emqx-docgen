@@ -1,0 +1,20 @@
+authorization.sources = [
+  {
+    type = ldap
+    publish_attribute = "mqttPublishTopic"
+    subscribe_attribute = "mqttSubscriptionTopic"
+    all_attribute = "mqttPubSubTopic"
+    acl_rule_attribute = "mqttAclRule"
+    query_timeout = "5s"
+    base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
+    filter = "(objectClass=mqttUser)"
+    server = "localhost:389"
+    pool_size = 8
+    username = "cn=admin,dc=emqx,dc=io"
+    password = "secret"
+    request_timeout = "10s"
+    ssl = {
+      #substruct(ldap:ssl)
+    }
+  }
+]
