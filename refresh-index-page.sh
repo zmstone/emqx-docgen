@@ -1,16 +1,40 @@
 #!/bin/bash
 
 index_file="index.html"
-DEFAULT_EMQX_REPO="$(dirname "$0")/tmp/emqx"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DEFAULT_EMQX_REPO="$SCRIPT_DIR/tmp/emqx"
 EMQX_REPO="${EMQX_REPO:-$DEFAULT_EMQX_REPO}"
+EMQX_REMOTE_URL="${EMQX_REMOTE_URL:-https://github.com/emqx/emqx.git}"
 
-cd "$(dirname "$0")"
+# Bootstrap or repair the local EMQX clone used for release-month lookup.
+# Skipped when the user pointed EMQX_REPO at their own clone.
+ensure_emqx_repo() {
+    if [ "$EMQX_REPO" != "$DEFAULT_EMQX_REPO" ]; then
+        return 0
+    fi
 
-cd docs/
+    # A previous run may have left a shallow / single-tag clone that can't
+    # resolve historic tags. Detect that and start over.
+    local shallow_marker="$EMQX_REPO/shallow"
+    [ -f "$EMQX_REPO/.git/shallow" ] && shallow_marker="$EMQX_REPO/.git/shallow"
+    local tag_count=0
+    if [ -d "$EMQX_REPO" ]; then
+        tag_count=$(git -C "$EMQX_REPO" tag --list 2>/dev/null | wc -l)
+    fi
+    if [ ! -d "$EMQX_REPO" ] || [ -f "$shallow_marker" ] || [ "$tag_count" -lt 50 ]; then
+        echo "Bootstrapping EMQX clone at $EMQX_REPO (blobless, tags only)..." >&2
+        rm -rf "$EMQX_REPO"
+        mkdir -p "$(dirname "$EMQX_REPO")"
+        git clone --bare --filter=tree:0 "$EMQX_REMOTE_URL" "$EMQX_REPO" >&2
+    else
+        # Pick up tags added since the last refresh.
+        git -C "$EMQX_REPO" fetch --tags --quiet origin || true
+    fi
+}
 
-if [ ! -d "$EMQX_REPO" ]; then
-    EMQX_REPO="../tmp/emqx"
-fi
+ensure_emqx_repo
+
+cd "$SCRIPT_DIR/docs"
 
 sed -i "s/HOCON Schema Explorer/EMQX Config Schema/g" v.html
 
