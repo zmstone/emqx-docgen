@@ -1,0 +1,238 @@
+connectors{
+  rabbitmq = {
+    my_rabbitmq_1 = {
+      #substruct(rabbitmq:config_connector)
+    }
+  }
+  rocketmq = {
+    my_rocketmq_1 = {
+      #substruct(rocketmq:config_connector)
+    }
+  }
+  oracle = {
+    my_oracle_1 = {
+      #substruct(bridge_oracle:config_connector)
+    }
+  }
+  disk_log = {
+    my_disk_log_1 = {
+      #substruct(connector_disk_log:config_connector)
+    }
+  }
+  snowflake_streaming = {
+    my_snowflake_streaming_1 = {
+      #substruct(connector_snowflake_streaming:config_connector)
+    }
+  }
+  confluent_producer = {
+    my_confluent_producer_1 = {
+      #substruct(confluent:config_connector)
+    }
+  }
+  syskeeper_forwarder = {
+    my_syskeeper_forwarder_1 = {
+      #substruct(syskeeper_forwarder:config)
+    }
+  }
+  syskeeper_proxy = {
+    my_syskeeper_proxy_1 = {
+      #substruct(connector_syskeeper_proxy:config)
+    }
+  }
+  greptimedb = {
+    my_greptimedb_1 = {
+      #substruct(bridge_greptimedb:config_connector)
+    }
+  }
+  kinesis = {
+    my_kinesis_1 = {
+      #substruct(bridge_kinesis:config_connector)
+    }
+  }
+  gcp_pubsub_consumer = {
+    my_gcp_pubsub_consumer_1 = {
+      #substruct(gcp_pubsub_consumer:config_connector)
+    }
+  }
+  azure_event_hub_producer = {
+    my_azure_event_hub_producer_1 = {
+      #substruct(bridge_azure_event_hub:config_connector)
+    }
+  }
+  iotdb = {
+    my_iotdb_1 = {
+      #substruct(iotdb:config_restapi)
+      #substruct(iotdb:config_thrift)
+    }
+  }
+  datalayers = {
+    my_datalayers_1 = {
+      #substruct(bridge_datalayers:config_connector)
+    }
+  }
+  kafka_producer = {
+    my_kafka_producer_1 = {
+      #substruct(bridge_kafka:config_connector)
+    }
+  }
+  clickhouse = {
+    my_clickhouse_1 = {
+      #substruct(bridge_clickhouse:config_connector)
+    }
+  }
+  cockroachdb = {
+    my_cockroachdb_1 = {
+      #substruct(connector_cockroachdb:config_connector)
+    }
+  }
+  mysql = {
+    my_mysql_1 = {
+      #substruct(bridge_mysql:config_connector)
+    }
+  }
+  opents = {
+    my_opents_1 = {
+      #substruct(opents_connector:config_connector)
+    }
+  }
+  tdengine = {
+    my_tdengine_1 = {
+      #substruct(tdengine_connector:config_connector)
+    }
+  }
+  sqlserver = {
+    my_sqlserver_1 = {
+      #substruct(bridge_sqlserver:config_connector)
+    }
+  }
+  redshift = {
+    my_redshift_1 = {
+      #substruct(connector_redshift:config_connector)
+    }
+  }
+  pgsql = {
+    my_pgsql_1 = {
+      #substruct(bridge_pgsql:config_connector)
+    }
+  }
+  s3tables = {
+    my_s3tables_1 = {
+      #substruct(connector_s3tables:config_connector)
+    }
+  }
+  alloydb = {
+    my_alloydb_1 = {
+      #substruct(connector_alloydb:config_connector)
+    }
+  }
+  pulsar = {
+    my_pulsar_1 = {
+      #substruct(pulsar:config_connector)
+    }
+  }
+  elasticsearch = {
+    my_elasticsearch_1 = {
+      #substruct(elasticsearch:config)
+    }
+  }
+  redis = {
+    my_redis_1 = {
+      #substruct(redis:config_connector)
+    }
+  }
+  bigquery = {
+    my_bigquery_1 = {
+      #substruct(connector_bigquery:config_connector)
+    }
+  }
+  http = {
+    my_http_1 = {
+      #substruct(bridge_http:config_connector)
+    }
+  }
+  couchbase = {
+    my_couchbase_1 = {
+      #substruct(connector_couchbase:config_connector)
+    }
+  }
+  kafka_consumer = {
+    my_kafka_consumer_1 = {
+      #substruct(kafka_consumer:config_connector)
+    }
+  }
+  matrix = {
+    my_matrix_1 = {
+      #substruct(bridge_matrix:config_connector)
+    }
+  }
+  gcp_pubsub_producer = {
+    my_gcp_pubsub_producer_1 = {
+      #substruct(gcp_pubsub_producer:config_connector)
+    }
+  }
+  dynamo = {
+    my_dynamo_1 = {
+      #substruct(bridge_dynamo:config_connector)
+    }
+  }
+  snowflake = {
+    my_snowflake_1 = {
+      #substruct(connector_snowflake_aggregated:config_connector)
+    }
+  }
+  mongodb = {
+    my_mongodb_1 = {
+      #substruct(bridge_mongodb:config_connector)
+    }
+  }
+  mqtt = {
+    my_mqtt_1 = {
+      #substruct(connector_mqtt:config_connector)
+    }
+  }
+  timescale = {
+    my_timescale_1 = {
+      #substruct(bridge_timescale:config_connector)
+    }
+  }
+  doris = {
+    my_doris_1 = {
+      #substruct(connector_doris:config_connector)
+    }
+  }
+  emqx_tables = {
+    my_emqx_tables_1 = {
+      #substruct(connector_emqx_tables:config_connector)
+    }
+  }
+  s3 = {
+    my_s3_1 = {
+      #substruct(bridge_s3:config_connector)
+    }
+  }
+  tablestore = {
+    my_tablestore_1 = {
+      #substruct(bridge_tablestore:config_connector)
+    }
+  }
+  azure_blob_storage = {
+    my_azure_blob_storage_1 = {
+      #substruct(connector_azure_blob_storage:config_connector)
+    }
+  }
+  influxdb = {
+    my_influxdb_1 = {
+      #substruct(bridge_influxdb:config_connector)
+    }
+  }
+  aws_timestream = {
+    my_aws_timestream_1 = {
+      #substruct(connector_aws_timestream:config_connector)
+    }
+  }
+  cassandra = {
+    my_cassandra_1 = {
+      #substruct(bridge_cassa:config_connector)
+    }
+  }
+}

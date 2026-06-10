@@ -1,0 +1,7 @@
+schema_validation.validations = [
+  {
+    log_failure {
+      level = info
+    }
+  }
+]

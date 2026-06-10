@@ -1,0 +1,10 @@
+actions.s3.my_webhook_1.parameters {
+  bucket = "my-s3-bucket"
+  key = "my-object-key"
+  acl = "private"
+  headers = {
+    "Content-Type" = "application/octet-stream"
+  }
+  mode = direct
+  content = "${.}"
+}

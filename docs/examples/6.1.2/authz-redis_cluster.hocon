@@ -1,0 +1,15 @@
+authorization.sources = [
+  {
+    type = redis
+    servers = "127.0.0.1:6379,127.0.0.2:6379"
+    redis_type = cluster
+    pool_size = 8
+    username = <<"user">>
+    password = <<"secret">>
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    cmd = <<"HGETALL authz:%u">>
+    compatibility_mode = "disabled"
+  }
+]

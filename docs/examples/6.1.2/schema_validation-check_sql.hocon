@@ -1,0 +1,10 @@
+schema_validation.validations = [
+  {
+    checks = [
+      {
+        type = sql
+        sql = "SELECT * FROM \"t/#\" WHERE payload.value > 0"
+      }
+    ]
+  }
+]

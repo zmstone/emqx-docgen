@@ -1,0 +1,11 @@
+actions.iotdb.my_iotdb_action.parameters {
+  write_to_table = true
+  table = <<"my_table">>
+  data = [
+    {
+      #substruct(bridge_iotdb:action_parameters_data_table)
+    }
+  ]
+  is_aligned = false
+  max_retries = 2
+}

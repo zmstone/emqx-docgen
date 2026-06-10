@@ -1,0 +1,7 @@
+streams.auto_create {
+  regular = false
+  #substruct(streams:auto_create_regular)
+  lastvalue = {
+    #substruct(streams:auto_create_lastvalue)
+  }
+}

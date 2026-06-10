@@ -1,0 +1,17 @@
+actions.matrix.my_pgsql_action_1 {
+  parameters = {
+    #substruct(bridge_pgsql:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "connector_name"
+  resource_opts = {
+    #substruct(bridge_pgsql:action_resource_opts)
+  }
+}

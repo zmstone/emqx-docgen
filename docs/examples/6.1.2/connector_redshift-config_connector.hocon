@@ -1,0 +1,14 @@
+connectors.redshift.my_redshift = {
+  server = "your_host:5432"
+  disable_prepared_statements = false
+  database = "your_database"
+  pool_size = 8
+  username = "your_username"
+  password = "your_password"
+  ssl = {
+    enable = false
+  }
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}

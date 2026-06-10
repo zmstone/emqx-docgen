@@ -1,0 +1,11 @@
+plugins{
+  states = [
+    {
+      #substruct(plugin:state)
+    }
+  ]
+  install_dir = "plugins"
+  api_endpoint = {
+    #substruct(plugin:api_endpoint)
+  }
+}

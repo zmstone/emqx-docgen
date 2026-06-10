@@ -1,0 +1,6 @@
+schema_registry.schemas.my_external_http {
+  type = external_http
+  parameters = {
+    #substruct(schema_registry:external_http_params)
+  }
+}

@@ -1,0 +1,10 @@
+authentication = [
+  {
+    ssl {
+      managed_certs {
+        namespace = "my_namespace"
+        bundle_name = "my_bundle"
+      }
+    }
+  }
+]

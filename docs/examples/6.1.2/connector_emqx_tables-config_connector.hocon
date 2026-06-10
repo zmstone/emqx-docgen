@@ -1,0 +1,14 @@
+connectors.emqx_tables.my_emqx_tables_connector {
+  server = "127.0.0.1:4001"
+  ttl = "1d"
+  ts_column = "ts"
+  dbname = "greptime"
+  username = "user"
+  password = "secret"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_greptimedb:connector_resource_opts)
+  }
+}

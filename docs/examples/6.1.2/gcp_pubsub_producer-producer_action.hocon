@@ -1,0 +1,13 @@
+actions.gcp_pubsub_producer.my_action {
+  parameters = {
+    #substruct(gcp_pubsub_producer:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(gcp_pubsub_producer:action_resource_opts)
+  }
+}

@@ -1,0 +1,17 @@
+actions.sqlserver.my_sqlserver_1{
+  parameters = {
+    #substruct(bridge_sqlserver:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(bridge_sqlserver:action_resource_opts)
+  }
+}

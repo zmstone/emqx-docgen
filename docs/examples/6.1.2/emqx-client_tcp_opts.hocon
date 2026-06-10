@@ -1,0 +1,13 @@
+cluster.links = [
+  {
+    tcp_opts {
+      active_n = 10
+      nodelay = true
+      sndbuf = "256KB"
+      recbuf = "256KB"
+      buffer = "1MB"
+      keepalive = true
+      delay_send = false
+    }
+  }
+]

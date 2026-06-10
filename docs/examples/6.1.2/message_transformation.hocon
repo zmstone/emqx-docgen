@@ -1,0 +1,7 @@
+message_transformation {
+  transformations = [
+    {
+      #substruct(message_transformation:transformation)
+    }
+  ]
+}

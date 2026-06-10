@@ -1,0 +1,11 @@
+actions.azure_event_hub_producer.my_action {
+  parameters = {
+    #substruct(bridge_azure_event_hub:producer_kafka_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_kafka:resource_opts)
+  }
+  fallback_actions = []
+  connector = <<"my_connector">>
+  tags = [<<"tag1">>]
+}

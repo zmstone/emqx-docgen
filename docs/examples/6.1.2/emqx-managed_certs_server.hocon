@@ -1,0 +1,5 @@
+dashboard.listeners.https.ssl_options.managed_certs{
+  sni = "example.com"
+  namespace = "global"
+  bundle_name = "my_cert_bundle"
+}

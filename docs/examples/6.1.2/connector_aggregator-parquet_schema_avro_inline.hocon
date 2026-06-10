@@ -1,0 +1,4 @@
+actions.azure_blob_storage.my_webhook_1.parameters.aggregation.container.schema {
+  type = avro_inline
+  def = "{\"type\":\"record\",\"name\":\"Example\",\"fields\":[{\"name\":\"field1\",\"type\":\"string\"}]}"
+}

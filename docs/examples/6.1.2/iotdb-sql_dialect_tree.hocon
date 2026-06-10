@@ -1,0 +1,3 @@
+connectors.iotdb.my_iotdb_1.sql {
+  dialect = tree
+}

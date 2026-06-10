@@ -1,0 +1,5 @@
+gateway.jt808.frame{
+  max_length = 8192
+  parse_unknown_message = true
+  string_encoding = utf8
+}
