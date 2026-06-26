@@ -1,0 +1,34 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = mongodb
+    collection = "my_collection"
+    filter = {}
+    password_hash_field = "password_hash"
+    salt_field = "salt"
+    is_superuser_field = "is_superuser"
+    clientid_override_field = "clientid_override"
+    password_hash_algorithm = {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    precondition = ""
+    mongo_type = sharded
+    servers = "mongo1.example.com:27017,mongo2.example.com:27017"
+    w_mode = unsafe
+    srv_record = false
+    pool_size = 8
+    username = "my_username"
+    password = "my_password"
+    use_legacy_protocol = auto
+    auth_source = "admin"
+    database = "my_database"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

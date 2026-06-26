@@ -1,0 +1,8 @@
+actions.azure_blob_storage.my_azure_blob_1.parameters{
+  mode = aggregated
+  aggregation = {
+    #substruct(action_azure_blob_storage:aggregation)
+  }
+  container = "my-container"
+  blob = "year=${datetime.YYYY}/month=${datetime.MM}/day=${datetime.DD}/hour=${datetime.hh}/${action}_${node}_N${sequence}.json"
+}

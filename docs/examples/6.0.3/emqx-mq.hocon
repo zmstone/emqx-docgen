@@ -1,0 +1,10 @@
+mq = {
+  enable = true
+  gc_interval = "1h"
+  regular_queue_retention_period = "7d"
+  max_queue_count = 100
+  find_queue_retry_interval = "10s"
+  auto_create = {
+    #substruct(mq:auto_create)
+  }
+}

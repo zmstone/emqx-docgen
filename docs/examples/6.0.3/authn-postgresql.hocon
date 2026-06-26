@@ -1,0 +1,22 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = postgresql
+    password_hash_algorithm = {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    query = "SELECT password_hash FROM users WHERE username = ${username}"
+    precondition = ""
+    server = "127.0.0.1:5432"
+    disable_prepared_statements = false
+    database = "auth_db"
+    pool_size = 8
+    username = "db_user"
+    password = "file:///path/to/password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

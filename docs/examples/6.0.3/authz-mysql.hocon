@@ -1,0 +1,17 @@
+authorization.sources = [
+  {
+    type = mysql
+    server = "mysql.example.com:3306"
+    database = <<"mydb">>
+    pool_size = 8
+    username = <<"root">>
+    password = "file:///path/to/password"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {
+      get_authz = <<"SELECT * FROM authz WHERE username = ?">>
+    }
+    query = <<"SELECT * FROM authz WHERE username = ?">>
+  }
+]

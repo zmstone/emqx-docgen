@@ -1,0 +1,15 @@
+file_transfer.storage.local.exporter.s3 {
+  access_key_id = "my_access_key_id"
+  secret_access_key = "file:///path/to/secret_access_key"
+  host = "s3.example.com"
+  port = 9000
+  access_method = path
+  transport_options = {
+    #substruct(s3:transport_options)
+  }
+  min_part_size = "5mb"
+  max_part_size = "5gb"
+  url_expire_time = "1h"
+  bucket = "${bucket_name}"
+  acl = private
+}

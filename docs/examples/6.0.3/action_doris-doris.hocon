@@ -1,0 +1,10 @@
+actions.doris.my_doris_action {
+  parameters = {
+    #substruct(action_doris:action_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

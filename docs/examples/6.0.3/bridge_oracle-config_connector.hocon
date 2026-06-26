@@ -1,0 +1,12 @@
+connectors.oracle.my_oracle_1 {
+  server = "oracle.example.com:1521"
+  sid = "ORCL"
+  service_name = "orcl_service"
+  role = normal
+  pool_size = 8
+  username = "db_user"
+  password = "secret_password"
+  resource_opts = {
+    #substruct(bridge_oracle:connector_resource_opts)
+  }
+}
