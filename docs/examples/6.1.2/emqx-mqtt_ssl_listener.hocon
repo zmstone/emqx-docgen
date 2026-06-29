@@ -5,6 +5,12 @@ listeners.ssl.my_ssl_listener {
   mountpoint = ""
   zone = default
   enable_authn = true
+  bytes_rate = "500KB/s"
+  bytes_burst = "100MB/60m"
+  messages_rate = "500/s"
+  messages_burst = "10000/60m"
+  max_conn_rate = "1000/s"
+  max_conn_burst = "10000/60m"
   delivery_bytes_rate = "500KB/s"
   delivery_bytes_burst = "100MB/60m"
   delivery_messages_rate = "500/s"
