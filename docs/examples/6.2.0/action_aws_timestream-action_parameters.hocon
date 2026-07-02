@@ -1,0 +1,4 @@
+actions.aws_timestream.my_aws_timestream_1.parameters {
+  write_syntax = "weather,location=us-midwest temperature=${payload.temp}i ${payload.timestamp}"
+  precision = ms
+}

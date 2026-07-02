@@ -1,0 +1,10 @@
+authentication = [
+  {
+    method {
+      type = bind
+      is_superuser_attribute = "isSuperuser"
+      clientid_override_attribute = "clientIdOverride"
+      bind_password = "${password}"
+    }
+  }
+]

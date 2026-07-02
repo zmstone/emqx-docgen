@@ -1,0 +1,6 @@
+mq.auto_create = {
+  regular = false
+  lastvalue = {
+    #substruct(mq:auto_create_lastvalue)
+  }
+}

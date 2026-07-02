@@ -1,0 +1,12 @@
+connectors.mqtt.my_mqtt_connector.static_clientids = [
+  {
+    node = "emqx@10.0.0.1"
+    ids = [
+      "client_id_1",
+      "client_id_2",
+      {
+        #substruct(connector_mqtt:static_clientid_entry_tuple)
+      }
+    ]
+  }
+]

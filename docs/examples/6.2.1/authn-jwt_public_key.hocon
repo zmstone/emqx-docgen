@@ -1,0 +1,12 @@
+authentication = [
+  {
+    algorithm = "public-key"
+    public_key = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A...-----END PUBLIC KEY-----"
+    mechanism = jwt
+    acl_claim_name = "acl"
+    verify_claims = {}
+    disconnect_after_expire = true
+    from = "password"
+    precondition = ""
+  }
+]

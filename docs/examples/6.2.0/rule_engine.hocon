@@ -1,0 +1,7 @@
+rule_engine {
+  ignore_sys_message = true
+  jq_function_default_timeout = "10s"
+  rules {
+    #substruct(rule_engine:rules)
+  }
+}

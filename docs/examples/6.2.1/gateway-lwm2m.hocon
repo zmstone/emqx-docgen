@@ -1,0 +1,23 @@
+gateway.lwm2m {
+  xml_dir = "/path/to/lwm2m/xml"
+  lifetime_min = "15s"
+  lifetime_max = "86400s"
+  qmode_time_window = "22s"
+  auto_observe = false
+  update_msg_publish_condition = always
+  translators = {
+    #substruct(gateway:lwm2m_translators)
+  }
+  blockwise = {
+    #substruct(gateway:lwm2m_blockwise)
+  }
+  mountpoint = "lwm2m/${endpoint_name}/"
+  listeners = {
+    #substruct(gateway:udp_listeners)
+  }
+  enable_stats = true
+  idle_timeout = "30s"
+  clientinfo_override = {
+    #substruct(gateway:clientinfo_override)
+  }
+}

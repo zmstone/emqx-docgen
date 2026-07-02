@@ -1,0 +1,12 @@
+authorization {
+  no_match = deny
+  deny_action = ignore
+  cache = {
+    #substruct(emqx:authz_cache)
+  }
+  include_mountpoint = false
+  sources = [{enable = true, path = "${EMQX_ETC_DIR}/acl.conf", type = file}]
+  node_cache = {
+    #substruct(auth_cache:config)
+  }
+}

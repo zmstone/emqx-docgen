@@ -1,0 +1,21 @@
+connectors.mqtt.my_mqtt_1{
+  pool_size = 8
+  resource_opts = {
+    #substruct(connector_mqtt:resource_opts)
+  }
+  server = "broker.emqx.io:1883"
+  clientid_prefix = "myclient"
+  static_clientids = []
+  proto_ver = v4
+  bridge_mode = false
+  username = "user1"
+  password = "secret"
+  clean_start = true
+  keepalive = "160s"
+  connect_timeout = "10s"
+  retry_interval = "15s"
+  max_inflight = 32
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}
