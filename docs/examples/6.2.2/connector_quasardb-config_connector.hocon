@@ -1,0 +1,12 @@
+connectors.quasardb.my_quasardb_1 {
+  dsn = "my_quasardb_dsn"
+  uri = "qdb://127.0.0.1:2836"
+  username = "my_username"
+  password = "my_password"
+  cluster_public_key = "my_cluster_public_key"
+  pool_size = 8
+  connect_timeout = "5s"
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

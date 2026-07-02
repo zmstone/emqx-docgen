@@ -1,0 +1,17 @@
+connectors.bigquery.my_bigquery_connector {
+  connect_timeout = "15s"
+  pool_size = 8
+  pipelining = 100
+  max_retries = 2
+  max_inactive = "10s"
+  authentication = {
+    #substruct(gcp_pubsub:auth_service_account_json)
+    #substruct(gcp_pubsub:auth_wif)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

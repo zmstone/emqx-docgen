@@ -1,0 +1,9 @@
+streams{
+  enable = false
+  max_stream_count = 1000
+  gc_interval = "1h"
+  regular_stream_retention_period = "7d"
+  auto_create = {
+    #substruct(streams:auto_create)
+  }
+}

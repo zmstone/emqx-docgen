@@ -1,0 +1,10 @@
+actions.dynamo.my_dynamo_1 {
+  parameters = {
+    #substruct(bridge_dynamo:action_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(bridge_dynamo:action_resource_opts)
+  }
+}

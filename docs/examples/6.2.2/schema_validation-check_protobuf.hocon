@@ -1,0 +1,11 @@
+schema_validation.validations = [
+  {
+    checks = [
+      {
+        type = protobuf
+        schema = "my_protobuf_schema"
+        message_type = "MyMessage"
+      }
+    ]
+  }
+]

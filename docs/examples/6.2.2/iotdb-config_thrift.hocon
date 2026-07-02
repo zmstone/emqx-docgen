@@ -1,0 +1,21 @@
+connectors.iotdb.my_iotdb_1{
+  driver = restapi
+  server = "127.0.0.1:6667"
+  protocol_version = protocol_v3
+  sql = {
+    #substruct(iotdb:sql_dialect_tree)
+    #substruct(iotdb:sql_dialect_table)
+  }
+  zoneId = "Asia/Shanghai"
+  pool_size = 8
+  connect_timeout = "10s"
+  recv_timeout = "10s"
+  username = "user"
+  password = "password"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(iotdb:connector_resource_opts)
+  }
+}

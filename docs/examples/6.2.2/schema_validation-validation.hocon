@@ -1,0 +1,29 @@
+schema_validation.validations = [
+  {
+    enable = true
+    name = "my_validation"
+    topics = ["t/#"]
+    strategy = all_pass
+    failure_action = drop
+    log_failure = {
+      #substruct(schema_validation:log_failure)
+    }
+    checks = [
+      {
+        #substruct(schema_validation:check_sql)
+      }
+      {
+        #substruct(schema_validation:check_json)
+      }
+      {
+        #substruct(schema_validation:check_avro)
+      }
+      {
+        #substruct(schema_validation:check_protobuf)
+      }
+      {
+        #substruct(schema_validation:check_external_http)
+      }
+    ]
+  }
+]

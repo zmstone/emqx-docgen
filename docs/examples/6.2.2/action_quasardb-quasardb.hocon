@@ -1,0 +1,14 @@
+actions.quasardb.my_quasardb_1 {
+  parameters = {
+    #substruct(action_quasardb:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  tags = ["tag1", "tag2"]
+  resource_opts = {
+    #substruct(action_quasardb:action_resource_opts)
+  }
+}

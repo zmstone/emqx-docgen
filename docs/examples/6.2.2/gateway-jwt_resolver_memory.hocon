@@ -1,0 +1,8 @@
+gateway.nats.internal_authn = [
+  {
+    resolver = {
+      type = memory
+      resolver_preload = []
+    }
+  }
+]
