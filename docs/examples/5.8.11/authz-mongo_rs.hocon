@@ -1,0 +1,27 @@
+authorization.sources = [
+  {
+    type = mongodb
+    collection = "authz_rules"
+    filter = {}
+    limit = 1000
+    skip = 0
+    mongo_type = rs
+    servers = "localhost:27017,localhost:27018"
+    w_mode = unsafe
+    r_mode = master
+    replica_set_name = "rs0"
+    srv_record = false
+    pool_size = 8
+    username = "db_user"
+    password = "secret"
+    use_legacy_protocol = auto
+    auth_source = "admin"
+    database = "authz"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

@@ -1,0 +1,6 @@
+file_transfer.storage.local.segments {
+  root = "/var/lib/file_transfer/segments"
+  gc = {
+    #substruct(file_transfer:local_storage_segments_gc)
+  }
+}

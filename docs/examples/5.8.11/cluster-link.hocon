@@ -1,0 +1,19 @@
+cluster.links = [
+  {
+    name = "remote_cluster"
+    server = "remote.example.com:1883"
+    clientid = "link-client"
+    username = "user"
+    password = "secret"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    topics = ["t/#"]
+    pool_size = 8
+    retry_interval = "15s"
+    max_inflight = 32
+    resource_opts = {
+      #substruct(cluster:creation_opts)
+    }
+  }
+]

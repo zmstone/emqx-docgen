@@ -1,0 +1,11 @@
+connectors.sqlserver.my_sqlserver_1 {
+  driver = "ms-sql"
+  server = "db.example.com:1433"
+  database = "mydb"
+  pool_size = 8
+  username = "sa"
+  password = "secret"
+  resource_opts = {
+    #substruct(bridge_sqlserver:connector_resource_opts)
+  }
+}

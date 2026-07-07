@@ -1,0 +1,11 @@
+actions.snowflake.my_snowflake_1 {
+  local_topic = "my/topic"
+  parameters = {
+    #substruct(action_snowflake:aggreg_parameters)
+  }
+  connector = "my_connector"
+  tags = ["tag1"]
+  resource_opts = {
+    #substruct(action_snowflake:action_resource_opts)
+  }
+}

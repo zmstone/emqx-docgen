@@ -1,0 +1,11 @@
+actions.rocketmq.my_rocketmq_1 {
+  local_topic = "my/mqtt/topic"
+  parameters = {
+    #substruct(rocketmq:action_parameters)
+  }
+  connector = "my_rocketmq_connector"
+  tags = ["tag1", "tag2"]
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

@@ -1,0 +1,10 @@
+actions.gcp_pubsub_producer.my_gcp_pubsub_action_1 {
+  local_topic = "sensors/temperature"
+  parameters = {
+    #substruct(gcp_pubsub_producer:action_parameters)
+  }
+  connector = "my_gcp_pubsub_connector"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

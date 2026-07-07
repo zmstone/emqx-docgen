@@ -1,0 +1,15 @@
+connectors.pgsql.my_pgsql_1 {
+  server = "localhost:5432"
+  disable_prepared_statements = false
+  database = "mydb"
+  pool_size = 8
+  username = "myuser"
+  password = "secret"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  tags = ["tag1"]
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}

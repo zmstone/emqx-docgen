@@ -1,0 +1,13 @@
+connectors.s3.my_webhook_1{
+  access_key_id = "my_access_key_id"
+  secret_access_key = <<"my_secret_access_key">>
+  host = "s3.example.com"
+  port = 9000
+  access_method = path
+  transport_options = {
+    #substruct(s3:transport_options)
+  }
+  resource_opts = {
+    #substruct(bridge_s3:s3_connector_resource_opts)
+  }
+}

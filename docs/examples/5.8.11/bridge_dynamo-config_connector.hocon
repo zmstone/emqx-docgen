@@ -1,0 +1,10 @@
+connectors.dynamo.my_dynamo_1 {
+  url = "https://dynamodb.us-east-1.amazonaws.com"
+  region = "us-east-1"
+  aws_access_key_id = "my_access_key_id"
+  aws_secret_access_key = "my_secret_access_key"
+  pool_size = 8
+  resource_opts = {
+    #substruct(bridge_dynamo:connector_resource_opts)
+  }
+}

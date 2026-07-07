@@ -1,0 +1,17 @@
+authorization.sources = [
+  {
+    type = mysql
+    server = "127.0.0.1:3306"
+    database = "mydb"
+    pool_size = 8
+    username = "root"
+    password = "secret"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    prepare_statement = {
+      get_user = "SELECT * FROM users WHERE username = ?"
+    }
+    query = "SELECT permission FROM acl WHERE username = ?"
+  }
+]

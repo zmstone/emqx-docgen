@@ -1,0 +1,5 @@
+connectors.mongodb.my_mongodb_sharded.parameters {
+  mongo_type = sharded
+  servers = "mongo1.example.com:27017,mongo2.example.com:27017"
+  w_mode = unsafe
+}

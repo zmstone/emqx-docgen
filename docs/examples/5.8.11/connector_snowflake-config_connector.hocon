@@ -1,0 +1,16 @@
+connectors.snowflake.my_snowflake_1 {
+  server = "snowflake.example.com"
+  account = "account_id"
+  dsn = "my_dsn"
+  proxy = none
+  #substruct(connector_snowflake:proxy_config)
+  pool_size = 8
+  username = "my_username"
+  password = "my_password"
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

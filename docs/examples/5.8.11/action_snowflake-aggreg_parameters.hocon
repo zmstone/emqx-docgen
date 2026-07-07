@@ -1,0 +1,18 @@
+actions.snowflake.my_snowflake_1.parameters {
+  mode = aggregated
+  aggregation = {
+    #substruct(action_snowflake:aggregation)
+  }
+  private_key = "file:///path/to/private_key.pem"
+  database = "my_database"
+  schema = "my_schema"
+  stage = "my_stage"
+  pipe = "my_pipe"
+  pipe_user = "my_pipe_user"
+  connect_timeout = "15s"
+  pipelining = 100
+  pool_size = 8
+  max_retries = 3
+  proxy = none
+  #substruct(action_snowflake:proxy_config)
+}

@@ -1,0 +1,10 @@
+actions.syskeeper_forwarder.my_webhook_1 {
+  local_topic = "t/syskeeper/source"
+  parameters = {
+    #substruct(syskeeper:parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(syskeeper:creation_opts)
+  }
+}

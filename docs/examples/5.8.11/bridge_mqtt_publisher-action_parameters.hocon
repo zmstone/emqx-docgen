@@ -1,0 +1,6 @@
+actions.mqtt.my_mqtt_action_1.parameters {
+  topic = "outgoing/${clientid}"
+  qos = 1
+  retain = false
+  payload = "${payload}"
+}

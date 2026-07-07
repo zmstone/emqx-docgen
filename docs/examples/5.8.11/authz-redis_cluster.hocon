@@ -1,0 +1,14 @@
+authorization.sources = [
+  {
+    type = redis
+    servers = "redis-1:6379,redis-2:6379"
+    redis_type = cluster
+    pool_size = 8
+    username = "user"
+    password = "secret"
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+    cmd = "get_user_acl"
+  }
+]

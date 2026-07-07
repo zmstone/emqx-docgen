@@ -1,0 +1,14 @@
+connectors.matrix.my_matrix_1 {
+  server = "db.example.com:5432"
+  disable_prepared_statements = false
+  database = "my_database"
+  pool_size = 8
+  username = "db_user"
+  password = "secret_password"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}

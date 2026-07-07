@@ -1,0 +1,13 @@
+connectors.cassandra.my_cassandra_1 {
+  servers = "cassandra-host:9042"
+  keyspace = "my_keyspace"
+  pool_size = 8
+  username = "db_user"
+  password = "db_password"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_cassa:connector_resource_opts)
+  }
+}

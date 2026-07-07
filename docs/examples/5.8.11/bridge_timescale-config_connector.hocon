@@ -1,0 +1,15 @@
+connectors.timescale.my_timescale_1 {
+  server = "db.example.com:5432"
+  disable_prepared_statements = false
+  database = "timescale_db"
+  pool_size = 8
+  username = "db_user"
+  password = "secret_password"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  tags = ["timescale", "analytics"]
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}
