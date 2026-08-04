@@ -1,0 +1,7 @@
+actions.pulsar.my_webhook_1.resource_opts {
+  health_check_interval = "15s"
+  health_check_interval_jitter = "0ms"
+  health_check_timeout = "60s"
+  query_mode = async
+  dispatch_strategy = per_clientid
+}
