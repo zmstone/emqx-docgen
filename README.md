@@ -30,6 +30,61 @@ env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py -b 5.8.8 ./docs/en/e5.9.0
 
 The generated content will be placed in the `docs/{en,zh}/v5.0.20.json`
 
+## Generate examples manually (without an OpenAI key)
+
+The HOCON examples under `docs/examples/<version>/` are normally produced by
+`generate-examples.py` calling OpenAI. When no valid `OPENAI_API_KEY` is
+available, the same result can be produced by hand (or with any other LLM)
+using the script's `--save-requests` dry-run mode.
+
+The script only ever needs to touch the schemas that actually changed: it copies
+the unchanged examples forward from the base version and prepares a request
+payload for each changed/new schema. You then fill in those payloads.
+
+Steps (example: `6.1.4`, base `6.1.3`):
+
+```bash
+# 1. Inspect which schemas were added / changed / removed.
+python3 ./generate-examples.py --list-changes -b 6.1.3 ./docs/en/6.1.4.json
+
+# 2. Dry run: copy unchanged examples from docs/examples/6.1.3 into
+#    docs/examples/6.1.4, and write one request payload per changed/new
+#    schema to ./requests (OpenAI is NOT called).
+python3 ./generate-examples.py --save-requests ./requests -b 6.1.3 ./docs/en/6.1.4.json
+```
+
+After step 2:
+
+- `docs/examples/6.1.4/` already contains every **unchanged** example (copied
+  from the base version).
+- `./requests/<struct>.json` holds one payload per **changed or new** schema.
+  Each payload contains the `system` prompt and a `user` message with the slim
+  schema — exactly what would have been sent to the model.
+
+For each payload, produce the example and save it to
+`docs/examples/6.1.4/<struct-name>.hocon`, where `<struct-name>` is the struct's
+`full_name` with `:` replaced by `-` (e.g. `emqx:ssl_client_opts` →
+`emqx-ssl_client_opts.hocon`). Follow the rules in the payload's system prompt:
+HOCON syntax, `=` delimiters, 2-space indentation, quote byte/duration values,
+use each field's `default`/`raw_default`, skip `Deprecated` fields, and emit
+sub-structs / union members as `#substruct(namespace:struct_name)` placeholder
+comments.
+
+Shortcut — not every "changed" schema needs a freshly written example. Many
+changes are **cosmetic** (description text edits, enum/union member reordering,
+or type refinements such as `integer()` → `pos_integer()` or `binary()` →
+`secret()`) that do not affect the rendered value. For those, just copy the
+example from the base version unchanged. Only schemas with example-affecting
+changes (new/removed fields, changed defaults, added sub-structs) need editing.
+
+Finally, verify completeness before committing:
+
+- Every schema struct (except the root) has exactly one `.hocon` file — the file
+  count under `docs/examples/<version>/` should equal the number of structs in
+  `docs/en/<version>.json` minus 1.
+- Every `#substruct(name)` placeholder resolves to a file that exists in the
+  same version directory.
+
 ## Background
 
 The main user interfaces to configure and manage EMQX are
