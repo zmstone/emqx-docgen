@@ -1,0 +1,9 @@
+actions.iotdb.my_iotdb_1.parameters.data = [
+  {
+    column_category = tag
+    timestamp = now
+    measurement = "${measurement}"
+    data_type = text
+    value = "${value}"
+  }
+]

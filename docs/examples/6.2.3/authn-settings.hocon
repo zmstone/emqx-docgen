@@ -1,0 +1,6 @@
+authentication_settings{
+  ignore_backend_failures = false
+  node_cache = {
+    #substruct(auth_cache:config)
+  }
+}
