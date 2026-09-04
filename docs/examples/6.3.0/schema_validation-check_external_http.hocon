@@ -1,0 +1,10 @@
+schema_validation.validations = [
+  {
+    checks = [
+      {
+        type = external_http
+        schema = "my_external_http_schema"
+      }
+    ]
+  }
+]

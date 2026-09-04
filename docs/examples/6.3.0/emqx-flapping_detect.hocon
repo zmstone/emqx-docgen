@@ -1,0 +1,8 @@
+flapping_detect {
+  by_clientid = none
+  #substruct(emqx:flapping_detect_dimension)
+  by_username = none
+  #substruct(emqx:flapping_detect_dimension)
+  by_peerhost = none
+  #substruct(emqx:flapping_detect_dimension)
+}

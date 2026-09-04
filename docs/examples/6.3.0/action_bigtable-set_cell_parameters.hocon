@@ -1,0 +1,9 @@
+actions.bigtable.my_bigtable_1.parameters.mutations = [
+  {
+    type = set_cell
+    family_name = "family"
+    column_qualifier = "qualifier"
+    timestamp_micros = "ts_micros"
+    value = "payload"
+  }
+]

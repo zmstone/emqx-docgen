@@ -1,0 +1,14 @@
+authentication = [
+  {
+    algorithm = hmac-based
+    secret = "my_hmac_secret"
+    secret_base64_encoded = false
+    mechanism = jwt
+    acl_claim_name = "acl"
+    on_missing_jwt = ignore
+    verify_claims = {}
+    disconnect_after_expire = true
+    from = password
+    precondition = ""
+  }
+]
