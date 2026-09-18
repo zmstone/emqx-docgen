@@ -10,6 +10,19 @@ the examples**. They are usually two commits.
 Version strings follow the git tag. v5 tags carry an `e` prefix (`e5.10.4`); v6
 and later tags do not (`6.3.0`, not `e6.3.0`).
 
+**v5 naming is not uniform across the repo.** The schema JSON keeps the `e`
+prefix, the examples directory drops it, and `-b` takes the bare version:
+
+| | v5 | v6+ |
+|---|---|---|
+| `./gen` argument | `e5.10.5` | `6.3.1` |
+| schema file | `docs/en/e5.10.5.json` | `docs/en/6.3.1.json` |
+| examples dir | `docs/examples/5.10.5/` | `docs/examples/6.3.1/` |
+| `-b` base | `-b 5.10.4` | `-b 6.3.0` |
+
+`generate-examples.py` derives the examples directory as `schema_path.stem.lstrip("ve")`,
+and resolves `-b` against `{v}.json`, `v{v}.json` and `e{v}.json` in turn.
+
 ## Step 1 — build the schema
 
 ```bash
@@ -165,11 +178,36 @@ EOF
 - One `.hocon` per struct, root excluded — file count equals struct count minus 1.
 - Every `#substruct(...)` resolves to a file in the same version directory.
 
+An unresolved placeholder is often inherited, not new: the copy-forward carries a
+bad example from the base version unchanged. Check before you edit —
+`diff docs/examples/<base>/<file> docs/examples/<version>/<file>`. When the files
+are identical, the defect predates this release. Fix it in the new version only;
+leave already-released directories as the record of what shipped. Check how the
+other major line renders the same struct, which is often already correct.
+
+Two such defects were found and fixed in 5.10.5:
+`emqx-log.hocon` referenced `#substruct(emqx:handler_name)`, but `emqx:log.file`
+is a union of `emqx:log_file_handler` and a *map* named `handler_name` whose
+values are that same struct; there is no `emqx:handler_name` struct.
+`cluster-link.hocon` rendered `password` as `#substruct(emqx_schema_secret:secret())`,
+but the field is a primitive and takes a quoted string.
+
 Then `rm -rf requests` (scratch, regenerable) and commit as
 `Add examples <version>`.
 
-## Reference: 6.2.2 → 6.2.3
+## Effort reference
 
-37 schemas flagged; 15 were cosmetic and copied, 20 needed a one- or two-line
-insert, 2 were new structs written from scratch. Budget the effort accordingly —
-the classification script in 2a is what keeps this cheap.
+| Round | Flagged | Cosmetic (copied) | Edited | New structs |
+|---|---|---|---|---|
+| 6.2.2 → 6.2.3 | 37 | 15 | 20 | 2 |
+| 6.3.0 → 6.3.1 (patch) | 12 | 10 | 2 | 0 |
+| 5.10.4 → 5.10.5 (patch) | 22 | 18 | 4 | 0 |
+| 6.2.3 → 6.3.0 (minor) | 88 | 17 | 52 | 18 |
+
+A patch release is usually an hour of work; a minor release is where the
+classification script in 2a earns its keep. Most flagged schemas are cosmetic.
+A union whose members were only reordered is cosmetic too, as long as the value
+the example already picks is still a member — check that rather than assuming.
+
+Two releases can be built in one run, but only sequentially: `gen` uses a fixed
+container name (`docgen`) and one shared `tmp/emqx` clone that `--rebuild` wipes.
