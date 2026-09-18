@@ -1,0 +1,11 @@
+schema_registry = {
+  external {
+    #substruct(schema_registry:confluent_schema_registry)
+  }
+  schemas {
+    #substruct(schema_registry:avro)
+    #substruct(schema_registry:protobuf)
+    #substruct(schema_registry:json)
+    #substruct(schema_registry:external_http)
+  }
+}

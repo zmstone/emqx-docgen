@@ -1,0 +1,7 @@
+sources.mqtt.my_webhook_1 {
+  parameters = {
+    #substruct(bridge_mqtt_publisher:ingress_parameters)
+  }
+  connector = "my_connector"
+  resource_opts = {}
+}

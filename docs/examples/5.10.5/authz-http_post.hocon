@@ -1,0 +1,26 @@
+authorization.sources = [
+  {
+    type = http
+    url = "https://auth.example.com"
+    request_timeout = "30s"
+    body = {
+      # example key-value pairs
+    }
+    connect_timeout = "15s"
+    pool_size = 8
+    enable_pipelining = 100
+    max_inactive = "10s"
+    request = {
+      #substruct(connector_http:request)
+    }
+    ssl = {enable = false}
+    method = post
+    headers = {
+      accept = "application/json"
+      cache-control = "no-cache"
+      connection = "keep-alive"
+      content-type = "application/json"
+      keep-alive = "timeout=30, max=1000"
+    }
+  }
+]

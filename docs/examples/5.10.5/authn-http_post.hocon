@@ -1,0 +1,22 @@
+authentication = [
+  {
+    method = post
+    headers = {accept = "application/json", cache-control = "no-cache", connection = "keep-alive", content-type = "application/json", keep-alive = "timeout=30, max=1000"}
+    mechanism = password_based
+    backend = http
+    url = "http://example.com"
+    body = {
+      #substruct(connector_http:request)
+    }
+    request_timeout = "5s"
+    precondition = ""
+    request = {
+      #substruct(connector_http:request)
+    }
+    ssl = {enable = false}
+    pool_size = 8
+    connect_timeout = "15s"
+    max_inactive = "10s"
+    enable_pipelining = 100
+  }
+]

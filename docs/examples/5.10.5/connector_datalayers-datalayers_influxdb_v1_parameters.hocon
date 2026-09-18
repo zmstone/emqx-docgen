@@ -1,0 +1,6 @@
+connectors.datalayers.my_datalayer.parameters {
+  driver_type = influxdb_v1
+  database = "example_database"
+  username = "example_user"
+  password = "example_password"
+}

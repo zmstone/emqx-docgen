@@ -1,0 +1,25 @@
+authorization.sources = [
+  {
+    type = mongodb
+    collection = "authz_data_collection"
+    filter = {}
+    limit = 1000
+    skip = 0
+    mongo_type = rs
+    servers = "db1.example.com,db2.example.com"
+    w_mode = unsafe
+    r_mode = master
+    replica_set_name = "exampleReplicaSet"
+    srv_record = false
+    pool_size = 8
+    username = "db_user"
+    password = "secret_password"
+    use_legacy_protocol = auto
+    auth_source = "auth_db"
+    database = "main_db"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {enable = false}
+  }
+]

@@ -1,0 +1,27 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = ldap
+    query_timeout = "5s"
+    acl_ttl_attribute = "mqttAclTtl"
+    publish_attribute = "mqttPublishTopic"
+    subscribe_attribute = "mqttSubscriptionTopic"
+    all_attribute = "mqttPubSubTopic"
+    acl_rule_attribute = "mqttAclRule"
+    base_dn = "uid=${username},ou=testdevice,dc=emqx,dc=io"
+    filter = "(objectClass=mqttUser)"
+    precondition = ""
+    server = "ldap.example.com"
+    pool_size = 8
+    username = "someuser"
+    password = "secret"
+    request_timeout = "10s"
+    ssl = {
+      #substruct(ldap:ssl)
+    }
+    method = {
+      #substruct(authn:hash_method)
+      #substruct(authn:bind_method)
+    }
+  }
+]

@@ -1,0 +1,14 @@
+actions.mqtt.my_mqtt_action {
+  local_topic = ""
+  parameters = {
+    #substruct(bridge_mqtt_publisher:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = ""
+  resource_opts = {
+    #substruct(bridge_mqtt_publisher:action_resource_opts)
+  }
+}

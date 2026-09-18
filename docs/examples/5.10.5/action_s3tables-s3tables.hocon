@@ -1,0 +1,14 @@
+actions.s3tables.my_s3table {
+  local_topic = "your/local/topic"
+  parameters = {
+    #substruct(action_s3tables:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector_name"
+  resource_opts = {
+    #substruct(action_s3tables:action_resource_opts)
+  }
+}

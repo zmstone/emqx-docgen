@@ -1,0 +1,12 @@
+actions.rocketmq.my_rocketmq_action {
+  local_topic = "your_topic_here"
+  parameters = {
+    #substruct(rocketmq:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector_name"
+  resource_opts = {}
+}

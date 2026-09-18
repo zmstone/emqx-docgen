@@ -1,0 +1,18 @@
+actions.oracle.my_oracle_action = {
+  local_topic = "your/source/topic"
+  parameters = {
+    #substruct(bridge_oracle:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "your_connector_name"
+  resource_opts = {
+    #substruct(actions_and_sources:action_resource_opts)
+  }
+}

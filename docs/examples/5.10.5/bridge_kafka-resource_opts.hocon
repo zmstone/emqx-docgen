@@ -1,0 +1,5 @@
+actions.azure_event_hub_producer.my_webhook_1.resource_opts {
+  health_check_interval = "15s"
+  #union(bridge_kafka:resource_opts_health_check_timeout_union_member1)
+  #union(bridge_kafka:resource_opts_health_check_timeout_union_member2)
+}

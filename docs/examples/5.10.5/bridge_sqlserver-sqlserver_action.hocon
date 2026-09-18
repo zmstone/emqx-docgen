@@ -1,0 +1,12 @@
+actions.sqlserver.my_webhook_1 {
+  local_topic = "your/topic/here"
+  parameters = {
+    #substruct(bridge_sqlserver:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "your_connector_name"
+  resource_opts = {}
+}

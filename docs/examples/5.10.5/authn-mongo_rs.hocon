@@ -1,0 +1,35 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = mongodb
+    collection = "auth_collection"
+    filter = {}
+    password_hash_field = "password_hash"
+    salt_field = "salt"
+    is_superuser_field = "is_superuser"
+    password_hash_algorithm = {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    precondition = ""
+    mongo_type = rs
+    servers = "localhost:27017"
+    w_mode = unsafe
+    r_mode = master
+    replica_set_name = "myReplicaSet"
+    srv_record = false
+    pool_size = 8
+    username = "dbUser"
+    password = "dbPassword"
+    use_legacy_protocol = auto
+    auth_source = "admin"
+    database = "myDatabase"
+    topology = {
+      #substruct(mongo:topology)
+    }
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]
