@@ -1,0 +1,4 @@
+actions.quasardb.my_quasardb_1.parameters {
+  sql = "insert into t_mqtt_msg(msgid, topic, payload) values ('${id}', '${topic}', '${payload}')"
+  health_check_table = "t_mqtt_msg"
+}

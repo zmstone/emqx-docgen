@@ -1,0 +1,7 @@
+authentication = [
+  {
+    oauth2 {
+      enable = false
+    }
+  }
+]

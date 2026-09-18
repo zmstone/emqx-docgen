@@ -1,0 +1,10 @@
+opentelemetry.exporter {
+  endpoint = "https://my-environment.live.dynatrace.com:443/api/v2/otlp"
+  headers = {}
+  auth = {
+    #substruct(opentelemetry:dynatrace_oauth2)
+  }
+  ssl_options = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

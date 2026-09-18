@@ -1,0 +1,18 @@
+node {
+  name = "emqx@127.0.0.1"
+  default_listener_address = loopback
+  cookie = "secret_cookie"
+  max_ports = auto
+  schedulers = auto
+  dirty_io_schedulers = auto
+  dist_buffer_size = 8192
+  dist_listen_options = "[{buffer,1048576}]"
+  dist_connect_options = "[{buffer,1048576}]"
+  data_dir = "/var/lib/emqx"
+  global_gc_interval = disabled
+  dist_bind_address = "192.168.1.100"
+  role = core
+  tls_server_session_tickets_amount = 1
+  tls_server_session_ticket_lifetime = 7200
+  tls_stateless_tickets_seed = ""
+}

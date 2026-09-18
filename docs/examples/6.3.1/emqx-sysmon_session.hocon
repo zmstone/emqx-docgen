@@ -1,0 +1,3 @@
+sysmon.session {
+  total_payload_bytes_high_watermark = 0
+}

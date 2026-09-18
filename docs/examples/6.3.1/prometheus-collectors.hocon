@@ -1,0 +1,8 @@
+prometheus.collectors = {
+  vm_dist = "enabled"
+  mnesia = "disabled"
+  vm_statistics = "enabled"
+  vm_system_info = "enabled"
+  vm_memory = "enabled"
+  vm_msacc = "disabled"
+}
