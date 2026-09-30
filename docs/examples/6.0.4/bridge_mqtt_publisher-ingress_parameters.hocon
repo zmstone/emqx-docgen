@@ -1,0 +1,6 @@
+sources.mqtt.my_mqtt_1.parameters{
+  no_local = false
+  retain_as_published = true
+  topic = "remote/topic"
+  qos = 1
+}

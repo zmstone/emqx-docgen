@@ -1,0 +1,37 @@
+durable_storage {
+  n_sites = 1
+
+  db_groups {
+    #map(name:durable_storage:db_group)
+  }
+
+  messages {
+    #substruct(durable_storage:builtin_raft_messages)
+    #substruct(durable_storage:builtin_local_messages)
+  }
+
+  sessions {
+    #substruct(durable_storage:builtin_raft)
+    #substruct(durable_storage:builtin_local)
+  }
+
+  timers {
+    #substruct(durable_storage:builtin_raft)
+    #substruct(durable_storage:builtin_local)
+  }
+
+  shared_subs {
+    #substruct(durable_storage:builtin_raft)
+    #substruct(durable_storage:builtin_local)
+  }
+
+  mq_states {
+    #substruct(durable_storage:builtin_raft)
+    #substruct(durable_storage:builtin_local)
+  }
+
+  mq_messages {
+    #substruct(durable_storage:builtin_raft)
+    #substruct(durable_storage:builtin_local)
+  }
+}

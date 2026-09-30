@@ -1,0 +1,18 @@
+connectors.snowflake.my_webhook_1 {
+  server = "snowflake.example.com"
+  account = "my_snowflake_account"
+  dsn = "my_snowflake_dsn"
+  private_key_path = "/var/lib/emqx/snowflake/private_key.pem"
+  private_key_password = "my_private_key_password"
+  proxy = none
+  #substruct(connector_snowflake_aggregated:proxy_config)
+  pool_size = 8
+  username = "my_username"
+  password = "my_password"
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

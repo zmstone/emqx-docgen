@@ -1,0 +1,14 @@
+actions.cassandra.my_cassandra_action {
+  parameters = {
+    #substruct(bridge_cassa:action_parameters)
+  }
+  fallback_actions = [
+    {
+      #substruct(actions_and_sources:fallback_action_reference)
+    }
+    {
+      #substruct(actions_and_sources:fallback_action_republish)
+    }
+  ]
+  connector = "my_connector"
+}

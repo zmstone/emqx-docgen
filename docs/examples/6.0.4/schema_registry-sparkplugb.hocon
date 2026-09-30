@@ -1,0 +1,3 @@
+schema_registry.sparkplugb = {
+  enable_alias_mapping = true
+}

@@ -1,0 +1,15 @@
+actions.alloydb.my_webhook_1.fallback_actions = [
+  {
+    args = {
+      topic = "a/1"
+      qos = "${qos}"
+      retain = "${retain}"
+      payload = "${payload}"
+      mqtt_properties = {
+        #substruct(rule_engine:republish_mqtt_properties)
+      }
+      user_properties = "${user_properties}"
+      direct_dispatch = false
+    }
+  }
+]

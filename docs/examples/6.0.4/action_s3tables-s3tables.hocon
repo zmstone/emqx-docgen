@@ -1,0 +1,11 @@
+actions.s3tables.my_s3tables_action {
+  parameters = {
+    #substruct(action_s3tables:action_parameters)
+  }
+  fallback_actions = []
+  connector = "my_connector"
+  tags = ["tag1"]
+  resource_opts = {
+    #substruct(action_s3tables:action_resource_opts)
+  }
+}

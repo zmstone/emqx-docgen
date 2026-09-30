@@ -1,0 +1,14 @@
+connectors.doris.my_doris_1 {
+  tags = ["tag1", "tag2"]
+  server = "doris.example.com:9030"
+  database = "my_database"
+  pool_size = 8
+  username = "root"
+  password = "secret"
+  ssl = {
+    #substruct(connector_doris:ssl)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

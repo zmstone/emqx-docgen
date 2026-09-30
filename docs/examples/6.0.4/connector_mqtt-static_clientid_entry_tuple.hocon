@@ -1,0 +1,7 @@
+connectors.mqtt.my_mqtt_connector.static_clientids = [{
+  ids = [{
+    clientid = "node1-clientid"
+    username = "static_user"
+    password = "file:///path/to/password"
+  }]
+}]

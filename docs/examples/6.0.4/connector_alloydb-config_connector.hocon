@@ -1,0 +1,15 @@
+connectors.alloydb.my_alloydb_1 {
+  server = "127.0.0.1:5432"
+  disable_prepared_statements = false
+  database = "mydb"
+  pool_size = 8
+  username = "dbuser"
+  password = "secret"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  tags = ["tag1", "tag2"]
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}

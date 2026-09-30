@@ -1,0 +1,4 @@
+durable_storage.messages.rocksdb {
+  cache_size = "8MB"
+  max_open_files = infinity
+}

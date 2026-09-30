@@ -1,0 +1,19 @@
+message_transformation.transformations = [
+  {
+    tags = ["tag1"]
+    description = ""
+    name = "my_transformation"
+    topics = ["topic/1", "topic/2"]
+    failure_action = drop
+    log_failure = {
+      #substruct(message_transformation:log_failure)
+    }
+    payload_decoder = payload_serde_none
+    payload_encoder = payload_serde_none
+    operations = [
+      {
+        #substruct(message_transformation:operation)
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+durable_storage.mq_messages {
+  backend = builtin_raft
+  replication_factor = 3
+  max_retries = 10
+  retry_interval = "10s"
+  data_dir = "node.data_dir/ds/"
+  n_shards = 16
+  db_group = "my_db_group"
+  rocksdb = {
+    #substruct(durable_storage:rocksdb_options)
+  }
+  transaction = {
+    #substruct(durable_storage:optimistic_transaction)
+  }
+}

@@ -1,0 +1,14 @@
+connectors.gcp_pubsub_producer.my_gcp_pubsub_producer_1 {
+  connect_timeout = "15s"
+  pool_size = 8
+  pipelining = 100
+  max_retries = 2
+  max_inactive = "10s"
+  service_account_json = "your_service_account_json"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(gcp_pubsub_producer:connector_resource_opts)
+  }
+}
