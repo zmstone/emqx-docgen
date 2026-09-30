@@ -1,0 +1,23 @@
+connectors.iotdb.my_iotdb_1 {
+  connect_timeout = "15s"
+  pool_type = random
+  pool_size = 8
+  enable_pipelining = 100
+  max_inactive = "10s"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(bridge_http:connector_resource_opts)
+  }
+  driver = restapi
+  base_url = "http://iotdb.example.com:18080"
+  iotdb_version = "v1.3.x"
+  sql = {
+    #substruct(iotdb:sql_dialect_tree)
+    #substruct(iotdb:sql_dialect_table)
+  }
+  authentication = {
+    #substruct(iotdb:authentication)
+  }
+}

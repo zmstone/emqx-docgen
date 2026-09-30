@@ -1,0 +1,13 @@
+prometheus{
+  enable_basic_auth = false
+  push_gateway = {
+    #substruct(prometheus:push_gateway)
+  }
+  collectors = {
+    #substruct(prometheus:collectors)
+  }
+  latency_buckets = "10ms, 100ms, 1s, 5s, 30s"
+  namespaced_metrics_limiter = {
+    #substruct(prometheus:namespaced_metrics_limiter)
+  }
+}

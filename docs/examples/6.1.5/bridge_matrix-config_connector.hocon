@@ -1,0 +1,14 @@
+connectors.matrix.my_webhook_1 {
+  server = "Host[:Port]"
+  disable_prepared_statements = false
+  database = "database_name"
+  pool_size = 8
+  username = "username"
+  password = "password"
+  ssl = {
+    enable = false
+  }
+  resource_opts = {
+    #substruct(connector_postgres:resource_opts)
+  }
+}
