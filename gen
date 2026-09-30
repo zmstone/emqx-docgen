@@ -81,8 +81,11 @@ case "$VERSION" in
     e5.10.*)
         BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.1-8:1.18.3-27.3.4.2-8-ubuntu24.04}"
         ;;
+    6.0.*)
+        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.1-8:1.18.3-27.3.4.2-8-ubuntu22.04}"
+        ;;
     6.1.*)
-        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.0-9:1.19.1-28.2-2-ubuntu22.04}"
+        BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.1-8:1.19.1-28.4.1-4-ubuntu22.04}"
         ;;
     6.2.*)
         BUILDER="${EMQX_BUILDER:-ghcr.io/emqx/emqx-builder/6.1-1:1.19.1-28.4.1-1-ubuntu22.04}"
