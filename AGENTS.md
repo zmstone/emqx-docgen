@@ -51,6 +51,17 @@ Confirm it exists before starting the build:
 docker manifest inspect ghcr.io/emqx/emqx-builder/6.1-8:1.19.1-28.4.1-4-ubuntu22.04
 ```
 
+**A case tracks the newest tag in its line, not the whole line.** The toolchain
+moves inside a minor line: 6.1.0 pinned OTP 28.2, 6.1.5 pins 28.4.1-4. Point the
+case at what the tag you are building pins, and do not split it into patch ranges.
+An OTP patch mismatch still compiles — 6.1.4 built correctly against a case
+pinning 28.2 while the tag pinned 28.4.1-4, and the whole 6.0 line built against
+a `-4` image while pinning `-8`. To reproduce an old tag against its exact
+toolchain, set `EMQX_BUILDER` instead of editing the case.
+
+Check that a case exists at all, not just that it is current. The 6.0 line had
+none until 6.0.4, so 6.0.0 through 6.0.3 were built against the fallback default.
+
 Commit as `Add <version>` — the four JSON files plus `docs/index.html`.
 
 ## Step 2 — generate the examples (no OpenAI key)
@@ -119,6 +130,18 @@ empty, nothing rendered changes.
 Only `ADDED` / `REMOVED` fields, changed `default` / `raw_default`, and new
 sub-structs need an edited example.
 
+Two flagged changes usually need no edit:
+
+- **A type change that keeps the rendered value.** `binary()` → `emqx_schema_secret:secret()`
+  still renders a quoted string, so `gateway:clientinfo_override` was identical
+  across 6.0.3, 6.1.4 and 6.3.1.
+- **A first-`paths` change from a new field elsewhere.** Adding `oauth2` inserted
+  `authentication.$INDEX.oauth2.ssl` ahead of `authentication.$INDEX.ssl` in
+  `emqx:ssl_client_opts`. The example keeps the old path, matching the newer
+  line, which has the identical paths list.
+
+Confirm each against the newer line's file rather than assuming.
+
 ### 2b. Edit the affected examples
 
 Edit rules (from the payload's system prompt in `requests/<struct>.json`):
@@ -143,6 +166,15 @@ Edit rules (from the payload's system prompt in `requests/<struct>.json`):
 - For a brand-new struct, expand its first `paths` entry: `$NAME` becomes a
   sample key, `$INDEX` becomes `= [` with the element indented on a new line.
   Copy the shape from an existing sibling (e.g. `connector_http-request.hocon`).
+
+**On an older line, check whether a later version already has the edit.** A patch
+release on `6.0`/`6.1` is mostly backports of changes that already landed on a
+newer line, so the same field, value and position are already rendered in
+`docs/examples/<newer>/<file>`. Read that file to get the exact line, then apply
+the insert to *this* line's base file — do not copy the whole file, since other
+fields differ between lines. A new struct is the exception: when its schema is
+identical (same fields, same first path), copy the whole file. 6.0.4 reused the
+two `connector_oauth2` examples from 6.2.3 that way.
 
 When one field is added to many structs, a `sed` insert after a stable anchor
 line is faster and less error-prone than editing each file:
@@ -203,9 +235,12 @@ Then `rm -rf requests` (scratch, regenerable) and commit as
 | 6.3.0 → 6.3.1 (patch) | 12 | 10 | 2 | 0 |
 | 5.10.4 → 5.10.5 (patch) | 22 | 18 | 4 | 0 |
 | 6.2.3 → 6.3.0 (minor) | 88 | 17 | 52 | 18 |
+| 6.1.4 → 6.1.5 (patch) | 60 | 52 | 8 | 0 |
+| 6.0.3 → 6.0.4 (patch) | 73 | 41 | 30 | 2 |
 
-A patch release is usually an hour of work; a minor release is where the
-classification script in 2a earns its keep. Most flagged schemas are cosmetic.
+A patch release on the newest line is small. A patch release on an older line is
+not: 6.0.4 flagged 73 schemas, because a quarter of backports land at once. The
+classification script in 2a is what keeps either cheap. Most flagged schemas are cosmetic.
 A union whose members were only reordered is cosmetic too, as long as the value
 the example already picks is still a member — check that rather than assuming.
 
