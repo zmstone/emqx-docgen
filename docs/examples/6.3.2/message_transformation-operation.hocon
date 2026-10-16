@@ -1,0 +1,10 @@
+message_transformation.transformations = [
+  {
+    operations = [
+      {
+        key = "payload.field"
+        value = "${payload.value}"
+      }
+    ]
+  }
+]

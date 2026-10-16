@@ -1,0 +1,5 @@
+connectors.disk_log.my_disk_log.rotation {
+  period = none
+  retention_period = infinity
+  timezone = "UTC"
+}

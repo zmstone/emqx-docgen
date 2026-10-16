@@ -1,0 +1,5 @@
+actions.bigquery.my_action.parameters {
+  project_id = "my-gcp-project"
+  dataset = "example_dataset"
+  table = "example_table"
+}

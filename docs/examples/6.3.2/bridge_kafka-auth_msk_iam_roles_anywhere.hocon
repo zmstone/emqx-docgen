@@ -1,0 +1,5 @@
+connectors.kafka_consumer.my_kafka_instance.authentication {
+  type = msk_iam_roles_anywhere
+  endpoint = "http://127.0.0.1:9911"
+  region = "us-east-1"
+}
