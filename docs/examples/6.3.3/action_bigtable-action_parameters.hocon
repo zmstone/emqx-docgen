@@ -1,0 +1,8 @@
+actions.bigtable.my_bigtable_1.parameters {
+  instance_id = "myinst"
+  table_id = "mytable"
+  row_key = "row_key"
+  mutations = [
+    #substruct(action_bigtable:set_cell_parameters)
+  ]
+}

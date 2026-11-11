@@ -1,0 +1,6 @@
+gateway.stomp.transaction {
+  max_transactions = 100
+  max_actions_per_transaction = 1000
+  max_retained_bytes = 16777216
+  timeout = "60s"
+}

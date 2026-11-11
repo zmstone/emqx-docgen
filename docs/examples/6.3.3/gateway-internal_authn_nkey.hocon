@@ -1,0 +1,6 @@
+gateway.nats.internal_authn = [
+  {
+    type = nkey
+    nkeys = []
+  }
+]

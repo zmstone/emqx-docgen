@@ -1,0 +1,7 @@
+plugins.package_limits {
+  max_package_size = "10MB"
+  max_decompressed_size = "50MB"
+  max_file_count = 10000
+  max_path_depth = 32
+  max_extraction_time_ms = "60s"
+}

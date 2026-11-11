@@ -1,0 +1,16 @@
+gateway.exproto.listeners.ssl.my_webhook_1.tcp_options = {
+  active_n = 10
+  backlog = 1024
+  send_timeout = "15s"
+  send_timeout_close = true
+  recbuf = "2KB"
+  sndbuf = "4KB"
+  buffer = "4KB"
+  buffer_retention_strategy = packet
+  high_watermark = "1MB"
+  low_watermark = "256KB"
+  nodelay = true
+  nolinger = false
+  reuseaddr = true
+  keepalive = none
+}

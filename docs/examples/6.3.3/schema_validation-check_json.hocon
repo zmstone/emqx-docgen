@@ -1,0 +1,10 @@
+schema_validation.validations = [
+  {
+    checks = [
+      {
+        type = json
+        schema = "my_json_schema"
+      }
+    ]
+  }
+]

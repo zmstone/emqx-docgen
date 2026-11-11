@@ -1,0 +1,19 @@
+gateway.coap {
+  heartbeat = "30s"
+  connection_required = false
+  notify_type = qos
+  subscribe_qos = coap
+  publish_qos = coap
+  blockwise = {
+    #substruct(gateway:coap_blockwise)
+  }
+  mountpoint = ""
+  listeners = {
+    #substruct(gateway:udp_listeners)
+  }
+  enable_stats = true
+  idle_timeout = "30s"
+  clientinfo_override = {
+    #substruct(gateway:clientinfo_override)
+  }
+}

@@ -1,0 +1,6 @@
+gateway.nats.internal_authn = [
+  {
+    type = token
+    token = "your_token"
+  }
+]

@@ -1,0 +1,15 @@
+connectors.bigtable.my_bigtable_connector {
+  connect_timeout = "5s"
+  pool_size = 8
+  authentication = {
+    #substruct(gcp_pubsub:auth_attached_service_account)
+    #substruct(gcp_pubsub:auth_service_account_json)
+    #substruct(gcp_pubsub:auth_wif)
+  }
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

@@ -1,0 +1,7 @@
+schema_validation {
+  validations = [
+    {
+      #substruct(schema_validation:validation)
+    }
+  ]
+}

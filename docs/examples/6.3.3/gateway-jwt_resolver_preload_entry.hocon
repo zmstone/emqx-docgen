@@ -1,0 +1,12 @@
+gateway.nats.internal_authn = [
+  {
+    resolver = {
+      resolver_preload = [
+        {
+          pubkey = "account_public_key"
+          jwt = "account_jwt_content"
+        }
+      ]
+    }
+  }
+]

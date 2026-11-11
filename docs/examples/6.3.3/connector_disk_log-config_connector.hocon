@@ -1,0 +1,11 @@
+connectors.disk_log.my_disk_log {
+  filepath = "/path/to/logfile"
+  max_file_size = "10MB"
+  max_file_number = 5
+  rotation = {
+    #substruct(connector_disk_log:rotation)
+  }
+  resource_opts = {
+    #substruct(connector:resource_opts)
+  }
+}

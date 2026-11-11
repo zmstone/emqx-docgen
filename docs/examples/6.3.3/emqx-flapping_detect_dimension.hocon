@@ -1,0 +1,5 @@
+flapping_detect.by_clientid {
+  window_time = "1m"
+  max_count = 15
+  ban_time = "5m"
+}

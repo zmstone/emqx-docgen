@@ -1,0 +1,12 @@
+opentelemetry {
+  type = dynatrace
+  logs = {
+    #substruct(opentelemetry:otel_logs)
+  }
+  traces = {
+    #substruct(opentelemetry:otel_traces)
+  }
+  exporter = {
+    #substruct(opentelemetry:otel_exporter_dynatrace)
+  }
+}

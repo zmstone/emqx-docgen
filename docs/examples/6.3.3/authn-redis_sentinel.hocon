@@ -1,0 +1,25 @@
+authentication = [
+  {
+    mechanism = password_based
+    backend = redis
+    cmd = "HGET"
+    password_hash_algorithm {
+      #substruct(authn_hash:bcrypt)
+      #substruct(authn_hash:pbkdf2)
+      #substruct(authn_hash:simple)
+    }
+    precondition = ""
+    servers = "127.0.0.1:6379"
+    redis_type = sentinel
+    sentinel = "mymaster"
+    sentinel_username = "sentinel_user"
+    sentinel_password = "sentinel_secret"
+    pool_size = 8
+    username = "user"
+    password = "secret"
+    database = 0
+    ssl = {
+      #substruct(emqx:ssl_client_opts)
+    }
+  }
+]

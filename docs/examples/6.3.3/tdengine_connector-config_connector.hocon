@@ -1,0 +1,13 @@
+connectors.tdengine.my_webhook_1 = {
+  server = "Host[:Port]"
+  pool_size = 8
+  username = "your_username"
+  password = "your_password"
+  ssl = {
+    #substruct(connector_schema_lib:client_tls_verify_peer)
+  }
+  token = ""
+  resource_opts = {
+    #substruct(tdengine_connector:connector_resource_opts)
+  }
+}

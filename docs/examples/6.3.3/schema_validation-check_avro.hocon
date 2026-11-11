@@ -1,0 +1,10 @@
+schema_validation.validations = [
+  {
+    checks = [
+      {
+        type = avro
+        schema = "my_avro_schema"
+      }
+    ]
+  }
+]

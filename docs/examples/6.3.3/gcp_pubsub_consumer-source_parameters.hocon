@@ -1,0 +1,5 @@
+sources.gcp_pubsub_consumer.my_pubsub_1.parameters {
+  topic = "your-gcp-topic"
+  ack_deadline = "60s"
+  pull_max_messages = 100
+}

@@ -1,0 +1,7 @@
+gateway.nats.internal_authn = [
+  {
+    type = jwt
+    trusted_operators = []
+    resolver = memory
+  }
+]

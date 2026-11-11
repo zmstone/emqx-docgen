@@ -1,0 +1,8 @@
+mqtt.limiter {
+  bytes_rate = "infinity"
+  bytes_burst = "0"
+  messages_rate = "infinity"
+  messages_burst = "0"
+  max_conn_rate = "infinity"
+  max_conn_burst = "0"
+}

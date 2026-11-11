@@ -1,0 +1,4 @@
+streams.auto_create.lastvalue.limits {
+  max_shard_message_count = infinity
+  max_shard_message_bytes = infinity
+}

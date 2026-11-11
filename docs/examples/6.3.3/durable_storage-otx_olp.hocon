@@ -1,0 +1,4 @@
+durable_storage.messages.transaction.overload_protection {
+  max_mql = 1000
+  max_ops = 10000
+}

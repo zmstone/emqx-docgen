@@ -1,0 +1,7 @@
+authorization.sources = [
+  {
+    type = built_in_database
+    precondition = ""
+    max_rules = 100
+  }
+]

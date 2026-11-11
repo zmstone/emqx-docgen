@@ -1,0 +1,7 @@
+authorization.sources = [
+  {
+    type = file
+    precondition = ""
+    path = "/path/to/acl_rules.conf"
+  }
+]

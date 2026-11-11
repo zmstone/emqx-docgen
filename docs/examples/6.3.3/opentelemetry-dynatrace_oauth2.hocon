@@ -1,0 +1,13 @@
+opentelemetry.exporter.auth {
+  kind = dynatrace_oauth2
+  resource = "urn:dtaccount:my-account-uuid"
+  enable = true
+  token_endpoint = "https://sso.dynatrace.com/sso/oauth2/token"
+  client_id = "dt0s02.EXAMPLE"
+  client_secret = "dt0s02.EXAMPLE.SECRET"
+  scope = "storage:logs:write"
+  timeout = "5s"
+  ssl = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

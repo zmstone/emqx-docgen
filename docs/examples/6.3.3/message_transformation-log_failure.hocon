@@ -1,0 +1,7 @@
+message_transformation.transformations = [
+  {
+    log_failure {
+      level = info
+    }
+  }
+]

@@ -1,0 +1,3 @@
+plugins.api_endpoint {
+  timeout = "5s"
+}

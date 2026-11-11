@@ -1,0 +1,6 @@
+sources.mqtt.my_webhook_1.parameters {
+  no_local = false
+  retain_as_published = true
+  topic = "your/topic"
+  qos = 1
+}

@@ -1,0 +1,12 @@
+connectors.opents.my_webhook_1 {
+  server = "http://opentsdb.example.com"
+  pool_size = 8
+  summary = true
+  details = false
+  ssl = {
+    #substruct(connector_schema_lib:client_tls_verify_peer)
+  }
+  resource_opts = {
+    #substruct(opents_connector:connector_resource_opts)
+  }
+}

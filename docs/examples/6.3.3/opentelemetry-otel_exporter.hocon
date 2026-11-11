@@ -1,0 +1,8 @@
+opentelemetry.exporter {
+  endpoint = "http://localhost:4317"
+  headers = {}
+  protocol = grpc
+  ssl_options = {
+    #substruct(emqx:ssl_client_opts)
+  }
+}

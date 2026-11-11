@@ -1,0 +1,14 @@
+actions.influxdb.my_influxdb_1 {
+  parameters = {
+    #substruct(bridge_influxdb:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  tags = ["tag1", "tag2"]
+  resource_opts = {
+    #substruct(bridge_influxdb:action_resource_opts)
+  }
+}

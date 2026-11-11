@@ -1,0 +1,13 @@
+actions.rocketmq.my_action {
+  parameters = {
+    #substruct(rocketmq:action_parameters)
+  }
+  fallback_actions = [
+    #substruct(actions_and_sources:fallback_action_reference)
+    #substruct(actions_and_sources:fallback_action_republish)
+  ]
+  connector = "my_connector"
+  resource_opts = {
+    #substruct(rocketmq:action_resource_opts)
+  }
+}

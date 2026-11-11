@@ -1,0 +1,8 @@
+actions.opents.my_webhook_1.parameters.data = [
+  {
+    timestamp = "2023-10-15T12:34:56Z"
+    metric = "cpu.usage"
+    #union(map, emqx_schema:template())
+    #union(integer, float, emqx_schema:template())
+  }
+]
