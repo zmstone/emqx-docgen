@@ -21,14 +21,14 @@ For example, to update the content for `e5.9.0`, execute:
 
 ```bash
 # build schema
-./gen e5.9.0 --rebuild
+./gen 6.3.3 --rebuild
 # inspect schema changes
-uv run ./generate-examples.py --list-changes -b 5.8.8 ./docs/en/e5.9.0.json
+uv run ./generate-examples.py --list-changes -b 6.3.2 ./docs/en/6.3.3.json
 # generate examples
-env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py -b 5.8.8 ./docs/en/e5.9.0.json
+env OPENAI_API_KEY=MYKEY uv run ./generate-examples.py -b 6.3.2 ./docs/en/6.3.3.json
 ```
 
-The generated content will be placed in the `docs/{en,zh}/v5.0.20.json`
+The generated content will be placed in the `docs/{en,zh}/<vsn>.json`
 
 ## Generate examples manually (without an OpenAI key)
 
